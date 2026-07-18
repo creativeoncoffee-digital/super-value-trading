@@ -1,0 +1,9 @@
+<svg class="route-divider" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true">
+  <path class="route-path" d="M0,30 Q120,6 240,30 T480,30 T720,30 T960,30 T1200,30 T1440,30" />
+  <circle class="route-node-ring" cx="240" cy="30" r="9"/>
+  <circle class="route-node" cx="240" cy="30" r="4"/>
+  <circle class="route-node-ring" cx="720" cy="30" r="9"/>
+  <circle class="route-node" cx="720" cy="30" r="4"/>
+  <circle class="route-node-ring" cx="1200" cy="30" r="9"/>
+  <circle class="route-node" cx="1200" cy="30" r="4"/>
+</svg>
