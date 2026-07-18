@@ -10,8 +10,11 @@ import Home from './pages/Home';
 import About from './pages/About';
 // import Contact from './pages/Contact';
 import BusinessActivities from './pages/BusinessActivities';
+
 // import GlobalPresence from './pages/GlobalPresence';
 // import Leadership from './pages/Leadership';
+import NotFound from './pages/NotFound'; //
+
 
 function App() {
 
@@ -31,6 +34,7 @@ function App() {
             <Route path="/business" element={<BusinessActivities />} />  
             {/* <Route path="/global-presence" element={<GlobalPresence />} />
             <Route path="/leadership" element={<Leadership />} /> */}
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
 
