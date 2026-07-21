@@ -5,7 +5,9 @@ import { Link } from 'react-router-dom';
 
 // Import your components
 import HomeHero from '../components/Home/HomeHero';
-import HomeStats from '../components/Home/HomeStats';
+import WhatWeTrade from '../components/Home/WhatWeTrade';
+// import HomeStats from '../components/Home/HomeStats';
+
 import pic from '../assets/img/office-interior.jpg';
 import grooming from '../assets/img/grooming-flatlay.jpg';
 import perfumery from '../assets/img/perfume-stones.jpg';
@@ -38,9 +40,12 @@ export default function Home() {
     <main ref={pageRef} className="w-full">
       {/* 1. Hero Section */}
       <HomeHero />
+      <WhatWeTrade />
+
+
 
       {/* 2. New Animated Stats Component */}
-      <HomeStats />
+      {/* <HomeStats /> */}
 
       {/* 3. Who We Are */}
       <section className="py-24 px-8 bg-white">

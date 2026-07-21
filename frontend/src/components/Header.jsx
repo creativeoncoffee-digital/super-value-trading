@@ -8,61 +8,74 @@ export default function Header() {
   const location = useLocation();
 
   useEffect(() => {
-    // Smooth fade-down entrance for the header
+    // GSAP smooth slide-down entrance
     gsap.fromTo(
       headerRef.current,
-      { y: -50, opacity: 0 },
-      { y: 0, opacity: 1, duration: 0.8, ease: 'power3.out' }
+      { y: -100, opacity: 0 },
+      { y: 0, opacity: 1, duration: 1, ease: 'power4.out' }
     );
   }, []);
 
-  const navLinks = [
-    { name: 'Home', path: '/' },
-    { name: 'About', path: '/about' },
-    { name: 'Business Activities', path: '/business' },
-    { name: 'Global Presence', path: '/global-presence' },
-    { name: 'Leadership', path: '/leadership' },
-    { name: 'Contact', path: '/contact' },
-  ];
-
   return (
-    <header ref={headerRef} className="bg-[#0B1E3A] text-white py-4 px-8 sticky top-0 z-50 shadow-md">
-      <div className="max-w-7xl mx-auto flex items-center justify-between">
-        {/* Logo */}
+    <header 
+      ref={headerRef} 
+      className="bg-white text-[#0B1E3A] pt-4 pb-2 px-[clamp(1rem,5vw,3rem)] sticky top-0 z-50    transition-all duration-300"
+    >
+      <div className="w-full max-w-[1400px] mx-auto flex flex-wrap items-center justify-between gap-[clamp(1rem,3vw,2rem)]">
+        
+        {/* Logo Section */}
         <Link to="/" className="flex items-center gap-3">
-        <img src={logoImg} alt="Super Value Logo" className="h-10" />
-          <div className="leading-tight">
-            <span className="block font-bold text-lg tracking-wide">Super Value</span>
-            <span className="text-[10px] text-orange-500 uppercase tracking-widest font-semibold">General Trading LLC</span>
-          </div>
+          <img src={logoImg} alt="Super Value Logo" className="h-[clamp(2.5rem,4vw,3.5rem)]" />
         </Link>
 
-        {/* Navigation */}
-        <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
-          {navLinks.map((link) => {
-            const isActive = location.pathname === link.path;
-            return (
-              <Link
-                key={link.name}
-                to={link.path}
-                className={`pb-1 transition-colors hover:text-orange-400 ${
-                  isActive ? 'text-white border-b-2 border-orange-500' : 'text-slate-300'
-                }`}
+        {/* Fluid Navigation Links (No Grid, No Breakpoints) */}
+        <nav className="flex flex-wrap items-center gap-8 text-[clamp(0.875rem,1.5vw,1rem)] font-bold">
+          <Link to="/" className="hover:text-orange-500 transition-colors">Home</Link>
+          <Link to="/about" className="hover:text-orange-500 transition-colors">About Us</Link>
+          
+          {/* Animated Dropdown Menu for Products & Services */}
+          <div className="relative group">
+            <button className="flex items-center gap-1 hover:text-orange-500 transition-colors py-2 cursor-pointer outline-none">
+              Product & Services 
+              <svg 
+                className="w-4 h-4 transform group-hover:rotate-180 transition-transform duration-500" 
+                viewBox="0 0 20 20" 
+                fill="currentColor"
               >
-                {link.name}
+                <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+              </svg>
+            </button>
+            
+            {/* The Dropdown Card */}
+            <div className="absolute top-full mt-2  left-0 min-w-[270px] bg-white shadow-2xl rounded-2xl flex flex-col opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-4 group-hover:translate-y-0 border border-slate-50 overflow-hidden z-50">
+              <Link to="/business" className="px-6 py-3 hover:bg-orange-50 hover:text-orange-500 transition-colors border-b border-slate-50 flex items-center gap-4">
+                FMCG and Personal Care
               </Link>
-            );
-          })}
+              <Link to="/business" className="px-6 py-3 hover:bg-orange-50 hover:text-orange-500 transition-colors border-b border-slate-50 flex items-center gap-4">
+                 Perfumery
+              </Link>
+              <Link to="/business" className="px-6 py-3 hover:bg-orange-50 hover:text-orange-500 transition-colors border-b border-slate-50 flex items-center gap-4">
+                 Automobiles
+              </Link>
+              <Link to="/business" className="px-6 py-3 hover:bg-orange-50 hover:text-orange-500 transition-colors flex items-center gap-4">
+                 Others
+              </Link>
+            </div>
+          </div>
+
+          <Link to="/blogs" className="hover:text-orange-500 transition-colors">Blogs</Link>
+          <Link to="/contact" className="hover:text-orange-500 transition-colors">Contact Us</Link>
         </nav>
 
-        {/* CTA Button */}
+        {/* Action Button */}
         <Link 
           to="/contact" 
-          className="bg-orange-500 hover:bg-orange-600 text-white text-sm font-semibold py-2.5 px-6 rounded transition-colors"
+          className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-[clamp(0.6rem,1.5vw,0.8rem)] px-[clamp(1.2rem,3vw,1.8rem)] rounded-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-orange-500/30"
         >
-          Get in touch
+          Inquiry Now
         </Link>
+
       </div>
     </header>
   );
-}   
+}
