@@ -5,7 +5,11 @@ import { Link } from 'react-router-dom';
 
 // Import your components
 import HomeHero from '../components/Home/HomeHero';
+import OurClients from '../components/OurClients';
+import AboutSection from '../components/Home/AboutSection';
 import WhatWeTrade from '../components/Home/WhatWeTrade';
+import GlobalPresence from '../components/GlobalPresence';
+import HomeBlogs from '../components/Home/HomeBlogs';
 // import HomeStats from '../components/Home/HomeStats';
 
 import pic from '../assets/img/office-interior.jpg';
@@ -13,6 +17,8 @@ import grooming from '../assets/img/grooming-flatlay.jpg';
 import perfumery from '../assets/img/perfume-stones.jpg';
 import consumerGoods from '../assets/img/warehouse.jpg';
 import automobiles from '../assets/img/tires.jpg';
+import WhyUs from '../components/Home/WhyUs';
+import Faq from '../components/FAQ/Faq';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -40,7 +46,14 @@ export default function Home() {
     <main ref={pageRef} className="w-full">
       {/* 1. Hero Section */}
       <HomeHero />
+      <OurClients />
+      <AboutSection />
       <WhatWeTrade />
+      <WhyUs />
+      <GlobalPresence />
+      <HomeBlogs />
+      <Faq />
+
 
 
 
@@ -48,7 +61,7 @@ export default function Home() {
       {/* <HomeStats /> */}
 
       {/* 3. Who We Are */}
-      <section className="py-24 px-8 bg-white">
+      {/* <section className="py-24 px-8 bg-white">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16">
           <div className="w-full md:w-1/2 reveal-up">
             <img src={pic} alt="Office in Business Bay" className="w-full h-auto rounded-lg shadow-xl" />
@@ -67,10 +80,10 @@ export default function Home() {
             </Link>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Sectors Grid */}
-      <section className="py-24 px-8 bg-slate-50">
+      {/* <section className="py-24 px-8 bg-slate-50">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-end mb-16 reveal-up">
             <div>
@@ -83,7 +96,7 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {/* Sector 1 */}
+    
             <div className="bg-white rounded-lg overflow-hidden shadow-md reveal-up">
               <img src={grooming} alt="Personal Care" className="w-full h-48 object-cover" />
               <div className="p-6">
@@ -92,7 +105,7 @@ export default function Home() {
                 <p className="text-slate-600 text-sm">Authorised distribution of premium razors and grooming systems for regional markets.</p>
               </div>
             </div>
-            {/* Sector 2 */}
+         
             <div className="bg-white rounded-lg overflow-hidden shadow-md reveal-up" style={{ transitionDelay: '100ms' }}>
               <img src={perfumery} alt="Perfumery" className="w-full h-48 object-cover" />
               <div className="p-6">
@@ -101,7 +114,7 @@ export default function Home() {
                 <p className="text-slate-600 text-sm">Premium perfumes and fragrance products sourced for global markets.</p>
               </div>
             </div>
-            {/* Sector 3 */}
+          
             <div className="bg-white rounded-lg overflow-hidden shadow-md reveal-up" style={{ transitionDelay: '200ms' }}>
               <img src={consumerGoods} alt="Consumer Goods" className="w-full h-48 object-cover" />
               <div className="p-6">
@@ -110,7 +123,7 @@ export default function Home() {
                 <p className="text-slate-600 text-sm">A diverse portfolio spanning sandalwood-based products, cosmetics and beauty goods.</p>
               </div>
             </div>
-            {/* Sector 4 */}
+         
             <div className="bg-white rounded-lg overflow-hidden shadow-md reveal-up" style={{ transitionDelay: '300ms' }}>
               <img src={automobiles} alt="Automobiles" className="w-full h-48 object-cover" />
               <div className="p-6">
@@ -123,7 +136,7 @@ export default function Home() {
             
           </div>
         </div>
-      </section>
+      </section> */}
     </main>
   );
 }

@@ -40,19 +40,19 @@ export default function WhatWeTrade() {
   ];
 
   return (
-    <section ref={sectionRef} className="w-full bg-slate-50 py-24 px-8 overflow-hidden">
+    <section ref={sectionRef} className="w-full bg-slate-50 py-15 px-8 overflow-hidden">
       <div className="max-w-7xl mx-auto flex flex-col gap-12">
         
         {/* Header Title */}
-        <div className="max-w-3xl">
-          <h2 className="text-4xl md:text-5xl font-bold text-[#0B1E3A] mb-4">What We Trade</h2>
-          <p className="text-slate-600 text-lg leading-relaxed">
+        <div className="max-w-5xl">
+          <h2 className="text-3xl md:text-5xl font-bold text-[#0B1E3A] mb-4">What We Trade</h2>
+          <p className=" text-slate-700 text-md leading-relaxed mb-8">
             Our core focus is delivering high-demand consumer products with efficiency, reliability, and trust. With a sharp eye on compliance, we ensure seamless transactions that keep global markets supplied.
           </p>
         </div>
 
         {/* Content Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-22 items-center">
           
           {/* Left Large Image */}
           <div className="trade-image-left w-full h-[600px] rounded-3xl overflow-hidden shadow-2xl relative">
@@ -85,7 +85,7 @@ export default function WhatWeTrade() {
 
              <div className="slide-anim flex flex-col">
 
-                <span className="inline-flex items-center gap-3 bg-orange-500 text-white font-bold px-[clamp(1.2rem,3vw,2rem)] py-[clamp(0.8rem,1.5vw,1.2rem)] rounded-full w-max transition-all duration-300 hover:bg-orange-600 hover:gap-5 shadow-lg shadow-orange-500/30">
+                <span className="inline-flex items-center gap-3 bg-orange-500 text-white font-bold px-6 ml-1 py-[clamp(0.8rem,1.5vw,1.2rem)] rounded-xl w-max transition-all duration-300 hover:bg-orange-600 hover:gap-5 shadow-lg shadow-orange-500/30">
                 Discuss A Trade
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
