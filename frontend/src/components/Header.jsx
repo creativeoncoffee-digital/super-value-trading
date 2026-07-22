@@ -19,7 +19,7 @@ export default function Header() {
   return (
     <header 
       ref={headerRef} 
-      className="bg-white text-[#0B1E3A] pt-4 pb-2 px-[clamp(1rem,5vw,3rem)] sticky top-0 z-50    transition-all duration-300"
+      className="bg-white text-[#0B1E3A] pt-4 pb-2 px-[clamp(1rem,5vw,3rem)] sticky top-0 z-50 transition-all duration-300"
     >
       <div className="w-full max-w-[1400px] mx-auto flex flex-wrap items-center justify-between gap-[clamp(1rem,3vw,2rem)]">
         
@@ -47,19 +47,22 @@ export default function Header() {
             </button>
             
             {/* The Dropdown Card */}
-            <div className="absolute top-full mt-2  left-0 min-w-[270px] bg-white shadow-2xl rounded-2xl flex flex-col opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-4 group-hover:translate-y-0 border border-slate-50 overflow-hidden z-50">
-              <Link to="/business" className="px-6 py-3 hover:bg-orange-50 hover:text-orange-500 transition-colors border-b border-slate-50 flex items-center gap-4">
+            <div className="absolute top-full mt-2 left-0 min-w-[270px] bg-white shadow-2xl rounded-2xl flex flex-col opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-4 group-hover:translate-y-0 border border-slate-50 overflow-hidden z-50">
+              
+              {/* Updated Routing Links */}
+              <Link to="/personal-care" className="px-6 py-3 hover:bg-orange-50 hover:text-orange-500 transition-colors border-b border-slate-50 flex items-center gap-4">
                 FMCG and Personal Care
               </Link>
-              <Link to="/business" className="px-6 py-3 hover:bg-orange-50 hover:text-orange-500 transition-colors border-b border-slate-50 flex items-center gap-4">
+              <Link to="/perfumery" className="px-6 py-3 hover:bg-orange-50 hover:text-orange-500 transition-colors border-b border-slate-50 flex items-center gap-4">
                  Perfumery
               </Link>
-              <Link to="/business" className="px-6 py-3 hover:bg-orange-50 hover:text-orange-500 transition-colors border-b border-slate-50 flex items-center gap-4">
+              <Link to="/automobiles" className="px-6 py-3 hover:bg-orange-50 hover:text-orange-500 transition-colors border-b border-slate-50 flex items-center gap-4">
                  Automobiles
               </Link>
               <Link to="/business" className="px-6 py-3 hover:bg-orange-50 hover:text-orange-500 transition-colors flex items-center gap-4">
                  Others
               </Link>
+              
             </div>
           </div>
 

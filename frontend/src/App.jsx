@@ -6,19 +6,16 @@ import Footer from './components/Footer';
 
 // Import your pages
 import Home from './pages/Home';
-// You will import other pages here as you build them
 import About from './pages/About';
-// import Contact from './pages/Contact';
-// import BusinessActivities from './pages/BusinessActivities';
-// import GlobalPresence from './pages/GlobalPresence';
-// import Leadership from './pages/Leadership';
-import Contact from './pages/Contact'; // Import the Contact page
-import NotFound from './pages/NotFound'; //
-import Blogs from './pages/BlogMain'; // Import the Blogs component
-
+import Contact from './pages/Contact'; 
+import NotFound from './pages/NotFound'; 
+import Blogs from './pages/BlogMain'; 
+import Perfumery from './pages/Perfumery'; 
+import Automobliles from './pages/Automobiles'; 
+import PersonalCare from './pages/PersonalCare'; 
+// import BusinessActivities from './pages/BusinessActivities'; // Import this when ready for the "Others" link
 
 function App() {
-
   return (
     <Router>
       <div className="flex flex-col min-h-screen bg-white">
@@ -29,16 +26,18 @@ function App() {
         <main className="flex-grow w-full">
           <Routes>
             <Route path="/" element={<Home />} />
-            {/* Add your other routes here as you create the files */}
             <Route path="/about" element={<About />} />
-            {/* <Route path="/contact" element={<Contact />} /> */}
-            {/* <Route path="/business" element={<BusinessActivities />} />  
-            <Route path="/global-presence" element={<GlobalPresence />} />
-            <Route path="/leadership" element={<Leadership />} /> */}
-            <Route path="/blogs" element={<Blogs />} /> {/* Add the Blogs route */}
+            <Route path="/contact" element={<Contact />} /> 
+            
+            {/* Products & Services Routes */}
+            <Route path="/perfumery" element={<Perfumery />} /> 
+            <Route path="/automobiles" element={<Automobliles />} /> 
+            <Route path="/personal-care" element={<PersonalCare />} /> 
+            
+            {/* Fallback for "Others" dropdown link (Uncomment and add component when ready) */}
+            {/* <Route path="/business" element={<BusinessActivities />} /> */}
 
-            <Route path="/contact" element={<Contact />} /> {/* Add the Contact route */
-            }
+            <Route path="/blogs" element={<Blogs />} /> 
             
             <Route path="*" element={<NotFound />} />
           </Routes>

@@ -46,7 +46,7 @@ export default function Form() {
   };
 
   return (
-    <section ref={containerRef} className="bg-white py-24 px-8 overflow-hidden">
+    <section ref={containerRef} className="bg-white pb-10 px-8 overflow-hidden">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16 items-start">      {/* --- LEFT SIDE: IMAGE --- */}
         <div className="w-full lg:w-1/2 split-reveal relative">
           <div className="absolute -inset-4 bg-slate-50 rounded-3xl transform rotate-2 transition-transform duration-500 hover:rotate-0 -z-10"></div>

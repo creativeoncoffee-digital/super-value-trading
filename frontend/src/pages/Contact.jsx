@@ -43,8 +43,8 @@ export default function Contact() {
         {/* 2. The Contact Form Section */}
         <Form />
         {/* 3. The License & Compliance Section */}
-        <License />
-        
+        {/* <License />
+         */}
 
     
 
