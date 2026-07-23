@@ -30,7 +30,7 @@ export default function AboutSection() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="w-full bg-white py-10 px-8 overflow-hidden">
+    <section ref={sectionRef} className="w-full bg-white pb-10  pt-30 px-8 overflow-hidden">
       {/* Matched the max-w-7xl and flex gap to the WhatWeTrade component */}
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
         

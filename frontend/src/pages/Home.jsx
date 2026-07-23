@@ -19,7 +19,7 @@ import consumerGoods from '../assets/img/warehouse.jpg';
 import automobiles from '../assets/img/tires.jpg';
 import WhyUs from '../components/Home/WhyUs';
 import Faq from '../components/FAQ/Faq';
-
+import TrustedMarkets from '../components/TrustedMarkets';
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
@@ -46,7 +46,7 @@ export default function Home() {
     <main ref={pageRef} className="w-full">
       {/* 1. Hero Section */}
       <HomeHero />
-      <OurClients />
+      <TrustedMarkets />
       <AboutSection />
       <WhatWeTrade />
       <WhyUs />
