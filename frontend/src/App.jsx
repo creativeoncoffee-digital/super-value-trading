@@ -26,12 +26,12 @@ function App() {
         <main className="flex-grow w-full">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
+            <Route path="/not-found" element={<About />} />
             <Route path="/contact" element={<Contact />} /> 
             
             {/* Products & Services Routes */}
-            <Route path="/perfumery" element={<Perfumery />} /> 
-            <Route path="/automobiles" element={<Automobliles />} /> 
+            <Route path="/not-found" element={<Perfumery />} /> 
+            <Route path="/not-found" element={<Automobliles />} /> 
             <Route path="/personal-care" element={<PersonalCare />} /> 
             
             {/* Fallback for "Others" dropdown link (Uncomment and add component when ready) */}
