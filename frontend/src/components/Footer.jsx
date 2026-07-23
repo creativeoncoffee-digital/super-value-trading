@@ -63,7 +63,7 @@ export default function Footer() {
             <div className="footer-item flex flex-col gap-6 border-l-2 border-white/10 pl-6">
               <div>
                 <p className="text-slate-500 text-xs font-bold uppercase tracking-widest mb-1">Direct Line</p>
-                <a href="tel:+971529607401" className="text-xl font-medium hover:text-orange-500 transition-colors">+971 52 960 7401</a>
+                <a href="tel:+971529607401" className="text-xl font-medium hover:text-orange-500 transition-colors">+971 xxx xxx xx </a>
               </div>
               <div>
                 <p className="text-slate-500 text-xs font-bold uppercase tracking-widest mb-1">Trading Enquiries</p>
