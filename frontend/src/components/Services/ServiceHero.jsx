@@ -1,6 +1,8 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { productData } from '../../data/ProductData';
+import Banner from '../../assets/Products/PlaceHolder.png'; // Replace with your actual banner image path
+import HeroBadgeBar from '../../components/HeroBadgeBar'; // Ensure this path is correct
 
 export default function ServiceHero({ category = "personal-care" }) {
   const sectionRef = useRef(null);
@@ -41,7 +43,7 @@ export default function ServiceHero({ category = "personal-care" }) {
       // Starts after the entrance timeline completes
       tl.add(() => {
         gsap.to(leftImgRef.current, {
-          y: 20,
+          y: 7,
           rotation: -8,
           duration: 3,
           ease: "sine.inOut",
@@ -50,7 +52,7 @@ export default function ServiceHero({ category = "personal-care" }) {
         });
 
         gsap.to(rightImgRef.current, {
-          y: -20,
+          y: -7,
           rotation: 8,
           duration: 2.5,
           ease: "sine.inOut",
@@ -70,8 +72,13 @@ export default function ServiceHero({ category = "personal-care" }) {
   return (
     <section 
       ref={sectionRef} 
-      className={`relative w-full h-[60vh] min-h-[500px] overflow-hidden bg-gradient-to-br ${data.themeFrom} ${data.themeTo} flex items-center justify-center font-sans`}
+      className={`relative w-full h-[60vh] min-h-[500px]  bg-gradient-to-br ${data.themeFrom} ${data.themeTo} flex items-center justify-center font-sans`}
     >
+         {/* --- NEW BANNER BACKGROUND --- */}
+      <div 
+        className="absolute inset-0 w-full h-full bg-cover bg-center opacity-40 mix-blend-screen"
+        style={{ backgroundImage: `url(${Banner})` }}
+      ></div>
       
       {/* Decorative center glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vh] h-[60vh] bg-white/5 rounded-full blur-[100px] pointer-events-none"></div>
@@ -79,7 +86,7 @@ export default function ServiceHero({ category = "personal-care" }) {
       {/* --- LEFT OVERLAPPING IMAGE --- */}
       <div 
         ref={leftImgRef}
-        className="absolute left-0 top-1/2 -translate-y-1/2 w-[25vw] max-w-[600px] z-10 pointer-events-none drop-shadow-2xl"
+        className="absolute left-0 top-1/2 -translate-y-1/2 w-[20vw] max-w-[500px] z-10 pointer-events-none drop-shadow-2xl"
       >
         {/* Replace object-cover with object-contain when you add your real background-removed PNGs */}
         <img 
@@ -92,7 +99,7 @@ export default function ServiceHero({ category = "personal-care" }) {
       {/* --- RIGHT OVERLAPPING IMAGE --- */}
       <div 
         ref={rightImgRef}
-        className="absolute right-0 top-1/2 -translate-y-1/2 w-[25vw] max-w-[600px] z-10 pointer-events-none drop-shadow-2xl"
+        className="absolute right-0 top-1/2 -translate-y-1/2 w-[20vw] max-w-[500px] z-10 pointer-events-none drop-shadow-2xl"
       >
         <img 
           src={data.rightImg} 
@@ -118,6 +125,10 @@ export default function ServiceHero({ category = "personal-care" }) {
         <p className="hero-text-anim text-white/80 text-lg md:text-xl leading-relaxed max-w-2xl font-light">
           {data.description}
         </p>
+      </div>
+      {/* --- OVERLAPPING BADGE BAR --- */}
+      <div className="absolute bottom-0 left-0 w-full translate-y-1/2 z-30">
+        <HeroBadgeBar />
       </div>
 
     </section>

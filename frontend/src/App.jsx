@@ -12,7 +12,7 @@ import NotFound from './pages/NotFound';
 import Blogs from './pages/BlogMain'; 
 import Perfumery from './pages/Perfumery'; 
 import Automobliles from './pages/Automobiles'; 
-import PersonalCare from './pages/PersonalCare'; 
+import PersonalCare from './pages/Product'; 
 // import BusinessActivities from './pages/BusinessActivities'; // Import this when ready for the "Others" link
 
 function App() {
