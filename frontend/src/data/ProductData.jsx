@@ -3,7 +3,10 @@ import React from 'react';
 // IMPORT YOUR IMAGES HERE (This fixes the broken image issue)
 import BladeImg from '../assets/Products/Blade.png';
 import PerfumeBottleImg from '../assets/Products/PerfumeBottle.png'; // Make sure to add this image
+import PerfumeWhyChooseUsImg from '../assets/Products/PerfumeBottle.png';
 import TireImg from '../assets/Products/Tire.png';
+import BikeTopImg from '../assets/Products/bike-top.png';
+import CarTopImg from '../assets/Products/car-top.png';
 // import BannerImg from '../assets/Products/Banner.jpg';
 import one from '../assets/Products/one.png'; 
 import two from '../assets/Products/two.png';
@@ -11,6 +14,129 @@ import three from '../assets/Products/three.png';
 import four from '../assets/Products/four.png';
 import five from '../assets/Products/five.png';
 import six from '../assets/Products/six.png';
+
+const createSectionOrder = (...keys) => keys.map((key) => ({ key }));
+
+const sharedWhyChooseUsStats = [
+  {
+    number: "500+",
+    title: "Products",
+    desc: "Wide range of trusted trade essentials",
+    icon: (
+      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+      </svg>
+    )
+  },
+  {
+    number: "50+",
+    title: "Global Brands",
+    desc: "Partnered with world leading brands",
+    icon: (
+      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+      </svg>
+    )
+  },
+  {
+    number: "30+",
+    title: "Countries",
+    desc: "Delivering to global markets efficiently",
+    icon: (
+      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+      </svg>
+    )
+  },
+  {
+    number: "100%",
+    title: "Quality Assured",
+    desc: "Guaranteed authenticity and safety",
+    icon: (
+      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+      </svg>
+    )
+  }
+];
+
+const sharedWhyChooseUsFeatures = [
+  {
+    title: "Consistent Product Quality",
+    desc: "Every product meets strict quality and safety standards.",
+    icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+  },
+  {
+    title: "Reliable Supply Chain",
+    desc: "On-time delivery with secure and efficient logistics.",
+    icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+  },
+  {
+    title: "Competitive Pricing",
+    desc: "Best value products to maximize your business profit.",
+    icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+  },
+  {
+    title: "Customer Focused",
+    desc: "Dedicated support for all your business needs.",
+    icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+  }
+];
+
+const createWhyChooseUs = ({ headlinePrefix, headlineEmphasis, description, image, imageAlt, cardTitle, cardDescription, cardCtaLabel }) => ({
+  headlinePrefix,
+  headlineEmphasis,
+  description,
+  image,
+  imageAlt,
+  cardTitle,
+  cardDescription,
+  cardCtaLabel,
+  stats: sharedWhyChooseUsStats,
+  features: sharedWhyChooseUsFeatures,
+});
+
+const createProductShowcase = ({
+  image,
+  imageAlt,
+  backgroundClass,
+  glowClass,
+  accentClass,
+  ctaClass,
+  panels,
+}) => ({
+  image,
+  imageAlt,
+  backgroundClass,
+  glowClass,
+  accentClass,
+  ctaClass,
+  panels,
+});
+
+const createVehicleShowcase = ({
+  image,
+  imageAlt,
+  title,
+  description,
+  backgroundClass,
+  glowClass,
+  accentClass,
+  ctaLabel,
+  ctaHref,
+  ctaClass,
+}) => ({
+  image,
+  imageAlt,
+  title,
+  description,
+  backgroundClass,
+  glowClass,
+  accentClass,
+  ctaLabel,
+  ctaHref,
+  ctaClass,
+});
 
 
 export const productData = {
@@ -31,15 +157,16 @@ export const productData = {
       themeTo: "to-[#041428]",
       accent: "text-orange-500"
     },
+    sections: createSectionOrder('trustedMarkets', 'fmcgShowcase', 'productShowcase', 'solutions', 'whyChooseUs'),
     trustedMarkets: {
       title: "Trusted By Global Markets",
-      logos: [
-        { id: 1, name: "Silvermax", src: "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" },
-        { id: 2, name: "Gillette", src: "https://upload.wikimedia.org/wikipedia/commons/a/a6/Logo_NIKE.svg" },
-        { id: 3, name: "Nivea", src: "https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" },
-        { id: 4, name: "Dove", src: "https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" },
-        { id: 5, name: "Colgate", src: "https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" },
-        { id: 6, name: "Unilever", src: "https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg" }
+    logos: [
+        { id: 1, name: "Michelin", src: one },
+        { id: 2, name: "Bridgestone", src:two  },
+        { id: 3, name: "Pirelli", src: three },
+        { id: 4, name: "Goodyear", src: four },
+        { id: 5, name: "Continental", src: five },
+        { id: 6, name: "Dunlop", src: six }
       ]
     },
     showcase: {
@@ -64,6 +191,32 @@ export const productData = {
         { title: "Feminine Care", desc: "Premium hygiene & intimate care solutions.", img: "https://images.unsplash.com/photo-1584305574647-0cc9ec5ee60a?q=80&w=800&auto=format&fit=crop" }
       ]
     },
+    productShowcase: createProductShowcase({
+      image: BladeImg,
+      imageAlt: "Personal care blade showcase",
+      backgroundClass: 'bg-white',
+      glowClass: 'bg-orange-500/10',
+      accentClass: 'bg-orange-500',
+      ctaClass: 'bg-orange-500 hover:bg-orange-600 shadow-orange-500/30',
+      panels: {
+        left: {
+          eyebrow: 'Precision Engineering',
+          description: 'Crafted from high-grade stainless steel, ensuring maximum durability and performance for the premium global grooming market.',
+          ctaLabel: 'Inquiry Now',
+          ctaHref: '/contact',
+        },
+        right: {
+          eyebrow: 'Advanced Coating',
+          description: 'Our authorized personal care products utilize multi-layered coating technology to dramatically extend product lifespan.',
+          ctaLabel: 'Explore Range',
+          ctaHref: '/contact',
+        },
+        bottom: {
+          title: 'Distributed globally by Super Value',
+          description: 'Seamlessly supplying regional markets with top-tier grooming systems.',
+        },
+      },
+    }),
     solutions: {
       headline: "Trusted Personal Care Solutions for Every Lifestyle",
       description: "From daily essentials to premium care, we deliver a wide range of personal care products that meet the highest standards of quality, safety and value.",
@@ -73,7 +226,17 @@ export const productData = {
         { title: "Bath & Shower", icon: <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M15 7.5V5.25m0 0a2.25 2.25 0 10-4.5 0v2.25m4.5 0a2.25 2.25 0 11-4.5 0m4.5 0h.008v.008H15V7.5zm-4.5 0h.008v.008H10.5V7.5zm-2.25 3h10.5c.828 0 1.5.672 1.5 1.5v6c0 .828-.672 1.5-1.5 1.5H8.25c-.828 0-1.5-.672-1.5-1.5v-6c0-.828.672-1.5 1.5-1.5z" /></svg> },
         { title: "Oral Care", icon: <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 20.25c4.97 0 9-3.694 9-8.25s-4.03-8.25-9-8.25S3 7.43 3 12c0 4.556 4.03 8.25 9 8.25z" /></svg> }
       ]
-    }
+    },
+    whyChooseUs: createWhyChooseUs({
+      headlinePrefix: 'Why Businesses Choose',
+      headlineEmphasis: 'Super Value',
+      description: 'We are committed to providing businesses with reliable products, seamless supply and unbeatable value.',
+      image: 'https://images.unsplash.com/photo-1556228578-0d85b1a4d571?q=80&w=1200&auto=format&fit=crop',
+      imageAlt: 'Personal care products',
+      cardTitle: 'Partner with us for lasting success',
+      cardDescription: 'We empower your business with premium products, trusted service and long-term growth.',
+      cardCtaLabel: 'Become a Partner',
+    })
   },
 
   // ==========================================
@@ -92,15 +255,16 @@ export const productData = {
       themeTo: "to-[#140C0B]",
       accent: "text-[#D4AF37]" // Gold Accent
     },
+    sections: createSectionOrder('trustedMarkets', 'fmcgShowcase', 'productShowcase', 'solutions', 'whyChooseUs'),
     trustedMarkets: {
       title: "Distributing Excellence Globally",
-      logos: [
-        { id: 1, name: "Brand 1", src: "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" },
-        { id: 2, name: "Brand 2", src: "https://upload.wikimedia.org/wikipedia/commons/a/a6/Logo_NIKE.svg" },
-        { id: 3, name: "Brand 3", src: "https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" },
-        { id: 4, name: "Brand 4", src: "https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" },
-        { id: 5, name: "Brand 5", src: "https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" },
-        { id: 6, name: "Brand 6", src: "https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg" }
+    logos: [
+        { id: 1, name: "Michelin", src: one },
+        { id: 2, name: "Bridgestone", src:two  },
+        { id: 3, name: "Pirelli", src: three },
+        { id: 4, name: "Goodyear", src: four },
+        { id: 5, name: "Continental", src: five },
+        { id: 6, name: "Dunlop", src: six }
       ]
     },
     showcase: {
@@ -148,7 +312,43 @@ export const productData = {
         { title: "Private Label", icon: <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg> },
         { title: "Raw Extracts", icon: <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg> }
       ]
-    }
+    },
+    productShowcase: createProductShowcase({
+      image: PerfumeBottleImg,
+      imageAlt: 'Perfumery showcase',
+      backgroundClass: 'bg-white',
+      glowClass: 'bg-[#D4AF37]/10',
+      accentClass: 'bg-[#D4AF37]',
+      ctaClass: 'bg-[#D4AF37] hover:bg-[#c09b2e] shadow-[#D4AF37]/30',
+      panels: {
+        left: {
+          eyebrow: 'Scent Architecture',
+          description: 'We curate fragrance solutions from raw materials to branded retail-ready perfumes for premium markets.',
+          ctaLabel: 'Talk to an Expert',
+          ctaHref: '/contact',
+        },
+        right: {
+          eyebrow: 'Luxury Distribution',
+          description: 'From concentrated oils to bespoke signature scent profiles, our perfumery lines are built for scale and consistency.',
+          ctaLabel: 'View Fragrance Line',
+          ctaHref: '/contact',
+        },
+        bottom: {
+          title: 'Distributed globally by Super Value',
+          description: 'Delivering premium fragrance solutions across luxury retail and private label channels.',
+        },
+      },
+    }),
+    whyChooseUs: createWhyChooseUs({
+      headlinePrefix: 'Why Luxury Buyers Choose',
+      headlineEmphasis: 'Super Value',
+      description: 'We supply fragrance programs with reliable sourcing, premium presentation and market-ready consistency.',
+      image: PerfumeWhyChooseUsImg,
+      imageAlt: 'Luxury fragrances',
+      cardTitle: 'Fragrance programs built to scale',
+      cardDescription: 'We bridge raw materials, private label development and global distribution.',
+      cardCtaLabel: 'Start a Project',
+    })
   },
 
   // ==========================================
@@ -170,15 +370,16 @@ export const productData = {
       themeTo: "to-[#020617]",
       accent: "text-blue-500" // Blue Accent for Automotives
     },
+    sections: createSectionOrder('trustedMarkets', 'fmcgShowcase', 'productShowcase', 'solutions', 'bikeShowcase', 'carShowcase', 'whyChooseUs'),
     trustedMarkets: {
       title: "Partnered with Leading Manufacturers",
-      logos: [
-        { id: 1, name: "Michelin", src: "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" },
-        { id: 2, name: "Bridgestone", src: "https://upload.wikimedia.org/wikipedia/commons/a/a6/Logo_NIKE.svg" },
-        { id: 3, name: "Pirelli", src: "https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" },
-        { id: 4, name: "Goodyear", src: "https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" },
-        { id: 5, name: "Continental", src: "https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" },
-        { id: 6, name: "Dunlop", src: "https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg" }
+   logos: [
+        { id: 1, name: "Michelin", src: one },
+        { id: 2, name: "Bridgestone", src:two  },
+        { id: 3, name: "Pirelli", src: three },
+        { id: 4, name: "Goodyear", src: four },
+        { id: 5, name: "Continental", src: five },
+        { id: 6, name: "Dunlop", src: six }
       ]
     },
     showcase: {
@@ -226,6 +427,66 @@ export const productData = {
         { title: "Quality Checks", icon: <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg> },
         { title: "Fleet Supply", icon: <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" /></svg> }
       ]
-    }
+    },
+    productShowcase: createProductShowcase({
+      image: TireImg,
+      imageAlt: 'Automotive tire showcase',
+      backgroundClass: 'bg-white',
+      glowClass: 'bg-blue-500/10',
+      accentClass: 'bg-blue-500',
+      ctaClass: 'bg-blue-600 hover:bg-blue-500 shadow-blue-500/30',
+      panels: {
+        left: {
+          eyebrow: 'Global Mobility',
+          description: 'We connect premium automotive tires, vehicles and parts with dependable trade and logistics support.',
+          ctaLabel: 'Start Sourcing',
+          ctaHref: '/contact',
+        },
+        right: {
+          eyebrow: 'Tire Trading Network',
+          description: 'From commercial fleets to passenger products, our supply chain is built to handle high-volume export and import.',
+          ctaLabel: 'See Tire Range',
+          ctaHref: '/contact',
+        },
+        bottom: {
+          title: 'Distributed globally by Super Value',
+          description: 'Secure transit and competitive pricing for high-demand automotive categories.',
+        },
+      },
+    }),
+    bikeShowcase: createVehicleShowcase({
+      image: BikeTopImg,
+      imageAlt: 'Automobile bike showcase',
+      title: 'High-Performance Mobility.',
+      description: 'Premium two-wheeler solutions engineered for the modern road. Uncompromising quality and endurance distributed across our global network.',
+      backgroundClass: 'bg-[#0A101D]',
+      glowClass: 'bg-blue-500/10',
+      accentClass: 'bg-blue-500',
+      ctaLabel: 'Explore Solutions',
+      ctaHref: '/contact',
+      ctaClass: 'bg-blue-600 hover:bg-blue-500 shadow-blue-500/30',
+    }),
+    carShowcase: createVehicleShowcase({
+      image: CarTopImg,
+      imageAlt: 'Automobile car showcase',
+      title: 'Commercial Vehicle Supply.',
+      description: 'Automotive vehicle sourcing, fleet support and spare parts distribution for regional and international buyers.',
+      backgroundClass: 'bg-[#0A101D]',
+      glowClass: 'bg-blue-500/10',
+      accentClass: 'bg-blue-500',
+      ctaLabel: 'Request a Quote',
+      ctaHref: '/contact',
+      ctaClass: 'bg-blue-600 hover:bg-blue-500 shadow-blue-500/30',
+    }),
+    whyChooseUs: createWhyChooseUs({
+      headlinePrefix: 'Why Automotive Buyers Choose',
+      headlineEmphasis: 'Super Value',
+      description: 'We support tire and vehicle trading with trusted logistics, consistent quality and competitive pricing.',
+      image: 'https://images.unsplash.com/photo-1578844251758-2f71da64c96f?q=80&w=1200&auto=format&fit=crop',
+      imageAlt: 'Automotive logistics',
+      cardTitle: 'Fleet supply that stays on schedule',
+      cardDescription: 'We keep automotive buyers moving with vetted sourcing and secure transit.',
+      cardCtaLabel: 'Partner With Us',
+    })
   }
 };

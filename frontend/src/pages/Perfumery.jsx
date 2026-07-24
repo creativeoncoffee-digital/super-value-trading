@@ -1,10 +1,7 @@
-import ServiceHero from '../components/Services/ServiceHero';
+import ProductCategoryPage from '../components/Services/ProductCategoryPage';
 
 export default function Perfumery() {
   return (
-    <div>
-      <ServiceHero category="perfumery" />
-      {/* The rest of your page content goes here */}
-    </div>
+    <ProductCategoryPage category="perfumery" />
   )
 }

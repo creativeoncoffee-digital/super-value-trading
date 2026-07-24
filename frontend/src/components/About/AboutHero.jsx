@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { aboutData } from '../../data/AboutData';
-import HeroBadgeBar from '../HeroBadgeBar';
+import HeroBadgeBar from '../HeroBadgeBar'; // Make sure this path is correct
 
 export default function AboutHero() {
   const sectionRef = useRef(null);
@@ -21,8 +21,9 @@ export default function AboutHero() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative w-full h-[60vh] min-h-[500px] bg-[#0A101D] overflow-hidden flex items-center">
-      <div className="absolute inset-0 bg-gradient-to-r from-[#0A101D] via-[#0A101D]/90 to-transparent z-10"></div>
+    // FIX: Removed overflow-hidden from the section so the badge can overlap the bottom edge
+    <section ref={sectionRef} className="relative w-full h-[60vh] min-h-[500px] bg-[#0A101D] flex items-center">
+      <div className="absolute inset-0 bg-gradient-to-r from-[#0A101D] via-[#0A101D]/90 to-transparent z-10 pointer-events-none"></div>
       
       <div className="max-w-[1400px] mx-auto w-full px-[clamp(1.5rem,5vw,4rem)] flex justify-between items-center relative z-20 h-full">
         
@@ -44,7 +45,7 @@ export default function AboutHero() {
         </div>
 
         {/* Right Overlapping Image Container */}
-        <div className="hidden lg:block absolute right-0 top-0 h-full w-[45%] about-hero-img">
+        <div className="hidden lg:block absolute right-0 top-0 h-full w-[45%] about-hero-img pointer-events-none">
           <div className="w-full h-full rounded-tl-[80px] rounded-bl-[80px] overflow-hidden border-l-4 border-y-4 border-white/5">
             <img 
               src={aboutData.hero.image} 
@@ -56,8 +57,13 @@ export default function AboutHero() {
           </div>
         </div>
       
-
       </div>
+
+      {/* OVERLAPPING BADGE BAR */}
+      <div className="absolute bottom-0 left-0 w-full translate-y-1/2 z-30">
+        <HeroBadgeBar />
+      </div>
+
     </section>
   );
 }

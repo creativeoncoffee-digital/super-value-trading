@@ -2,7 +2,6 @@ import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { productData } from '../../data/ProductData';
-import ProductShowcase from './ProductShowcase';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -57,9 +56,6 @@ export default function FMCGShowcase({ category = "personal-care" }) {
           </div>
         </div>
       </section>
-
-      {/* PRODUCT SHOWCASE (Will now scroll perfectly) */}
-      <ProductShowcase />
 
       {/* GRID SECTION (Added padding and overflow-hidden specifically here) */}
       <section className="cat-grid-trigger w-full py-24 md:py-32 overflow-hidden">

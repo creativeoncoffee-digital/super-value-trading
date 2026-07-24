@@ -5,11 +5,13 @@ import CoreValues from '../components/About/CoreValues';
 import ProductDivisions from '../components/About/ProductDivisions';
 import AboutStats from '../components/About/AboutStats';
 import AboutCTA from '../components/About/AboutCTA';
+import TrustedMarks from '../components/TrustedMarkets';
 
 export default function About() {
   return (
     <main className="w-full min-h-screen">
       <AboutHero />
+      <TrustedMarks />
       <WhoWeAre />
       <CoreValues />
       <ProductDivisions />

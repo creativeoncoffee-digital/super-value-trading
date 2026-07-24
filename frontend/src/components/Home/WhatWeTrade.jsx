@@ -16,16 +16,22 @@ export default function WhatWeTrade() {
 
   useEffect(() => {
     let ctx = gsap.context(() => {
-      // Animate the left large image
+      // Force3D pushes the animation to the GPU to stop lagging
       gsap.fromTo('.trade-image-left', 
-        { opacity: 0, x: -100 },
-        { opacity: 1, x: 0, duration: 1, ease: 'power3.out', scrollTrigger: { trigger: sectionRef.current, start: 'top 75%' } }
+        { opacity: 0, x: -50 }, // Shortened distance for smoother rendering
+        { opacity: 1, x: 0, duration: 1.2, ease: 'power3.out', force3D: true, scrollTrigger: { trigger: sectionRef.current, start: 'top 75%' } }
       );
 
       // Animate the right list items stagger
       gsap.fromTo('.trade-list-item', 
-        { opacity: 0, x: 100 },
-        { opacity: 1, x: 0, duration: 0.8, stagger: 0.15, ease: 'power3.out', scrollTrigger: { trigger: sectionRef.current, start: 'top 75%' } }
+        { opacity: 0, x: 50 }, // Shortened distance
+        { opacity: 1, x: 0, duration: 0.8, stagger: 0.15, ease: 'power3.out', force3D: true, scrollTrigger: { trigger: sectionRef.current, start: 'top 75%' } }
+      );
+
+      // Added animation for the button to match the flow
+      gsap.fromTo('.slide-anim', 
+        { opacity: 0, y: 20 },
+        { opacity: 1, y: 0, duration: 0.8, delay: 0.6, ease: 'power3.out', force3D: true, scrollTrigger: { trigger: sectionRef.current, start: 'top 75%' } }
       );
     }, sectionRef);
 
@@ -83,15 +89,13 @@ export default function WhatWeTrade() {
               </div>
             ))}
 
-             <div className="slide-anim flex flex-col">
-
-                <span className="inline-flex items-center gap-3 bg-orange-500 text-white font-bold px-6 ml-1 py-[clamp(0.8rem,1.5vw,1.2rem)] rounded-xl w-max transition-all duration-300 hover:bg-orange-600 hover:gap-5 shadow-lg shadow-orange-500/30">
+             <div className="slide-anim flex flex-col mt-4">
+                <span className="inline-flex items-center gap-3 bg-orange-500 text-white font-bold px-6 py-[clamp(0.8rem,1.5vw,1.2rem)] rounded-xl w-max transition-all duration-300 hover:bg-orange-600 hover:gap-5 shadow-lg shadow-orange-500/30 cursor-pointer">
                 Discuss A Trade
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
                   </svg>
                 </span>
-                
               </div>
           </div>
           
