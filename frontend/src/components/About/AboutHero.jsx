@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { aboutData } from '../../data/AboutData';
+import HeroBadgeBar from '../HeroBadgeBar';
 
 export default function AboutHero() {
   const sectionRef = useRef(null);
@@ -54,6 +55,7 @@ export default function AboutHero() {
             <div className="absolute inset-0 bg-gradient-to-l from-transparent to-[#0A101D]/50 pointer-events-none"></div>
           </div>
         </div>
+      
 
       </div>
     </section>
