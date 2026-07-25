@@ -43,7 +43,7 @@ export default function WhoWeAre() {
 
         <div className="wwa-img w-full lg:w-1/2 rounded-[2rem] overflow-hidden shadow-2xl">
           <img 
-            src={aboutData.whoWeAre.image} 
+            src={aboutData.hero.image} 
             alt="Warehouse Operations" 
             className="w-full h-[400px] object-cover hover:scale-105 transition-transform duration-700 ease-out"
           />

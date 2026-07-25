@@ -57,9 +57,10 @@ export default function FMCGShowcase({ category = "personal-care" }) {
         </div>
       </section>
 
-      {/* GRID SECTION (Added padding and overflow-hidden specifically here) */}
+     {/* GRID SECTION */}
       <section className="cat-grid-trigger w-full py-24 md:py-32 overflow-hidden">
         <div className="max-w-[1400px] mx-auto px-[clamp(1.5rem,5vw,4rem)] flex flex-col items-center">
+          
           <div className="cat-header flex flex-col items-center text-center mb-16">
             <div className="flex items-center gap-4 mb-4">
               <span className="w-8 h-[2px] bg-orange-500"></span>
@@ -67,21 +68,37 @@ export default function FMCGShowcase({ category = "personal-care" }) {
               <span className="w-8 h-[2px] bg-orange-500"></span>
             </div>
           </div>
+          
           <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            {data.categories.map((cat, index) => (
-              <div key={index} className="cat-card group relative w-full aspect-[4/3] rounded-[2rem] overflow-hidden cursor-pointer shadow-lg hover:shadow-2xl transition-shadow bg-[#0B1E3A]">
-                <img src={cat.img} alt={cat.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-90 group-hover:opacity-100" />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0B1E3A]/90 to-transparent"></div>
-                <div className="absolute inset-0 p-8 flex flex-col justify-end">
-                  <h3 className="text-2xl md:text-3xl font-bold text-white">{cat.title}</h3>
-                  <p className="text-slate-300 text-sm">{cat.desc}</p>
+            {data.categories.map((cat, index) => {
+              
+              // Logic to center the 4th item on large screens if there are exactly 4 items
+              const isCenteredOrphan = data.categories.length === 4 && index === 3;
+              
+              return (
+                <div 
+                  key={index} 
+                  className={`cat-card group relative justify-center items-center w-full aspect-[4/3] rounded-[2rem] overflow-hidden cursor-pointer shadow-lg hover:shadow-2xl transition-shadow bg-[#0B1E3A] ${
+                    isCenteredOrphan ? 'lg:col-start-2' : ''
+                  }`}
+                >
+                  <img 
+                    src={cat.img} 
+                    alt={cat.title} 
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-90 group-hover:opacity-100" 
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0B1E3A]/90 to-transparent"></div>
+                  <div className="absolute inset-0 p-8 flex flex-col justify-end">
+                    <h3 className="text-2xl md:text-3xl font-bold text-white">{cat.title}</h3>
+                    <p className="text-slate-300 text-sm">{cat.desc}</p>
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
+
         </div>
       </section>
-
     </div>
   );
 }

@@ -45,7 +45,7 @@ export default function Faq({ page = 'home' }) {
   if (faqs.length === 0) return null;
 
   return (
-    <section ref={sectionRef} className="w-full bg-[#f8fafc] py-10 px-8 overflow-hidden">
+    <section ref={sectionRef} className="w-full bg-[#f8fafc] py-20 px-8 overflow-hidden">
       <div className="max-w-5xl mx-auto flex flex-col items-center">
         
         {/* Section Header */}

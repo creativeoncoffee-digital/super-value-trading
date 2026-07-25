@@ -273,7 +273,7 @@ export const productData = {
         highlight: "Scent Architects",
         headline: "Mastering the Art of",
         description: "We are curators of olfactory elegance. From rare raw materials to fully branded retail ready perfumes, we bridge the gap between traditional perfumery techniques and modern mass-market distribution.",
-        image: "https://images.unsplash.com/photo-1615962122149-ea64878a8ed5?q=80&w=1000&auto=format&fit=crop",
+        image:PerfumeWhyChooseUsImg,
         stats: [
           { value: "500+", label: "Unique Notes" },
           { value: "20+", label: "Master Blends" },
@@ -289,7 +289,7 @@ export const productData = {
         { 
           title: "Perfume Oils", 
           desc: "Highly concentrated, pure attars and perfume oils crafted for deep, enduring fragrance experiences without alcohol.", 
-          img: "https://images.unsplash.com/photo-1608528577891-eb05f03ce376?q=80&w=800&auto=format&fit=crop" 
+          img: PerfumeWhyChooseUsImg ,
         },
         { 
           title: "Fine Fragrances & Private Label", 
@@ -299,7 +299,7 @@ export const productData = {
         { 
           title: "Sandalwood & Operculum", 
           desc: "Rare, exotic raw materials. Sustainably sourced sandalwood and authentic operculum for traditional incense and perfumery.", 
-          img: "https://images.unsplash.com/photo-1611078519659-c2901dbfaeb8?q=80&w=800&auto=format&fit=crop" 
+          img: PerfumeWhyChooseUsImg,
         }
       ]
     },
@@ -399,12 +399,12 @@ export const productData = {
         { 
           title: "Passenger Car Tires", 
           desc: "High-performance, all-season, and touring tires engineered for safety and comfort.", 
-          img: "https://images.unsplash.com/photo-1590362891991-f700445d8b8a?q=80&w=800&auto=format&fit=crop" 
+          img: "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?q=80&w=800&auto=format&fit=crop" 
         },
         { 
           title: "Commercial & TBR Tires", 
           desc: "Heavy-duty truck and bus radial tires built for extreme endurance and heavy loads.", 
-          img: "https://images.unsplash.com/photo-1601007204910-d096c4a8d4d3?q=80&w=800&auto=format&fit=crop" 
+          img: "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?q=80&w=800&auto=format&fit=crop" 
         },
         { 
           title: "Two-Wheeler Trading", 

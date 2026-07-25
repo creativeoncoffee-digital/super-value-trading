@@ -12,7 +12,7 @@ import NotFound from './pages/NotFound';
 import Blogs from './pages/BlogMain'; 
 import Perfumery from './pages/Perfumery'; 
 import Automobliles from './pages/Automobiles'; 
-import PersonalCare from './pages/Product'; 
+import PersonalCarePage from './pages/PersonalCarePage'; 
 // import BusinessActivities from './pages/BusinessActivities'; // Import this when ready for the "Others" link
 
 function App() {
@@ -32,7 +32,7 @@ function App() {
             {/* Products & Services Routes */}
             <Route path="/perfumery" element={<Perfumery />} /> 
             <Route path="/automobiles" element={<Automobliles />} /> 
-            <Route path="/personal-care" element={<PersonalCare />} /> 
+            <Route path="/personal-care" element={<PersonalCarePage />} /> 
             
             {/* Fallback for "Others" dropdown link (Uncomment and add component when ready) */}
             {/* <Route path="/business" element={<BusinessActivities />} /> */}

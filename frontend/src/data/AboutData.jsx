@@ -1,3 +1,4 @@
+import PerfumeBottleImg from '../assets/Products/PerfumeBottle.png';
 export const aboutData = {
   hero: {
     label: "ABOUT US",
@@ -53,7 +54,7 @@ export const aboutData = {
         title: "Perfumery",
         link: "/perfumery", // Added link to the business page
         desc: "Exquisite collection of oil and perfume products crafted for lasting impressions and timeless elegance.",
-        img: "https://images.unsplash.com/photo-1595425970377-c9703d740873?q=80&w=800&auto=format&fit=crop",
+        img: PerfumeBottleImg,
         icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
       },
       {

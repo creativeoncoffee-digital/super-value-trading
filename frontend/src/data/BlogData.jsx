@@ -5,7 +5,7 @@ export const blogData = {
     title: "The Future of Cross-Border Trade: Navigating New Supply Chain Realities",
     author: "Mr. Pankaj Attrey",
     date: "25 Jan 2024",
-    img: "https://images.unsplash.com/photo-1586528116311-ad8ed744d463?q=80&w=1200&auto=format&fit=crop",
+    img: "https://images.unsplash.com/photo-1558981403-c5f9899a28bc?q=80&w=400&auto=format&fit=crop",
     content: `
       <p>The global trade landscape is undergoing a massive transformation. With shifting geopolitical dynamics and an increasing emphasis on supply chain resilience, trading enterprises must adapt rapidly to maintain seamless operations.</p>
       <br/>
@@ -70,7 +70,7 @@ export const blogData = {
       title: "The science of scent: Sourcing the finest sandalwood.",
       author: "Procurement",
       date: "10 Jan 2024",
-      img: "https://images.unsplash.com/photo-1608528577891-eb0559d997b5?q=80&w=600&auto=format&fit=crop",
+      img: "https://images.unsplash.com/photo-1558981403-c5f9899a28bc?q=80&w=400&auto=format&fit=crop",
       content: "<p>Sandalwood remains one of the most sought-after ingredients in luxury perfumery. Our sourcing teams travel to...</p>"
     },
     {
