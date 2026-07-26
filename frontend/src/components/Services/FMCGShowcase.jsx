@@ -64,7 +64,7 @@ export default function FMCGShowcase({ category = "personal-care" }) {
           <div className="cat-header flex flex-col items-center text-center mb-16">
             <div className="flex items-center gap-4 mb-4">
               <span className="w-8 h-[2px] bg-orange-500"></span>
-              <h2 className="text-2xl md:text-3xl font-bold text-[#0B1E3A] tracking-tight">Our Product Categories</h2>
+              <h2 className="text-2xl md:text-3xl font-bold text-[#0B1E3A] tracking-tight">Our Products Categories</h2>
               <span className="w-8 h-[2px] bg-orange-500"></span>
             </div>
           </div>
