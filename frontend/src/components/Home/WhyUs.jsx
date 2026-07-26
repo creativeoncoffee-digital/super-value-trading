@@ -39,45 +39,48 @@ export default function WhyUs() {
   }, []);
 
   return (
-    // Background color set to project theme. If you want the exact bright blue from the image, change #0B1E3A to #165296
     <section ref={sectionRef} className="w-full bg-[#084ea3] py-[clamp(4rem,10vw,8rem)] px-[clamp(1.5rem,5vw,4rem)] overflow-hidden">
       
-      {/* Fluid Flex Container (No Grid, No Breakpoints) */}
-      <div className="w-full max-w-7xl mx-auto flex flex-wrap items-start justify-between gap-[clamp(3rem,6vw,5rem)]">
+      {/* Expanded Container for a bigger image */}
+      <div className="w-full max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-12 md:gap-24">
         
-        {/* Left Side: Text Content (Pinned to Top Left) */}
-        <div className="flex flex-col flex-1 min-w-[300px] max-w-[700px]">
+        {/* Left Side: Text Content */}
+        <div className="flex flex-col w-full lg:w-1/2">
           
-          <h2 className="why-text-anim text-white font-bold text-3xl md:text-5xl leading-tight mb-1">
-            Why Choose Us
+          <h2 className="why-text-anim text-white font-bold text-3xl md:text-5xl leading-tight mb-12">
+            Why Choose Super Value General Trading LLC
           </h2>
-          
-          <p className="why-text-anim text-white/90 text-sm font-medium mb-5">
-            Super Value General Trading LLC
-          </p>
 
-          <p className="why-text-anim text-white/90 text-lg leading-relaxed max-w-[600px]">
-            BLADES & Personal Care: Authorized Distributor of DORCO (South
-            Korea), SILVERMAX and personal care products, including razors and
-            premium grooming systems for regional markets.
-          </p>
+          <ul className="why-text-anim text-white/90 text-md leading-relaxed space-y-6">
+            <li className="flex items-start gap-3">
+              <span className="text-orange-500 font-bold text-xl mt-1">•</span>
+              <p><strong>Strategic Global Location</strong> – Headquartered in Dubai, a world-class logistics and trade hub, enabling seamless international sourcing and distribution.</p>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="text-orange-500 font-bold text-xl mt-1">•</span>
+              <p><strong>Diverse Trading Expertise</strong> – Serving multiple industries with a broad portfolio of high-demand commodities and consumer goods.</p>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="text-orange-500 font-bold text-xl mt-1">•</span>
+              <p><strong>Reliable Global Supply Chain</strong> – Strong sourcing network and efficient logistics ensure timely deliveries and consistent product quality.</p>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="text-orange-500 font-bold text-xl mt-1">•</span>
+              <p><strong>Customer-Centric & Trusted Partner</strong> – Committed to transparency, competitive pricing, and building long-term business relationships through dependable service.</p>
+            </li>
+          </ul>
           
         </div>
 
-        {/* Right Side: Image Container */}
-        <div className="why-img-anim flex-1 min-w-[300px] flex justify-center md:justify-end items-center">
+        {/* Right Side: Image Container (Made significantly larger) */}
+        <div className="why-img-anim w-full lg:w-1/2 flex justify-center lg:justify-end items-center">
           
-          {/* 
-            This is the placeholder for your background-removed SV image. 
-            When you are ready, replace the <div> content with your <img /> tag.
-          */}
-          <div className="relative w-full max-w-[500px] aspect-square flex items-center justify-center rounded-3xl border-2 border-dashed border-white/20 bg-white/5 backdrop-blur-sm">
-            <span className="text-white/50 font-medium tracking-widest uppercase text-sm text-center px-4">
-              Add Background-Removed <br/> SV Image Here
-            </span>
-            
-            {/* Example of how you will add your image later: */}
-            {/* <img src="/assets/img/your-sv-image.png" alt="SV Product" className="absolute inset-0 w-full h-full object-contain drop-shadow-2xl" /> */}
+          <div className="relative w-full max-w-[600px] lg:max-w-[700px] aspect-square flex items-center justify-center rounded-3xl border-2 border-dashed border-white/20 bg-white/5 backdrop-blur-sm overflow-hidden">
+            <img 
+              src="/src/assets/Home/HomeWhyUsPic.jpeg" 
+              alt="Super Value Core Strengths" 
+              className="absolute inset-0 w-full h-full object-cover drop-shadow-2xl transition-transform duration-700 hover:scale-105" 
+            />
           </div>
 
         </div>

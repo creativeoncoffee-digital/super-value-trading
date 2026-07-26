@@ -11,34 +11,59 @@ export default function ServiceHero({ category = "personal-care" }) {
   // Dynamic Data Pull
   const data = productData[category]?.hero;
 
+  // FIX 1: Check if the current page is the automobiles page
+  const isAutomobile = category === 'automobiles';
+
   useEffect(() => {
     if (!data) return;
     let ctx = gsap.context(() => {
       const tl = gsap.timeline();
-      tl.fromTo('.hero-text-anim', { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 1, stagger: 0.15, ease: 'power3.out' });
-      tl.fromTo(leftImgRef.current, { opacity: 0, xPercent: -100, rotation: -15 }, { opacity: 1, xPercent: -30, rotation: -5, duration: 1.2, ease: 'power3.out' }, "-=0.8");
-      tl.fromTo(rightImgRef.current, { opacity: 0, xPercent: 100, rotation: 15 }, { opacity: 1, xPercent: 30, rotation: 5, duration: 1.2, ease: 'power3.out' }, "-=1.2");
+      
+      tl.fromTo('.hero-text-anim', 
+        { opacity: 0, y: 30 }, 
+        { opacity: 1, y: 0, duration: 1, stagger: 0.15, ease: 'power3.out' }
+      );
+      
+      tl.fromTo(leftImgRef.current, 
+        { opacity: 0, xPercent: -100, rotation: -5 }, 
+        { opacity: 1, xPercent: -30, rotation: -2, duration: 1.2, ease: 'power3.out' }, 
+        "-=0.8"
+      );
+      
+      tl.fromTo(rightImgRef.current, 
+        { opacity: 0, xPercent: 100, rotation: 5 }, 
+        { opacity: 1, xPercent: 30, rotation: 2, duration: 1.2, ease: 'power3.out' }, 
+        "-=1.2"
+      );
+      
       tl.add(() => {
-        gsap.to(leftImgRef.current, { y: 7, rotation: -8, duration: 3, ease: "sine.inOut", yoyo: true, repeat: -1 });
-        gsap.to(rightImgRef.current, { y: -7, rotation: 8, duration: 2.5, ease: "sine.inOut", yoyo: true, repeat: -1, delay: 0.5 });
+        // FIX 2: Reduced floating 'y' distance and rotation, increased duration for a slower, minimal float
+        gsap.to(leftImgRef.current, { y: -8, rotation: -4, duration: 4, ease: "sine.inOut", yoyo: true, repeat: -1 });
+        gsap.to(rightImgRef.current, { y: 8, rotation: 4, duration: 3.5, ease: "sine.inOut", yoyo: true, repeat: -1, delay: 0.5 });
       });
+      
     }, sectionRef);
     return () => ctx.revert();
   }, [data]);
 
   if (!data) return <div className="h-[60vh] flex items-center justify-center">Category not found.</div>;
 
+  // FIX 3: Apply a smaller size strictly if the category is 'automobiles'
+  const imageSizeClass = isAutomobile ? "w-[16vw] max-w-[300px]" : "w-[25vw] max-w-[600px]";
+
   return (
     <section ref={sectionRef} className={`relative w-full h-[60vh] min-h-[500px] flex items-center justify-center font-sans`}>
-      <div className={`absolute inset-0 w-full h-full  bg-gradient-to-br ${data.themeFrom} ${data.themeTo}`}>
-        {/* DYNAMIC BANNER */}
+      
+      {/* FIX 4: Added overflow-hidden here so the images never float outside the hero background */}
+      <div className={`absolute inset-0 w-full h-full overflow-hidden bg-gradient-to-br ${data.themeFrom} ${data.themeTo}`}>
         <div className="absolute inset-0 w-full h-full bg-cover bg-center opacity-40 mix-blend-screen" style={{ backgroundImage: `url(${data.bgBanner})` }}></div>
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vh] h-[60vh] bg-white/5 rounded-full blur-[100px] pointer-events-none"></div>
 
-        <div ref={leftImgRef} className="absolute left-0 top-1/2 -translate-y-1/2 w-[25vw] max-w-[600px] z-20 pointer-events-none drop-shadow-2xl">
+        {/* Applied dynamic size classes to both image containers */}
+        <div ref={leftImgRef} className={`absolute left-0 top-1/2 -translate-y-1/2 ${imageSizeClass} z-20 pointer-events-none drop-shadow-2xl`}>
           <img src={data.leftImg} alt="Left" className="w-full h-auto object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)]" />
         </div>
-        <div ref={rightImgRef} className="absolute right-0 top-1/2 -translate-y-1/2 w-[25vw] max-w-[600px] z-20 pointer-events-none drop-shadow-2xl">
+        <div ref={rightImgRef} className={`absolute right-0 top-1/2 -translate-y-1/2 ${imageSizeClass} z-20 pointer-events-none drop-shadow-2xl`}>
           <img src={data.rightImg} alt="Right" className="w-full h-auto object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)]" />
         </div>
       </div>

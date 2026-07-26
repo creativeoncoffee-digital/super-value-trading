@@ -174,7 +174,7 @@ export const productData = {
         title: "About Super Value",
         highlight: "FMCG Partner",
         headline: "Your Trusted",
-        description: "Super Value is committed to delivering high-quality personal care and grooming products that enhance everyday life. With a strong distribution network, we ensure the best global brands reach you with reliability.",
+        description: "Super Value is committed to delivering high-quality personal care and grooming products that enhance everyday life. With a strong distribution network, we ensure the best global brands reach you with reliability.The best personal care solutions for global markets, ensuring authenticity and quality for our customers.We are authorized distributors of these products, ensuring authenticity and quality for our customers.",
         image: "https://images.unsplash.com/photo-1621607505833-616916c46a25?q=80&w=1000&auto=format&fit=crop",
         stats: [
           { value: "10+", label: "Years Experience" },
@@ -183,12 +183,12 @@ export const productData = {
         ]
       },
       categories: [
-        { title: "Hair Care", desc: "Shampoos, conditioners & styling products.", img: "https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?q=80&w=800&auto=format&fit=crop" },
-        { title: "Skin Care", desc: "Face care, body lotions & daily creams.", img: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&w=800&auto=format&fit=crop" },
-        { title: "Bath & Shower", desc: "Soaps, body washes & bathing essentials.", img: "https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?q=80&w=800&auto=format&fit=crop" },
-        { title: "Oral Care", desc: "Toothpaste, brushes & complete dental care.", img: "https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?q=80&w=800&auto=format&fit=crop" },
-        { title: "Men's Grooming", desc: "Shaving systems, beard care & deodorants.", img: "https://images.unsplash.com/photo-1621607512022-6aecc4fed814?q=80&w=800&auto=format&fit=crop" },
-        { title: "Feminine Care", desc: "Premium hygiene & intimate care solutions.", img: "https://images.unsplash.com/photo-1584305574647-0cc9ec5ee60a?q=80&w=800&auto=format&fit=crop" }
+        { title: "Hair Care", desc: "Shampoos, conditioners & styling products.And we are authorized distributors of these products, ensuring authenticity and quality for our customers.", img: "https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?q=80&w=800&auto=format&fit=crop" },
+        { title: "Skin Care", desc: "Face care, body lotions & daily creams.And we are authorized distributors of these products, ensuring authenticity and quality for our customers.", img: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&w=800&auto=format&fit=crop" },
+        { title: "Bath & Shower", desc: "Soaps, body washes & bathing essentials.And we are authorized distributors of these products, ensuring authenticity and quality for our customers.", img: "https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?q=80&w=800&auto=format&fit=crop" },
+        { title: "Oral Care", desc: "Toothpaste, brushes & complete dental care.And we are authorized distributors of these products, ensuring authenticity and quality for our customers.", img: "https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?q=80&w=800&auto=format&fit=crop" },
+        { title: "Men's Grooming", desc: "Shaving systems, beard care & deodorants.And we are authorized distributors of these products, ensuring authenticity and quality for our customers.", img: "https://images.unsplash.com/photo-1621607512022-6aecc4fed814?q=80&w=800&auto=format&fit=crop" },
+        { title: "Feminine Care", desc: "Premium hygiene & intimate care solutions.And we are authorized distributors of these products, ensuring authenticity and quality for our customers.", img: "https://images.unsplash.com/photo-1584305574647-0cc9ec5ee60a?q=80&w=800&auto=format&fit=crop" }
       ]
     },
     productShowcase: createProductShowcase({
@@ -201,19 +201,19 @@ export const productData = {
       panels: {
         left: {
           eyebrow: 'Precision Engineering',
-          description: 'Crafted from high-grade stainless steel, ensuring maximum durability and performance for the premium global grooming market.',
+          description: 'Crafted from high-grade stainless steel, ensuring maximum durability and performance for the premium global grooming market.And  we are authorized distributors of these products, ensuring authenticity and quality for our customers.And we are authorized distributors of these products, ensuring authenticity and quality for our customers.',
           ctaLabel: 'Inquiry Now',
           ctaHref: '/contact',
         },
         right: {
           eyebrow: 'Advanced Coating',
-          description: 'Our authorized personal care products utilize multi-layered coating technology to dramatically extend product lifespan.',
+          description: 'Our authorized personal care products utilize multi-layered coating technology to dramatically extend product lifespan.And we are authorized distributors of these products, ensuring authenticity and quality for our customers.So you can trust that every product we distribute meets the highest standards of quality and performance.',
           ctaLabel: 'Explore Range',
           ctaHref: '/contact',
         },
         bottom: {
           title: 'Distributed globally by Super Value',
-          description: 'Seamlessly supplying regional markets with top-tier grooming systems.',
+          description: 'Seamlessly supplying regional markets with top-tier grooming systems. And we are authorized distributors of these products, ensuring authenticity and quality for our customers.So you can trust that every product we distribute meets the highest standards of quality and performance.',
         },
       },
     }),
@@ -247,7 +247,7 @@ export const productData = {
     hero: {
       title: "Perfumery & Fragrances",
       subtitle: "The Essence of Luxury",
-      description: "Premium fragrance solutions, spanning luxury perfumes, concentrated oils, and bespoke signature scent profiles sourced globally.",
+      description: "Premium fragrance solutions, spanning luxury perfumes, concentrated oils, and bespoke signature scent profiles sourced globally.The best perfumery solutions for global markets, ensuring authenticity and quality for our customers.",
       leftImg: PerfumeBottleImg, // Transparent PNG of a perfume bottle
       rightImg: PerfumeBottleImg,
       bgBanner: "https://images.unsplash.com/photo-1595425970377-c9703d740873?q=80&w=2000&auto=format&fit=crop", // Moody perfume background
@@ -272,7 +272,7 @@ export const productData = {
         title: "About Our Fragrance House",
         highlight: "Scent Architects",
         headline: "Mastering the Art of",
-        description: "We are curators of olfactory elegance. From rare raw materials to fully branded retail ready perfumes, we bridge the gap between traditional perfumery techniques and modern mass-market distribution.",
+        description: "We are curators of olfactory elegance. From rare raw materials to fully branded retail ready perfumes, we bridge the gap between traditional perfumery techniques and modern mass-market distribution.The best perfumery solutions for global markets, ensuring authenticity and quality for our customers.",
         image:PerfumeWhyChooseUsImg,
         stats: [
           { value: "500+", label: "Unique Notes" },
@@ -283,22 +283,22 @@ export const productData = {
       categories: [
         { 
           title: "Perfumes", 
-          desc: "A curated selection of premium luxury perfumes offering sophisticated profiles and long-lasting sillage.", 
+          desc: "A curated selection of premium luxury perfumes offering sophisticated profiles and long-lasting sillage.The best perfumes for global markets, ensuring authenticity and quality for our customers.", 
           img: "https://images.unsplash.com/photo-1541643600914-78b084683601?q=80&w=800&auto=format&fit=crop" 
         },
         { 
           title: "Perfume Oils", 
-          desc: "Highly concentrated, pure attars and perfume oils crafted for deep, enduring fragrance experiences without alcohol.", 
+          desc: "Highly concentrated, pure attars and perfume oils crafted for deep, enduring fragrance experiences without alcohol.The best perfume oils for global markets, ensuring authenticity and quality for our customers.", 
           img: PerfumeWhyChooseUsImg ,
         },
         { 
           title: "Fine Fragrances & Private Label", 
-          desc: "Custom perfume manufacturing from UAE and India. Make your own signature perfumes with our comprehensive private label services.", 
+          desc: "Custom perfume manufacturing from UAE and India. Make your own signature perfumes with our comprehensive private label services.The best fine fragrances for global markets, ensuring authenticity and quality for our customers.", 
           img: "https://images.unsplash.com/photo-1594035910387-fea47794261f?q=80&w=800&auto=format&fit=crop" 
         },
         { 
           title: "Sandalwood & Operculum", 
-          desc: "Rare, exotic raw materials. Sustainably sourced sandalwood and authentic operculum for traditional incense and perfumery.", 
+          desc: "Rare, exotic raw materials. Sustainably sourced sandalwood and authentic operculum for traditional incense and perfumery.The best sandalwood and operculum for global markets, ensuring authenticity and quality for our customers.", 
           img: PerfumeWhyChooseUsImg,
         }
       ]
@@ -323,19 +323,19 @@ export const productData = {
       panels: {
         left: {
           eyebrow: 'Scent Architecture',
-          description: 'We curate fragrance solutions from raw materials to branded retail-ready perfumes for premium markets.',
+          description: 'We curate fragrance solutions from raw materials to branded retail-ready perfumes for premium markets.And we are authorized distributors of these products, ensuring authenticity and quality for our customers.',
           ctaLabel: 'Talk to an Expert',
           ctaHref: '/contact',
         },
         right: {
           eyebrow: 'Luxury Distribution',
-          description: 'From concentrated oils to bespoke signature scent profiles, our perfumery lines are built for scale and consistency.',
+          description: 'From concentrated oils to bespoke signature scent profiles, our perfumery lines are built for scale and consistency.And we are authorized distributors of these products, ensuring authenticity and quality for our customers.',
           ctaLabel: 'View Fragrance Line',
           ctaHref: '/contact',
         },
         bottom: {
           title: 'Distributed globally by Super Value',
-          description: 'Delivering premium fragrance solutions across luxury retail and private label channels.',
+          description: 'Delivering premium fragrance solutions across luxury retail and private label channels.And we are authorized distributors of these products, ensuring authenticity and quality for our customers.',
         },
       },
     }),
@@ -387,7 +387,7 @@ export const productData = {
         title: "Automotive Trading",
         highlight: "Tire Supply",
         headline: "Leaders in Global",
-        description: "Specializing in the high-volume export and import of premium automotive tires, two-wheelers, and commercial vehicles. We provide robust supply chain solutions tailored to the rigorous demands of the global automotive sector.",
+        description: "Specializing in the high-volume export and import of premium automotive tires, two-wheelers, and commercial vehicles. We provide robust supply chain solutions tailored to the rigorous demands of the global automotive sector.FUll supply chain solutions for the global automotive sector, ensuring authenticity and quality for our customers.",
         image: "https://images.unsplash.com/photo-1578844251758-2f71da64c96f?q=80&w=1000&auto=format&fit=crop", // Tire warehouse or logistics
         stats: [
           { value: "10k+", label: "Tires Shipped" },
@@ -398,22 +398,22 @@ export const productData = {
       categories: [
         { 
           title: "Passenger Car Tires", 
-          desc: "High-performance, all-season, and touring tires engineered for safety and comfort.", 
+          desc: "High-performance, all-season, and touring tires engineered for safety and comfort.And we are authorized distributors of these products, ensuring authenticity and quality for our customers.", 
           img: "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?q=80&w=800&auto=format&fit=crop" 
         },
         { 
           title: "Commercial & TBR Tires", 
-          desc: "Heavy-duty truck and bus radial tires built for extreme endurance and heavy loads.", 
+          desc: "Heavy-duty truck and bus radial tires built for extreme endurance and heavy loads.We are authorized distributors of these products, ensuring authenticity and quality for our customers.", 
           img: "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?q=80&w=800&auto=format&fit=crop" 
         },
         { 
           title: "Two-Wheeler Trading", 
-          desc: "Export and distribution of premium motorcycles and high-efficiency scooters.", 
+          desc: "Export and distribution of premium motorcycles and high-efficiency scooters.The best two-wheeler brands for global markets, ensuring authenticity and quality for our customers.", 
           img: "https://images.unsplash.com/photo-1558981403-c5f9899a28bc?q=80&w=800&auto=format&fit=crop" 
         },
         { 
           title: "Automotive Parts", 
-          desc: "Essential OEM and aftermarket spare parts, batteries, and lubricants.", 
+          desc: "Essential OEM and aftermarket spare parts, batteries, and lubricants.The best automotive parts for global markets, ensuring authenticity and quality for our customers.", 
           img: "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?q=80&w=800&auto=format&fit=crop" 
         }
       ]
@@ -438,19 +438,19 @@ export const productData = {
       panels: {
         left: {
           eyebrow: 'Global Mobility',
-          description: 'We connect premium automotive tires, vehicles and parts with dependable trade and logistics support.',
+          description: 'We connect premium automotive tires, vehicles and parts with dependable trade and logistics support.And we are authorized distributors of these products, ensuring authenticity and quality for our customers.We are authorized distributors of these products, ensuring authenticity and quality for our customers.',
           ctaLabel: 'Start Sourcing',
           ctaHref: '/contact',
         },
         right: {
           eyebrow: 'Tire Trading Network',
-          description: 'From commercial fleets to passenger products, our supply chain is built to handle high-volume export and import.',
+          description: 'From commercial fleets to passenger products, our supply chain is built to handle high-volume export and import.And we are authorized distributors of these products, ensuring authenticity and quality for our customers.Ensured authenticity and quality for our customers with our authorized distribution network.',
           ctaLabel: 'See Tire Range',
           ctaHref: '/contact',
         },
         bottom: {
           title: 'Distributed globally by Super Value',
-          description: 'Secure transit and competitive pricing for high-demand automotive categories.',
+          description: 'Secure transit and competitive pricing for high-demand automotive categories.And we are authorized distributors of these products, ensuring authenticity and quality for our customers.',
         },
       },
     }),
@@ -458,7 +458,7 @@ export const productData = {
       image: BikeTopImg,
       imageAlt: 'Automobile bike showcase',
       title: 'High-Performance Mobility.',
-      description: 'Premium two-wheeler solutions engineered for the modern road. Uncompromising quality and endurance distributed across our global network.',
+      description: 'Premium two-wheeler solutions engineered for the modern road. Uncompromising quality and endurance distributed across our global network.And we are authorized distributors of these products, ensuring authenticity and quality for our customers.',
       backgroundClass: 'bg-[#0A101D]',
       glowClass: 'bg-blue-500/10',
       accentClass: 'bg-blue-500',
@@ -470,7 +470,7 @@ export const productData = {
       image: CarTopImg,
       imageAlt: 'Automobile car showcase',
       title: 'Commercial Vehicle Supply.',
-      description: 'Automotive vehicle sourcing, fleet support and spare parts distribution for regional and international buyers.',
+      description: 'Automotive vehicle sourcing, fleet support and spare parts distribution for regional and international buyers.And we are authorized distributors of these products, ensuring authenticity and quality for our customers.',
       backgroundClass: 'bg-[#0A101D]',
       glowClass: 'bg-blue-500/10',
       accentClass: 'bg-blue-500',

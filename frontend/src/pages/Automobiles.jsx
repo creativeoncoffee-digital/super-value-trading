@@ -1,13 +1,34 @@
-import ProductCategoryPage from '../components/Services/ProductCategoryPage';
+import ServiceHero from '../components/Services/ServiceHero';
+import TrustedMarkets from '../components/TrustedMarkets';
+import ServiceAbout from '../components/Services/ServiceAbout';       // IMPORT NEW COMPONENT
+import ServiceGrid from '../components/Services/ServiceGrid'; 
+import ProductShowcase from '../components/Services/ProductShowcase';
+import PersonalCareSolutions from '../components/PersonalCareSolutions';
+import BikeShowcase from '../components/BikeShowcase';
+import CarShowcase from '../components/CarShowcase';
+import WhyChooseUs from '../components/WhyChooseUs';
 import Faq from '../components/FAQ/Faq';
 
-export default function Automobliles() {
-  return (
-    <main >  
-       <ProductCategoryPage category="automobiles" />
-    <Faq page="automobiles" />
-    </main>
-  
+export default function Automobiles() {
+  const category = "automobiles";
 
-  )
+  return (
+    <main className="w-full">
+      <ServiceHero category={category} />
+      <TrustedMarkets category={category} />
+     <ServiceAbout category={category} />
+       <ProductShowcase category={category} />
+       <ServiceGrid category={category} />
+      <PersonalCareSolutions category={category} />
+      
+      {/* Custom Automobile Components */}
+      <BikeShowcase category={category} />
+      <CarShowcase category={category} />
+      
+      <WhyChooseUs category={category} />
+      
+      {/* FAQ for Automobiles */}
+      <Faq page="automobiles" />
+    </main>
+  );
 }

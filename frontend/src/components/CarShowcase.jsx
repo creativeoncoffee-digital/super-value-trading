@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Link } from 'react-router-dom';
-import { productData } from '../data/ProductData'; // Ensure path is correct
+import { productData } from '../data/ProductData'; 
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -23,7 +23,6 @@ export default function CarShowcase({ category = 'automobiles' }) {
         },
       });
 
-      // FIX: Changed all class names to target the CAR specifically
       gsap.set('.car-wrapper', { y: '100vh', x: '0vw' });
       gsap.set('.car-text-panel', { opacity: 0, x: -50 });
       gsap.set('.car-img', { scale: 0.9, filter: 'blur(4px)' });
@@ -52,37 +51,47 @@ export default function CarShowcase({ category = 'automobiles' }) {
           <div className="w-[2px] h-full bg-[linear-gradient(to_bottom,transparent_50%,#fff_50%)] bg-[length:100%_60px]"></div>
         </div>
 
-        <div className="car-text-panel absolute left-[5%] md:left-[10%] top-1/2 -translate-y-1/2 w-[90%] md:w-[40%] flex flex-col items-start justify-center z-40 pointer-events-auto">
-          <div className="flex items-center gap-4 mb-4">
-            <span className={`w-8 h-[2px] ${data.accentClass || 'bg-blue-500'}`}></span>
-            <h2 className="text-3xl md:text-5xl font-bold text-white tracking-tight leading-tight">
-              {data.title}
-            </h2>
-          </div>
+        {/* FIX 1: Wrapper div handles the Tailwind layout (-translate-y-1/2) */}
+        <div className="absolute left-[5%] md:left-[10%] top-1/2 -translate-y-1/2 w-[90%] md:w-[40%] z-40 pointer-events-auto">
+          {/* Inner div handles the GSAP .car-text-panel animation independently */}
+          <div className="car-text-panel flex flex-col items-start justify-center">
+            
+            <div className="flex items-center gap-4 mb-4">
+              <span className={`w-8 h-[2px] ${data.accentClass || 'bg-blue-500'}`}></span>
+              <h2 className="text-3xl md:text-5xl font-bold text-white tracking-tight leading-tight">
+                {data.title}
+              </h2>
+            </div>
 
-          <p className="text-slate-400 text-lg md:text-xl leading-relaxed ml-12 mb-10">
-            {data.description}
-          </p>
+            <p className="text-slate-400 text-lg md:text-xl leading-relaxed ml-12 mb-10">
+              {data.description}
+            </p>
 
-          <div className="ml-12">
-            <Link
-              to={data.ctaHref || '/contact'}
-              className={`inline-flex items-center gap-3 ${data.ctaClass || 'bg-blue-600 hover:bg-blue-500 shadow-blue-500/30'} text-white font-bold py-[clamp(0.8rem,1.5vw,1rem)] px-[clamp(1.5rem,3vw,2.5rem)] rounded-xl transition-all duration-300 shadow-lg hover:-translate-y-1`}
-            >
-              {data.ctaLabel || 'Explore Solutions'}
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-            </Link>
+            <div className="ml-12">
+              <Link
+                to={data.ctaHref || '/contact'}
+                className={`inline-flex items-center gap-3 ${data.ctaClass || 'bg-blue-600 hover:bg-blue-500 shadow-blue-500/30'} text-white font-bold py-[clamp(0.8rem,1.5vw,1rem)] px-[clamp(1.5rem,3vw,2.5rem)] rounded-xl transition-all duration-300 shadow-lg hover:-translate-y-1`}
+              >
+                {data.ctaLabel || 'Explore Solutions'}
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+              </Link>
+            </div>
+            
           </div>
         </div>
 
-        {/* FIX: Changed class to car-wrapper and widened max-w to 600px for the car */}
-        <div className="car-wrapper absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50 pointer-events-none w-full max-w-[600px] flex justify-center">
-          <img
-            src={data.image}
-            alt={data.imageAlt || 'Vehicle showcase'}
-            className="car-img w-[80%] md:w-[90%] h-auto object-contain drop-shadow-[0_40px_60px_rgba(0,0,0,0.8)]"
-          />
+        {/* FIX 2: Wrapper div handles the Tailwind centering (-translate-x-1/2 -translate-y-1/2) */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50 pointer-events-none w-full max-w-[600px] flex justify-center">
+          {/* Inner div handles the GSAP .car-wrapper animation independently */}
+          <div className="car-wrapper w-full flex justify-center">
+            <img
+              src={data.image}
+              alt={data.imageAlt || 'Vehicle showcase'}
+              className="car-img w-[80%] md:w-[90%] h-auto object-contain drop-shadow-[0_40px_60px_rgba(0,0,0,0.8)]"
+            />
+          </div>
         </div>
+        
       </div>
     </section>
   );

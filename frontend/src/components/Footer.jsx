@@ -20,12 +20,21 @@ export default function Footer() {
           duration: 0.8, 
           stagger: 0.1, 
           ease: 'power2.out',
+          force3D: true, // Fixes the lag by using the GPU
           scrollTrigger: { 
             trigger: footerRef.current, 
-            start: 'top 85%' 
+            start: 'top 95%', // Adjusted to trigger slightly earlier
+            once: true,       // Prevents the footer from getting stuck on fast scrolls
           }
         }
       );
+
+      // Force GSAP to recalculate page height after a short delay 
+      // This guarantees the trigger point is perfectly accurate even if images load slowly above it
+      setTimeout(() => {
+        ScrollTrigger.refresh();
+      }, 500);
+
     }, footerRef);
 
     return () => ctx.revert();

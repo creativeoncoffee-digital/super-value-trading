@@ -57,6 +57,8 @@ export default function FMCGShowcase({ category = "personal-care" }) {
         </div>
       </section>
 
+    {/*  product showcare individual like in  pesnalcare page only  that show annd for perfumery only perfumaey productshowcase compeotnst are here in fmcgshoecase  i want the proudutshowcase before the grid section  */}
+
      {/* GRID SECTION */}
       <section className="cat-grid-trigger w-full py-24 md:py-32 overflow-hidden">
         <div className="max-w-[1400px] mx-auto px-[clamp(1.5rem,5vw,4rem)] flex flex-col items-center">
