@@ -6,7 +6,7 @@ import ProductDivisions from '../components/About/ProductDivisions';
 import AboutStats from '../components/About/AboutStats';
 import AboutCTA from '../components/About/AboutCTA';
 import TrustedMarks from '../components/TrustedMarkets';
-import Faq from '../components/Faq/Faq';
+import Faq from '../components/FAQ/Faq';
 
 export default function About() {
   return (

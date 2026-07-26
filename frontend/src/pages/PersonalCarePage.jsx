@@ -1,5 +1,5 @@
 import ProductCategoryPage from '../components/Services/ProductCategoryPage';
-import Faq from '../components/Faq/Faq';
+import Faq from '../components/FAQ/Faq';
 
 
 export default function PersonalCarePage() {
