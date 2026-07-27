@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import whyPic from '../../assets/Home/HomeWhyUsPic.jpeg';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -77,7 +78,7 @@ export default function WhyUs() {
           
           <div className="relative w-full max-w-[600px] lg:max-w-[700px] aspect-square flex items-center justify-center rounded-3xl border-2 border-dashed border-white/20 bg-white/5 backdrop-blur-sm overflow-hidden">
             <img 
-              src="/src/assets/Home/HomeWhyUsPic.jpeg" 
+              src={whyPic} 
               alt="Super Value Core Strengths" 
               className="absolute inset-0 w-full h-full object-cover drop-shadow-2xl transition-transform duration-700 hover:scale-105" 
             />
