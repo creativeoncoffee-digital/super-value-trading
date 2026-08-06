@@ -11,9 +11,9 @@ export default function HomeHero() {
   const sliderRef = useRef(null);
 
   const slides = [
-    { id: 1, image: slide1, title: "Premium Perfumery", link: "/business" },
-    { id: 2, image: slide2, title: "FMCG & Personal Care", link: "/business" },
-    { id: 3, image: slide3, title: "Automotive Solutions", link: "/business" }
+    { id: 1, image: slide1, title: "Premium Perfumery", link: "/perfumery" },
+    { id: 2, image: slide2, title: "FMCG & Personal Care", link: "/personal-care" },
+    { id: 3, image: slide3, title: "Automotive Solutions", link: "/automobiles" }
   ];
 
   useEffect(() => {

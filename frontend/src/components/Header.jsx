@@ -100,7 +100,7 @@ export default function Header() {
               <Link to="/automobiles" className="px-6 py-3 hover:bg-orange-50 hover:text-orange-500 transition-colors border-b border-slate-50 flex items-center gap-4">
                  Automobiles
               </Link>
-              <Link to="/business" className="px-6 py-3 hover:bg-orange-50 hover:text-orange-500 transition-colors flex items-center gap-4">
+              <Link to="/" className="px-6 py-3 hover:bg-orange-50 hover:text-orange-500 transition-colors flex items-center gap-4">
                  Others
               </Link>
             </div>
@@ -158,7 +158,7 @@ export default function Header() {
               <Link to="/personal-care" className="text-sm font-semibold text-slate-500 hover:text-orange-500 transition-colors">FMCG and Personal Care</Link>
               <Link to="/perfumery" className="text-sm font-semibold text-slate-500 hover:text-orange-500 transition-colors">Perfumery</Link>
               <Link to="/automobiles" className="text-sm font-semibold text-slate-500 hover:text-orange-500 transition-colors">Automobiles</Link>
-              <Link to="/business" className="text-sm font-semibold text-slate-500 hover:text-orange-500 transition-colors">Others</Link>
+              <Link to="/" className="text-sm font-semibold text-slate-500 hover:text-orange-500 transition-colors">Others</Link>
             </div>
           </div>
 

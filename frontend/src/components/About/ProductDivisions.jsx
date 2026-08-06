@@ -44,7 +44,7 @@ export default function ProductDivisions() {
         <div className="pd-grid w-full grid grid-cols-1 lg:grid-cols-3 gap-8">
           {data.cards.map((card, idx) => (
             <Link 
-              to={card.link || "/business"} // Added fallback link to /business
+              to={card.link || "/"} // Added fallback link to /business
               key={idx} 
               className="pd-card group flex flex-col bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-slate-100 cursor-pointer block"
             >
