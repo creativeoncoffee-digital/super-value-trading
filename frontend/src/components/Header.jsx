@@ -7,16 +7,15 @@ export default function Header() {
   const headerRef = useRef(null);
   const location = useLocation();
   
-  // State for mobile sidebar and mobile dropdown
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
 
-  // Close mobile menu whenever the route changes
+  // 1. Close mobile menu whenever the route changes
   useEffect(() => {
     setIsMobileMenuOpen(false);
   }, [location]);
 
-  // Initial header drop down animation
+  // 2. Initial header drop down animation
   useEffect(() => {
     gsap.fromTo(
       headerRef.current,
@@ -25,7 +24,7 @@ export default function Header() {
     );
   }, []);
 
-  // Staggered animation for sidebar links when opened
+  // 3. Staggered animation for sidebar links when opened
   useEffect(() => {
     if (isMobileMenuOpen) {
       gsap.fromTo('.mobile-anim-item',
@@ -35,14 +34,32 @@ export default function Header() {
     }
   }, [isMobileMenuOpen]);
 
-  // Prevent scrolling when mobile menu is open
+  // 4. Structural fixes for "Desktop Site" mode and scroll locking
   useEffect(() => {
+    // Prevent horizontal layout bleeding globally
+    document.documentElement.style.overflowX = 'hidden';
+    document.body.style.overflowX = 'hidden';
+
+    // Lock vertical scrolling when menu is open
     if (isMobileMenuOpen) {
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflowY = 'hidden';
     } else {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflowY = 'unset';
     }
-    return () => { document.body.style.overflow = 'unset'; };
+
+    // Auto-close the mobile menu if screen resizes to desktop dimensions (>= 768px)
+    const handleResize = () => {
+      if (window.innerWidth >= 768 && isMobileMenuOpen) {
+        setIsMobileMenuOpen(false);
+      }
+    };
+    
+    window.addEventListener('resize', handleResize);
+    
+    return () => { 
+      document.body.style.overflowY = 'unset'; 
+      window.removeEventListener('resize', handleResize);
+    };
   }, [isMobileMenuOpen]);
 
   return (
@@ -50,17 +67,17 @@ export default function Header() {
       ref={headerRef} 
       className="bg-white text-[#0B1E3A] pt-4 pb-2 px-[clamp(1rem,5vw,3rem)] sticky top-0 z-50 transition-all duration-300 shadow-sm"
     >
-      <div className="w-full max-w-[1400px] mx-auto flex flex-wrap items-center justify-between gap-[clamp(1rem,3vw,2rem)]">
+      <div className="w-full max-w-[1400px] mx-auto flex flex-wrap items-center justify-between gap-[clamp(1rem,2vw,2rem)]">
         
         {/* Logo Section */}
         <Link to="/" className="flex items-center gap-3 relative z-[60]">
           <img src={logoImg} alt="Super Value Logo" className="h-[clamp(2.5rem,4vw,3.5rem)]" />
         </Link>
 
-        {/* Mobile Hamburger Button */}
+        {/* Mobile Hamburger Button - Now hides on 'md' instead of 'lg' */}
         <button 
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="lg:hidden relative z-[60] p-2 text-[#0B1E3A] focus:outline-none"
+          className="md:hidden relative z-[60] p-2 text-[#0B1E3A] focus:outline-none cursor-pointer"
         >
           <div className="w-6 flex flex-col gap-1.5 items-end">
             <span className={`h-0.5 bg-current transition-all duration-300 ${isMobileMenuOpen ? 'w-6 rotate-45 translate-y-2' : 'w-6'}`}></span>
@@ -70,9 +87,10 @@ export default function Header() {
         </button>
 
         {/* ---------------------------------------------------- */}
-        {/* DESKTOP NAVIGATION (Hidden on Mobile/Tablets)        */}
+        {/* DESKTOP NAVIGATION (Hidden on Mobile, Shows on Desktop Site) */}
         {/* ---------------------------------------------------- */}
-        <nav className="hidden lg:flex flex-wrap items-center gap-8 text-[clamp(0.875rem,1.5vw,1rem)] font-bold">
+        {/* Now uses 'md:flex' so it properly renders when "Desktop Site" is requested */}
+        <nav className="hidden md:flex flex-wrap items-center gap-[clamp(1rem,2vw,2rem)] text-[clamp(0.85rem,1vw,1rem)] font-bold">
           <Link to="/" className="hover:text-orange-500 transition-colors">Home</Link>
           <Link to="/about" className="hover:text-orange-500 transition-colors">About Us</Link>
           
@@ -100,7 +118,7 @@ export default function Header() {
               <Link to="/automobiles" className="px-6 py-3 hover:bg-orange-50 hover:text-orange-500 transition-colors border-b border-slate-50 flex items-center gap-4">
                  Automobiles
               </Link>
-              <Link to="/" className="px-6 py-3 hover:bg-orange-50 hover:text-orange-500 transition-colors flex items-center gap-4">
+              <Link to="/business" className="px-6 py-3 hover:bg-orange-50 hover:text-orange-500 transition-colors flex items-center gap-4">
                  Others
               </Link>
             </div>
@@ -110,10 +128,10 @@ export default function Header() {
           <Link to="/contact" className="hover:text-orange-500 transition-colors">Contact Us</Link>
         </nav>
 
-        {/* Desktop Action Button */}
+        {/* Desktop Action Button - Now uses 'md:inline-flex' */}
         <Link 
           to="/contact" 
-          className="hidden lg:inline-flex bg-orange-500 hover:bg-orange-600 text-white font-bold py-[clamp(0.6rem,1.5vw,0.8rem)] px-[clamp(1.2rem,3vw,1.8rem)] rounded-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-orange-500/30"
+          className="hidden md:inline-flex bg-orange-500 hover:bg-orange-600 text-white font-bold py-[clamp(0.6rem,1vw,0.8rem)] px-[clamp(1.2rem,2vw,1.8rem)] rounded-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-orange-500/30"
         >
           Inquiry Now
         </Link>
@@ -126,12 +144,15 @@ export default function Header() {
       {/* Dark Overlay Backdrop */}
       <div 
         onClick={() => setIsMobileMenuOpen(false)}
-        className={`fixed inset-0 bg-[#0B1E3A]/60 backdrop-blur-sm z-[50] lg:hidden transition-opacity duration-500 ${isMobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}
+        className={`fixed inset-0 bg-[#0B1E3A]/60 backdrop-blur-sm z-[50] md:hidden transition-all duration-500 ${isMobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}
       ></div>
 
-      {/* The 60% Width Sidebar */}
+      {/* 
+        The Sidebar 
+        Hides completely via 'md:hidden' when Desktop site is active.
+      */}
       <div 
-        className={`fixed top-0 right-0 h-[100dvh] w-[60%] min-w-[260px] bg-white z-[55] shadow-2xl lg:hidden flex flex-col pt-24 px-6 pb-8 transform transition-transform duration-500 ease-in-out ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
+        className={`fixed top-0 h-[100dvh] w-[75%] max-w-[320px] bg-white z-[55] shadow-2xl md:hidden flex flex-col pt-24 px-6 pb-8 transition-all duration-500 ease-in-out ${isMobileMenuOpen ? 'right-0 visible' : '-right-[100%] invisible'}`}
       >
         <div className="flex flex-col gap-6 overflow-y-auto overflow-x-hidden h-full no-scrollbar">
           
@@ -146,7 +167,7 @@ export default function Header() {
           <div className="mobile-anim-item flex flex-col border-b border-slate-100 pb-4">
             <button 
               onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
-              className="flex justify-between items-center text-lg font-bold text-[#0B1E3A] hover:text-orange-500 transition-colors outline-none"
+              className="flex justify-between items-center text-lg font-bold text-[#0B1E3A] hover:text-orange-500 transition-colors outline-none cursor-pointer"
             >
               Product & Services
               <svg className={`w-5 h-5 transform transition-transform duration-300 ${isMobileServicesOpen ? 'rotate-180 text-orange-500' : ''}`} viewBox="0 0 20 20" fill="currentColor">
@@ -154,11 +175,11 @@ export default function Header() {
               </svg>
             </button>
             
-            <div className={`flex flex-col gap-4 pl-4 overflow-hidden transition-all duration-300 ${isMobileServicesOpen ? 'max-h-[300px] mt-4 opacity-100' : 'max-h-0 opacity-0'}`}>
+            <div className={`flex flex-col gap-4 overflow-hidden transition-all duration-300 ${isMobileServicesOpen ? 'max-h-[300px] mt-4 opacity-100 pl-4' : 'max-h-0 opacity-0 pl-4'}`}>
               <Link to="/personal-care" className="text-sm font-semibold text-slate-500 hover:text-orange-500 transition-colors">FMCG and Personal Care</Link>
               <Link to="/perfumery" className="text-sm font-semibold text-slate-500 hover:text-orange-500 transition-colors">Perfumery</Link>
               <Link to="/automobiles" className="text-sm font-semibold text-slate-500 hover:text-orange-500 transition-colors">Automobiles</Link>
-              <Link to="/" className="text-sm font-semibold text-slate-500 hover:text-orange-500 transition-colors">Others</Link>
+              <Link to="/business" className="text-sm font-semibold text-slate-500 hover:text-orange-500 transition-colors">Others</Link>
             </div>
           </div>
 
@@ -171,7 +192,7 @@ export default function Header() {
 
         </div>
         
-        {/* Mobile Action Button pushed to the bottom */}
+        {/* Mobile Action Button */}
         <div className="mobile-anim-item mt-auto pt-6">
           <Link 
             to="/contact" 
