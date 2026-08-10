@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { productData } from '../../data/ProductData';
@@ -7,7 +8,8 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function ServiceGrid({ category = "personal-care" }) {
   const containerRef = useRef(null);
-  const categories = productData[category]?.showcase?.categories;
+  const data = productData[category]?.showcase;
+  const categories = data?.categories;
 
   useEffect(() => {
     if (!categories) return;
@@ -18,10 +20,10 @@ export default function ServiceGrid({ category = "personal-care" }) {
         { opacity: 1, y: 0, duration: 1, ease: 'power3.out', scrollTrigger: { trigger: '.cat-grid-trigger', start: 'top 85%' } }
       );
       
-      // Staggered Card Reveal
+      // Staggered Card Reveal (Including the dynamic CTA card)
       gsap.fromTo('.cat-card', 
-        { opacity: 0, y: 60, scale: 0.95 }, 
-        { opacity: 1, y: 0, scale: 1, duration: 0.8, stagger: 0.15, ease: 'power3.out', scrollTrigger: { trigger: '.cat-grid-trigger', start: 'top 80%' } }
+        { opacity: 0, y: 50 }, 
+        { opacity: 1, y: 0, duration: 0.8, stagger: 0.1, ease: 'power3.out', scrollTrigger: { trigger: '.cat-grid-trigger', start: 'top 80%' } }
       );
     }, containerRef);
     return () => ctx.revert();
@@ -29,76 +31,95 @@ export default function ServiceGrid({ category = "personal-care" }) {
 
   if (!categories) return null;
 
-  // ==========================================
-  // SMART DYNAMIC LAYOUT LOGIC
-  // ==========================================
+  // Logic to determine if we need the wide CTA block
   const isFourItems = categories.length === 4;
-  
-  // If 4 items, constrain width to 5xl so they don't stretch too wide. If 6, use the full 1400px width.
-  const maxWidthClass = isFourItems ? 'max-w-6xl' : 'max-w-[1400px]';
-  
-  // If 4 items, use exactly 2 columns. If 6 items, use 3 columns.
-  const gridClass = isFourItems ? 'md:grid-cols-2' : 'md:grid-cols-2 lg:grid-cols-3';
 
   return (
-    <section ref={containerRef} className="cat-grid-trigger w-full bg-[#f8fafc] py-24 md:py-20 overflow-hidden font-sans">
-      <div className={`${maxWidthClass} mx-auto px-[clamp(1.5rem,5vw,4rem)] flex flex-col items-center transition-all duration-300`}>
+    <section ref={containerRef} className="cat-grid-trigger w-full bg-[#f8fafc] py-24 md:py-32 overflow-hidden font-sans">
+      <div className="max-w-[1400px] mx-auto px-[clamp(1.5rem,5vw,4rem)] flex flex-col items-center">
         
-        {/* Section Header */}
+        {/* Section Header (Matched to your image design) */}
         <div className="cat-header flex flex-col items-center text-center mb-16">
-          <div className="flex items-center gap-4 mb-4">
-            <span className="w-12 h-[2px] bg-orange-500"></span>
-            <h2 className="text-sm md:text-base font-bold text-orange-500 tracking-[0.2em] uppercase">
-              Premium Solutions
-            </h2>
-            <span className="w-12 h-[2px] bg-orange-500"></span>
-          </div>
-          <h3 className="text-3xl md:text-5xl font-bold text-[#0B1E3A] tracking-tight">
-            Our Product Categories
-          </h3>
+          <h4 className="text-orange-500 font-bold text-xs md:text-sm tracking-[0.2em] uppercase mb-4">
+            Explore Our Range
+          </h4>
+          <h2 className="text-3xl md:text-4xl font-extrabold text-[#0B1E3A] tracking-tight mb-4">
+            {category === 'personal-care' ? 'Personal Care Categories' : 
+             category === 'perfumery' ? 'Fragrance Categories' : 
+             'Automotive Categories'}
+          </h2>
+          <p className="text-slate-500 text-lg max-w-2xl">
+            Explore our wide range of premium solutions tailored for global markets and specific business needs.
+          </p>
         </div>
         
-        {/* Dynamic Grid */}
-        <div className={`w-full grid grid-cols-1 ${gridClass} gap-6 md:gap-8`}>
+        {/* Fixed 3-Column Grid */}
+        <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          
+          {/* Map through the dynamic products */}
           {categories.map((cat, index) => (
             <div 
               key={index} 
-              // Enforced a strict height so cards look identical regardless of screen stretch
-              className="cat-card group relative justify-center items-center w-full h-[400px] lg:h-[450px] rounded-[2rem] overflow-hidden cursor-pointer shadow-lg hover:shadow-2xl transition-all duration-500 bg-[#0B1E3A]"
+              className="cat-card group flex flex-col bg-white rounded-[1.5rem] overflow-hidden shadow-sm hover:shadow-xl border border-slate-100 transition-all duration-300 cursor-pointer"
             >
-              {/* Background Image with slow zoom on hover */}
-              <img 
-                src={cat.img} 
-                alt={cat.title} 
-                className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 opacity-90" 
-              />
+              {/* Top Image */}
+              <div className="w-full h-56 overflow-hidden bg-slate-100">
+                <img 
+                  src={cat.img} 
+                  alt={cat.title} 
+                  className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105" 
+                />
+              </div>
               
-              {/* Dual Gradient Overlay: Darkens on hover to make text pop */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#09152a] via-[#09152a]/40 to-transparent opacity-80 group-hover:opacity-95 transition-opacity duration-500"></div>
-              
-              {/* Text Content Container */}
-              <div className="absolute inset-0 p-8 md:p-10 flex flex-col justify-end">
+              {/* Bottom Text Content */}
+              <div className="p-4 flex flex-col flex-grow relative">
+                <h3 className="text-xl font-bold text-[#0B1E3A] mb-3">
+                  {cat.title}
+                </h3>
+                <p className="text-slate-500 text-sm leading-relaxed  line-clamp-3 mb-6 pr-8">
+                  {cat.desc}
+                </p>
                 
-                {/* The text block slides up slightly on hover */}
-                <div className="transform transition-transform duration-500 translate-y-8 group-hover:translate-y-0">
-                  
-                  <h4 className="text-2xl md:text-3xl font-bold text-white mb-4 drop-shadow-md">
-                    {cat.title}
-                  </h4>
-                  
-                  {/* Animated Accent Line that draws itself on hover */}
-                  <div className="w-12 h-1 bg-orange-500 mb-4 transform origin-left transition-all duration-500 scale-x-0 group-hover:scale-x-100"></div>
-                  
-                  {/* Description fades in smoothly */}
-                  <p className="text-slate-300 text-sm md:text-base leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-75">
-                    {cat.desc}
-                  </p>
-
+                {/* Orange Circular Arrow Icon */}
+                <div className="absolute bottom-4 right-4 w-8 h-8 rounded-full border border-orange-200 flex items-center justify-center text-orange-500 group-hover:bg-orange-500 group-hover:text-white transition-colors duration-300">
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                  </svg>
                 </div>
               </div>
-
             </div>
           ))}
+
+          {/* Conditional 2-Column Wide CTA Box for 4-item grids */}
+          {isFourItems && (
+            <div className="cat-card lg:col-span-2 group relative bg-[#0B1E3A] rounded-[1.5rem] overflow-hidden shadow-lg flex flex-col justify-center p-10 md:p-12">
+              {/* Subtle background glow/texture for the dark box */}
+              <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-orange-500/10 rounded-full blur-[80px] pointer-events-none transform translate-x-1/2 -translate-y-1/2"></div>
+              
+              <div className="relative z-10 max-w-xl">
+                <h4 className="text-orange-500 font-bold text-xs tracking-[0.2em] uppercase mb-3">
+                  Custom Requirements
+                </h4>
+                <h3 className="text-3xl md:text-4xl font-extrabold text-white mb-4">
+                  Looking for something specific?
+                </h3>
+                <p className="text-slate-300 text-base leading-relaxed mb-8">
+                  We offer bespoke sourcing, private label manufacturing, and dedicated supply chain solutions to meet your exact market demands. Connect with our global trade desk today.
+                </p>
+                
+                <Link 
+                  to="/contact" 
+                  className="inline-flex items-center gap-3 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3.5 px-8 rounded-xl transition-all duration-300 shadow-lg shadow-orange-500/20 hover:-translate-y-1"
+                >
+                  Discuss Your Needs
+                  <svg className="w-5 h-5 transform transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                  </svg>
+                </Link>
+              </div>
+            </div>
+          )}
+
         </div>
 
       </div>

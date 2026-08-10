@@ -15,6 +15,8 @@ import four from '../assets/Products/four.png';
 import five from '../assets/Products/five.png';
 import six from '../assets/Products/six.png';
 
+
+
 const createSectionOrder = (...keys) => keys.map((key) => ({ key }));
 
 const sharedWhyChooseUsStats = [
@@ -139,22 +141,34 @@ const createVehicleShowcase = ({
 });
 
 
+const iconGlobe = <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>;
+const iconShield = <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>;
+const iconSettings = <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" /></svg>;
+const iconTruck = <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" /></svg>;
+
 export const productData = {
   
   // ==========================================
   // 1. FMCG & PERSONAL CARE
   // ==========================================
-  "personal-care": {
-    useCustomVehicleShowcase: false, // Flag to hide standard showcase and show custom one
+"personal-care": {
+    useCustomVehicleShowcase: false,
     hero: {
-      title: "Personal Care & Grooming",
-      subtitle: "Precision & Performance",
-      description: "Authorized distributors of premium grooming systems, razors, and blades, ensuring top-tier quality for regional and global markets.",
+      breadcrumb: "Home > Products & Services > Personal Care",
+      eyebrow: "PREMIUM PERSONAL CARE",
+      title: "Personal Care\nSolutions",
+      description: "High-quality personal care products crafted for safety, efficacy, and global standards.",
+      features: [
+        { icon: iconGlobe, title: "Global Quality", desc: "International Standards" },
+        { icon: iconShield, title: "Trusted Sourcing", desc: "Reliable & Ethical" },
+        { icon: iconSettings, title: "Custom Solutions", desc: "Private Label & OEM" },
+        { icon: iconTruck, title: "Timely Delivery", desc: "Global Logistics" }
+      ],
       leftImg: BladeImg,
       rightImg: BladeImg,
       bgBanner: "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?q=80&w=2000&auto=format&fit=crop",
-      themeFrom: "from-[#0B1E3A]",
-      themeTo: "to-[#041428]",
+      themeFrom: "from-[#081225]", // Deep Navy
+      themeTo: "to-[#020813]",     // Almost Black
       accent: "text-orange-500"
     },
     sections: createSectionOrder('trustedMarkets', 'fmcgShowcase', 'productShowcase', 'solutions', 'whyChooseUs'),
@@ -228,32 +242,72 @@ export const productData = {
       ]
     },
     whyChooseUs: createWhyChooseUs({
-      headlinePrefix: 'Why Businesses Choose',
-      headlineEmphasis: 'Super Value',
+      headlinePrefix: 'Why Businesses Choose Super Value',
+      headlineEmphasis: '',
       description: 'We are committed to providing businesses with reliable products, seamless supply and unbeatable value.',
       image: 'https://images.unsplash.com/photo-1556228578-0d85b1a4d571?q=80&w=1200&auto=format&fit=crop',
       imageAlt: 'Personal care products',
       cardTitle: 'Partner with us for lasting success',
       cardDescription: 'We empower your business with premium products, trusted service and long-term growth.',
       cardCtaLabel: 'Become a Partner',
-    })
+    }),
+
+    cta: {
+      eyebrow: "READY TO GROW TOGETHER?",
+      title: "Let's Build Your Brand with Super Value Trading LLC",
+      description: "Partner with us for reliable personal care solutions that deliver quality, trust, and growth.",
+      primaryBtnText: "Become a Partner",
+      primaryBtnLink: "/contact",
+      secondaryBtnText: "Get in Touch",
+      secondaryBtnLink: "/contact",
+      image: BladeImg // Import and place your specific image here
+    },
+    aestheticShowcase: {
+      headline: "PERSONAL CARE,\nRE-IMAGINED.",
+      subhead: "A new wave of premium solutions, crafted\nfor the conscious consumer.",
+      btnText: "GET IN TOUCH",
+      btnLink: "/contact",
+      statsBg: "bg-[#2C5270]", // The Deep Blue from your image
+      stats: [
+        { number: "90+", label: "COUNTRIES" },
+        { number: "20+", label: "YEARS" },
+        { number: "100%", label: "QUALITY" }
+      ],
+      bannerText: "YOUR CONSCIOUS BRAND\nJOURNEY STARTS HERE.",
+      images: [
+        { src: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&w=800", shape: "rounded-3xl", title: "Solid lotion bars", desc: "A new wave of premium solutions." },
+        { src: "https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?q=80&w=800", shape: "rounded-tr-[4rem] rounded-bl-3xl rounded-tl-3xl rounded-br-3xl" },
+        { src: "https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?q=80&w=800", shape: "rounded-full" },
+        { src: "https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?q=80&w=800", shape: "rounded-3xl", title: "Aesthetic care", desc: "Crafted for the conscious consumer." },
+        { src: "https://images.unsplash.com/photo-1621607512022-6aecc4fed814?q=80&w=800", shape: "rounded-tl-[4rem] rounded-br-3xl rounded-bl-3xl rounded-tr-3xl" },
+        { src: "https://images.unsplash.com/photo-1584305574647-0cc9ec5ee60a?q=80&w=800", shape: "rounded-3xl" },
+      ]
+    }
+
   },
 
   // ==========================================
   // 2. PERFUMERY & FRAGRANCES
   // ==========================================
-  "perfumery": {
+"perfumery": {
     useCustomVehicleShowcase: false, 
     hero: {
-      title: "Perfumery & Fragrances",
-      subtitle: "The Essence of Luxury",
-      description: "Premium fragrance solutions, spanning luxury perfumes, concentrated oils, and bespoke signature scent profiles sourced globally.The best perfumery solutions for global markets, ensuring authenticity and quality for our customers.",
-      leftImg: PerfumeBottleImg, // Transparent PNG of a perfume bottle
+      breadcrumb: "Home > Products & Services > Perfumery",
+      eyebrow: "THE ESSENCE OF LUXURY",
+      title: "Perfumery &\nFragrances",
+      description: "Premium fragrance solutions, spanning luxury perfumes, concentrated oils, and bespoke signature scent profiles sourced globally.",
+      features: [
+        { icon: iconSettings, title: "Master Blends", desc: "Authentic Formulations" },
+        { icon: iconShield, title: "Premium Quality", desc: "Long-Lasting Sillage" },
+        { icon: iconGlobe, title: "Global Reach", desc: "Export Expertise" },
+        { icon: iconTruck, title: "Custom Profiles", desc: "Private Label Creation" }
+      ],
+      leftImg: PerfumeBottleImg,
       rightImg: PerfumeBottleImg,
-      bgBanner: "https://images.unsplash.com/photo-1595425970377-c9703d740873?q=80&w=2000&auto=format&fit=crop", // Moody perfume background
-      themeFrom: "from-[#2A1B18]", 
-      themeTo: "to-[#140C0B]",
-      accent: "text-[#D4AF37]" // Gold Accent
+      bgBanner: "https://images.unsplash.com/photo-1595425970377-c9703d740873?q=80&w=2000&auto=format&fit=crop",
+      themeFrom: "from-[#1a1210]", // Dark Brown/Charcoal
+      themeTo: "to-[#0a0706]",
+      accent: "text-orange-500"
     },
     sections: createSectionOrder('trustedMarkets', 'fmcgShowcase', 'productShowcase', 'solutions', 'whyChooseUs'),
     trustedMarkets: {
@@ -340,35 +394,70 @@ export const productData = {
       },
     }),
     whyChooseUs: createWhyChooseUs({
-      headlinePrefix: 'Why Luxury Buyers Choose',
-      headlineEmphasis: 'Super Value',
+      headlinePrefix: 'Why Luxury Buyers Choose Super Value',
+      headlineEmphasis: '',
       description: 'We supply fragrance programs with reliable sourcing, premium presentation and market-ready consistency.',
       image: PerfumeWhyChooseUsImg,
       imageAlt: 'Luxury fragrances',
       cardTitle: 'Fragrance programs built to scale',
       cardDescription: 'We bridge raw materials, private label development and global distribution.',
       cardCtaLabel: 'Start a Project',
-    })
+    }),
+    cta: {
+      eyebrow: "READY TO ELEVATE YOUR SCENT?",
+      title: "Craft Signature Fragrances with Super Value Trading LLC",
+      description: "Partner with us for premium perfumery ingredients and retail-ready solutions that define luxury.",
+      primaryBtnText: "Start a Project",
+      primaryBtnLink: "/contact",
+      secondaryBtnText: "Get in Touch",
+      secondaryBtnLink: "/contact",
+      image: PerfumeBottleImg // Import and place your specific image here
+    },
+    aestheticShowcase: {
+      headline: "FRAGRANCE,\nRE-DEFINED.",
+      subhead: "Master blends and signature scents, curated\nfor luxury global markets.",
+      btnText: "START A PROJECT",
+      btnLink: "/contact",
+      statsBg: "bg-[#2A1B18]", // Deep Brown/Charcoal
+      stats: [
+        { number: "500+", label: "NOTES" },
+        { number: "50+", label: "BRANDS" },
+        { number: "100%", label: "AUTHENTIC" }
+      ],
+      bannerText: "YOUR SIGNATURE SCENT\nJOURNEY STARTS HERE.",
+      images: [
+        { src: "https://images.unsplash.com/photo-1594035910387-fea47794261f?q=80&w=800", shape: "rounded-3xl", title: "Bespoke Blends", desc: "Custom perfume manufacturing." },
+        { src: "https://images.unsplash.com/photo-1541643600914-78b084683601?q=80&w=800", shape: "rounded-tr-[4rem] rounded-bl-3xl rounded-tl-3xl rounded-br-3xl" },
+        { src: "https://images.unsplash.com/photo-1595425970377-c9703d740873?q=80&w=800", shape: "rounded-full" },
+        { src: "https://images.unsplash.com/photo-1615634260167-c8cdede054de?q=80&w=800", shape: "rounded-3xl", title: "Pure Oils", desc: "Highly concentrated attars." },
+        { src: "https://images.unsplash.com/photo-1588405748880-12d1d2a59f75?q=80&w=800", shape: "rounded-tl-[4rem] rounded-br-3xl rounded-bl-3xl rounded-tr-3xl" },
+        { src: "https://images.unsplash.com/photo-1616949755610-8c9bac08f9f8?q=80&w=800", shape: "rounded-3xl" },
+      ]
+    }
   },
 
   // ==========================================
   // 3. AUTOMOBILES & TIRE TRADING
   // ==========================================
-  "automobiles": {
-    // Setting this to true means you can conditionally hide the standard showcase 
-    // and show your custom Bike/Car showcase components on the Automobile page!
+"automobiles": {
     useCustomVehicleShowcase: true, 
-    
     hero: {
-      title: "Automotive Solutions",
-      subtitle: "Global Mobility & Tires",
+      breadcrumb: "Home > Products & Services > Automobiles",
+      eyebrow: "GLOBAL MOBILITY & TIRES",
+      title: "Automotive\nSolutions",
       description: "Seamless cross-border trade and logistics management of premium tires, vehicles, and high-performance automotive spare parts.",
-      leftImg: TireImg, // Transparent PNG of a Tire or Car
+      features: [
+        { icon: iconShield, title: "Certified Parts", desc: "OEM Standards" },
+        { icon: iconGlobe, title: "Global Network", desc: "Reliable Sourcing" },
+        { icon: iconSettings, title: "Secure Transit", desc: "Fully Insured Logistics" },
+        { icon: iconTruck, title: "Fast Delivery", desc: "Optimized Routes" }
+      ],
+      leftImg: TireImg, 
       rightImg: TireImg,
-      bgBanner: "https://images.unsplash.com/photo-1580273916550-e323be2ae537?q=80&w=2000&auto=format&fit=crop", // Dark automotive background
-      themeFrom: "from-[#0F172A]",
-      themeTo: "to-[#020617]",
-      accent: "text-blue-500" // Blue Accent for Automotives
+      bgBanner: "https://images.unsplash.com/photo-1580273916550-e323be2ae537?q=80&w=2000&auto=format&fit=crop",
+      themeFrom: "from-[#0a1120]",
+      themeTo: "to-[#02050b]",
+      accent: "text-orange-500"
     },
     sections: createSectionOrder('trustedMarkets', 'fmcgShowcase', 'productShowcase', 'solutions', 'bikeShowcase', 'carShowcase', 'whyChooseUs'),
     trustedMarkets: {
@@ -479,14 +568,45 @@ export const productData = {
       ctaClass: 'bg-blue-600 hover:bg-blue-500 shadow-blue-500/30',
     }),
     whyChooseUs: createWhyChooseUs({
-      headlinePrefix: 'Why Automotive Buyers Choose',
-      headlineEmphasis: 'Super Value',
+      headlinePrefix: 'Why Automotive Buyers Choose Super Value',
+      headlineEmphasis: '',
       description: 'We support tire and vehicle trading with trusted logistics, consistent quality and competitive pricing.',
       image: 'https://images.unsplash.com/photo-1578844251758-2f71da64c96f?q=80&w=1200&auto=format&fit=crop',
       imageAlt: 'Automotive logistics',
       cardTitle: 'Fleet supply that stays on schedule',
       cardDescription: 'We keep automotive buyers moving with vetted sourcing and secure transit.',
       cardCtaLabel: 'Partner With Us',
-    })
+    }),
+    cta: {
+      eyebrow: "READY TO DRIVE GLOBAL SUCCESS?",
+      title: "Accelerate Your Business with Super Value Trading LLC",
+      description: "Partner with us for dependable automotive solutions, from commercial fleets to premium tires.",
+      primaryBtnText: "Become a Partner",
+      primaryBtnLink: "/contact",
+      secondaryBtnText: "Get a Quote",
+      secondaryBtnLink: "/contact",
+      image: TireImg // Import and place your specific image here
+    },
+    aestheticShowcase: {
+      headline: "GLOBAL MOBILITY,\nACCELERATED.",
+      subhead: "Premium automotive solutions and logistics,\nengineered for performance.",
+      btnText: "GET A QUOTE",
+      btnLink: "/contact",
+      statsBg: "bg-[#0A101D]", // Deep Navy/Black
+      stats: [
+        { number: "10k+", label: "SHIPPED" },
+        { number: "40+", label: "ROUTES" },
+        { number: "100%", label: "SECURE" }
+      ],
+      bannerText: "YOUR GLOBAL FLEET\nJOURNEY STARTS HERE.",
+      images: [
+        { src: "https://images.unsplash.com/photo-1580273916550-e323be2ae537?q=80&w=800", shape: "rounded-3xl", title: "Passenger Tires", desc: "Engineered for safety." },
+        { src: "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?q=80&w=800", shape: "rounded-tr-[4rem] rounded-bl-3xl rounded-tl-3xl rounded-br-3xl" },
+        { src: "https://images.unsplash.com/photo-1558981403-c5f9899a28bc?q=80&w=800", shape: "rounded-full" },
+        { src: "https://images.unsplash.com/photo-1578844251758-2f71da64c96f?q=80&w=800", shape: "rounded-3xl", title: "Fleet Supply", desc: "Commercial vehicle sourcing." },
+        { src: "https://images.unsplash.com/photo-1503376712351-1c438dbf3754?q=80&w=800", shape: "rounded-tl-[4rem] rounded-br-3xl rounded-bl-3xl rounded-tr-3xl" },
+        { src: "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?q=80&w=800", shape: "rounded-3xl" },
+      ]
+    }
   }
 };

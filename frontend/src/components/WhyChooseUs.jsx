@@ -46,8 +46,8 @@ export default function WhyChooseUs({ category = 'personal-care' }) {
       <div className="main-content max-w-[1400px] mx-auto px-[clamp(1.5rem,5vw,4rem)] py-24 flex flex-col lg:flex-row gap-16 lg:gap-8 items-center lg:items-start">
         <div className="w-full lg:w-5/12 flex flex-col pr-0 lg:pr-8">
           <h2 className="left-content text-3xl md:text-4xl lg:text-5xl font-bold text-[#0B1E3A] leading-tight mb-6">
-            {data.headlinePrefix} <br />
-            <span className="inline-block w-8 h-[2px] bg-orange-500 mr-3 align-middle"></span>
+            {data.headlinePrefix}
+        
             {data.headlineEmphasis}
           </h2>
 
@@ -77,7 +77,7 @@ export default function WhyChooseUs({ category = 'personal-care' }) {
             <img
               src={data.image}
               alt={data.imageAlt || 'Why choose us'}
-              className="w-full h-auto max-h-[600px] object-cover"
+              className="w-full h-auto max-h-[500px] object-cover"
               // Add this line to force GSAP to recalculate when the image loads
               onLoad={() => ScrollTrigger.refresh()}
             />

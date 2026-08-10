@@ -8,6 +8,8 @@ import BikeShowcase from '../components/BikeShowcase';
 import CarShowcase from '../components/CarShowcase';
 import WhyChooseUs from '../components/WhyChooseUs';
 import Faq from '../components/FAQ/Faq';
+import ServiceCTA from '../components/ServiceCTA';
+import AestheticShowcase from '../components/Services/AestheticShowcase';
 
 export default function Automobiles() {
   const category = "automobiles";
@@ -19,7 +21,7 @@ export default function Automobiles() {
      <ServiceAbout category={category} />
        <ProductShowcase category={category} />
        <ServiceGrid category={category} />
-      <PersonalCareSolutions category={category} />
+      {/* <PersonalCareSolutions category={category} /> */}
       
       {/* Custom Automobile Components */}
       <BikeShowcase category={category} />
@@ -28,6 +30,8 @@ export default function Automobiles() {
       <WhyChooseUs category={category} />
       
       {/* FAQ for Automobiles */}
+       <ServiceCTA category={category} />
+       <AestheticShowcase />
       <Faq page="automobiles" />
     </main>
   );

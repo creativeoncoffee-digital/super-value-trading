@@ -43,7 +43,7 @@ export default function BikeShowcase({ category = 'automobiles' }) {
   if (!data) return null;
 
   return (
-    <section ref={containerRef} className={`relative w-full h-[300vh] ${data.backgroundClass || 'bg-[#0A101D]'} font-sans`}>
+    <section ref={containerRef} className={`relative w-full h-[100vh] ${data.backgroundClass || 'bg-[#0A101D]'} font-sans`}>
       <div className="sticky top-0 w-full h-screen overflow-hidden flex items-center justify-center">
         <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[50vw] h-[50vw] ${data.glowClass || 'bg-blue-500/10'} rounded-full blur-[150px] pointer-events-none`}></div>
 
