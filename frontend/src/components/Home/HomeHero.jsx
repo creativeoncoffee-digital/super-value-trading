@@ -76,7 +76,7 @@ export default function HomeHero() {
               <div className="slide-anim flex flex-col">
                 <Link
                   to="/about"
-                  className="brand-button brand-button-primary w-max"
+                  className="brand-button brand-butto bg-orange-500 text-white w-max"
                 >
                   Explore Sector
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -104,7 +104,7 @@ export default function HomeHero() {
       {/* Floating Badge - Positioned 50% inside and 50% outside the banner */}
       <Link
         to="/contact"
-        className="absolute bottom-0 right-10 md:right-14 translate-y-1/3 z-40 w-32 h-32 md:w-40 md:h-40 bg-[linear-gradient(135deg,#f3790a,#ff9f4d)] rounded-full flex items-center justify-center text-white shadow-2xl hover:scale-105 transition-transform duration-300 group/badge"
+        className="absolute bottom-0 right-10 md:right-14 translate-y-1/3 z-40 w-32 h-32 md:w-40 md:h-40 bg-orange-500 rounded-full flex items-center justify-center text-white shadow-2xl hover:scale-105 transition-transform duration-300 group/badge"
       >
         <svg className="absolute inset-0 w-full h-full animate-[spin_12s_linear_infinite]" viewBox="0 0 100 100">
           <path id="textPath" d="M 50, 50 m -34, 0 a 34,34 0 1,1 68,0 a 34,34 0 1,1 -68,0" fill="none" />

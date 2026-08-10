@@ -66,13 +66,13 @@ export default function Footer() {
             </h2>
             
             <p className="footer-item text-slate-400 text-sm leading-relaxed mb-10 max-w-md">
-              Connect directly with our sourcing and logistics experts. We facilitate seamless cross-border transactions across 90 countries.
+              Connect directly with our sourcing and logistics experts. We facilitate seamless cross-border transactions across 80+ countries.
             </p>
 
             <div className="footer-item flex flex-col gap-6 border-l-2 border-white/10 pl-6">
               <div>
                 <p className="text-slate-500 text-xs font-bold uppercase tracking-widest mb-1">Direct Line</p>
-                <a href="tel:+971529607401" className="text-xl font-medium hover:text-orange-500 transition-colors">+971 xxx xxx xx </a>
+                <a href="tel:+971529607401" className="text-xl font-medium hover:text-orange-500 transition-colors">+971 52 960 7401</a>
               </div>
               <div>
                 <p className="text-slate-500 text-xs font-bold uppercase tracking-widest mb-1">Trading Enquiries</p>
@@ -189,9 +189,6 @@ export default function Footer() {
                 Office 1707, Damac XL Tower<br />
                 Marasi Drive, Business Bay<br />
                 Dubai, United Arab Emirates
-              </p>
-              <p className="text-slate-400 text-sm mt-2">
-                License No: 822355
               </p>
             </div>
 

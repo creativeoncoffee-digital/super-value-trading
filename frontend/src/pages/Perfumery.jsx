@@ -8,12 +8,13 @@ import WhyChooseUs from '../components/WhyChooseUs';
 import Faq from '../components/FAQ/Faq';
 import ServiceCTA from '../components/ServiceCTA';
 import AestheticShowcase from '../components/Services/AestheticShowcase';
-
+import Breadcrumb from '../components/Breadcrumb';
 export default function Perfumery() {
   const category = "perfumery";
 
   return (
     <main className="w-full">
+      {/* <Breadcrumb /> */}
       <ServiceHero category={category} />
       <TrustedMarkets category={category} />
       

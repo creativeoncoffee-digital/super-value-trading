@@ -109,12 +109,10 @@ export default function License() {
               <h4 className="text-orange-500 text-xs font-bold uppercase tracking-widest">Registration</h4>
             </div>
             <p className="text-slate-300 leading-relaxed text-sm mb-2">
-              Commercial License No.<br/>
-              <span className="text-white font-semibold">822355</span>
+              Compliance documentation is available on request.
             </p>
             <p className="text-slate-300 leading-relaxed text-sm">
-              Dubai Chamber Membership No.<br/>
-              <span className="text-white font-semibold">313811</span>
+              Dubai Chamber membership and regulatory details can be shared with serious partners.
             </p>
           </div>
 
@@ -135,10 +133,10 @@ export default function License() {
                 </p>
               </div>
               <h2 className="comp-text text-4xl md:text-5xl font-bold text-slate-900 mb-6 leading-tight">
-                Fully licensed and compliant
+                Fully compliant and partner-ready
               </h2>
               <p className="comp-text text-slate-600 text-lg leading-relaxed">
-                Super Value General Trading LLC maintains full compliance with all UAE regulatory requirements, including Dubai Department of Economy and Tourism (DET) regulations and active membership with Dubai Chamber of Commerce & Industry[cite: 3].
+                Super Value General Trading LLC maintains full compliance with all UAE regulatory requirements and can share supporting documentation with verified partners.
               </p>
             </div>
 
@@ -146,23 +144,23 @@ export default function License() {
             <div className="comp-grid grid grid-cols-1 md:grid-cols-2 gap-6">
               
               <div className="comp-data-item bg-slate-50 p-6 rounded-lg border border-slate-100 hover:border-orange-200 transition-colors">
-                <p className="text-slate-400 text-xs font-semibold uppercase tracking-wider mb-2">Commercial License No.</p>
-                <p className="text-2xl font-bold text-slate-900">822355</p>
+                <p className="text-slate-400 text-xs font-semibold uppercase tracking-wider mb-2">Compliance</p>
+                <p className="text-2xl font-bold text-slate-900">Available on request</p>
               </div>
               
               <div className="comp-data-item bg-slate-50 p-6 rounded-lg border border-slate-100 hover:border-orange-200 transition-colors">
-                <p className="text-slate-400 text-xs font-semibold uppercase tracking-wider mb-2">Dubai Chamber No.</p>
-                <p className="text-2xl font-bold text-slate-900">313811</p>
+                <p className="text-slate-400 text-xs font-semibold uppercase tracking-wider mb-2">Membership</p>
+                <p className="text-2xl font-bold text-slate-900">Dubai Chamber</p>
               </div>
               
               <div className="comp-data-item bg-slate-50 p-6 rounded-lg border border-slate-100 hover:border-orange-200 transition-colors">
                 <p className="text-slate-400 text-xs font-semibold uppercase tracking-wider mb-2">License Valid Until</p>
-                <p className="text-lg font-bold text-slate-900">25 December 2026</p>
+                <p className="text-lg font-bold text-slate-900">Available on request</p>
               </div>
               
               <div className="comp-data-item bg-slate-50 p-6 rounded-lg border border-slate-100 hover:border-orange-200 transition-colors">
                 <p className="text-slate-400 text-xs font-semibold uppercase tracking-wider mb-2">Regulatory Authority</p>
-                <p className="text-lg font-bold text-slate-900">Dubai DET</p>
+                <p className="text-lg font-bold text-slate-900">Dubai, UAE</p>
               </div>
 
             </div>

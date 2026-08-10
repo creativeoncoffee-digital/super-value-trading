@@ -2,95 +2,95 @@ export const faqData = {
   home: [
     {
       question: "What is Super Value General Trading LLC?",
-      answer: "Super Value General Trading LLC is a premier, multi-sector trading enterprise incorporated in Dubai. We specialize in the sourcing, distribution, and cross-border trade of high-demand commodities and consumer goods."
+      answer: "Super Value General Trading LLC is a Dubai-based trading partner focused on sourcing, distribution, and cross-border trade across FMCG, perfumery, automotive, and private-label categories."
     },
     {
       question: "Where are your operations headquartered?",
-      answer: "Our operations are headquartered in Business Bay, Dubai, UAE. This strategic location gives us direct access to Jebel Ali Port and major global logistical hubs, ensuring efficient supply chain management."
+      answer: "Our operations are headquartered in Business Bay, Dubai, UAE, giving us direct access to major logistics routes and international trade hubs."
     },
     {
       question: "Which core sectors do you trade in?",
-      answer: "We primarily operate across four core sectors: Blades & Personal Care, Perfumery & Fragrances, Consumer Goods & Specialty Cosmetics, and Automobiles & Auto Parts."
+      answer: "We operate across three core divisions: FMCG and personal care, perfumery and fragrances, and automobiles and auto parts."
     },
     {
       question: "Can I partner with Super Value for B2B distribution?",
-      answer: "We are always open to strategic partnerships. If you are looking to distribute your products in the MENA region or looking for a reliable sourcing partner, you can reach out to our Business Development team via the Contact page."
+      answer: "Yes. We welcome B2B distribution, sourcing, and private-label partnerships for businesses looking to grow in the UAE and international markets."
     }
   ],
   
   about: [
     {
-      question: "How long has Super Value been in the trading business?",
-      answer: "Super Value General Trading LLC was established with a vision to become a leading global trading partner. With over 10 years of collective industry experience among our founders, we have built a robust network spanning 50+ countries."
+      question: "How much international experience do you have?",
+      answer: "Super Value brings more than 23 years of international business experience with operations and relationships across 80+ countries."
     },
     {
-      question: "What are your core business values?",
-      answer: "Our business is built on Quality Assurance, Global Reach, Customer Commitment, and Unwavering Integrity. We ensure transparency and honesty in all our B2B transactions."
+      question: "What support do you provide beyond trading?",
+      answer: "We help with import and export management, product launches, distributor appointments, business setup, team recruitment, and risk management."
     },
     {
-      question: "Is your business fully licensed and compliant?",
-      answer: "Yes, we are fully licensed under the Dubai Department of Economy and Tourism (DET) and are a registered member of the Dubai Chamber of Commerce, adhering to all international trade compliances."
+      question: "What makes Super Value different?",
+      answer: "We are a one-stop solution for international business growth, combining sourcing, distribution, and market expansion under one roof."
     },
     {
-      question: "Do you have your own warehousing facilities?",
-      answer: "Yes, we utilize state-of-the-art warehousing facilities in the UAE that allow us to safely store, manage, and dispatch goods globally with maximum efficiency."
+      question: "Which markets do you cover?",
+      answer: "We work across five continents and maintain long-term relationships with distributors, importers, and business partners in many global markets."
     }
   ],
 
   fmcg: [
     {
-      question: "What types of FMCG products do you distribute?",
-      answer: "Our FMCG division focuses heavily on personal care and grooming, including high-quality razor blades, shaving systems, skincare essentials, oral care, and bath products."
+      question: "What FMCG products do you supply?",
+      answer: "We supply razor blades, shaving systems, grooming products, skincare, oral care, bath essentials, and other FMCG categories."
     },
     {
-      question: "Are you an authorized distributor for grooming brands?",
-      answer: "Yes, we are the authorized trading partner for premium global brands, including DORCO (South Korea) and SILVERMAX, supplying their platinum-coated grooming systems to regional markets."
+      question: "Do you work with known grooming brands?",
+      answer: "Yes. We work with category-specific brands such as DORCO and Silvermax, along with other trusted partners in the sector."
     },
     {
-      question: "Do you guarantee the authenticity of your personal care products?",
-      answer: "Absolutely. We source directly from manufacturers and authorized global distributors. Every product we trade undergoes strict quality control to guarantee 100% authenticity and safety."
+      question: "Can you support private-label FMCG programs?",
+      answer: "Yes. We can support private-label and OEM development for brands that want to launch or expand their own product line."
     },
     {
-      question: "Can you handle bulk orders for large retail chains?",
-      answer: "Yes, our supply chain is designed to accommodate high-volume B2B orders for supermarkets, pharmacies, and regional distributors with consistent supply schedules."
+      question: "Can you handle bulk orders for retailers and distributors?",
+      answer: "Yes, our supply chain is built for bulk B2B orders with consistent supply and reliable delivery schedules."
     }
   ],
 
   perfumery: [
     {
-      question: "What kind of fragrance products do you supply?",
-      answer: "We supply a premium range of perfumery products, including luxury perfumes, concentrated perfume oils (attars), body mists, and specialty fragrances."
+      question: "What fragrance products do you supply?",
+      answer: "We supply perfumes, perfume oils, deodorants, fragrance raw materials, and private-label manufacturing support."
     },
     {
-      question: "How do you ensure the safe transit of fragile perfume bottles?",
-      answer: "We utilize specialized packaging and climate-controlled logistics for our perfumery division to ensure glass bottles and delicate formulations arrive safely and in perfect condition."
+      question: "Can you help create a private-label perfume brand?",
+      answer: "Yes. We can help you launch a perfume brand in any quantity, from small runs to luxury premium product lines."
     },
     {
-      question: "Do you trade in both western and oriental fragrances?",
-      answer: "Yes, our diverse portfolio caters to global tastes, offering a wide selection of both contemporary western fragrances and traditional oriental scents."
+      question: "Do you work with perfume oils and raw materials?",
+      answer: "Yes, we work with perfume oils, concentrated blends, and fragrance raw materials including sandalwood and operculum."
     },
     {
-      question: "Are MSDS (Material Safety Data Sheets) provided for shipping?",
-      answer: "Yes, we provide full documentation, including MSDS and certificates of origin, to ensure smooth customs clearance for all liquid and alcohol-based fragrance shipments."
+      question: "Can you share factory media and production content?",
+      answer: "Yes. We can request factory images, high-resolution photos, and videos to support product presentation and brand storytelling."
     }
   ],
 
   automobiles: [
     {
       question: "What automotive products do you specialize in?",
-      answer: "Our automotive division specializes in high-performance tires, two-wheeler vehicles, and essential auto parts sourced from industry-leading global manufacturers."
+      answer: "We specialize in two-wheelers, three-wheelers, EVs, tires, tubes, and essential automotive spare parts."
     },
     {
-      question: "Which tire brands do you trade?",
-      answer: "We partner with top-tier global brands such as Michelin, Bridgestone, Pirelli, Goodyear, Continental, and Dunlop to provide premium mobility solutions."
+      question: "Can you support private-label automotive products?",
+      answer: "Yes. We can support private-label opportunities within the automotive category where the product type and market allow it."
     },
     {
-      question: "Do you handle the export and logistics of vehicles?",
-      answer: "Yes, we manage the complete cross-border trade and logistics lifecycle for vehicles and large auto parts, ensuring secure transit and competitive shipping rates."
+      question: "Do you handle export and logistics for vehicles and parts?",
+      answer: "Yes, we manage cross-border trade and logistics for vehicles, tires, tubes, and large auto parts with secure transit."
     },
     {
-      question: "Do your automotive products come with warranties?",
-      answer: "All automotive parts and tires we distribute are genuine and come with standard manufacturer warranties, backed by our commitment to quality assurance."
+      question: "Can you share factory images or videos for automotive products?",
+      answer: "Yes. We can request factory images, high-resolution product photos, and videos when available."
     }
   ]
 };

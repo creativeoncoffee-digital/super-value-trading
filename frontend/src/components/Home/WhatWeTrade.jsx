@@ -39,10 +39,10 @@ export default function WhatWeTrade() {
   }, []);
 
   const tradeItems = [
-    { title: "FMCG & Personal Care", desc: "Authorized distribution of premium grooming systems and personal care products for regional markets.", img: icon1 },
-    { title: "Perfumery & Fragrances", desc: "Premium fragrance solutions spanning perfumes, oils, and fragrance-based products globally.", img: icon2 },
-    { title: "Consumer Goods", desc: "A diverse portfolio including specialty cosmetics and beauty goods.", img: icon3 },
-    { title: "Automobiles & Parts", desc: "Cross-border trade and logistics management of vehicles and automotive parts.", img: icon4 },
+    { title: "FMCG & Personal Care", desc: "Razor blades, grooming systems, skincare, and everyday FMCG products for reliable trade supply.", img: icon1 },
+    { title: "Perfumery & Fragrances", desc: "Luxury perfumes, perfume oils, and private-label fragrance development for global markets.", img: icon2 },
+    { title: "Consumer Goods", desc: "A diverse portfolio spanning specialty cosmetics, beauty goods, and private-label opportunities.", img: icon3 },
+    { title: "Automobiles & Parts", desc: "Two-wheelers, three-wheelers, EVs, tires, tubes, and automotive parts across trade corridors.", img: icon4 },
   ];
 
   return (
@@ -90,7 +90,7 @@ export default function WhatWeTrade() {
             ))}
 
              <div className="slide-anim flex flex-col mt-4">
-                <span className="brand-button brand-button-primary w-max cursor-pointer">
+                <span className="brand-button bg-orange-500 w-max cursor-pointer">
                   Discuss A Trade
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M13 5l7 7-7 7M5 12h15"></path>

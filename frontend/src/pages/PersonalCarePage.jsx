@@ -9,12 +9,16 @@ import WhyChooseUs from '../components/WhyChooseUs';
 import Faq from '../components/FAQ/Faq';
 import ServiceCTA from '../components/ServiceCTA';
 import AestheticShowcase from '../components/Services/AestheticShowcase';
+import Breadcrumb from '../components/Breadcrumb';
+
 
 export default function PersonalCarePage() {
   const category = "personal-care";
 
   return (
     <main className="w-full">
+      {/* <Breadcrumb /> */}
+
       <ServiceHero category={category} />
       <TrustedMarkets category={category} />
     

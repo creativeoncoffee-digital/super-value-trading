@@ -4,7 +4,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import ContactHero from '../components/Contact/ContactHero';
 import Form from '../components/Contact/Form';
-import License from '../components/Contact/License';
+// import License from '../components/Contact/License';
 
 
 

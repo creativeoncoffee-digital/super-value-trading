@@ -75,7 +75,7 @@ export default function ServiceHero({ category = "personal-care" }) {
       {/* Background Gradients & Overlay */}
       <div className={`absolute inset-0 w-full h-full bg-gradient-to-br ${data.themeFrom} ${data.themeTo}`}>
         {/* Subtle texture/image overlay */}
-        <div className="absolute inset-0 w-full h-full bg-cover bg-center opacity-10 mix-blend-screen" style={{ backgroundImage: `url(${data.bgBanner})` }}></div>
+        <div className="absolute inset-0 w-full h-full bg-cover bg-center opacity-30 mix-blend-screen" style={{ backgroundImage: `url(${data.bgBanner})` }}></div>
         {/* Right side glow light */}
         <div className="absolute top-0 right-0 w-[60vh] h-[60vh] bg-blue-400/10 rounded-full blur-[120px] pointer-events-none"></div>
       </div>
