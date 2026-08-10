@@ -7,7 +7,7 @@ export default function TrustedMarkets({ category = "personal-care" }) {
   if (!data) return null;
 
   return (
-    <section className="w-full bg-white pt-34 px-4 md:px-8">
+    <section className="w-full bg-white py-18 px-4 md:px-8">
       <div className="max-w-7xl mx-auto flex flex-col gap-8">
         
         <div className="flex items-center justify-center w-full max-w-4xl mx-auto gap-4 md:gap-6">

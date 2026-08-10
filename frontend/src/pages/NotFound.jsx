@@ -42,16 +42,16 @@ export default function NotFound() {
         
         {/* Eyebrow */}
         <div className="not-found-anim flex items-center gap-4 mb-2">
-          <span className="w-6 h-[2px] bg-[#0a53a6]"></span>
-          <p className="text-[#0a53a6] font-bold uppercase tracking-widest text-xs">
+          <span className="w-6 h-[2px] bg-orange-500"></span>
+          <p className="text-orange-500 font-bold uppercase tracking-widest text-xs">
             Error 404
           </p>
-          <span className="w-6 h-[2px] bg-[#0a53a6]"></span>
+          <span className="w-6 h-[2px] bg-orange-500"></span>
         </div>
 
         {/* Massive 404 Text */}
         <h1 className="not-found-anim float-text text-[8rem] md:text-[8rem] font-bold text-white leading-none tracking-tighter drop-shadow-2xl mb-6">
-          4<span className="text-[#0a53a6]">0</span>4
+          4<span className="text-orange-500">0</span>4
         </h1>
 
         {/* Heading */}

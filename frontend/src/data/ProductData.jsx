@@ -176,7 +176,7 @@ export const productData = {
     trustedMarkets: {
       title: "Trusted By Global Markets",
     logos: [
-        { id: 1, name: "Michelin", src: one },
+        { id: 1, name: "Michelin", src:five },
         { id: 2, name: "Bridgestone", src:two  },
         { id: 3, name: "Pirelli", src: three },
         { id: 4, name: "Goodyear", src: four },

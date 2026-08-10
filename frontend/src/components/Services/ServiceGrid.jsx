@@ -79,13 +79,12 @@ export default function ServiceGrid({ category = "personal-care" }) {
                 <p className="text-slate-500 text-sm leading-relaxed  line-clamp-3 mb-6 pr-8">
                   {cat.desc}
                 </p>
-                
-                {/* Orange Circular Arrow Icon */}
-                <div className="absolute bottom-4 right-4 w-8 h-8 rounded-full border border-orange-200 flex items-center justify-center text-orange-500 group-hover:bg-orange-500 group-hover:text-white transition-all duration-300 group-hover:scale-110">
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                  </svg>
-                </div>
+   {/* Independent Circular Arrow Icon */}
+<div className="absolute bottom-4 right-4 w-8 h-8 rounded-full border border-orange-200 bg-white flex items-center justify-center text-[#f3790a] transition-all duration-300 group-hover:bg-[#f3790a] group-hover:text-white group-hover:border-[#f3790a] shadow-sm group-hover:shadow-md group-hover:scale-110">
+  <svg className="w-4 h-4 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+  </svg>
+</div>
               </div>
             </div>
           ))}
