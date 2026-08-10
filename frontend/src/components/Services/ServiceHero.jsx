@@ -70,14 +70,14 @@ export default function ServiceHero({ category = "personal-care" }) {
   };
 
   return (
-    <section ref={sectionRef} className={`relative w-full min-h-[70vh] flex flex-col justify-center font-sans overflow-hidden bg-[#071326]`}>
+    <section ref={sectionRef} className={`relative w-full min-h-[70vh] max-h-full flex flex-col justify-center font-sans overflow-hidden bg-[#071326] brand-section`}>
       
       {/* Background Gradients & Overlay */}
       <div className={`absolute inset-0 w-full h-full bg-gradient-to-br ${data.themeFrom} ${data.themeTo}`}>
         {/* Subtle texture/image overlay */}
         <div className="absolute inset-0 w-full h-full bg-cover bg-center opacity-10 mix-blend-screen" style={{ backgroundImage: `url(${data.bgBanner})` }}></div>
         {/* Right side glow light */}
-        <div className="absolute top-0 right-0 w-[60vh] h-[60vh] bg-blue-400/5 rounded-full blur-[120px] pointer-events-none"></div>
+        <div className="absolute top-0 right-0 w-[60vh] h-[60vh] bg-blue-400/10 rounded-full blur-[120px] pointer-events-none"></div>
       </div>
 
       {/* FLOATING IMAGES (Kept exactly as requested, positioned absolute) */}
@@ -96,17 +96,17 @@ export default function ServiceHero({ category = "personal-care" }) {
           {renderBreadcrumb()}
 
           {/* Eyebrow */}
-          <h2 className={`hero-text-anim ${data.accent} font-bold uppercase tracking-[0.15em] text-sm mb-4`}>
+          <h2 className={`hero-text-anim ${data.accent} font-bold uppercase tracking-[0.18em] text-sm mb-4`}> 
             {data.eyebrow}
           </h2>
 
           {/* Main Title (Preserves \n for line breaks) */}
-          <h1 className="hero-text-anim text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-[1.1] mb-6 tracking-tight drop-shadow-lg whitespace-pre-line">
+          <h1 className="hero-text-anim text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[0.98] mb-6 tracking-tight drop-shadow-lg whitespace-pre-line max-w-3xl">
             {data.title}
           </h1>
 
           {/* Description */}
-          <p className="hero-text-anim text-slate-100 text-lg md:text-xl leading-relaxed max-w-2xl font-normal mb-12 drop-shadow-md">
+          <p className="hero-text-anim text-slate-100 text-lg md:text-xl leading-relaxed max-w-2xl font-normal mb-12 drop-shadow-md brand-lead text-slate-100/90">
             {data.description}
           </p>
 
@@ -115,7 +115,7 @@ export default function ServiceHero({ category = "personal-care" }) {
             <div className="hero-text-anim flex flex-wrap gap-x-8 gap-y-6">
               {data.features.map((feat, index) => (
                 <div key={index} className="flex items-center gap-3">
-                  <div className="text-orange-500 bg-white/5 p-2 rounded-lg backdrop-blur-sm border border-white/10">
+                  <div className="text-orange-500 bg-white/8 p-2.5 rounded-2xl backdrop-blur-sm border border-white/10 shadow-lg shadow-black/10">
                     {feat.icon}
                   </div>
                   <div className="flex flex-col">

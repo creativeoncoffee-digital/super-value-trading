@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 
 // Import your structural components
 import Header from './components/Header';
@@ -18,35 +18,44 @@ import PersonalCarePage from './pages/PersonalCarePage';
 function App() {
   return (
     <Router>
-      <div className="flex flex-col min-h-screen bg-white">
-        {/* The Header will always show at the top */}
-        <Header />
-
-        {/* The main content area that changes based on the URL */}
-        <main className="flex-grow w-full">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<Contact />} /> 
-            
-            {/* Products & Services Routes */}
-            <Route path="/perfumery" element={<Perfumery />} /> 
-            <Route path="/automobiles" element={<Automobliles />} /> 
-            <Route path="/personal-care" element={<PersonalCarePage />} /> 
-            
-            {/* Fallback for "Others" dropdown link (Uncomment and add component when ready) */}
-            {/* <Route path="/business" element={<BusinessActivities />} /> */}
-
-            <Route path="/blogs" element={<Blogs />} /> 
-            
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </main>
-
-        {/* The Footer will always show at the bottom */}
-        <Footer />
-      </div>
+      <AppShell />
     </Router>
+  );
+}
+
+function AppShell() {
+  const location = useLocation();
+  const isHomePage = location.pathname === '/';
+
+  return (
+    <div className={`flex min-h-screen flex-col bg-[linear-gradient(180deg,#ffffff_0%,#f7f9fc_45%,#ffffff_100%)] text-[#16202E] ${isHomePage ? '' : 'non-home-theme'}`}>
+      {/* The Header will always show at the top */}
+      <Header />
+
+      {/* The main content area that changes based on the URL */}
+      <main className="flex-grow w-full">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} /> 
+          
+          {/* Products & Services Routes */}
+          <Route path="/perfumery" element={<Perfumery />} /> 
+          <Route path="/automobiles" element={<Automobliles />} /> 
+          <Route path="/personal-care" element={<PersonalCarePage />} /> 
+          
+          {/* Fallback for "Others" dropdown link (Uncomment and add component when ready) */}
+          {/* <Route path="/business" element={<BusinessActivities />} /> */}
+
+          <Route path="/blogs" element={<Blogs />} /> 
+          
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </main>
+
+      {/* The Footer will always show at the bottom */}
+      <Footer />
+    </div>
   );
 }
 

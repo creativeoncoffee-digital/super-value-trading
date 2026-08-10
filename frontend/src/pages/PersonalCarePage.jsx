@@ -25,7 +25,7 @@ export default function PersonalCarePage() {
       {/* <PersonalCareSolutions category={category} /> */}
       <WhyChooseUs category={category} />
       <ServiceCTA category={category} />
-      <AestheticShowcase />
+      {/* <AestheticShowcase /> */}
       <Faq page="fmcg" />
     </main>
   );

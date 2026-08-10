@@ -39,7 +39,7 @@ export default function AestheticShowcase({ category = 'personal-care' }) {
   if (!data) return null;
 
   return (
-    <section ref={containerRef} className="w-full bg-[#faf9f8] py-24 md:py-32 font-sans overflow-hidden">
+    <section ref={containerRef} className="w-full bg-[#faf9f8] py-24 md:py-32 font-sans overflow-hidden brand-section">
       
       {/* 
         Full-width Container 
@@ -53,18 +53,19 @@ export default function AestheticShowcase({ category = 'personal-care' }) {
           {/* HEADER SECTION (Spans Columns 2 & 3 on Desktop) */}
           {/* ========================================== */}
           <div className="lg:col-start-2 lg:col-span-2 lg:row-start-1 flex flex-col items-center text-center pt-8 pb-16 z-20">
-            <h2 className="aes-header-anim text-4xl md:text-5xl lg:text-7xl font-serif text-[#1a1a1a] tracking-tight leading-[1.1] mb-6 whitespace-pre-line">
+            <h2 className="aes-header-anim text-4xl md:text-5xl lg:text-7xl font-serif text-[#0B1E3A] tracking-tight leading-[1.02] mb-6 whitespace-pre-line brand-title">
               {data.headline}
             </h2>
-            <p className="aes-header-anim text-slate-600 text-lg md:text-xl leading-relaxed mb-8 whitespace-pre-line font-medium">
+            <p className="aes-header-anim brand-lead text-lg md:text-xl leading-relaxed mb-8 whitespace-pre-line font-medium">
               {data.subhead}
             </p>
             <div className="aes-header-anim">
               <Link 
                 to={data.btnLink}
-                className="inline-block bg-[#D97757] hover:bg-[#c26547] text-white font-bold tracking-widest uppercase text-sm py-4 px-10 rounded-md transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
+                className="brand-button brand-button-primary"
               >
                 {data.btnText}
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M13 5l7 7-7 7M5 12h15"></path></svg>
               </Link>
             </div>
           </div>
@@ -80,7 +81,7 @@ export default function AestheticShowcase({ category = 'personal-care' }) {
             </div>
             {data.images[0].title && (
               <div className="px-2">
-                <h4 className="font-bold text-[#1a1a1a] text-lg">{data.images[0].title}</h4>
+                <h4 className="font-bold text-[#0B1E3A] text-lg tracking-tight">{data.images[0].title}</h4>
                 <p className="text-slate-500 text-sm leading-relaxed">{data.images[0].desc}</p>
               </div>
             )}
@@ -107,7 +108,7 @@ export default function AestheticShowcase({ category = 'personal-care' }) {
             </div>
             {data.images[3].title && (
               <div className="px-2">
-                <h4 className="font-bold text-[#1a1a1a] text-lg">{data.images[3].title}</h4>
+                <h4 className="font-bold text-[#0B1E3A] text-lg tracking-tight">{data.images[3].title}</h4>
                 <p className="text-slate-500 text-sm leading-relaxed">{data.images[3].desc}</p>
               </div>
             )}
@@ -136,7 +137,7 @@ export default function AestheticShowcase({ category = 'personal-care' }) {
             <div className="grid grid-cols-3 gap-2 p-8 border-b border-white/10">
               {data.stats.map((stat, i) => (
                 <div key={i} className="flex flex-col items-center text-center">
-                  <span className="text-[#D97757] font-serif text-3xl md:text-4xl font-light mb-1">{stat.number}</span>
+                  <span className="text-[#0a53a6] font-serif text-3xl md:text-4xl font-light mb-1">{stat.number}</span>
                   <span className="text-white text-[10px] tracking-[0.2em] uppercase font-bold">{stat.label}</span>
                 </div>
               ))}

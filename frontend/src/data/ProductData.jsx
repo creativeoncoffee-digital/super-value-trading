@@ -209,9 +209,9 @@ export const productData = {
       image: BladeImg,
       imageAlt: "Personal care blade showcase",
       backgroundClass: 'bg-white',
-      glowClass: 'bg-orange-500/10',
-      accentClass: 'bg-orange-500',
-      ctaClass: 'bg-orange-500 hover:bg-orange-600 shadow-orange-500/30',
+      glowClass: 'bg-[#0a53a6]/12',
+      accentClass: 'bg-[#0a53a6]',
+      ctaClass: 'bg-[#0a53a6] hover:bg-[#0e67cd] shadow-[#0a53a6]/30',
       panels: {
         left: {
           eyebrow: 'Precision Engineering',
@@ -267,7 +267,7 @@ export const productData = {
       subhead: "A new wave of premium solutions, crafted\nfor the conscious consumer.",
       btnText: "GET IN TOUCH",
       btnLink: "/contact",
-      statsBg: "bg-[#2C5270]", // The Deep Blue from your image
+      statsBg: "bg-[#071326]", // Match the site-wide navy brand tone
       stats: [
         { number: "90+", label: "COUNTRIES" },
         { number: "20+", label: "YEARS" },
@@ -371,9 +371,9 @@ export const productData = {
       image: PerfumeBottleImg,
       imageAlt: 'Perfumery showcase',
       backgroundClass: 'bg-white',
-      glowClass: 'bg-[#D4AF37]/10',
-      accentClass: 'bg-[#D4AF37]',
-      ctaClass: 'bg-[#D4AF37] hover:bg-[#c09b2e] shadow-[#D4AF37]/30',
+      glowClass: 'bg-[#0a53a6]/12',
+      accentClass: 'bg-[#0a53a6]',
+      ctaClass: 'bg-[#0a53a6] hover:bg-[#0e67cd] shadow-[#0a53a6]/30',
       panels: {
         left: {
           eyebrow: 'Scent Architecture',
@@ -521,9 +521,9 @@ export const productData = {
       image: TireImg,
       imageAlt: 'Automotive tire showcase',
       backgroundClass: 'bg-white',
-      glowClass: 'bg-blue-500/10',
-      accentClass: 'bg-blue-500',
-      ctaClass: 'bg-blue-600 hover:bg-blue-500 shadow-blue-500/30',
+      glowClass: 'bg-[#0a53a6]/12',
+      accentClass: 'bg-[#0a53a6]',
+      ctaClass: 'bg-[#0a53a6] hover:bg-[#0e67cd] shadow-[#0a53a6]/30',
       panels: {
         left: {
           eyebrow: 'Global Mobility',
@@ -549,11 +549,11 @@ export const productData = {
       title: 'High-Performance Mobility.',
       description: 'Premium two-wheeler solutions engineered for the modern road. Uncompromising quality and endurance distributed across our global network.And we are authorized distributors of these products, ensuring authenticity and quality for our customers.',
       backgroundClass: 'bg-[#0A101D]',
-      glowClass: 'bg-blue-500/10',
-      accentClass: 'bg-blue-500',
+      glowClass: 'bg-[#0a53a6]/12',
+      accentClass: 'bg-[#0a53a6]',
       ctaLabel: 'Explore Solutions',
       ctaHref: '/contact',
-      ctaClass: 'bg-blue-600 hover:bg-blue-500 shadow-blue-500/30',
+      ctaClass: 'bg-[#0a53a6] hover:bg-[#0e67cd] shadow-[#0a53a6]/30',
     }),
     carShowcase: createVehicleShowcase({
       image: CarTopImg,
@@ -561,11 +561,11 @@ export const productData = {
       title: 'Commercial Vehicle Supply.',
       description: 'Automotive vehicle sourcing, fleet support and spare parts distribution for regional and international buyers.And we are authorized distributors of these products, ensuring authenticity and quality for our customers.',
       backgroundClass: 'bg-[#0A101D]',
-      glowClass: 'bg-blue-500/10',
-      accentClass: 'bg-blue-500',
+      glowClass: 'bg-[#0a53a6]/12',
+      accentClass: 'bg-[#0a53a6]',
       ctaLabel: 'Request a Quote',
       ctaHref: '/contact',
-      ctaClass: 'bg-blue-600 hover:bg-blue-500 shadow-blue-500/30',
+      ctaClass: 'bg-[#0a53a6] hover:bg-[#0e67cd] shadow-[#0a53a6]/30',
     }),
     whyChooseUs: createWhyChooseUs({
       headlinePrefix: 'Why Automotive Buyers Choose Super Value',
@@ -607,6 +607,6 @@ export const productData = {
         { src: "https://images.unsplash.com/photo-1503376712351-1c438dbf3754?q=80&w=800", shape: "rounded-tl-[4rem] rounded-br-3xl rounded-bl-3xl rounded-tr-3xl" },
         { src: "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?q=80&w=800", shape: "rounded-3xl" },
       ]
-    }
+    },
   }
 };

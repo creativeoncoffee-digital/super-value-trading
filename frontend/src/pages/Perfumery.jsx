@@ -25,7 +25,7 @@ export default function Perfumery() {
       
       {/* FAQ for Perfumery */}
        <ServiceCTA category={category} />
-       <AestheticShowcase />
+       {/* <AestheticShowcase /> */}
       <Faq page="perfumery" />
     </main>
   );

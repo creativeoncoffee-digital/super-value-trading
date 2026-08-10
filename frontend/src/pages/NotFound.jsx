@@ -33,7 +33,7 @@ export default function NotFound() {
     >
       
       {/* Decorative Ambient Background Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-orange-500/10 rounded-full blur-[120px] pointer-events-none"></div>
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-[#0a53a6]/10 rounded-full blur-[120px] pointer-events-none"></div>
 
       {/* Decorative Grid Overlay (Subtle) */}
       <div className="absolute inset-0 opacity-[0.02]" style={{ backgroundImage: 'radial-gradient(#ffffff 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
@@ -42,16 +42,16 @@ export default function NotFound() {
         
         {/* Eyebrow */}
         <div className="not-found-anim flex items-center gap-4 mb-2">
-          <span className="w-6 h-[2px] bg-orange-500"></span>
-          <p className="text-orange-500 font-bold uppercase tracking-widest text-xs">
+          <span className="w-6 h-[2px] bg-[#0a53a6]"></span>
+          <p className="text-[#0a53a6] font-bold uppercase tracking-widest text-xs">
             Error 404
           </p>
-          <span className="w-6 h-[2px] bg-orange-500"></span>
+          <span className="w-6 h-[2px] bg-[#0a53a6]"></span>
         </div>
 
         {/* Massive 404 Text */}
         <h1 className="not-found-anim float-text text-[8rem] md:text-[8rem] font-bold text-white leading-none tracking-tighter drop-shadow-2xl mb-6">
-          4<span className="text-orange-500">0</span>4
+          4<span className="text-[#0a53a6]">0</span>4
         </h1>
 
         {/* Heading */}
@@ -68,9 +68,10 @@ export default function NotFound() {
         <div className="not-found-anim">
           <Link
             to="/"
-            className="bg-orange-500 hover:bg-orange-600 text-white font-semibold py-4 px-10 rounded transition-colors inline-block shadow-lg shadow-orange-500/20"
+            className="brand-button brand-button-primary inline-flex"
           >
             Return to Homepage
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M13 5l7 7-7 7M5 12h15"></path></svg>
           </Link>
         </div>
         

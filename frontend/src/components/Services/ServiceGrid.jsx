@@ -35,20 +35,20 @@ export default function ServiceGrid({ category = "personal-care" }) {
   const isFourItems = categories.length === 4;
 
   return (
-    <section ref={containerRef} className="cat-grid-trigger w-full bg-[#f8fafc] py-24 md:py-32 overflow-hidden font-sans">
+    <section ref={containerRef} className="cat-grid-trigger w-full bg-[#f8fafc] py-24 md:py-32 overflow-hidden font-sans brand-section">
       <div className="max-w-[1400px] mx-auto px-[clamp(1.5rem,5vw,4rem)] flex flex-col items-center">
         
         {/* Section Header (Matched to your image design) */}
         <div className="cat-header flex flex-col items-center text-center mb-16">
-          <h4 className="text-orange-500 font-bold text-xs md:text-sm tracking-[0.2em] uppercase mb-4">
+          <h4 className="brand-kicker mb-4 text-orange-500">
             Explore Our Range
           </h4>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-[#0B1E3A] tracking-tight mb-4">
+          <h2 className="brand-title text-3xl md:text-4xl font-extrabold text-[#0B1E3A] tracking-tight mb-4">
             {category === 'personal-care' ? 'Personal Care Categories' : 
              category === 'perfumery' ? 'Fragrance Categories' : 
              'Automotive Categories'}
           </h2>
-          <p className="text-slate-500 text-lg max-w-2xl">
+          <p className="brand-lead max-w-2xl">
             Explore our wide range of premium solutions tailored for global markets and specific business needs.
           </p>
         </div>
@@ -73,7 +73,7 @@ export default function ServiceGrid({ category = "personal-care" }) {
               
               {/* Bottom Text Content */}
               <div className="p-4 flex flex-col flex-grow relative">
-                <h3 className="text-xl font-bold text-[#0B1E3A] mb-3">
+                <h3 className="text-xl font-bold text-[#0B1E3A] mb-3 tracking-tight">
                   {cat.title}
                 </h3>
                 <p className="text-slate-500 text-sm leading-relaxed  line-clamp-3 mb-6 pr-8">
@@ -81,7 +81,7 @@ export default function ServiceGrid({ category = "personal-care" }) {
                 </p>
                 
                 {/* Orange Circular Arrow Icon */}
-                <div className="absolute bottom-4 right-4 w-8 h-8 rounded-full border border-orange-200 flex items-center justify-center text-orange-500 group-hover:bg-orange-500 group-hover:text-white transition-colors duration-300">
+                <div className="absolute bottom-4 right-4 w-8 h-8 rounded-full border border-orange-200 flex items-center justify-center text-orange-500 group-hover:bg-orange-500 group-hover:text-white transition-all duration-300 group-hover:scale-110">
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
                   </svg>
@@ -97,10 +97,10 @@ export default function ServiceGrid({ category = "personal-care" }) {
               <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-orange-500/10 rounded-full blur-[80px] pointer-events-none transform translate-x-1/2 -translate-y-1/2"></div>
               
               <div className="relative z-10 max-w-xl">
-                <h4 className="text-orange-500 font-bold text-xs tracking-[0.2em] uppercase mb-3">
+                <h4 className="brand-kicker text-orange-500 mb-3">
                   Custom Requirements
                 </h4>
-                <h3 className="text-3xl md:text-4xl font-extrabold text-white mb-4">
+                <h3 className="text-3xl md:text-4xl font-bold text-white mb-4 tracking-tight">
                   Looking for something specific?
                 </h3>
                 <p className="text-slate-300 text-base leading-relaxed mb-8">
@@ -109,7 +109,7 @@ export default function ServiceGrid({ category = "personal-care" }) {
                 
                 <Link 
                   to="/contact" 
-                  className="inline-flex items-center gap-3 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3.5 px-8 rounded-xl transition-all duration-300 shadow-lg shadow-orange-500/20 hover:-translate-y-1"
+                  className="brand-button brand-button-primary"
                 >
                   Discuss Your Needs
                   <svg className="w-5 h-5 transform transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">

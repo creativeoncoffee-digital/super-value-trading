@@ -33,7 +33,7 @@ export default function HomeHero() {
 
   return (
     // Added mb-16 to give the overlapping badge space to breathe above the next section
-    <section className="relative w-full h-[85vh] min-h-[600px] px-5 mt-1 bg-white mb-2">
+    <section className="relative w-full h-[85vh] min-h-[600px] px-5 mt-1 bg-white mb-2 brand-section">
 
       {/* Banner Container (overflow hidden keeps image rounded) */}
       <div ref={sliderRef} className="w-full h-full rounded-2xl relative overflow-hidden group shadow-[0_20px_50px_rgba(0,0,0,0.2)]">
@@ -42,7 +42,7 @@ export default function HomeHero() {
           <Link
             key={slide.id}
             to={slide.link}
-            className={`absolute inset-0 w-full h-full flex flex-col justify-end p-[clamp(2rem,6vw,8rem)] transition-opacity duration-1000 ease-in-out cursor-pointer ${index === currentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'
+            className={`absolute inset-0 w-full h-full flex flex-col justify-end p-[clamp(2rem,6vw,8rem)] transition-all duration-1000 ease-in-out cursor-pointer ${index === currentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'
               }`}
           >
             <img
@@ -60,14 +60,14 @@ export default function HomeHero() {
               {/* Premium Subtitle with Icon */}
               <div className="slide-anim flex items-center gap-3 mb-4">
                 <span className="w-8 h-[2px] bg-orange-500"></span>
-                <p className="text-orange-500 font-bold uppercase tracking-[0.2em] text-xs md:text-sm flex items-center gap-2">
+                <p className="brand-kicker text-orange-400 flex items-center gap-2">
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                   Global Markets
                 </p>
               </div>
 
               {/* Bold, Clean Title */}
-              <h1 className="slide-anim text-white font-extrabold text-5xl md:text-6xl lg:text-7xl leading-tight tracking-tight mb-8 drop-shadow-md">
+              <h1 className="slide-anim text-white font-bold text-5xl md:text-6xl lg:text-7xl leading-[0.98] tracking-tight mb-8 drop-shadow-md">
                 {slide.title}
               </h1>
 
@@ -76,7 +76,7 @@ export default function HomeHero() {
               <div className="slide-anim flex flex-col">
                 <Link
                   to="/about"
-                  className="inline-flex items-center justify-center gap-3 bg-orange-500 text-white font-bold px-8 py-4 rounded-xl w-max transition-all duration-300 hover:bg-orange-600 shadow-lg shadow-orange-500/20 hover:-translate-y-1"
+                  className="brand-button brand-button-primary w-max"
                 >
                   Explore Sector
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -104,7 +104,7 @@ export default function HomeHero() {
       {/* Floating Badge - Positioned 50% inside and 50% outside the banner */}
       <Link
         to="/contact"
-        className="absolute bottom-0 right-10 md:right-14 translate-y-1/3 z-40 w-32 h-32 md:w-40 md:h-40 bg-orange-500 rounded-full flex items-center justify-center text-white shadow-2xl hover:scale-105 hover:bg-orange-600 transition-transform duration-300 group/badge"
+        className="absolute bottom-0 right-10 md:right-14 translate-y-1/3 z-40 w-32 h-32 md:w-40 md:h-40 bg-[linear-gradient(135deg,#f3790a,#ff9f4d)] rounded-full flex items-center justify-center text-white shadow-2xl hover:scale-105 transition-transform duration-300 group/badge"
       >
         <svg className="absolute inset-0 w-full h-full animate-[spin_12s_linear_infinite]" viewBox="0 0 100 100">
           <path id="textPath" d="M 50, 50 m -34, 0 a 34,34 0 1,1 68,0 a 34,34 0 1,1 -68,0" fill="none" />

@@ -50,7 +50,7 @@ export default function AboutCTA() {
 
         {/* Right Button */}
         <div className="cta-anim w-full md:w-1/2 flex justify-start md:justify-end">
-          <Link to="/contact" className="flex items-center gap-3 bg-orange-500 hover:bg-orange-600 text-white font-bold py-4 px-10 rounded-lg transition-all duration-300 shadow-lg shadow-orange-500/20 hover:-translate-y-1 group">
+          <Link to="/contact" className="brand-button brand-button-primary group">
             {data.buttonText}
             <svg className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3" />

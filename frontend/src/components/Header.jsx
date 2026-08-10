@@ -128,13 +128,15 @@ export default function Header() {
           <Link to="/contact" className="hover:text-orange-500 transition-colors">Contact Us</Link>
         </nav>
 
+     
         {/* Desktop Action Button - Now uses 'md:inline-flex' */}
         <Link 
           to="/contact" 
-          className="hidden md:inline-flex bg-orange-500 hover:bg-orange-600 text-white font-bold py-[clamp(0.6rem,1vw,0.8rem)] px-[clamp(1.2rem,2vw,1.8rem)] rounded-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-orange-500/30"
+          className="hidden md:inline-flex brand-button text-white bg-orange-500 "
         >
           Inquiry Now
-        </Link>
+          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M13 5l7 7-7 7M5 12h15"></path></svg>
+        </Link>          
       </div>
 
       {/* ---------------------------------------------------- */}
@@ -192,15 +194,16 @@ export default function Header() {
 
         </div>
         
-        {/* Mobile Action Button */}
-        <div className="mobile-anim-item mt-auto pt-6">
-          <Link 
-            to="/contact" 
-            className="flex justify-center items-center w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-4 rounded-xl shadow-lg shadow-orange-500/30 transition-colors"
-          >
-            Inquiry Now
-          </Link>
-        </div>
+           {/* Mobile Action Button */}
+                <div className="mobile-anim-item mt-auto pt-6">
+                  <Link 
+                    to="/contact" 
+                    className="brand-button text-white bg-orange-500 w-full"
+                  >
+                    Inquiry Now
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M13 5l7 7-7 7M5 12h15"></path></svg>
+                  </Link>
+                </div>
 
       </div>
     </header>

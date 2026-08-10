@@ -164,7 +164,7 @@ export default function Form() {
             <div className="form-field flex items-center gap-6 mt-2">
               <button 
                 type="submit" 
-                className="bg-orange-500 hover:bg-orange-600 text-white text-sm font-semibold py-3 px-8 rounded-lg shadow-lg shadow-orange-500/20 transition-all duration-300 hover:-translate-y-0.5"
+                className="bg-orange-500 hover:bg-orange-600 text-white text-lg font-semibold py-3 px-6 rounded-2xl shadow-lg shadow-orange-500/20 transition-all duration-300 hover:-translate-y-0.5"
               >
                 Send message
               </button>

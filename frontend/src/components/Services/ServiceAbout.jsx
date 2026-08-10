@@ -27,7 +27,7 @@ export default function ServiceAbout({ category = "personal-care" }) {
   if (!data) return null;
 
   return (
-    <section ref={containerRef} className="fmcg-about-trigger w-full bg-[#f8fafc] pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden font-sans">
+    <section ref={containerRef} className="fmcg-about-trigger w-full bg-[#f8fafc] pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden font-sans brand-section">
       <div className="max-w-[1400px] mx-auto px-[clamp(1.5rem,5vw,4rem)] flex flex-col lg:flex-row gap-16 lg:gap-24 items-center">
         <div className="fmcg-img w-full lg:w-1/2 flex justify-center lg:justify-start">
           <div className="relative w-full max-w-[600px] aspect-[4/5] md:aspect-square rounded-[2.5rem] overflow-hidden shadow-2xl shadow-slate-300/50 group">
@@ -36,15 +36,15 @@ export default function ServiceAbout({ category = "personal-care" }) {
         </div>
         <div className="w-full lg:w-1/2 flex flex-col items-start">
           <div className="fmcg-text-item flex items-center gap-4 mb-4">
-            <span className="w-8 h-[2px] bg-orange-500"></span>
-            <h3 className="text-[#0B1E3A] font-bold uppercase tracking-[0.15em] text-sm">{data.title}</h3>
+        
+            <h3 className="brand-kicker text-[#0B1E3A]">{data.title}</h3>
           </div>
-          <h2 className="fmcg-text-item text-3xl md:text-4xl font-bold text-[#0B1E3A] tracking-tight mb-4">
+          <h2 className="fmcg-text-item brand-title text-3xl md:text-4xl font-bold text-[#0B1E3A] tracking-tight mb-4">
             {data.headline} <span className="text-orange-500">{data.highlight}</span>
           </h2>
-          <p className="fmcg-text-item text-slate-500 text-lg md:text-xl leading-relaxed mb-10 max-w-xl">{data.description}</p>
+          <p className="fmcg-text-item brand-lead text-slate-500 mb-10 max-w-xl">{data.description}</p>
           
-          <div className="fmcg-text-item w-full bg-white border border-slate-100 rounded-2xl p-6 flex items-center justify-between divide-x divide-slate-100 shadow-sm mb-10">
+          <div className="fmcg-text-item w-full bg-white border border-slate-100 rounded-3xl p-6 flex items-center justify-between divide-x divide-slate-100 shadow-[0_20px_60px_rgba(7,19,38,0.08)] mb-10">
             {data.stats.map((stat, i) => (
               <div key={i} className="flex-1 flex flex-col items-center text-center">
                 <span className="text-3xl font-bold text-orange-500 mb-1">{stat.value}</span>
@@ -52,7 +52,10 @@ export default function ServiceAbout({ category = "personal-care" }) {
               </div>
             ))}
           </div>
-          <button className="fmcg-text-item bg-orange-500 text-white font-bold py-4 px-8 rounded-xl shadow-lg hover:-translate-y-1 transition-all">Know More</button>
+          <button className="fmcg-text-item brand-button bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-6 rounded-xl shadow-lg shadow-orange-500/30 transition-all duration-300 hover:-translate-y-0.5 flex items-center gap-2">
+            Know More
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M13 5l7 7-7 7M5 12h15"></path></svg>
+          </button>
         </div>
       </div>
     </section>

@@ -89,7 +89,7 @@ export default function ProductShowcase({ category = 'personal-care' }) {
         <div className="absolute left-[5%] md:left-[10%] top-1/2 -translate-y-1/2 w-[90%] md:w-1/2 lg:w-[40%] z-40 pointer-events-auto">
           <div className="text-1-anim flex flex-col items-start justify-center">
             <div className="flex items-center gap-4 mb-4">
-              <span className={`w-8 h-[2px] ${data.accentClass || 'bg-orange-500'}`}></span>
+              <span className={`w-8 h-[2px]  bg-orange-500`}></span>
               <h2 className="text-3xl md:text-4xl font-bold text-[#0B1E3A] tracking-tight">
                 {data.panels?.left?.eyebrow}
               </h2>
@@ -100,7 +100,7 @@ export default function ProductShowcase({ category = 'personal-care' }) {
             <div className="ml-12">
               <Link
                 to={data.panels?.left?.ctaHref || '/contact'}
-                className={`inline-flex items-center gap-3 ${data.ctaClass || 'bg-orange-500 hover:bg-orange-600 shadow-orange-500/30'} text-white font-bold py-[clamp(0.8rem,1.5vw,1rem)] px-[clamp(1.5rem,3vw,2.5rem)] rounded-xl transition-all duration-300 shadow-lg hover:-translate-y-1`}
+                className={`inline-flex items-center gap-3 bg-orange-500 hover:bg-orange-600 shadow-orange-500/30 text-white font-bold py-[clamp(0.8rem,1.5vw,1rem)] px-[clamp(1.5rem,3vw,2.5rem)] rounded-xl transition-all duration-300 shadow-lg hover:-translate-y-1`}
               >
                 {data.panels?.left?.ctaLabel || 'Inquiry Now'}
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
@@ -113,7 +113,7 @@ export default function ProductShowcase({ category = 'personal-care' }) {
         <div className="absolute right-[5%] md:right-[10%] top-1/2 -translate-y-1/2 w-[90%] md:w-1/2 lg:w-[40%] z-40 pointer-events-auto">
           <div className="text-2-anim flex flex-col items-start justify-center">
             <div className="flex items-center gap-4 mb-4">
-              <span className={`w-8 h-[2px] ${data.accentClass || 'bg-orange-500'}`}></span>
+              <span className={`w-8 h-[2px]  bg-orange-500`}></span>
               <h2 className="text-3xl md:text-4xl font-bold text-[#0B1E3A] tracking-tight">
                 {data.panels?.right?.eyebrow}
               </h2>
@@ -124,7 +124,7 @@ export default function ProductShowcase({ category = 'personal-care' }) {
             <div className="ml-12">
               <Link
                 to={data.panels?.right?.ctaHref || '/contact'}
-                className={`inline-flex items-center gap-3 ${data.ctaClass || 'bg-orange-500 hover:bg-orange-600 shadow-orange-500/30'} text-white font-bold py-[clamp(0.8rem,1.5vw,1rem)] px-[clamp(1.5rem,3vw,2.5rem)] rounded-xl transition-all duration-300 shadow-lg hover:-translate-y-1`}
+                className={`inline-flex items-center gap-3 bg-orange-500 hover:bg-orange-600 shadow-orange-500/30 text-white font-bold py-[clamp(0.8rem,1.5vw,1rem)] px-[clamp(1.5rem,3vw,2.5rem)] rounded-xl transition-all duration-300 shadow-lg hover:-translate-y-1`}
               >
                 {data.panels?.right?.ctaLabel || 'Inquiry Now'}
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>

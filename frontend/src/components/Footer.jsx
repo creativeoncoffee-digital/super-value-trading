@@ -134,7 +134,7 @@ export default function Footer() {
               <div className="footer-item pt-4">
                 <button 
                   type="submit" 
-                  className="bg-white text-[#071326] hover:bg-orange-500 hover:text-white font-bold py-4 px-10 rounded text-sm tracking-wide transition-all duration-300 w-full md:w-auto"
+                  className="text-white bg-orange-500 hover:bg-orange-600  font-bold py-4 px-10 rounded text-sm tracking-wide transition-all duration-300 w-full md:w-auto"
                 >
                   Submit Inquiry
                 </button>

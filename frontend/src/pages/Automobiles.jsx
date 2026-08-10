@@ -31,7 +31,7 @@ export default function Automobiles() {
       
       {/* FAQ for Automobiles */}
        <ServiceCTA category={category} />
-       <AestheticShowcase />
+       {/* <AestheticShowcase /> */}
       <Faq page="automobiles" />
     </main>
   );

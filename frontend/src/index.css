@@ -1,24 +1,279 @@
 @import "tailwindcss";
 
-/* 1. Import your Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Chivo:ital,wght@0,100..900;1,100..900&family=Elms+Sans:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100..900;1,100..900&family=Space+Grotesk:wght@300..700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
 
-/* 2. Configure Tailwind v4 Theme Variables */
 @theme {
-  /* This overrides Tailwind's default font and applies "Chivo" automatically to the entire website */
-  --font-sans: "Chivo", sans-serif;
-  
-  /* These create custom utility classes if you want to use the other fonts on specific elements */
-  --font-archivo: "Archivo", sans-serif;
-  --font-chivo: "Chivo", sans-serif;
-  --font-poppins: "Poppins", sans-serif;
+  --font-sans: "Inter", sans-serif;
+  --font-serif: "Cormorant Garamond", serif;
+  --font-display: "Space Grotesk", sans-serif;
 }
 
-/* 3. Apply base font smoothing */
 @layer base {
+  :root {
+    --brand-navy: #071326;
+    --brand-blue: #0a53a6;
+    --brand-sky: #2c8cff;
+    --brand-orange: #f3790a;
+    --brand-orange-deep: #d9660a;
+    --brand-cream: #f6f7f9;
+    --brand-ice: #eef4fb;
+    --brand-ink: #16202e;
+    --brand-muted: #5b6472;
+    --brand-line: rgba(11, 30, 58, 0.12);
+    --brand-line-dark: rgba(255, 255, 255, 0.14);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
+    margin: 0;
     font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--brand-ink);
+    background:
+      radial-gradient(circle at top, rgba(11, 87, 168, 0.08), transparent 34%),
+      radial-gradient(circle at 90% 10%, rgba(243, 121, 10, 0.08), transparent 22%),
+      linear-gradient(180deg, #ffffff 0%, #f7f9fc 45%, #ffffff 100%);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body,
+  p,
+  li {
+    color: var(--brand-ink);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-display);
+    letter-spacing: -0.03em;
+    color: var(--brand-navy);
+    text-wrap: balance;
+  }
+
+  h1 {
+    font-size: clamp(2.75rem, 6vw, 5.25rem);
+    line-height: 0.98;
+    font-weight: 700;
+  }
+
+  h2 {
+    font-size: clamp(2rem, 3.8vw, 3.4rem);
+    line-height: 1.04;
+    font-weight: 700;
+  }
+
+  h3 {
+    font-size: clamp(1.35rem, 2vw, 2rem);
+    line-height: 1.08;
+    font-weight: 700;
+  }
+
+  h4 {
+    font-size: clamp(1.05rem, 1.4vw, 1.25rem);
+    line-height: 1.15;
+    font-weight: 700;
+  }
+
+  a {
+    transition: color 180ms ease, transform 180ms ease, opacity 180ms ease;
+  }
+
+  img {
+    display: block;
+  }
+
+  ::selection {
+    background: var(--brand-orange);
+    color: white;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--brand-orange);
+    outline-offset: 3px;
+  }
+
+  input,
+  textarea,
+  select,
+  button {
+    font: inherit;
+  }
+}
+
+@layer components {
+  .brand-section {
+    position: relative;
+    isolation: isolate;
+  }
+
+  .brand-shell {
+    max-width: 1440px;
+    margin-inline: auto;
+    padding-inline: clamp(1.25rem, 4vw, 3rem);
+  }
+
+  .brand-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.7rem;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--brand-orange);
+  }
+
+  .brand-kicker::before {
+    content: '';
+    width: 2rem;
+    height: 2px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, var(--brand-orange));
+    display: inline-block;
+  }
+
+  .brand-lead {
+    font-size: clamp(1rem, 1.2vw, 1.125rem);
+    line-height: 1.85;
+    color: #5f6978;
+  }
+
+  .brand-title {
+    line-height: 1.03;
+    letter-spacing: -0.04em;
+  }
+
+  .brand-card {
+    border: 1px solid rgba(11, 30, 58, 0.08);
+    background: rgba(255, 255, 255, 0.78);
+    box-shadow: 0 24px 80px rgba(7, 19, 38, 0.08);
+    backdrop-filter: blur(12px);
+  }
+
+  .brand-card-dark {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: linear-gradient(180deg, rgba(11, 19, 38, 0.98), rgba(7, 19, 38, 0.92));
+    box-shadow: 0 32px 100px rgba(7, 19, 38, 0.28);
+  }
+
+  .brand-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.7rem;
+    border-radius: 1rem;
+    padding: 0.9rem 1.35rem;
+    font-size: 0.85rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: transform 200ms ease, box-shadow 200ms ease, background 200ms ease, color 200ms ease, border-color 200ms ease;
+  }
+
+  .brand-button:hover {
+    transform: translateY(-2px);
+  }
+
+  .brand-button svg {
+    flex-shrink: 0;
+    transition: transform 200ms ease, opacity 200ms ease;
+  }
+
+  .brand-button:hover svg {
+    transform: translateX(2px);
+  }
+
+  .brand-button-primary {
+    color: white;
+    background: linear-gradient(135deg, var(--brand-orange), #ff8d2f);
+    box-shadow: 0 18px 34px rgba(243, 121, 10, 0.26);
+  }
+
+  .brand-button-primary:hover {
+    box-shadow: 0 22px 40px rgba(243, 121, 10, 0.36);
+  }
+
+  .brand-button-secondary {
+    color: var(--brand-navy);
+    border: 1.5px solid rgba(11, 30, 58, 0.15);
+    background: rgba(255, 255, 255, 0.82);
+  }
+
+  .brand-button-secondary:hover {
+    border-color: rgba(11, 30, 58, 0.3);
+    background: white;
+  }
+
+  .brand-icon-chip {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 999px;
+    background: linear-gradient(135deg, rgba(11, 87, 168, 0.12), rgba(243, 121, 10, 0.12));
+    color: var(--brand-blue);
+    box-shadow: inset 0 0 0 1px rgba(11, 30, 58, 0.08);
+  }
+
+  .brand-fade-up {
+    animation: brandFadeUp 700ms ease both;
+  }
+
+    .non-home-theme .brand-kicker,
+    .non-home-theme .text-orange-500 {
+      color: var(--brand-orange) !important;
+    }
+
+    .non-home-theme .brand-kicker::before {
+      background: linear-gradient(90deg, var(--brand-orange));
+    }
+
+    .non-home-theme .brand-button-primary {
+      color: var(--brand-orange);
+      background: transparent;
+      border: 1.5px solid rgba(243, 121, 10, 0.4);
+      box-shadow: none;
+    }
+
+    .non-home-theme .brand-button-primary:hover {
+      background: rgba(243, 121, 10, 0.08);
+      box-shadow: none;
+    }
+
+    .non-home-theme .brand-button-secondary {
+      color: var(--brand-orange);
+      border-color: rgba(243, 121, 10, 0.35);
+    }
+
+    .non-home-theme .brand-button-secondary:hover {
+      border-color: rgba(243, 121, 10, 0.5);
+      color: var(--brand-orange);
+    }
+
+    .non-home-theme .brand-icon-chip {
+      color: var(--brand-orange);
+      background: linear-gradient(135deg, rgba(243, 121, 10, 0.12), rgba(243, 121, 10, 0.04));
+    }
+}
+
+@keyframes brandFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

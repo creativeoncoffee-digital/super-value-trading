@@ -45,19 +45,19 @@ export default function Faq({ page = 'home' }) {
   if (faqs.length === 0) return null;
 
   return (
-    <section ref={sectionRef} className="w-full bg-[#f8fafc] py-20 px-8 overflow-hidden">
+    <section ref={sectionRef} className="w-full bg-[#f8fafc] py-20 px-8 overflow-hidden brand-section">
       <div className="max-w-5xl mx-auto flex flex-col items-center">
         
         {/* Section Header */}
         <div className="faq-header text-center mb-16">
           <div className="flex items-center justify-center gap-4 mb-4">
             <span className="w-8 h-[2px] bg-orange-500"></span>
-            <p className="text-orange-500 font-bold uppercase tracking-[0.2em] text-xs">
+            <p className=" text-orange-500">
               Knowledge Base
             </p>
-            <span className="w-8 h-[2px] bg-orange-500"></span>
+            <span className="w-8 h-[2px] bg-orange-500 "></span>
           </div>
-          <h2 className="text-3xl md:text-5xl font-semibold text-[#0B1E3A]">
+          <h2 className="brand-title text-3xl md:text-5xl font-semibold text-[#0B1E3A]">
             Frequently Asked Questions
           </h2>
         </div>

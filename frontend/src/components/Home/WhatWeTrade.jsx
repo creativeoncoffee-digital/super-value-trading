@@ -90,10 +90,10 @@ export default function WhatWeTrade() {
             ))}
 
              <div className="slide-anim flex flex-col mt-4">
-                <span className="inline-flex items-center gap-3 bg-orange-500 text-white font-bold px-6 py-[clamp(0.8rem,1.5vw,1.2rem)] rounded-xl w-max transition-all duration-300 hover:bg-orange-600 hover:gap-5 shadow-lg shadow-orange-500/30 cursor-pointer">
-                Discuss A Trade
+                <span className="brand-button brand-button-primary w-max cursor-pointer">
+                  Discuss A Trade
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M13 5l7 7-7 7M5 12h15"></path>
                   </svg>
                 </span>
               </div>
