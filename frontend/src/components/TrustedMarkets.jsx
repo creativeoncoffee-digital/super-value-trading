@@ -1,33 +1,82 @@
 import React from 'react';
-import { productData } from '../data/ProductData';
 
-export default function TrustedMarkets({ category = "personal-care" }) {
-  const data = productData[category]?.trustedMarkets;
+// Replace these with your actual logo imports
+import logo1 from '../assets/Products/one.png'; 
+import logo2 from '../assets/Products/two.png';
+import logo3 from '../assets/Products/three.png';
+import logo4 from '../assets/Products/four.png';
+import logo5 from '../assets/Products/five.png';
+import logo6 from '../assets/Products/six.png';
 
-  if (!data) return null;
+export default function TrustedMarkets() {
+  const logos = [
+    { id: 1, src: logo1, alt: "Partner 1" },
+    { id: 2, src: logo2, alt: "Partner 2" },
+    { id: 3, src: logo3, alt: "Partner 3" },
+    { id: 4, src: logo4, alt: "Partner 4" },
+    { id: 5, src: logo5, alt: "Partner 5" },
+    { id: 6, src: logo6, alt: "Partner 6" }
+  ];
 
   return (
-    <section className="w-full bg-white py-18 px-4 md:px-8">
-      <div className="max-w-7xl mx-auto flex flex-col gap-8">
+    <section className="w-full bg-white py-12 md:py-16 border-b border-slate-100 overflow-hidden">
+      
+      {/* Dynamic Keyframes for the Marquee injected via standard style block */}
+      <style>
+        {`
+          @keyframes mobileMarquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+          }
+          .animate-mobile-marquee {
+            animation: mobileMarquee 15s linear infinite;
+          }
+        `}
+      </style>
+
+      <div className="max-w-7xl mx-auto px-5 md:px-8">
         
-        <div className="flex items-center justify-center w-full max-w-4xl mx-auto gap-4 md:gap-6">
-          <div className="flex-1 h-[1px] bg-slate-200 flex justify-end"><div className="w-12 md:w-20 h-[2px] bg-orange-500"></div></div>
-          <h3 className="text-[#0B1E3A] font-bold uppercase tracking-[0.2em] text-xs md:text-sm whitespace-nowrap">
-            {data.title}
-          </h3>
-          <div className="flex-1 h-[1px] bg-slate-200 flex justify-start"><div className="w-12 md:w-20 h-[2px] bg-orange-500"></div></div>
+        <div className="flex items-center gap-4 justify-center md:justify-start mb-8 md:mb-10">
+          <span className="w-8 h-[2px] bg-orange-500"></span>
+          <h4 className="text-xs md:text-sm font-bold uppercase tracking-[0.15em] text-slate-800">
+            Trusted By Global Markets
+          </h4>
+          <span className="w-8 h-[2px] bg-orange-500 md:hidden"></span>
         </div>
 
-        <div className="w-full bg-[#f8fafc] rounded-2xl py-8 md:py-6 px-8 flex flex-wrap justify-center md:justify-between items-center gap-10 md:gap-4 border border-slate-100">
-          {data.logos.map((logo) => (
-            // BLACK AND WHITE EFFECT HAPPENS HERE
-            <div 
+        {/* ========================================== */}
+        {/* DESKTOP VIEW: Clean Grid Layout */}
+        {/* ========================================== */}
+        <div className="hidden md:grid grid-cols-3 lg:grid-cols-6 gap-8 items-center justify-items-center opacity-70">
+          {logos.map((logo) => (
+            <img 
               key={logo.id} 
-              className="w-24 md:w-32 h-12 flex items-center justify-center grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300 cursor-pointer"
-            >
-              <img src={logo.src} alt={logo.name} className="max-w-full max-h-full object-contain" />
-            </div>
+              src={logo.src} 
+              alt={logo.alt} 
+              className="h-10 lg:h-12 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300"
+            />
           ))}
+        </div>
+
+        {/* ========================================== */}
+        {/* MOBILE VIEW: Infinite Scrolling Marquee */}
+        {/* ========================================== */}
+        <div className="md:hidden relative w-full flex overflow-hidden">
+          {/* Transparent gradients to fade the edges */}
+          <div className="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-white to-transparent z-10"></div>
+          <div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-white to-transparent z-10"></div>
+
+          {/* The Track: We duplicate the logos array so it loops seamlessly */}
+          <div className="flex items-center gap-10 animate-mobile-marquee w-max pl-4">
+            {[...logos, ...logos].map((logo, idx) => (
+              <img 
+                key={idx} 
+                src={logo.src} 
+                alt={logo.alt} 
+                className="h-8 w-auto object-contain opacity-60 grayscale"
+              />
+            ))}
+          </div>
         </div>
 
       </div>

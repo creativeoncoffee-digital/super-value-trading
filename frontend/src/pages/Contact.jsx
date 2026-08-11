@@ -5,6 +5,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import ContactHero from '../components/Contact/ContactHero';
 import Form from '../components/Contact/Form';
 // import License from '../components/Contact/License';
+import Breadcrumb from '../components/Breadcrumb';
 
 
 
@@ -36,6 +37,7 @@ export default function Contact() {
 
   return (
     <main ref={pageRef} className="w-full">
+      <Breadcrumb />
       
       {/* 1. The custom Animated Business Hero */}
       <ContactHero />

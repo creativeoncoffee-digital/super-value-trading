@@ -12,12 +12,13 @@ import AestheticShowcase from '../components/Services/AestheticShowcase';
 import Breadcrumb from '../components/Breadcrumb';
 
 
+
 export default function PersonalCarePage() {
   const category = "personal-care";
 
   return (
     <main className="w-full">
-      {/* <Breadcrumb /> */}
+      <Breadcrumb />
 
       <ServiceHero category={category} />
       <TrustedMarkets category={category} />

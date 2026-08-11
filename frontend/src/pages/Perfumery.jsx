@@ -14,7 +14,7 @@ export default function Perfumery() {
 
   return (
     <main className="w-full">
-      {/* <Breadcrumb /> */}
+      <Breadcrumb />
       <ServiceHero category={category} />
       <TrustedMarkets category={category} />
       

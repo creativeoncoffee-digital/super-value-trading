@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { blogData, categories } from '../data/BlogData';
+import Breadcrumb from '../components/Breadcrumb';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -61,8 +62,15 @@ export default function BlogMain() {
   const closeModal = () => setSelectedPost(null);
 
   return (
+    
     <main ref={pageRef} className="w-full bg-[#f8fafc] min-h-screen pb-24 font-sans">
-      
+      {/* CUSTOMIZED BREADCRUMB FOR LIGHT BACKGROUND */}
+      <Breadcrumb 
+        textColor="text-slate-600" 
+        activeColor="text-orange-500" 
+        hoverColor="hover:text-orange-500" 
+      />
+
       {/* --- TOP SECTION: LATEST NEWS --- */}
       <section className="max-w-7xl mx-auto px-8 pt-24 pb-16">
         <h1 className="reveal-top text-4xl md:text-5xl font-bold text-[#0B1E3A] mb-12">

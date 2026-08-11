@@ -17,7 +17,7 @@ export default function Automobiles() {
 
   return (
     <main className="w-full">
-      {/* <Breadcrumb /> */}
+      <Breadcrumb />
       <ServiceHero category={category} />
       <TrustedMarkets category={category} />
      <ServiceAbout category={category} />

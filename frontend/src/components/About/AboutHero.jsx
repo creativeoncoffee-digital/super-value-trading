@@ -1,7 +1,8 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { aboutData } from '../../data/AboutData';
-import HeroBadgeBar from '../HeroBadgeBar'; // Make sure this path is correct
+import HeroBadgeBar from '../HeroBadgeBar'; 
+
 
 export default function AboutHero() {
   const sectionRef = useRef(null);
@@ -21,8 +22,8 @@ export default function AboutHero() {
   }, []);
 
   return (
-    // FIX: Removed overflow-hidden from the section so the badge can overlap the bottom edge
-    <section ref={sectionRef} className="relative w-full h-[60vh] min-h-[500px] bg-[#0A101D] flex items-center">
+    // FIX: Changed to h-auto on mobile with thick padding (pt-24 pb-48) to avoid the badge overlap. Desktop stays at h-[60vh].
+    <section ref={sectionRef} className="relative w-full h-auto lg:h-[60vh] min-h-[600px] lg:min-h-[500px] pt-24 pb-48 lg:py-0 bg-[#0A101D] flex items-center">
       <div className="absolute inset-0 bg-gradient-to-r from-[#0A101D] via-[#0A101D]/90 to-transparent z-10 pointer-events-none"></div>
       
       <div className="max-w-[1400px] mx-auto w-full px-[clamp(1.5rem,5vw,4rem)] flex justify-between items-center relative z-20 h-full">
@@ -52,7 +53,6 @@ export default function AboutHero() {
               alt="Premium Products" 
               className="w-full h-full object-cover opacity-80 mix-blend-lighten"
             />
-            {/* Inner glow effect matching the design */}
             <div className="absolute inset-0 bg-gradient-to-l from-transparent to-[#0A101D]/50 pointer-events-none"></div>
           </div>
         </div>
@@ -60,7 +60,7 @@ export default function AboutHero() {
       </div>
 
       {/* OVERLAPPING BADGE BAR */}
-      <div className="absolute bottom-0 left-0 w-full translate-y-1/2 z-30">
+      <div className="absolute bottom-0 left-0 w-full translate-y-[60%] lg:translate-y-1/2 z-30">
         <HeroBadgeBar />
       </div>
 
