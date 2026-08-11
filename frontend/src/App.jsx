@@ -14,6 +14,7 @@ import Perfumery from './pages/Perfumery';
 import Automobliles from './pages/Automobiles'; 
 import PersonalCarePage from './pages/PersonalCarePage'; 
 // import BusinessActivities from './pages/BusinessActivities'; // Import this when ready for the "Others" link
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   return (
@@ -33,8 +34,10 @@ function AppShell() {
       <Header />
 
       {/* The main content area that changes based on the URL */}
+        <ScrollToTop />
       <main className="flex-grow w-full">
         <Routes>
+        
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} /> 

@@ -11,6 +11,7 @@ import Faq from '../components/FAQ/Faq';
 import ServiceCTA from '../components/ServiceCTA';
 import AestheticShowcase from '../components/Services/AestheticShowcase';
 import Breadcrumb from '../components/Breadcrumb';
+import AutomotiveBrandFocus from '../components/Services/AutomotiveBrandFocus';
 
 export default function Automobiles() {
   const category = "automobiles";
@@ -20,6 +21,7 @@ export default function Automobiles() {
       <Breadcrumb />
       <ServiceHero category={category} />
       <TrustedMarkets category={category} />
+      <AutomotiveBrandFocus />
      <ServiceAbout category={category} />
        <ProductShowcase category={category} />
        <ServiceGrid category={category} />

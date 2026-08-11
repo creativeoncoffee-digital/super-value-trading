@@ -169,17 +169,16 @@ export default function Footer() {
               <h4 className="text-white font-bold text-sm tracking-wider uppercase mb-2">Company</h4>
               <Link to="/" className="text-slate-400 text-sm hover:text-orange-500 transition-colors w-fit">Home</Link>
               <Link to="/about" className="text-slate-400 text-sm hover:text-orange-500 transition-colors w-fit">About Us</Link>
-              <Link to="/leadership" className="text-slate-400 text-sm hover:text-orange-500 transition-colors w-fit">Leadership</Link>
-              <Link to="/global-presence" className="text-slate-400 text-sm hover:text-orange-500 transition-colors w-fit">Global Presence</Link>
+       
             </div>
 
             {/* Col 3: Sectors */}
             <div className="footer-item flex flex-col gap-4">
               <h4 className="text-white font-bold text-sm tracking-wider uppercase mb-2">Sectors</h4>
-              <Link to="/business" className="text-slate-400 text-sm hover:text-orange-500 transition-colors w-fit">FMCG & Personal Care</Link>
-              <Link to="/business" className="text-slate-400 text-sm hover:text-orange-500 transition-colors w-fit">Perfumery & Fragrances</Link>
-              <Link to="/business" className="text-slate-400 text-sm hover:text-orange-500 transition-colors w-fit">Automotive Solutions</Link>
-              <Link to="/business" className="text-slate-400 text-sm hover:text-orange-500 transition-colors w-fit">Specialty Goods</Link>
+              <Link to="/personal-care" className="text-slate-400 text-sm hover:text-orange-500 transition-colors w-fit">FMCG & Personal Care</Link>
+              <Link to="/perfumery" className="text-slate-400 text-sm hover:text-orange-500 transition-colors w-fit">Perfumery & Fragrances</Link>
+              <Link to="/automobiles" className="text-slate-400 text-sm hover:text-orange-500 transition-colors w-fit">Automotive Solutions</Link>
+            
             </div>
 
             {/* Col 4: Location */}

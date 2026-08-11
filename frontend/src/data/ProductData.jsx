@@ -293,11 +293,10 @@ export const productData = {
 "perfumery": {
     useCustomVehicleShowcase: false, 
     hero: {
-      breadcrumb: "Home > Products & Services > Perfumery",
-      eyebrow: "THE ESSENCE OF LUXURY",
-      title: "Perfumery &\nFragrances",
-      description: "Luxury perfumes, perfume oils, deodorants, and private-label fragrance manufacturing designed for every market tier.",
-      features: [
+     breadcrumb: "Home > Products & Services > Perfumery",
+      eyebrow: "PRIVATE LABEL PERFUMERY",
+      title: "YOUR PERFUME.\nYOUR BRAND.",
+      description: "Create your own private-label perfume brand, from accessible everyday fragrances to premium and luxury positioning — with product presentation and packaging built around your brand.",    features: [
         { icon: iconSettings, title: "Master Blends", desc: "Authentic Formulations" },
         { icon: iconShield, title: "Premium Quality", desc: "Long-Lasting Sillage" },
         { icon: iconGlobe, title: "Global Reach", desc: "Export Expertise" },
@@ -305,10 +304,19 @@ export const productData = {
       ],
       leftImg: PerfumeBottleImg,
       rightImg: PerfumeBottleImg,
-      bgBanner: perfumeryBanner,
-      themeFrom: "from-[#1a1210]", // Dark Brown/Charcoal
-      themeTo: "to-[#0a0706]",
-      accent: "text-orange-500"
+
+// NEW: Layered Perfumery Composition
+      layeredImages: {
+        main: "https://images.unsplash.com/photo-1594035910387-fea47794261f?q=80&w=800&auto=format&fit=crop",
+        secondary: "https://images.unsplash.com/photo-1541643600914-78b084683601?q=80&w=600&auto=format&fit=crop",
+        packaging: "https://images.unsplash.com/photo-1588405748880-12d1d2a59f75?q=80&w=600&auto=format&fit=crop"
+      },
+    bgBanner: "https://images.unsplash.com/photo-1615634260167-c8cdede054de?q=80&w=2000&auto=format&fit=crop",
+      themeFrom: "from-[#070b14]", 
+      themeTo: "to-[#03050a]",
+      accent: "text-orange-500",
+      ctaLabel: "Create Your Perfume Brand →",
+      ctaHref: "/contact"
     },
     sections: createSectionOrder('trustedMarkets', 'fmcgShowcase', 'productShowcase', 'solutions', 'whyChooseUs'),
     trustedMarkets: {
@@ -329,6 +337,11 @@ export const productData = {
         headline: "Mastering the Art of",
         description: "We help brands create perfumes from entry-level 1 oz concepts to luxury premium lines, with private-label development, perfume oils, deodorants, and manufacturing support.",
         image:PerfumeWhyChooseUsImg,
+        positioning: [
+          { title: "VALUE", desc: "Everyday Fragrance" },
+          { title: "PREMIUM", desc: "Refined Lifestyle Fragrance" },
+          { title: "LUXURY", desc: "Signature Luxury Fragrance" }
+        ],
         stats: [
           { value: "23+", label: "Years Experience" },
           { value: "80+", label: "Countries" },
@@ -368,33 +381,79 @@ export const productData = {
         { title: "Raw Extracts", icon: <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg> }
       ]
     },
-    productShowcase: createProductShowcase({
+    privateLabelShowcase: [
+      {
+        id: "value",
+        label: "VALUE",
+        title: "Accessible Everyday Fragrance",
+        desc: "Create fragrance products designed for accessible, everyday markets.",
+        image: "https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?q=80&w=1200&auto=format&fit=crop"
+      },
+      {
+        id: "premium",
+        label: "PREMIUM",
+        title: "Premium Fragrance",
+        desc: "Build a refined fragrance line for lifestyle and premium markets.",
+        image: "https://images.unsplash.com/photo-1594035910387-fea47794261f?q=80&w=1200&auto=format&fit=crop"
+      },
+      {
+        id: "luxury",
+        label: "LUXURY",
+        title: "Luxury Fragrance",
+        desc: "Develop an elevated fragrance presentation for premium and luxury positioning.",
+        image: "https://images.unsplash.com/photo-1541643600914-78b084683601?q=80&w=1200&auto=format&fit=crop"
+      }
+    ],
+    privateLabelProcess: [
+      { num: "01", title: "YOUR IDEA", desc: "Define the vision and target market." },
+      { num: "02", title: "FRAGRANCE DIRECTION", desc: "Select and refine the scent profile." },
+      { num: "03", title: "PRODUCT & BOTTLE", desc: "Choose the physical container." },
+      { num: "04", title: "YOUR BRAND IDENTITY", desc: "Design the visual essence." },
+      { num: "05", title: "CUSTOM PACKAGING", desc: "Create the unboxing experience." },
+      { num: "06", title: "FINISHED PRODUCT", desc: "Ready for global distribution." }
+    ],
+    visualStory: [
+      { id: "01", title: "INSPIRATION", size: "tall", img: "https://images.unsplash.com/photo-1616949755610-8c9bac08f9f8?q=80&w=800" },
+      { id: "02", title: "THE PRODUCT", size: "square", img: "https://images.unsplash.com/photo-1595425970377-c9703d740873?q=80&w=800" },
+      { id: "03", title: "THE DETAILS", size: "wide", img: "https://images.unsplash.com/photo-1588405748880-12d1d2a59f75?q=80&w=1000" },
+      { id: "04", title: "YOUR BRAND", size: "square", img: "https://images.unsplash.com/photo-1615634260167-c8cdede054de?q=80&w=800" },
+      { id: "05", title: "PREMIUM & LUXURY", size: "tall", img: "https://images.unsplash.com/photo-1541643600914-78b084683601?q=80&w=800" },
+      { id: "06", title: "FINISHED PRODUCT", size: "wide", img: "https://images.unsplash.com/photo-1594035910387-fea47794261f?q=80&w=1000" }
+    ],
+    capabilities: [
+      { title: "PRODUCT", desc: "Select the right product direction" },
+      { title: "FRAGRANCE", desc: "Choose the fragrance direction" },
+      { title: "BOTTLE", desc: "Select the desired presentation" },
+      { title: "BRANDING", desc: "Build your visual identity" },
+      { title: "PACKAGING", desc: "Create your branded presentation" }
+    ],
+ productShowcase: createProductShowcase({
       image: PerfumeBottleImg,
       imageAlt: 'Perfumery showcase',
-      backgroundClass: 'bg-white',
-      glowClass: 'bg-[#0a53a6]/12',
+      backgroundClass: 'bg-[#f8fafc]',
+      glowClass: 'bg-orange-500/10',
       accentClass: 'bg-[#0a53a6]',
-      ctaClass: 'bg-[#0a53a6] hover:bg-[#0e67cd] shadow-[#0a53a6]/30',
+      ctaClass: 'bg-orange-500 hover:bg-orange-600',
       panels: {
         left: {
-          eyebrow: 'Scent Architecture',
-          description: 'We help brands create perfumes from entry-level concepts to luxury premium lines with private-label and manufacturing support.',
-          ctaLabel: 'Talk to an Expert',
+          eyebrow: 'SUPER VALUE',
+          description: 'Our Own Brand. Alongside private-label manufacturing, we distribute our own exclusive Super Value fragrance lines designed for scalable market entry.',
+          ctaLabel: 'View Our Line',
           ctaHref: '/contact',
         },
         right: {
-          eyebrow: 'Luxury Distribution',
-          description: 'From concentrated oils to bespoke signature scent profiles, our perfumery lines are built for scale and consistency.',
-          ctaLabel: 'View Fragrance Line',
+          eyebrow: 'Wholesale Distribution',
+          description: 'From concentrated oils to ready-to-sell perfumes, our lines are built for scale, consistency, and global export.',
+          ctaLabel: 'Talk to an Expert',
           ctaHref: '/contact',
         },
         bottom: {
           title: 'Distributed globally by Super Value',
-          description: 'Delivering premium fragrance solutions across luxury retail and private-label channels.',
+          description: 'Delivering premium fragrance solutions across retail and wholesale channels.',
         },
       },
     }),
-    whyChooseUs: createWhyChooseUs({
+ whyChooseUs: createWhyChooseUs({
       headlinePrefix: 'Why Luxury Buyers Choose Super Value',
       headlineEmphasis: '',
       description: 'We supply fragrance programs with reliable sourcing, premium presentation, and market-ready consistency.',
@@ -405,14 +464,14 @@ export const productData = {
       cardCtaLabel: 'Start a Project',
     }),
     cta: {
-      eyebrow: "READY TO ELEVATE YOUR SCENT?",
-      title: "Craft Signature Fragrances with Super Value Trading LLC",
-      description: "Partner with us for premium perfumery ingredients, private-label development, and retail-ready fragrance solutions.",
-      primaryBtnText: "Start a Project",
+      eyebrow: "READY TO CREATE YOUR PERFUME BRAND?",
+      title: "Start Your Journey With Us",
+      description: "Tell us what you want to build, who you want to sell to, and how you want your fragrance brand to feel. Let's explore the right private-label direction for you.",
+      primaryBtnText: "Start Your Perfume Brand →",
       primaryBtnLink: "/contact",
-      secondaryBtnText: "Get in Touch",
+      secondaryBtnText: "Discuss Your Requirements",
       secondaryBtnLink: "/contact",
-      image: PerfumeBottleImg // Import and place your specific image here
+      image: PerfumeBottleImg 
     },
     aestheticShowcase: {
       headline: "FRAGRANCE,\nBUILT TO STAND OUT.",
@@ -460,107 +519,145 @@ export const productData = {
       themeTo: "to-[#02050b]",
       accent: "text-orange-500"
     },
-    sections: createSectionOrder('trustedMarkets', 'fmcgShowcase', 'productShowcase', 'solutions', 'bikeShowcase', 'carShowcase', 'whyChooseUs'),
-    trustedMarkets: {
-      title: "Partnered with Leading Manufacturers",
-   logos: [
-        { id: 1, name: "Michelin", src: one },
-        { id: 2, name: "Bridgestone", src:two  },
-        { id: 3, name: "Pirelli", src: three },
-        { id: 4, name: "Goodyear", src: four },
-        { id: 5, name: "Continental", src: five },
-        { id: 6, name: "Dunlop", src: six }
-      ]
-    },
+sections: createSectionOrder('trustedMarkets', 'fmcgShowcase', 'productShowcase', 'solutions', 'bikeShowcase', 'carShowcase', 'whyChooseUs'),
     showcase: {
       about: {
-        title: "Automotive Trading",
-        highlight: "Tire Supply",
-        headline: "Leaders in Global",
-        description: "We support the export and import of two-wheelers, three-wheelers, EVs, tires, tubes, and auto parts with dependable sourcing and supply chain execution.",
-        image: "https://images.unsplash.com/photo-1578844251758-2f71da64c96f?q=80&w=1000&auto=format&fit=crop", // Tire warehouse or logistics
+        title: "Automotive Focus",
+        highlight: "Specialized Export",
+        headline: "Leaders in",
+        description: "Our automotive division operates with a sharp focus on two primary categories: Vehicles (Two and Three Wheelers) and Spare Parts. We are an authorized distribution partner for global names like Piaggio, TVS, and Hero. Furthermore, we provide exclusive private label opportunities under the Supervalue brand for tires, tubes, and essential components.",
+        image: "https://images.unsplash.com/photo-1578844251758-2f71da64c96f?q=80&w=1000&auto=format&fit=crop", 
         stats: [
-          { value: "23+", label: "Years Experience" },
-          { value: "80+", label: "Countries" },
-          { value: "100%", label: "Quality" }
+          { value: "Piaggio", label: "TVS & Hero" },
+          { value: "EVs", label: "Modern Solutions" },
+          { value: "Private Label", label: "Supervalue Brand" }
         ]
       },
       categories: [
         { 
-          title: "Two & Three Wheelers", 
-          desc: "Vehicles and mobility solutions for fast-moving consumer and transport markets.", 
-          img: "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?q=80&w=800&auto=format&fit=crop" 
-        },
-        { 
-          title: "EVs", 
-          desc: "Electronic vehicles for modern mobility programs and expanding market demand.", 
-          img: "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?q=80&w=800&auto=format&fit=crop" 
-        },
-        { 
-          title: "Tires & Tubes", 
-          desc: "High-performance tires, tubes, and supporting product lines for reliable road use.", 
+          title: "Bikes & EVs", 
+          desc: "Premium two-wheelers and cutting-edge Electronic Vehicles (EVs) from industry giants like Hero and TVS.", 
           img: "https://images.unsplash.com/photo-1558981403-c5f9899a28bc?q=80&w=800&auto=format&fit=crop" 
         },
         { 
-          title: "Auto Parts", 
-          desc: "OEM and aftermarket spare parts, batteries, and consumables for automotive trade.", 
+          title: "Two & Three Wheelers", 
+          desc: "Highly durable commercial and passenger three-wheelers, proudly featuring Piaggio and TVS models.", 
+          img: "https://images.unsplash.com/photo-1514316454349-750a7fd3da3a?q=80&w=800&auto=format&fit=crop" 
+        },
+        { 
+          title: "Tires & Tubes", 
+          desc: "High-performance tires and tubes tailored for all terrains. Available in our exclusive Supervalue private label.", 
+          img: "https://images.unsplash.com/photo-1580273916550-e323be2ae537?q=80&w=800&auto=format&fit=crop" 
+        },
+        { 
+          title: "All Other Parts", 
+          desc: "A comprehensive catalog of automotive spare parts, strictly quality-controlled under the Supervalue brand.", 
           img: "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?q=80&w=800&auto=format&fit=crop" 
         }
       ]
     },
-    solutions: {
+    // Add this inside the "automobiles" object in ProductData.jsx
+
+editorialShowcase: {
+  intro: {
+    title: "Automotive Solutions",
+    description: "Our automotive portfolio covers complete mobility solutions and automotive aftermarket products, ranging from two-wheelers and three-wheelers to electric vehicles, tyres, tubes, spare parts and private-label products."
+  },
+  category01: {
+    label: "CATEGORY 01 — MOBILITY",
+    heading: "Two & Three Wheelers / Electric Vehicles",
+    description: "We provide mobility solutions across two-wheelers, three-wheelers and electric vehicles, serving both commercial and passenger transportation requirements.",
+    image: "https://images.unsplash.com/photo-1558981403-c5f9899a28bc?q=80&w=1000&auto=format&fit=crop", // Bike/Mobility image
+    imageAlt: "Two and Three Wheelers",
+    subCategories: ["Bikes", "Three Wheelers", "Electric Vehicles (EVs)"],
+    brands: ["Piaggio", "TVS", "Hero"],
+    ctaLabel: "Explore Mobility Solutions →",
+    ctaHref: "/contact"
+  },
+  category02: {
+    label: "CATEGORY 02 — AUTOMOTIVE AFTERMARKET",
+    heading: "Spare Parts, Tyres & Private Label",
+    description: "Beyond complete vehicles, we supply a wide range of automotive aftermarket products including tyres, tubes, spare parts and other components. Our private-label capability also allows customers to develop and market products under their own brand name.",
+    image: "https://images.unsplash.com/photo-1580273916550-e323be2ae537?q=80&w=1000&auto=format&fit=crop", // Tyres/Parts image
+    imageAlt: "Automotive Aftermarket",
+    subCategories: ["Tyres", "Tubes", "Automotive Spare Parts", "Other Automotive Components"],
+    privateLabel: {
+      heading: "Your Brand. Your Product. Your Market.",
+      description: "You can create and market products under your own brand across eligible automotive categories. We support private-label opportunities where products can be supplied with your branding, packaging and market positioning.",
+      blocks: [
+        { title: "YOUR BRAND", desc: "Custom branding" },
+        { title: "YOUR PRODUCT", desc: "Selected product categories" },
+        { title: "YOUR PACKAGING", desc: "Custom packaging" },
+        { title: "YOUR MARKET", desc: "Build your own product line" }
+      ]
+    }
+  },
+  brandSection: {
+    heading: "BRAND & PRIVATE LABEL CAPABILITIES",
+    distributed: {
+      title: "Existing / Distributed Brands",
+      brands: ["PIAGGIO", "TVS", "HERO"]
+    },
+    privateLabel: {
+      title: "PRIVATE LABEL",
+      description: "Create your own automotive product line under your own brand.\nPrivate-label opportunities across selected automotive categories.",
+      categories: ["Two Wheelers", "Three Wheelers", "EV Products", "Tyres", "Tubes", "Automotive Parts", "Other Eligible Products"]
+    }
+  }
+},
+solutions: {
       headline: "End-to-End Automotive Trade and Logistics",
       description: "From factory procurement to final delivery, our automotive division handles vehicles, tires, tubes, and parts with secure transit and efficiency.",
       cards: [
-        { title: "Tire Procurement", icon: <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" /></svg> },
-        { title: "Global Shipping", icon: <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg> },
-        { title: "Quality Checks", icon: <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg> },
-        { title: "Fleet Supply", icon: <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" /></svg> }
+        { title: "Two Wheelers", icon: <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" /></svg> },
+        { title: "Three Wheelers", icon: <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg> },
+        { title: "Private Label Parts", icon: <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg> },
+        { title: "Tires & Tubes", icon: <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" /></svg> }
       ]
     },
     productShowcase: createProductShowcase({
       image: TireImg,
-      imageAlt: 'Automotive tire showcase',
+      imageAlt: 'Automotive spare parts showcase',
       backgroundClass: 'bg-white',
       glowClass: 'bg-[#0a53a6]/12',
       accentClass: 'bg-[#0a53a6]',
       ctaClass: 'bg-[#0a53a6] hover:bg-[#0e67cd] shadow-[#0a53a6]/30',
       panels: {
         left: {
-          eyebrow: 'Global Mobility',
-          description: 'We connect vehicles, tires, tubes, and parts with dependable trade and logistics support.',
+          eyebrow: 'Supervalue Brand',
+          description: 'Take advantage of our custom private label capabilities. We manufacture and supply premium tires, tubes, and spare parts under our trusted Supervalue name.',
           ctaLabel: 'Start Sourcing',
           ctaHref: '/contact',
         },
         right: {
-          eyebrow: 'Tire Trading Network',
-          description: 'From commercial fleets to passenger products, our supply chain is built to handle high-volume export and import.',
-          ctaLabel: 'See Tire Range',
+          eyebrow: 'Piaggio, TVS, Hero',
+          description: 'We are proud exporters of the world’s leading two and three wheeler brands, including traditional combustion engines and modern Electronic Vehicles.',
+          ctaLabel: 'View Vehicle Range',
           ctaHref: '/contact',
         },
         bottom: {
           title: 'Distributed globally by Super Value',
-          description: 'Secure transit and competitive pricing for high-demand automotive categories.',
+          description: 'Your premier source for bikes, three-wheelers, and high-quality spare parts.',
         },
       },
     }),
     bikeShowcase: createVehicleShowcase({
       image: BikeTopImg,
       imageAlt: 'Automobile bike showcase',
-      title: 'High-Performance Mobility.',
-      description: 'Premium two-wheeler solutions engineered for the modern road and distributed across our global network.',
+      title: 'Hero & TVS Mobility.',
+      description: 'Supplying top-tier bikes and the latest Electronic Vehicles (EVs) engineered for the modern road.',
       backgroundClass: 'bg-[#0A101D]',
       glowClass: 'bg-[#0a53a6]/12',
       accentClass: 'bg-[#0a53a6]',
-      ctaLabel: 'Explore Solutions',
+      ctaLabel: 'Explore Two Wheelers',
       ctaHref: '/contact',
       ctaClass: 'bg-[#0a53a6] hover:bg-[#0e67cd] shadow-[#0a53a6]/30',
     }),
     carShowcase: createVehicleShowcase({
-      image: CarTopImg,
-      imageAlt: 'Automobile car showcase',
-      title: 'Commercial Vehicle Supply.',
-      description: 'Automotive vehicle sourcing, fleet support, and spare parts distribution for regional and international buyers.',
+      image: CarTopImg, // You can replace this image later with a 3-wheeler/Piaggio overhead shot if you have one
+      imageAlt: 'Three wheeler showcase',
+      title: 'Piaggio & TVS Utility.',
+      description: 'Reliable, heavy-duty three-wheelers built for commercial supply chains and passenger transit.',
       backgroundClass: 'bg-[#0A101D]',
       glowClass: 'bg-[#0a53a6]/12',
       accentClass: 'bg-[#0a53a6]',
@@ -571,22 +668,22 @@ export const productData = {
     whyChooseUs: createWhyChooseUs({
       headlinePrefix: 'Why Automotive Buyers Choose Super Value',
       headlineEmphasis: '',
-      description: 'We support tire and vehicle trading with trusted logistics, consistent quality, and competitive pricing.',
+      description: 'We strictly focus on two categories: Vehicles (Piaggio, TVS, Hero) and Spare Parts (Supervalue private label).',
       image: 'https://images.unsplash.com/photo-1578844251758-2f71da64c96f?q=80&w=1200&auto=format&fit=crop',
       imageAlt: 'Automotive logistics',
-      cardTitle: 'Fleet supply that stays on schedule',
-      cardDescription: 'We keep automotive buyers moving with vetted sourcing and secure transit.',
+      cardTitle: 'Supply that stays on schedule',
+      cardDescription: 'We keep automotive buyers moving with vetted sourcing and secure transit for parts and vehicles.',
       cardCtaLabel: 'Partner With Us',
     }),
     cta: {
       eyebrow: "READY TO DRIVE GLOBAL SUCCESS?",
-      title: "Accelerate Your Business with Super Value Trading LLC",
-      description: "Partner with us for vehicle distribution, tire sourcing, and logistics support across global markets.",
+      title: "Scale Your Business with Super Value Trading LLC",
+      description: "Partner with us for TVS, Hero, Piaggio vehicles, and custom Supervalue private label spare parts.",
       primaryBtnText: "Become a Partner",
       primaryBtnLink: "/contact",
       secondaryBtnText: "Get a Quote",
       secondaryBtnLink: "/contact",
-      image: TireImg // Import and place your specific image here
+      image: TireImg 
     },
     aestheticShowcase: {
       headline: "MOBILITY,\nREADY TO SCALE.",

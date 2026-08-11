@@ -44,14 +44,30 @@ export default function ServiceAbout({ category = "personal-care" }) {
           </h2>
           <p className="fmcg-text-item brand-lead text-slate-500 mb-10 max-w-xl">{data.description}</p>
           
-          <div className="fmcg-text-item w-full bg-white border border-slate-100 rounded-3xl p-6 flex items-center justify-between divide-x divide-slate-100 shadow-[0_20px_60px_rgba(7,19,38,0.08)] mb-10">
-            {data.stats.map((stat, i) => (
-              <div key={i} className="flex-1 flex flex-col items-center text-center">
-                <span className="text-3xl font-bold text-orange-500 mb-1">{stat.value}</span>
-                <span className="text-slate-400 text-sm font-medium">{stat.label}</span>
-              </div>
-            ))}
-          </div>
+        // Find the fmcg-text-item block containing data.stats in ServiceAbout.jsx and replace it with this:
+
+          {/* DYNAMIC DATA RENDERING: Positioning vs Stats */}
+          {data.positioning ? (
+            // PERFUMERY SPECIFIC: Market Positioning Blocks
+            <div className="fmcg-text-item w-full bg-[#0B1E3A] border border-slate-700/50 rounded-3xl p-6 md:p-8 flex flex-col md:flex-row items-start justify-between gap-6 shadow-2xl shadow-black/20 mb-10">
+              {data.positioning.map((pos, i) => (
+                <div key={i} className="flex-1 flex flex-col border-l-2 border-orange-500 pl-4 w-full">
+                  <span className="text-orange-500 font-bold text-xs uppercase tracking-widest mb-1">{pos.title}</span>
+                  <span className="text-white text-sm font-medium">{pos.desc}</span>
+                </div>
+              ))}
+            </div>
+          ) : (
+            // DEFAULT: Standard Stats Block (Personal Care / Auto)
+            <div className="fmcg-text-item w-full bg-white border border-slate-100 rounded-3xl p-6 flex items-center justify-between divide-x divide-slate-100 shadow-[0_20px_60px_rgba(7,19,38,0.08)] mb-10">
+              {data.stats.map((stat, i) => (
+                <div key={i} className="flex-1 flex flex-col items-center text-center">
+                  <span className="text-3xl font-bold text-orange-500 mb-1">{stat.value}</span>
+                  <span className="text-slate-400 text-sm font-medium">{stat.label}</span>
+                </div>
+              ))}
+            </div>
+          )}
           <button className="fmcg-text-item brand-button bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-6 rounded-xl shadow-lg shadow-orange-500/30 transition-all duration-300 hover:-translate-y-0.5 flex items-center gap-2">
             Know More
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M13 5l7 7-7 7M5 12h15"></path></svg>

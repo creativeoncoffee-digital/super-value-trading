@@ -44,6 +44,7 @@ export default function Home() {
 
   return (
     <main ref={pageRef} className="w-full">
+      
       {/* 1. Hero Section */}
       <HomeHero />
       <TrustedMarkets />
