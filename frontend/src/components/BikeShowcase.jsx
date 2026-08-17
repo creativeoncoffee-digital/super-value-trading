@@ -111,7 +111,7 @@ export default function BikeShowcase({ category = 'automobiles' }) {
           <img
             src={data.image}
             alt={data.imageAlt || 'Vehicle showcase'}
-            className="bike-hero-img w-[80%] md:w-[95%] max-h-[50vh] md:max-h-[60vh] object-contain drop-shadow-[0_40px_80px_rgba(0,0,0,0.8)]"
+            className="bike-hero-img w-[80%] md:w-[95%] max-h-[50vh] md:max-h-[70vh] object-contain drop-shadow-[0_40px_80px_rgba(0,0,0,0.8)]"
           />
         </div>
 

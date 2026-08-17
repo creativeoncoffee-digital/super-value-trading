@@ -5,8 +5,8 @@ import BladeImg from '../assets/Products/Blade.png';
 import PerfumeBottleImg from '../assets/Products/PerfumeBottle.png'; // Make sure to add this image
 import PerfumeWhyChooseUsImg from '../assets/Products/PerfumeBottle.png';
 import TireImg from '../assets/Products/Tire.png';
-import BikeTopImg from '../assets/Products/bike-top.png';
-import CarTopImg from '../assets/Products/car-top.png';
+import BikeTopImg from '../assets/Products/BikeShow.png';
+import CarTopImg from '../assets/Products/CarShow.png';
 // import BannerImg from '../assets/Products/Banner.jpg';
 import one from '../assets/Products/one.png'; 
 import two from '../assets/Products/two.png';

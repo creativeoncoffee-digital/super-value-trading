@@ -34,9 +34,10 @@ export default function ServiceHero({ category = "personal-care" }) {
         "-=1.2"
       );
       
+      // FIX 2: Minimized the floating animation distance from 8 to 3 so it doesn't clip the borders
       tl.add(() => {
-        gsap.to(leftImgRef.current, { y: -8, rotation: -4, duration: 4, ease: "sine.inOut", yoyo: true, repeat: -1 });
-        gsap.to(rightImgRef.current, { y: 8, rotation: 4, duration: 3.5, ease: "sine.inOut", yoyo: true, repeat: -1, delay: 0.5 });
+        gsap.to(leftImgRef.current, { y: -3, rotation: -2, duration: 4, ease: "sine.inOut", yoyo: true, repeat: -1 });
+        gsap.to(rightImgRef.current, { y: 3, rotation: 2, duration: 3.5, ease: "sine.inOut", yoyo: true, repeat: -1, delay: 0.5 });
       });
       
     }, sectionRef);
@@ -45,8 +46,14 @@ export default function ServiceHero({ category = "personal-care" }) {
 
   if (!data) return <div className="h-[60vh] flex items-center justify-center">Category not found.</div>;
 
-  const imageSizeClass = isAutomobile ? "w-[16vw] max-w-[300px]" : "w-[25vw] max-w-[600px]";
-
+  // FIX 1: Explicitly defining full strings so Tailwind compiles the correct desktop sizes
+  const leftWrapperClass = isAutomobile 
+    ? "w-[16vw] max-w-[300px]" 
+    : "w-[25vw] max-w-[600px]";
+    
+  const rightWrapperClass = isAutomobile 
+    ? "w-[45vw] sm:w-[35vw] lg:w-[16vw] max-w-[300px]" 
+    : "w-[45vw] sm:w-[35vw] lg:w-[25vw] max-w-[600px]";
 
   return (
     <section ref={sectionRef} className="relative w-full min-h-[70vh] lg:min-h-[70vh] flex flex-col justify-center font-sans overflow-hidden bg-[#071326] brand-section pt-10 pb-20 lg:pt-0 lg:pb-0">
@@ -57,13 +64,14 @@ export default function ServiceHero({ category = "personal-care" }) {
       </div>
 
       {/* FLOATING IMAGES */}
-      {/* 1. Left image is completely hidden on mobile (hidden lg:block) */}
-      <div ref={leftImgRef} className={`hidden lg:block absolute -left-1 top-1/2 -translate-y-1/2 ${imageSizeClass} z-10 pointer-events-none drop-shadow-[0_20px_50px_rgba(0,0,0,0.8)] opacity-60`}>
+      
+      {/* Left Image: Moved up slightly to top-[48%] to give safe distance from bottom border */}
+      <div ref={leftImgRef} className={`hidden lg:block absolute -left-1 top-[48%] -translate-y-1/2 ${leftWrapperClass} z-10 pointer-events-none drop-shadow-[0_20px_50px_rgba(0,0,0,0.8)] opacity-60`}>
         <img src={data.leftImg} alt="Left Background" className="w-[70%] h-auto object-contain" />
       </div>
 
-      {/* 2. Right image is scaled for mobile and brought further LEFT into the screen */}
-      <div ref={rightImgRef} className={`absolute right-[14%] sm:right-[10%] top-[75%] lg:-right-25 lg:top-1/2 -translate-y-1/2 w-[45vw] sm:w-[35vw] lg:${imageSizeClass} z-20 pointer-events-none drop-shadow-[0_20px_50px_rgba(0,0,0,0.8)] opacity-50 lg:opacity-100`}>
+      {/* Right Image: Moved up slightly to top-[48%] on desktop, applied explicit Tailwind class */}
+      <div ref={rightImgRef} className={`absolute right-[14%] sm:right-[10%] top-[75%] lg:-right-25 lg:top-[48%] -translate-y-1/2 ${rightWrapperClass} z-20 pointer-events-none drop-shadow-[0_20px_50px_rgba(0,0,0,0.8)] opacity-50 lg:opacity-100`}>
         <img src={data.rightImg} alt="Right Showcase" className="w-full lg:w-[70%] h-auto object-contain" />
       </div>
 
@@ -71,8 +79,6 @@ export default function ServiceHero({ category = "personal-care" }) {
       <div className="relative z-30 w-full max-w-[1400px] mx-auto px-[clamp(1.5rem,5vw,4rem)] lg:pt-24 lg:pb-32">
         <div className="w-full lg:w-[65%] flex flex-col items-start text-left">
           
-     
-
           <h2 className={`hero-text-anim ${data.accent} font-bold uppercase tracking-[0.18em] text-xs md:text-sm mb-4`}> 
             {data.eyebrow}
           </h2>
@@ -85,7 +91,7 @@ export default function ServiceHero({ category = "personal-care" }) {
             {data.description}
           </p>
 
-          {/* 3. Feature Icons Row */}
+          {/* Feature Icons Row */}
           {data.features && (
             <div className="hero-text-anim flex flex-col lg:flex-row flex-wrap gap-x-8 gap-y-4 md:gap-y-6">
               {data.features.map((feat, index) => (
@@ -105,16 +111,10 @@ export default function ServiceHero({ category = "personal-care" }) {
         </div>
       </div>
 
-      {/* BOTTOM CURVED SWOOP (Fully Fixed for Mobile) */}
-      {/* translate-y-[1px] removes the subpixel gap beneath it, without heavily cutting into the section */}
+      {/* BOTTOM CURVED SWOOP */}
       <div className="absolute bottom-0 left-0 w-full leading-none z-40 transform translate-y-[1px] pointer-events-none">
-        {/* Increased mobile height to 60px so it's not a flat pancake */}
         <svg viewBox="0 0 1440 120" className="w-full h-[60px] md:h-[80px] lg:h-[120px] block" preserveAspectRatio="none">
-          {/* Solid White Fill */}
           <path d="M0,120 C480,120 960,40 1440,0 L1440,120 Z" fill="#ffffff" />
-          
-          {/* FIX: Lifted the orange path up slightly (y=116 instead of 120) so it never gets clipped by the section's overflow-hidden. */}
-          {/* FIX: Added vectorEffect="non-scaling-stroke" to maintain perfect 5px thickness across all devices. */}
           <path 
             d="M0,116 C480,116 960,36 1440,-4" 
             fill="none" 
