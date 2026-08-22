@@ -11,6 +11,8 @@ import WhyChooseUs from '../components/WhyChooseUs';
 import Faq from '../components/FAQ/Faq';
 import ServiceCTA from '../components/ServiceCTA';
 import Breadcrumb from '../components/Breadcrumb';
+import WhatWeOffer from '../components/Services/WhatWeOffer';
+import CreateYourBrand from '../components/Services/CreateYourBrand';
 
 export default function Perfumery() {
   const category = "perfumery";
@@ -20,25 +22,29 @@ export default function Perfumery() {
       <Breadcrumb />
       
       <ServiceHero category={category} />
-      <TrustedMarkets category={category} />
-      <ServiceAbout category={category} />
+      {/* <TrustedMarkets category={category} /> */}
+        <ServiceAbout category={category} />
+          <ServiceGrid category={category} />
+    
       
       {/* Conditionally render the Private Label Showcase instead of standard ServiceGrid */}
       
-        <PerfumeryPrivateLabelShowcase category={category} />
+        {/* <PerfumeryPrivateLabelShowcase category={category} /> */}
     
-        <ServiceGrid category={category} />
+    
     
 
-      <PerfumeryPrivateLabelProcess category={category} />
+      {/* <PerfumeryPrivateLabelProcess category={category} /> */}
       
       {/* Product Showcase acts as the distinct "Super Value - Our Own Brand" section based on data */}
       <ProductShowcase category={category} />
       
-      <PerfumeryVisualStory category={category} />
+      {/* <PerfumeryVisualStory category={category} />
       <PerfumeryCapabilities category={category} />
-      
+       */}
+       <CreateYourBrand category={category} />
       <WhyChooseUs category={category} />
+      <WhatWeOffer category={category} />
       <ServiceCTA category={category} />
       <Faq page="perfumery" />
     </main>

@@ -13,6 +13,7 @@ import Blogs from './pages/BlogMain';
 import Perfumery from './pages/Perfumery'; 
 import Automobliles from './pages/Automobiles'; 
 import PersonalCarePage from './pages/PersonalCarePage'; 
+import Silvermax from './pages/Silvermax';  // Import the Silvermax page
 // import BusinessActivities from './pages/BusinessActivities'; // Import this when ready for the "Others" link
 import ScrollToTop from './components/ScrollToTop';
 
@@ -40,6 +41,7 @@ function AppShell() {
         
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
+          <Route path="/silvermax" element={<Silvermax />} />  {/* Route for Silvermax page */}
           <Route path="/contact" element={<Contact />} /> 
           
           {/* Products & Services Routes */}

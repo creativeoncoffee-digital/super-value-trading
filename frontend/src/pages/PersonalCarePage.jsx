@@ -10,6 +10,8 @@ import Faq from '../components/FAQ/Faq';
 import ServiceCTA from '../components/ServiceCTA';
 import AestheticShowcase from '../components/Services/AestheticShowcase';
 import Breadcrumb from '../components/Breadcrumb';
+import WhatWeOffer from '../components/Services/WhatWeOffer';
+import CreateYourBrand from '../components/Services/CreateYourBrand'; 
 
 
 
@@ -21,14 +23,14 @@ export default function PersonalCarePage() {
       <Breadcrumb />
 
       <ServiceHero category={category} />
-      <TrustedMarkets category={category} />
-    
+        <ServiceGrid category={category} />
       <ServiceAbout category={category} />
-      <ProductShowcase category={category} />
-      <ServiceGrid category={category} />
+      <CreateYourBrand category={category} />
+   
       
       {/* <PersonalCareSolutions category={category} /> */}
       <WhyChooseUs category={category} />
+      <WhatWeOffer category={category} />
       <ServiceCTA category={category} />
       {/* <AestheticShowcase /> */}
       <Faq page="fmcg" />

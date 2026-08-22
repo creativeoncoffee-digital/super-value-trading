@@ -44,24 +44,6 @@ export default function WhyChooseUs({ category = 'personal-care' }) {
 
   return (
     <section ref={sectionRef} className="w-full bg-[#fcfcfc] font-sans overflow-hidden border-t border-slate-100">
-      
-      {/* Top Stats Bar */}
-      <div className="stats-bar w-full bg-[#071326] py-12 px-8">
-        <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-0 lg:divide-x divide-slate-700/50">
-          {data.stats.map((stat, index) => (
-            <div key={index} className="stat-item flex items-start gap-4 px-0 lg:px-8 first:pl-0">
-              <div className="text-orange-500 flex-shrink-0 mt-1">
-                {stat.icon}
-              </div>
-              <div className="flex flex-col">
-                <span className="text-white font-bold text-2xl md:text-3xl leading-none mb-1">{stat.number}</span>
-                <span className="text-orange-500 font-semibold text-sm mb-2">{stat.title}</span>
-                <p className="text-slate-400 text-xs leading-relaxed max-w-[200px]">{stat.desc}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
 
       {/* Main Content Area */}
       <div className="main-content max-w-[1400px] mx-auto px-[clamp(1.5rem,5vw,4rem)] py-24 md:py-32">

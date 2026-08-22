@@ -1,130 +1,238 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import gsap from 'gsap';
-import { productData } from '../../data/ProductData';
 
-export default function ServiceHero({ category = "personal-care" }) {
-  const sectionRef = useRef(null);
-  const leftImgRef = useRef(null);
-  const rightImgRef = useRef(null);
+// ============================================================================
+// INTERNAL DATA STORE
+// All hero data is now managed directly inside this file.
+//
+// HOW TO USE VIDEOS OR MULTIPLE BANNERS:
+// - Image: { type: 'image', src: 'url_here.jpg' }
+// - Video: { type: 'video', src: 'url_here.mp4' }
+// - If you put MORE THAN ONE item in the 'banners' array, they will 
+//   automatically auto-rotate every 5 seconds!
+// ============================================================================
+
+const heroDataStore = {
+  "automobiles": {
+ 
+    titleHighlight: "Automobiles",     // This will be Orange
+    titleWhite: "Parts & Accessories", // This will be White
+    description: "Reliable parts. Trusted brands. Powerful performance. Your one-stop destination for two & three wheelers and all kinds of spare parts.",
+    // buttons: [
+    //   { label: "Two & Three Wheelers", link: "/contact", style: "bg-gradient-to-r from-orange-500 to-orange-400 text-white border-none", icon: true },
+    //   { label: "Spare Parts & Accessories", link: "/contact", style: "bg-transparent border border-white/20 text-white hover:bg-white/5", icon: true }
+    // ],
+    banners: [
+      { type: 'image', src: 'https://images.unsplash.com/photo-1580273916550-e323be2ae537?q=80&w=2000&auto=format&fit=crop' },
+      // Example of adding a video or second image for auto-rotation:
+      // { type: 'video', src: 'https://www.yourwebsite.com/car-video.mp4' }
+    ],
+    features: [
+      { title: "Wide Product Range", desc: "Thousands of parts under one roof" },
+      { title: "Trusted Brands", desc: "Genuine products from top manufacturers" },
+      { title: "Bulk Supply", desc: "Wholesale pricing for dealers & distributors" },
+      { title: "Fast Delivery", desc: "On-time delivery across the globe" }
+    ]
+  },
+
+  "perfumery": {
+ 
+    titleHighlight: "PERFUMERY",
+    titleWhite: "Create Your Perfume",
+    description: "From accessible everyday to Luxury Premium — we help you create your own perfume brand that defines your identity.",
+    buttons: [],
+    banners: [
+      { type: 'image', src: 'https://images.unsplash.com/photo-1594035910387-fea47794261f?q=80&w=2000&auto=format&fit=crop' }
+    ],
+    features: [
+      { title: "Premium Quality Ingredients", desc: "Sourced globally for the best scent" },
+      { title: "Custom Fragrance Development", desc: "Signature scent profiles" },
+      { title: "Worldwide Delivery", desc: "Secure and insured transit" },
+           { title: "Global Supply", desc: "Worldwide export capabilities" }
+    ]
+  },
+
+  "personal-care": {
+    titleHighlight: "FMCG &", 
+    titleWhite: "Personal Care",
+    description: "Premium quality products. Trusted brands. Endless possibilities.",
+    buttons: [],
+    banners: [
+      { type: 'image', src: 'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&w=2000&auto=format&fit=crop' }
+    ],
+    features: [
+      { title: "Wide Range of Products", desc: "Thousands of items available" },
+      { title: "Trusted Partner Brands", desc: "Genuine and verified products" },
+      { title: "Quality Assured", desc: "100% authentic supply chain" },
+      { title: "Global Supply", desc: "Worldwide export capabilities" }
+    ]
+  },
+
+  "silvermax": {
+   
+    titleHighlight: "SILVERMAX",
+    titleWhite: "Precision Grooming Solutions",
+    description: "Authorized distribution and global supply of premium blades and grooming solutions engineered for absolute precision and comfort.",
+    buttons: [
+      { label: "Explore Blades", link: "/contact", style: "bg-orange-500 text-white border-none hover:bg-orange-600", icon: false }
+    ],
+    banners: [
+      { type: 'image', src: 'https://images.unsplash.com/photo-1556228578-0d85b1a4d571?q=80&w=2000&auto=format&fit=crop' }
+    ],
+    features: [
+      { title: "Precision Engineering", desc: "High-grade stainless steel" },
+      { title: "Trusted Brand", desc: "Global grooming standard" },
+      { title: "Bulk Wholesale", desc: "Optimized for distributors" },
+      { title: "Global Logistics", desc: "Fast worldwide shipping" }
+    ]
+  }
+};
+
+// Generic icons for the bottom strip
+const genericIcons = [
+  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />,
+  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />,
+  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />,
+  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+];
+
+export default function ServiceHero({ category = "automobiles" }) {
+  const [currentSlide, setCurrentSlide] = useState(0);
   
-  const data = productData[category]?.hero;
-  const isAutomobile = category === 'automobiles';
+  // Safely grab the data based on the category passed in, default to automobiles if missing
+  const data = heroDataStore[category] || heroDataStore["automobiles"];
 
+  // =========================================================
+  // AUTO-ROTATING BANNER LOGIC
+  // =========================================================
   useEffect(() => {
-    if (!data) return;
-    let ctx = gsap.context(() => {
-      const tl = gsap.timeline();
-      
-      tl.fromTo('.hero-text-anim', 
-        { opacity: 0, y: 30 }, 
-        { opacity: 1, y: 0, duration: 1, stagger: 0.15, ease: 'power3.out' }
-      );
-      
-      tl.fromTo(leftImgRef.current, 
-        { opacity: 0, xPercent: -100, rotation: -5 }, 
-        { opacity: 1, xPercent: -30, rotation: -2, duration: 1.2, ease: 'power3.out' }, 
-        "-=0.8"
-      );
-      
-      // Right image slides in
-      tl.fromTo(rightImgRef.current, 
-        { opacity: 0, xPercent: 100, rotation: 5 }, 
-        { opacity: 1, xPercent: 30, rotation: 2, duration: 1.2, ease: 'power3.out' }, 
-        "-=1.2"
-      );
-      
-      // FIX 2: Minimized the floating animation distance from 8 to 3 so it doesn't clip the borders
-      tl.add(() => {
-        gsap.to(leftImgRef.current, { y: -3, rotation: -2, duration: 4, ease: "sine.inOut", yoyo: true, repeat: -1 });
-        gsap.to(rightImgRef.current, { y: 3, rotation: 2, duration: 3.5, ease: "sine.inOut", yoyo: true, repeat: -1, delay: 0.5 });
-      });
-      
-    }, sectionRef);
-    return () => ctx.revert();
-  }, [data]);
+    // Only run the interval if there is more than 1 banner (Image or Video)
+    if (data.banners.length <= 1) return;
 
-  if (!data) return <div className="h-[60vh] flex items-center justify-center">Category not found.</div>;
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % data.banners.length);
+    }, 5000); // Rotates every 5 seconds
 
-  // FIX 1: Explicitly defining full strings so Tailwind compiles the correct desktop sizes
-  const leftWrapperClass = isAutomobile 
-    ? "w-[16vw] max-w-[300px]" 
-    : "w-[25vw] max-w-[600px]";
-    
-  const rightWrapperClass = isAutomobile 
-    ? "w-[45vw] sm:w-[35vw] lg:w-[16vw] max-w-[300px]" 
-    : "w-[45vw] sm:w-[35vw] lg:w-[25vw] max-w-[600px]";
+    return () => clearInterval(interval);
+  }, [data.banners.length]);
 
   return (
-    <section ref={sectionRef} className="relative w-full min-h-[70vh] lg:min-h-[70vh] flex flex-col justify-center font-sans overflow-hidden bg-[#071326] brand-section pt-10 pb-20 lg:pt-0 lg:pb-0">
+    <section className="relative w-full min-h-[85vh] lg:min-h-[80vh] flex flex-col justify-end bg-[#07101E] overflow-hidden font-sans pt-32 pb-6">
       
-      <div className={`absolute inset-0 w-full h-full bg-gradient-to-br ${data.themeFrom} ${data.themeTo}`}>
-        <div className="absolute inset-0 w-full h-full bg-cover bg-center opacity-30 mix-blend-screen" style={{ backgroundImage: `url(${data.bgBanner})` }}></div>
-        <div className="absolute top-0 right-0 w-[60vh] h-[60vh] bg-blue-400/10 rounded-full blur-[120px] pointer-events-none"></div>
-      </div>
-
-      {/* FLOATING IMAGES */}
-      
-      {/* Left Image: Moved up slightly to top-[48%] to give safe distance from bottom border */}
-      <div ref={leftImgRef} className={`hidden lg:block absolute -left-1 top-[48%] -translate-y-1/2 ${leftWrapperClass} z-10 pointer-events-none drop-shadow-[0_20px_50px_rgba(0,0,0,0.8)] opacity-60`}>
-        <img src={data.leftImg} alt="Left Background" className="w-[70%] h-auto object-contain" />
-      </div>
-
-      {/* Right Image: Moved up slightly to top-[48%] on desktop, applied explicit Tailwind class */}
-      <div ref={rightImgRef} className={`absolute right-[14%] sm:right-[10%] top-[75%] lg:-right-25 lg:top-[48%] -translate-y-1/2 ${rightWrapperClass} z-20 pointer-events-none drop-shadow-[0_20px_50px_rgba(0,0,0,0.8)] opacity-50 lg:opacity-100`}>
-        <img src={data.rightImg} alt="Right Showcase" className="w-full lg:w-[70%] h-auto object-contain" />
-      </div>
-
-      {/* MAIN TEXT CONTENT */}
-      <div className="relative z-30 w-full max-w-[1400px] mx-auto px-[clamp(1.5rem,5vw,4rem)] lg:pt-24 lg:pb-32">
-        <div className="w-full lg:w-[65%] flex flex-col items-start text-left">
+      {/* ========================================================= */}
+      {/* BACKGROUND SLIDER (Images & Videos)                       */}
+      {/* ========================================================= */}
+      <div className="absolute inset-0 z-0">
+        {data.banners.map((banner, index) => {
+          const isActive = index === currentSlide;
           
-          <h2 className={`hero-text-anim ${data.accent} font-bold uppercase tracking-[0.18em] text-xs md:text-sm mb-4`}> 
-            {data.eyebrow}
-          </h2>
+          return (
+            <div 
+              key={index} 
+              className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${isActive ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+            >
+              {/* Renders a video if type is 'video', otherwise renders an image */}
+              {banner.type === 'video' ? (
+                <video 
+                  src={banner.src} 
+                  autoPlay 
+                  loop 
+                  muted 
+                  playsInline 
+                  className="w-full h-full object-cover object-right lg:object-center"
+                />
+              ) : (
+                <img 
+                  src={banner.src} 
+                  alt="Hero Background" 
+                  className="w-full h-full object-cover object-right lg:object-center"
+                />
+              )}
 
-          <h1 className="hero-text-anim text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.05] md:leading-[0.98] mb-6 tracking-tight drop-shadow-lg whitespace-pre-line max-w-3xl">
-            {data.title}
+              {/* Seamless Dark Gradients: Fades the image perfectly into the dark blue background on the left */}
+              <div className="absolute inset-0 bg-gradient-to-r from-[#07101E] via-[#07101E]/90 to-transparent lg:w-[70%]"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-[#07101E] via-[#07101E]/40 to-transparent"></div>
+            </div>
+          );
+        })}
+      </div>
+
+      {/* ========================================================= */}
+      {/* MAIN TEXT CONTENT                                         */}
+      {/* ========================================================= */}
+      <div className="relative z-10 w-full max-w-[1400px] mx-auto px-[clamp(1.5rem,5vw,4rem)] flex flex-col justify-end h-full">
+        
+        <div className="w-full lg:w-[65%] xl:w-[55%] mb-12 md:mb-16 animate-in fade-in slide-in-from-bottom-8 duration-1000">
+          
+          {/* Eyebrow */}
+          <p className="text-slate-300 text-xs md:text-sm font-medium tracking-wide mb-6">
+            {data.eyebrow}
+          </p>
+
+          {/* Title Area */}
+          <h1 className="text-4xl md:text-5xl  font-bold tracking-tight leading-[1.1] mb-6 whitespace-pre-line">
+            {data.titleHighlight && (
+              <span className="text-orange-500 block mb-2">
+                {data.titleHighlight}
+              </span>
+            )}
+            <span className="text-white">
+              {data.titleWhite}
+            </span>
           </h1>
 
-          <p className="hero-text-anim text-slate-200 text-base md:text-xl leading-relaxed max-w-2xl font-normal mb-10 md:mb-12 drop-shadow-md brand-lead text-slate-100/90">
+          {/* Description */}
+          <p className="text-slate-300 text-base md:text-lg leading-relaxed max-w-xl mb-10">
             {data.description}
           </p>
 
-          {/* Feature Icons Row */}
-          {data.features && (
-            <div className="hero-text-anim flex flex-col lg:flex-row flex-wrap gap-x-8 gap-y-4 md:gap-y-6">
-              {data.features.map((feat, index) => (
-                <div key={index} className="flex items-center gap-3 w-fit">
-                  <div className="text-orange-500 bg-white/10 p-2 md:p-2.5 rounded-xl md:rounded-2xl backdrop-blur-md border border-white/20 shadow-lg shadow-black/20">
-                    {feat.icon}
-                  </div>
-                  <div className="flex flex-col">
-                    <span className="text-white font-bold text-sm leading-tight drop-shadow-md">{feat.title}</span>
-                    <span className="text-slate-300 text-[11px] md:text-xs font-medium">{feat.desc}</span>
-                  </div>
-                </div>
+          {/* Buttons Area */}
+          {data.buttons && data.buttons.length > 0 && (
+            <div className="flex flex-col sm:flex-row gap-4">
+              {data.buttons.map((btn, i) => (
+                <Link 
+                  key={i} 
+                  to={btn.link} 
+                  className={`flex items-center justify-center gap-3 px-8 py-4 rounded-xl font-bold text-sm md:text-base transition-all duration-300 ${btn.style}`}
+                >
+                  {btn.icon && (
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M12 4v16m8-8H4"></path></svg>
+                  )}
+                  {btn.label}
+                </Link>
               ))}
             </div>
           )}
 
         </div>
-      </div>
 
-      {/* BOTTOM CURVED SWOOP */}
-      <div className="absolute bottom-0 left-0 w-full leading-none z-40 transform translate-y-[1px] pointer-events-none">
-        <svg viewBox="0 0 1440 120" className="w-full h-[60px] md:h-[80px] lg:h-[120px] block" preserveAspectRatio="none">
-          <path d="M0,120 C480,120 960,40 1440,0 L1440,120 Z" fill="#ffffff" />
-          <path 
-            d="M0,116 C480,116 960,36 1440,-4" 
-            fill="none" 
-            stroke="#f97316" 
-            strokeWidth="5" 
-            vectorEffect="non-scaling-stroke" 
-          />
-        </svg>
-      </div>
+        {/* ========================================================= */}
+        {/* BOTTOM FEATURES STRIP                                     */}
+        {/* ========================================================= */}
+        <div className="w-full border-t border-white/10 pt-8 pb-4 animate-in fade-in duration-1000 delay-300">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+            {data.features.map((feat, i) => (
+              <div key={i} className="flex items-start gap-4">
+                
+                {/* Hexagon Outline Icon */}
+                <div className="w-10 h-10 md:w-12 md:h-12 rounded-lg border border-orange-500/40 flex items-center justify-center text-orange-500 shrink-0">
+                  <svg className="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    {genericIcons[i % genericIcons.length]}
+                  </svg>
+                </div>
+                
+                {/* Feature Text */}
+                <div className="flex flex-col">
+                  <h4 className="text-white font-bold text-sm leading-tight mb-1">{feat.title}</h4>
+                  <p className="text-slate-400 text-xs leading-snug">{feat.desc}</p>
+                </div>
 
+              </div>
+            ))}
+          </div>
+        </div>
+
+      </div>
     </section>
   );
 }

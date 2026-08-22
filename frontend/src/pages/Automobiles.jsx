@@ -12,6 +12,9 @@ import ServiceCTA from '../components/ServiceCTA';
 import AestheticShowcase from '../components/Services/AestheticShowcase';
 import Breadcrumb from '../components/Breadcrumb';
 import AutomotiveBrandFocus from '../components/Services/AutomotiveBrandFocus';
+import WhatWeOffer from '../components/Services/WhatWeOffer';
+import CreateYourBrand from '../components/Services/CreateYourBrand';
+
 
 export default function Automobiles() {
   const category = "automobiles";
@@ -20,11 +23,13 @@ export default function Automobiles() {
     <main className="w-full">
       <Breadcrumb />
       <ServiceHero category={category} />
-      <TrustedMarkets category={category} />
+      {/* <TrustedMarkets category={category} /> */}
+      <ServiceGrid category={category} />
       <AutomotiveBrandFocus />
      <ServiceAbout category={category} />
        <ProductShowcase category={category} />
-       <ServiceGrid category={category} />
+       <CreateYourBrand category={category} />
+  
       {/* <PersonalCareSolutions category={category} /> */}
       
       {/* Custom Automobile Components */}
@@ -32,6 +37,7 @@ export default function Automobiles() {
       <CarShowcase category={category} />
       
       <WhyChooseUs category={category} />
+      <WhatWeOffer category={category} />
       
       {/* FAQ for Automobiles */}
        <ServiceCTA category={category} />

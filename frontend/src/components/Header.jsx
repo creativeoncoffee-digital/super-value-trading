@@ -93,6 +93,7 @@ export default function Header() {
         <nav className="hidden md:flex flex-wrap items-center gap-[clamp(1rem,2vw,2rem)] text-[clamp(0.85rem,1vw,1rem)] font-bold">
           <Link to="/" className="hover:text-orange-500 transition-colors">Home</Link>
           <Link to="/about" className="hover:text-orange-500 transition-colors">About Us</Link>
+             <Link to="/silvermax" className="hover:text-orange-500 transition-colors">Silvermax</Link>
           
           {/* Animated Dropdown Menu for Products & Services */}
           <div className="relative group">

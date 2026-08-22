@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 // IMPORT YOUR IMAGES HERE (This fixes the broken image issue)
 import BladeImg from '../assets/Products/Blade.png';
 import PerfumeBottleImg from '../assets/Products/PerfumeBottle.png'; // Make sure to add this image
@@ -15,6 +16,7 @@ import four from '../assets/Products/four.png';
 import five from '../assets/Products/five.png';
 import six from '../assets/Products/six.png';
 import perfumeryBanner from '../assets/Products/perfumeryBanner.jpg'
+import perfuextra from '../assets/perfuextra.png'
 
 
 
@@ -207,7 +209,7 @@ export const productData = {
       ]
     },
     productShowcase: createProductShowcase({
-      image: BladeImg,
+      image: perfumeryBanner,
       imageAlt: "Personal care blade showcase",
       backgroundClass: 'bg-white',
       glowClass: 'bg-[#0a53a6]/12',
@@ -261,7 +263,7 @@ export const productData = {
       primaryBtnLink: "/contact",
       secondaryBtnText: "Get in Touch",
       secondaryBtnLink: "/contact",
-      image: BladeImg // Import and place your specific image here
+      image: perfuextra // Import and place your specific image here
     },
     aestheticShowcase: {
           headline: "PERSONAL CARE,\nREADY TO SCALE.",
@@ -454,7 +456,7 @@ export const productData = {
       },
     }),
  whyChooseUs: createWhyChooseUs({
-      headlinePrefix: 'Why Luxury Buyers Choose Super Value',
+      headlinePrefix: 'Why Choose Super Value',
       headlineEmphasis: '',
       description: 'We supply fragrance programs with reliable sourcing, premium presentation, and market-ready consistency.',
       image: PerfumeWhyChooseUsImg,

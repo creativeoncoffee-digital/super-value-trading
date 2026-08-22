@@ -44,7 +44,6 @@ export default function ServiceAbout({ category = "personal-care" }) {
           </h2>
           <p className="fmcg-text-item brand-lead text-slate-500 mb-10 max-w-xl">{data.description}</p>
           
-        // Find the fmcg-text-item block containing data.stats in ServiceAbout.jsx and replace it with this:
 
           {/* DYNAMIC DATA RENDERING: Positioning vs Stats */}
           {data.positioning ? (

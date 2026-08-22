@@ -18,7 +18,7 @@ export default function About() {
   activeColor="text-orange-500" 
 />
       <AboutHero />
-      <TrustedMarks />
+      {/* <TrustedMarks /> */}
       <WhoWeAre />
       <CoreValues />
       <ProductDivisions />
