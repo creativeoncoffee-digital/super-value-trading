@@ -245,7 +245,7 @@ export const productData = {
       ]
     },
     whyChooseUs: createWhyChooseUs({
-      headlinePrefix: 'Why Businesses Choose Super Value',
+      headlinePrefix: 'Why Choose Super Value',
       headlineEmphasis: '',
       description: 'We are committed to providing businesses with reliable products, seamless supply and unbeatable value.',
       image: 'https://images.unsplash.com/photo-1556228578-0d85b1a4d571?q=80&w=1200&auto=format&fit=crop',

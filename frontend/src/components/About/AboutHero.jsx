@@ -1,69 +1,58 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
-import { aboutData } from '../../data/AboutData';
-import HeroBadgeBar from '../HeroBadgeBar'; 
-
+import { Link } from 'react-router-dom';
 
 export default function AboutHero() {
   const sectionRef = useRef(null);
 
   useEffect(() => {
     let ctx = gsap.context(() => {
-      gsap.fromTo('.about-hero-anim',
+      gsap.fromTo('.about-anim',
         { opacity: 0, y: 30 },
-        { opacity: 1, y: 0, duration: 1, stagger: 0.15, ease: 'power3.out' }
-      );
-      gsap.fromTo('.about-hero-img',
-        { opacity: 0, x: 50 },
-        { opacity: 1, x: 0, duration: 1.2, ease: 'power3.out' }
+        { opacity: 1, y: 0, duration: 1, stagger: 0.15, ease: 'power3.out', delay: 0.2 }
       );
     }, sectionRef);
     return () => ctx.revert();
   }, []);
 
   return (
-    // FIX: Changed to h-auto on mobile with thick padding (pt-24 pb-48) to avoid the badge overlap. Desktop stays at h-[60vh].
-    <section ref={sectionRef} className="relative w-full h-auto lg:h-[60vh] min-h-[600px] lg:min-h-[500px] pt-24 pb-48 lg:py-0 bg-[#0A101D] flex items-center">
-      <div className="absolute inset-0 bg-gradient-to-r from-[#0A101D] via-[#0A101D]/90 to-transparent z-10 pointer-events-none"></div>
+    <section ref={sectionRef} className="relative w-full  min-h-[90vh] flex flex-col justify-end bg-[#07101E] overflow-hidden font-sans pt-32 pb-16">
       
-      <div className="max-w-[1400px] mx-auto w-full px-[clamp(1.5rem,5vw,4rem)] flex justify-between items-center relative z-20 h-full">
-        
-        {/* Left Content */}
-        <div className="w-full lg:w-1/2 flex flex-col justify-center max-w-xl">
-          <div className="about-hero-anim flex items-center gap-4 mb-4">
-            <span className="w-10 h-[2px] bg-orange-500"></span>
-            <p className="text-orange-500 font-bold uppercase tracking-[0.2em] text-xs">
-              {aboutData.hero.label}
-            </p>
-          </div>
-          <h1 className="about-hero-anim text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-            {aboutData.hero.titlePart1} <br />
-            <span className="text-orange-500">{aboutData.hero.titlePart2}</span>
+      {/* Background Image & Gradient */}
+      <div className="absolute  inset-0 z-0">
+        <img 
+          src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2000&auto=format&fit=crop" 
+          alt="About Super Value" 
+          className="w-full h-full object-cover opacity-60"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#07101E] via-[#07101E]/90 to-transparent lg:w-[65%]"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-[#07101E] via-[#07101E]/40 to-transparent"></div>
+      </div>
+
+      <div className="relative z-10 w-full max-w-[1400px]  mx-auto px-[clamp(1.5rem,5vw,4rem)]">
+        <div className="w-full lg:w-[60%] mb-8">
+          
+          {/* <p className="about-anim text-orange-500  font-bold uppercase tracking-[0.2em] text-xs md:text-sm mb-4">
+            ABOUT US
+          </p> */}
+
+          <h1 className="about-anim text-4xl md:text-6xl  font-bold text-white tracking-tight leading-[1.05] mb-6">
+            23+ Years of <br />
+            <span className="text-orange-500">International Trade</span>
           </h1>
-          <p className="about-hero-anim text-slate-400 text-base md:text-lg leading-relaxed">
-            {aboutData.hero.description}
+
+          <p className="about-anim text-gray-300 text-base md:text-md leading-relaxed max-w-xl mb-10">
+            Super Value General Trading LLC is a Dubai-based partner for FMCG, perfumery, automobiles, and private-label growth, serving markets across the Middle East, Africa, Europe, Asia, and beyond.
           </p>
-        </div>
 
-        {/* Right Overlapping Image Container */}
-        <div className="hidden lg:block absolute right-0 top-0 h-full w-[45%] about-hero-img pointer-events-none">
-          <div className="w-full h-full rounded-tl-[80px] rounded-bl-[80px] overflow-hidden border-l-4 border-y-4 border-white/5">
-            <img 
-              src={aboutData.hero.image} 
-              alt="Premium Products" 
-              className="w-full h-full object-cover opacity-80 mix-blend-lighten"
-            />
-            <div className="absolute inset-0 bg-gradient-to-l from-transparent to-[#0A101D]/50 pointer-events-none"></div>
+          <div className="about-anim">
+            <Link to="/contact" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold text-sm px-8 py-3.5 rounded transition-all shadow-[0_4px_20px_rgba(243,121,10,0.4)]">
+              Partner With Us
+            </Link>
           </div>
+
         </div>
-      
       </div>
-
-      {/* OVERLAPPING BADGE BAR */}
-      <div className="absolute bottom-0 left-0 w-full translate-y-[60%] lg:translate-y-1/2 z-30">
-        <HeroBadgeBar />
-      </div>
-
     </section>
   );
 }

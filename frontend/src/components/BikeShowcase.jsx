@@ -95,7 +95,7 @@ export default function BikeShowcase({ category = 'automobiles' }) {
   if (!data) return null;
 
   return (
-    <section ref={containerRef} className={`relative w-full h-[100vh] ${data.backgroundClass || 'bg-[#0A101D]'} font-sans overflow-hidden`}>
+    <section ref={containerRef} className={`relative w-full h-[100vh]  bg-[#111111] font-sans overflow-hidden`}>
       
       <div className="absolute inset-0 w-full h-full flex items-center justify-center">
         

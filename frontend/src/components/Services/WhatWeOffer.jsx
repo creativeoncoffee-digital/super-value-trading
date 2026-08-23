@@ -223,7 +223,7 @@ export default function WhatWeOffer({ category = "personal-care" }) {
         {/* SECTION HEADER                                          */}
         {/* ======================================================= */}
         <div className="offer-header flex flex-col items-center text-center mb-12 md:mb-16">
-          <h4 className="text-[#e85a4f] font-bold uppercase tracking-widest text-xs md:text-sm mb-2">
+          <h4 className="text-orange-500 font-bold uppercase tracking-widest text-xs md:text-sm mb-2">
             {data.kicker}
           </h4>
           <h2 className="text-3xl md:text-5xl font-bold text-[#1c2331] tracking-tight">
@@ -266,7 +266,7 @@ export default function WhatWeOffer({ category = "personal-care" }) {
                   {card.bullets.map((bullet, i) => (
                     <li key={i} className="flex items-start gap-3">
                       {/* Custom Green Checkmark Icon matching the screenshot */}
-                      <svg className="w-5 h-5 text-[#3b5e2b] shrink-0 mt-0.5" viewBox="0 0 24 24" fill="currentColor">
+                      <svg className="w-5 h-5 text-[#111111] shrink-0 mt-0.5" viewBox="0 0 24 24" fill="currentColor">
                         <path fillRule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l4.5-6.25z" clipRule="evenodd" />
                       </svg>
                       <span className="text-[#1c2331] font-semibold text-sm">{bullet}</span>
@@ -277,7 +277,7 @@ export default function WhatWeOffer({ category = "personal-care" }) {
                 {/* Olive Green Button */}
                 <Link 
                   to={card.btnLink}
-                  className="w-fit bg-[#2d3319] hover:bg-[#1a1e0f] text-white text-sm font-bold py-3 px-6 rounded-lg transition-colors flex items-center gap-2"
+                  className="w-fit bg-[#2d3319] hover:bg-orange-500 text-white text-sm font-bold py-3 px-6 rounded-lg transition-colors flex items-center gap-2"
                 >
                   {card.btnText}
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

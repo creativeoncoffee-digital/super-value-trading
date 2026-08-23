@@ -16,6 +16,7 @@ import PersonalCarePage from './pages/PersonalCarePage';
 import Silvermax from './pages/Silvermax';  // Import the Silvermax page
 // import BusinessActivities from './pages/BusinessActivities'; // Import this when ready for the "Others" link
 import ScrollToTop from './components/ScrollToTop';
+import Gallery from './pages/Gallery';
 
 function App() {
   return (
@@ -53,6 +54,7 @@ function AppShell() {
           {/* <Route path="/business" element={<BusinessActivities />} /> */}
 
           <Route path="/blogs" element={<Blogs />} /> 
+         <Route path="/gallery" element={<Gallery />} /> 
           
           <Route path="*" element={<NotFound />} />
         </Routes>

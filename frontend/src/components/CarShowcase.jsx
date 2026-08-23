@@ -94,7 +94,7 @@ export default function CarShowcase({ category = 'automobiles' }) {
   if (!data) return null;
 
   return (
-    <section ref={containerRef} className="relative w-full h-[100vh] bg-[#050B14] font-sans overflow-hidden">
+    <section ref={containerRef} className="relative w-full h-[100vh] bg-[#111111] font-sans overflow-hidden">
       
       <div className="absolute inset-0 w-full h-full flex items-center justify-center">
         

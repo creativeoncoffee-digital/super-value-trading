@@ -8,6 +8,7 @@ import AboutCTA from '../components/About/AboutCTA';
 import TrustedMarks from '../components/TrustedMarkets';
 import Faq from '../components/FAQ/Faq';
 import Breadcrumb from '../components/Breadcrumb';
+import ServiceGallery from '../components/Services/ServiceGallery';
 
 export default function About() {
   return (
@@ -24,6 +25,7 @@ export default function About() {
       <ProductDivisions />
       <AboutStats />
       <AboutCTA />
+      <ServiceGallery category="exhibition  " />
       <Faq page="about" />
     </main>
   );

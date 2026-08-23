@@ -105,10 +105,10 @@ export default function CreateYourBrand({ category = "perfumery" }) {
           </h2>
           
           {/* Red Divider Line */}
-          <div className="brand-anim w-12 h-1 bg-[#e84e36] mt-6 mb-6"></div>
+          <div className="brand-anim w-9   h-1 bg-orange-500 mt-6 mb-6"></div>
           
           {/* Description */}
-          <p className="brand-anim text-slate-300 text-sm md:text-base leading-relaxed mb-8">
+          <p className="brand-anim text-gray-200 text-sm md:text-base leading-relaxed mb-8">
             {data.desc}
           </p>
 
@@ -118,7 +118,7 @@ export default function CreateYourBrand({ category = "perfumery" }) {
               <li key={index} className="flex items-center gap-3">
                 
                 {/* Gold/Yellow Outline Checkmark Icon */}
-                <svg className="w-5 h-5 text-[#d4af37] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <svg className="w-5 h-5 text-gray-500 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                   <circle cx="12" cy="12" r="10" strokeWidth="2" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 12.5l3 3 5-6" />
                 </svg>
@@ -132,7 +132,7 @@ export default function CreateYourBrand({ category = "perfumery" }) {
           <div className="brand-anim">
             <Link 
               to={data.btnLink}
-              className="inline-flex items-center gap-3 bg-[#242918] border border-[#7a6a43] text-white text-sm font-semibold py-3 px-6 rounded-md hover:bg-[#2d3319] hover:border-[#a68c53] transition-all duration-300"
+              className="inline-flex items-center gap-3 bg-orange-500   text-white text-sm font-semibold py-3 px-6 rounded-md hover:bg-orange-500  transition-all duration-300"
             >
               {data.btnText}
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

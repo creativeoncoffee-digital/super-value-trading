@@ -22,8 +22,11 @@ import Faq from '../components/FAQ/Faq';
 import TrustedMarkets from '../components/TrustedMarkets';
 gsap.registerPlugin(ScrollTrigger);
 
+
 export default function Home() {
   const pageRef = useRef(null);
+   const category = "home";
+
 
   useEffect(() => {
     let ctx = gsap.context(() => {
@@ -47,7 +50,7 @@ export default function Home() {
       
       {/* 1. Hero Section */}
       <HomeHero />
-      <TrustedMarkets />
+      <TrustedMarkets category="home" />
       <AboutSection />
       <WhatWeTrade />
       <WhyUs />

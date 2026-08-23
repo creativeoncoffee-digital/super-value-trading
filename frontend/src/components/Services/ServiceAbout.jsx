@@ -1,24 +1,107 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { productData } from '../../data/ProductData';
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function ServiceAbout({ category = "personal-care" }) {
+// ============================================================================
+// INTERNAL DATA STORE
+// All data for the 4 categories is now stored directly here.
+// Every category now uses the premium 3-block "positioning" design.
+// ============================================================================
+
+const aboutDataStore = {
+  "perfumery": {
+    title: "PRIVATE LABEL PERFUMERY",
+    headline: "From Fragrance Idea to",
+    highlight: "Your Own Brand",
+    description: "We help you create your own perfume brand with product options designed around your target audience, market positioning and desired presentation.",
+    image: "https://images.unsplash.com/photo-1594035910387-fea47794261f?q=80&w=800&auto=format&fit=crop",
+    bullets: [
+      "Uncompromising quality and safety standards",
+      "Seamless global export and logistics infrastructure",
+      "Tailored private label and OEM manufacturing solutions"
+    ],
+    positioning: [
+      { title: "VALUE", desc: "Everyday Fragrance" },
+      { title: "PREMIUM", desc: "Refined Lifestyle Fragrance" },
+      { title: "LUXURY", desc: "Signature Luxury Fragrance" }
+    ]
+  },
+  
+  "automobiles": {
+    title: "AUTOMOTIVE FOCUS",
+    headline: "Leaders in",
+    highlight: "Specialized Export",
+    description: "Our automotive division operates with a sharp focus on two primary categories: Vehicles (Two and Three Wheelers) and Spare Parts. We are an authorized distribution partner for global names like Piaggio, TVS, and Hero.",
+    image: "https://images.unsplash.com/photo-1578844251758-2f71da64c96f?q=80&w=800&auto=format&fit=crop",
+    bullets: [
+      "Authorized distribution for Piaggio, TVS, and Hero",
+      "Extensive catalog of OEM and aftermarket spare parts",
+      "Exclusive Supervalue private label components"
+    ],
+    positioning: [
+      { title: "VEHICLES", desc: "Two & Three Wheelers" },
+      { title: "EVs", desc: "Modern Mobility Solutions" },
+      { title: "PARTS", desc: "Supervalue Private Label" }
+    ]
+  },
+
+  "personal-care": {
+    title: "ABOUT SUPER VALUE",
+    headline: "Your Trusted",
+    highlight: "FMCG Partner",
+    description: "Super Value supplies grooming and personal care essentials across international markets, combining dependable sourcing, private-label support, and long-term distribution expertise.",
+    image: "https://images.unsplash.com/photo-1621607505833-616916c46a25?q=80&w=800&auto=format&fit=crop",
+    bullets: [
+      "International standards of quality and safety",
+      "End-to-end private label and OEM capabilities",
+      "Secure global logistics and supply chain"
+    ],
+    positioning: [
+      { title: "ESSENTIALS", desc: "Daily Grooming & Care" },
+      { title: "COSMETICS", desc: "Premium Beauty Lines" },
+      { title: "OEM", desc: "Custom Formulation & Packaging" }
+    ]
+  },
+
+  "silvermax": {
+    title: "ABOUT SILVERMAX",
+    headline: "Precision",
+    highlight: "Grooming Solutions",
+    description: "Authorized distribution and global supply of premium blades and grooming solutions engineered for absolute precision and comfort in every shave.",
+    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800&auto=format&fit=crop",
+    bullets: [
+      "High-grade stainless steel engineering",
+      "Platinum-coated edges for ultimate comfort",
+      "Scalable bulk and wholesale distribution"
+    ],
+    positioning: [
+      { title: "PLATINUM", desc: "Premium Multi-Coated Blades" },
+      { title: "STAINLESS", desc: "Reliable Everyday Performance" },
+      { title: "CUSTOM", desc: "OEM Blister & Packaging" }
+    ]
+  }
+};
+
+export default function ServiceAbout({ category = "perfumery" }) {
   const containerRef = useRef(null);
-  const data = productData[category]?.showcase?.about;
+  
+  // Safely grab the correct data block, defaulting to perfumery if none is found
+  const data = aboutDataStore[category] || aboutDataStore["perfumery"];
 
   useEffect(() => {
     if (!data) return;
     let ctx = gsap.context(() => {
-      gsap.fromTo('.fmcg-img', 
-        { opacity: 0, x: -50, scale: 0.95 }, 
-        { opacity: 1, x: 0, scale: 1, duration: 1, ease: 'power3.out', scrollTrigger: { trigger: '.fmcg-about-trigger', start: 'top 80%' } }
+      // Image smooth slide in
+      gsap.fromTo('.about-img-wrapper', 
+        { opacity: 0, x: -40 }, 
+        { opacity: 1, x: 0, duration: 1.2, ease: 'power3.out', scrollTrigger: { trigger: containerRef.current, start: 'top 75%' } }
       );
-      gsap.fromTo('.fmcg-text-item', 
-        { opacity: 0, y: 30 }, 
-        { opacity: 1, y: 0, duration: 0.8, stagger: 0.15, ease: 'power2.out', scrollTrigger: { trigger: '.fmcg-about-trigger', start: 'top 80%' } }
+      // Text content staggered reveal
+      gsap.fromTo('.about-text-anim', 
+        { opacity: 0, y: 20 }, 
+        { opacity: 1, y: 0, duration: 0.8, stagger: 0.1, ease: 'power2.out', scrollTrigger: { trigger: containerRef.current, start: 'top 75%' } }
       );
     }, containerRef);
     return () => ctx.revert();
@@ -27,50 +110,91 @@ export default function ServiceAbout({ category = "personal-care" }) {
   if (!data) return null;
 
   return (
-    <section ref={containerRef} className="fmcg-about-trigger w-full bg-[#f8fafc] pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden font-sans brand-section">
-      <div className="max-w-[1400px] mx-auto px-[clamp(1.5rem,5vw,4rem)] flex flex-col lg:flex-row gap-16 lg:gap-24 items-center">
-        <div className="fmcg-img w-full lg:w-1/2 flex justify-center lg:justify-start">
-          <div className="relative w-full max-w-[600px] aspect-[4/5] md:aspect-square rounded-[2.5rem] overflow-hidden shadow-2xl shadow-slate-300/50 group">
-            <img src={data.image} alt="Showcase" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
+    <section ref={containerRef} className="w-full bg-white py-24 md:py-32 font-sans overflow-hidden border-t border-slate-100">
+      <div className="max-w-[1400px] mx-auto px-[clamp(1.5rem,5vw,4rem)] flex flex-col lg:flex-row gap-16 lg:gap-20 items-center">
+        
+        {/* ========================================== */}
+        {/* LEFT: IMAGE SHOWCASE                       */}
+        {/* ========================================== */}
+        <div className="about-img-wrapper w-full lg:w-1/2 relative flex justify-center lg:justify-start">
+          
+          
+          {/* Main Image Container */}
+          <div className="relative w-full max-w-[550px] aspect-[4/5] rounded-[2.5rem] overflow-hidden shadow-[0_20px_60px_rgba(7,19,38,0.08)] group bg-slate-100">
+            <img 
+              src={data.image} 
+              alt={data.highlight} 
+              className="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-105" 
+            />
+            {/* Subtle Luxury Gradient Overlay on Hover */}
+            <div className="absolute inset-0 bg-gradient-to-t from-[#071326]/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
           </div>
         </div>
-        <div className="w-full lg:w-1/2 flex flex-col items-start">
-          <div className="fmcg-text-item flex items-center gap-4 mb-4">
-        
-            <h3 className="brand-kicker text-[#0B1E3A]">{data.title}</h3>
-          </div>
-          <h2 className="fmcg-text-item brand-title text-3xl md:text-4xl font-bold text-[#0B1E3A] tracking-tight mb-4">
-            {data.headline} <span className="text-orange-500">{data.highlight}</span>
-          </h2>
-          <p className="fmcg-text-item brand-lead text-slate-500 mb-10 max-w-xl">{data.description}</p>
-          
 
-          {/* DYNAMIC DATA RENDERING: Positioning vs Stats */}
-          {data.positioning ? (
-            // PERFUMERY SPECIFIC: Market Positioning Blocks
-            <div className="fmcg-text-item w-full bg-[#0B1E3A] border border-slate-700/50 rounded-3xl p-6 md:p-8 flex flex-col md:flex-row items-start justify-between gap-6 shadow-2xl shadow-black/20 mb-10">
+        {/* ========================================== */}
+        {/* RIGHT: TEXT & CONTENT                      */}
+        {/* ========================================== */}
+        <div className="w-full lg:w-1/2 flex flex-col items-start">
+          
+          {/* Eyebrow */}
+          <div className="about-text-anim flex items-center gap-4 mb-4">
+            <span className="w-8 h-[2px] bg-orange-500"></span>
+            <h3 className="text-orange-500 font-bold uppercase tracking-[0.2em] text-xs md:text-sm">
+              {data.title}
+            </h3>
+          </div>
+
+          {/* Headline with Gradient Highlight */}
+          <h2 className="about-text-anim text-3xl md:text-5xl font-bold text-[#071326] tracking-tight leading-[1.1] mb-6">
+            {data.headline} <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-orange-400">
+              {data.highlight}
+            </span>
+          </h2>
+
+          {/* Description */}
+          <p className="about-text-anim text-slate-500 text-base md:text-lg leading-relaxed mb-8 max-w-xl">
+            {data.description}
+          </p>
+
+          {/* Elegant Bullet Points */}
+          <ul className="about-text-anim flex flex-col gap-4 mb-10 w-full">
+            {data.bullets.map((bullet, i) => (
+              <li key={i} className="flex items-start gap-4">
+                <div className="w-6 h-6 rounded-full bg-orange-50 flex items-center justify-center shrink-0 mt-0.5 border border-orange-100">
+                  <svg className="w-3.5 h-3.5 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                </div>
+                <span className="text-[#071326] font-semibold text-sm md:text-base leading-snug">
+                  {bullet}
+                </span>
+              </li>
+            ))}
+          </ul>
+
+          {/* UNIFIED DESIGN: The 3-Block "Positioning" Style for EVERY category */}
+          <div className="about-text-anim w-full mb-10">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 bg-slate-50 rounded-2xl p-6 md:p-8 border border-slate-100 shadow-sm">
               {data.positioning.map((pos, i) => (
-                <div key={i} className="flex-1 flex flex-col border-l-2 border-orange-500 pl-4 w-full">
-                  <span className="text-orange-500 font-bold text-xs uppercase tracking-widest mb-1">{pos.title}</span>
-                  <span className="text-white text-sm font-medium">{pos.desc}</span>
+                <div key={i} className="flex flex-col border-l-2 border-orange-400 pl-4">
+                  <span className="text-[#071326] font-bold text-xs uppercase tracking-widest mb-1">{pos.title}</span>
+                  <span className="text-slate-500 text-xs font-medium leading-relaxed mt-1">{pos.desc}</span>
                 </div>
               ))}
             </div>
-          ) : (
-            // DEFAULT: Standard Stats Block (Personal Care / Auto)
-            <div className="fmcg-text-item w-full bg-white border border-slate-100 rounded-3xl p-6 flex items-center justify-between divide-x divide-slate-100 shadow-[0_20px_60px_rgba(7,19,38,0.08)] mb-10">
-              {data.stats.map((stat, i) => (
-                <div key={i} className="flex-1 flex flex-col items-center text-center">
-                  <span className="text-3xl font-bold text-orange-500 mb-1">{stat.value}</span>
-                  <span className="text-slate-400 text-sm font-medium">{stat.label}</span>
-                </div>
-              ))}
-            </div>
-          )}
-          <button className="fmcg-text-item brand-button bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-6 rounded-xl shadow-lg shadow-orange-500/30 transition-all duration-300 hover:-translate-y-0.5 flex items-center gap-2">
-            Know More
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M13 5l7 7-7 7M5 12h15"></path></svg>
-          </button>
+          </div>
+
+          {/* CTA Button */}
+          <div className="about-text-anim">
+            <button className="bg-orange-500  hover:bg-orange-500 text-white font-bold text-sm py-4 px-8 rounded-xl shadow-lg transition-all duration-300 flex items-center gap-3 group">
+              Discover More
+              <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+              </svg>
+            </button>
+          </div>
+
         </div>
       </div>
     </section>

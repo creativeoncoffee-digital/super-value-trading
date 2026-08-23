@@ -63,7 +63,7 @@ export default function BlogMain() {
 
   return (
     
-    <main ref={pageRef} className="w-full bg-[#f8fafc] min-h-screen pb-24 font-sans">
+    <main ref={pageRef} className="w-full bg-[#f8fafc] min-h-screen py-25  font-sans">
       {/* CUSTOMIZED BREADCRUMB FOR LIGHT BACKGROUND */}
       <Breadcrumb 
         textColor="text-slate-600" 
@@ -147,21 +147,21 @@ export default function BlogMain() {
           </h2>
           
           {/* Category Filter Pills */}
-          <div className="flex flex-wrap justify-center gap-3">
+          {/* <div className="flex flex-wrap justify-center gap-3">
             {categories.map((cat, index) => (
               <button
                 key={index}
                 onClick={() => setActiveCategory(cat)}
                 className={`px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 border ${
                   activeCategory === cat 
-                  ? 'bg-[#0B1E3A] text-white border-[#0B1E3A] shadow-lg' 
+                  ? 'bg-[#0B1E3A] text-whi  te border-[#0B1E3A] shadow-lg' 
                   : 'bg-white text-slate-600 border-slate-200 hover:border-orange-500 hover:text-orange-500'
                 }`}
               >
                 {cat}
               </button>
             ))}
-          </div>
+          </div> */}
         </div>
 
         {/* Posts Grid */}

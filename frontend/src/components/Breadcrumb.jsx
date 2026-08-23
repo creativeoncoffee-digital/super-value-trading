@@ -24,10 +24,10 @@ export default function Breadcrumb({
 
   return (
     // Absolute positioned to perfectly overlap the hero section
-    <div className="absolute top-[80px] md:top-[100px] left-0 w-full z-40 px-6 md:px-[clamp(1.5rem,5vw,4rem)] pointer-events-none">
+    <div className="absolute top-[80px] md:top-[80px] left-0 pt-2 w-full z-40 px-6 md:px-[clamp(1.5rem,5vw,4rem)] pointer-events-none">
       <div className="max-w-[1400px] mx-auto pointer-events-auto">
         <nav aria-label="Breadcrumb">
-          <ol className="flex items-center flex-wrap gap-2 text-sm md:text-base font-medium">
+          <ol className="flex items-center flex-wrap gap-2 text-xs md:text-xs font-medium">
             
             {/* HOME ICON & LINK */}
             <li className={`flex items-center ${textColor}`}>
