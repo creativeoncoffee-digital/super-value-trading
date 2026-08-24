@@ -277,7 +277,7 @@ export default function WhatWeOffer({ category = "personal-care" }) {
                 {/* Olive Green Button */}
                 <Link 
                   to={card.btnLink}
-                  className="w-fit bg-[#2d3319] hover:bg-orange-500 text-white text-sm font-bold py-3 px-6 rounded-lg transition-colors flex items-center gap-2"
+                  className="w-fit bg-orange-500 hover:bg-orange-500 text-white text-sm font-bold py-3 px-6 rounded-lg transition-colors flex items-center gap-2"
                 >
                   {card.btnText}
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
