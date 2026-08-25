@@ -1,16 +1,25 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger'; // Added just in case it's needed for other animations
+
+// --- DESKTOP BANNERS ---
+import per from "../../assets/Products/Banners/sv_per_banner.png"
+import auto from "../../assets/Products/Banners/sv_auto_banner.png"
+import blade from "../../assets/Products/Banners/sv_blade_banner.png"
+import care from "../../assets/Products/Banners/sv_care_banner.png"
+
+// import perMobile from "../../assets/Products/Banners/per_phone.png"
+import careMobile from "../../assets/Products/Banners/care_phone.png"
+import autoMobile from "../../assets/Products/Banners/auto_phone.png"
+import bladeMobile from "../../assets/Products/Banners/blade_phone.png"
+
+// --- MOBILE BANNERS (Placeholder) ---
+// UPDATE THESE LATER WITH YOUR ACTUAL MOBILE IMAGE
+
 
 // ============================================================================
 // INTERNAL DATA STORE
-// All hero data is now managed directly inside this file.
-//
-// VIDEO & MULTIPLE BANNER INSTRUCTIONS:
-// - To use an image: { type: 'image', src: 'url_here.jpg' }
-// - To use a video: { type: 'video', src: 'url_here.mp4' }
-// - If you add MORE THAN ONE object to the 'banners' array, the component 
-//   will automatically start a continuous rotating slideshow.
 // ============================================================================
 
 const heroDataStore = {
@@ -24,7 +33,8 @@ const heroDataStore = {
       { label: "Explore Products", link: "/contact", primary: false, arrow: false }
     ],
     banners: [
-      { type: 'image', src: 'https://images.unsplash.com/photo-1594035910387-fea47794261f?q=80&w=2000&auto=format&fit=crop' }
+      // FEATURE ADDED: 'mobileSrc' handles the phone banner
+      { type: 'image', src: per, mobileSrc:"" }
     ],
     features: [
       { title: "Premium", desc: "Quality Ingredients" },
@@ -44,7 +54,7 @@ const heroDataStore = {
       { label: "Spare Parts & Accessories", link: "/contact", primary: false, arrow: false }
     ],
     banners: [
-      { type: 'image', src: 'https://images.unsplash.com/photo-1580273916550-e323be2ae537?q=80&w=2000&auto=format&fit=crop' }
+      { type: 'image', src: auto, mobileSrc: [autoMobile] }
     ],
     features: [
       { title: "Wide Range", desc: "Thousands of parts" },
@@ -64,7 +74,7 @@ const heroDataStore = {
       { label: "Partner With Us", link: "/contact", primary: false, arrow: false }
     ],
     banners: [
-      { type: 'image', src: 'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&w=2000&auto=format&fit=crop' }
+      { type: 'image', src: care, mobileSrc: [careMobile] }
     ],
     features: [
       { title: "Wide Range", desc: "Extensive product line" },
@@ -84,7 +94,7 @@ const heroDataStore = {
       { label: "OEM Manufacturing", link: "/contact", primary: false, arrow: false }
     ],
     banners: [
-      { type: 'image', src: 'https://images.unsplash.com/photo-1556228578-0d85b1a4d571?q=80&w=2000&auto=format&fit=crop' }
+      { type: 'image', src: blade, mobileSrc: [bladeMobile] }
     ],
     features: [
       { title: "Precision", desc: "Engineering" },
@@ -107,23 +117,16 @@ export default function ServiceHero({ category = "perfumery" }) {
   const containerRef = useRef(null);
   const [currentSlide, setCurrentSlide] = useState(0);
   
-  // Safely grab the data based on the category passed in, default to perfumery
   const data = heroDataStore[category] || heroDataStore["perfumery"];
 
-  // =========================================================
-  // AUTO-ROTATING BANNER LOGIC
-  // =========================================================
   useEffect(() => {
     if (data.banners.length <= 1) return;
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % data.banners.length);
-    }, 5000); // Changes image/video every 5 seconds
+    }, 5000); 
     return () => clearInterval(interval);
   }, [data.banners.length]);
 
-  // =========================================================
-  // GSAP ENTRANCE ANIMATION
-  // =========================================================
   useEffect(() => {
     let ctx = gsap.context(() => {
       gsap.fromTo('.hero-text-anim', 
@@ -156,12 +159,28 @@ export default function ServiceHero({ category = "perfumery" }) {
               {banner.type === 'video' ? (
                 <video src={banner.src} autoPlay loop muted playsInline className="w-full h-full object-cover object-right lg:object-center" />
               ) : (
-                <img src={banner.src} alt="Hero Background" className="w-full h-full object-cover object-right lg:object-center" />
+                <>
+                  {/* DESKTOP BANNER */}
+                  <img 
+                    src={banner.src} 
+                    alt="Hero Background Desktop" 
+                    className={`w-full h-full object-cover object-right lg:object-center ${banner.mobileSrc ? 'hidden md:block' : ''}`} 
+                  />
+                  
+                  {/* MOBILE BANNER */}
+                  {banner.mobileSrc && (
+                    <img 
+                      src={banner.mobileSrc} 
+                      alt="Hero Background Mobile" 
+                      className="w-full h-full object-cover object-center block md:hidden" 
+                    />
+                  )}
+                </>
               )}
 
               {/* Seamless Dark Gradients masking the left side and bottom */}
-              <div className="absolute inset-0 bg-gradient-to-r from-[#111111] via-[#111111] to-transparent lg:w-[65%]"></div>
-              <div className="absolute inset-0 bg-gradient-to-t from-[#111111] via-[#111111]/40 to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-[#111111]/80 via-[#111111]/50 to-transparent lg:w-[65%]"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-[#111111]/80 via-[#111111]/40 to-transparent"></div>
             </div>
           );
         })}
@@ -173,45 +192,41 @@ export default function ServiceHero({ category = "perfumery" }) {
       <div className="relative z-10 w-full max-w-[1400px] mx-auto px-[clamp(1.5rem,5vw,4rem)]">
         
         {/* Top Text Content */}
-        <div className="w-full lg:w-[65%] xl:w-[50%] mb-12">
+        <div className="w-full lg:w-[65%] xl:w-[50%] mb-12 mt-10 md:mt-0">
 
-          {/* <h4 className="hero-text-anim text-orange-500 font-bold uppercase tracking-[0.2em] text-xs md:text-sm mb-3">
-            {data.kicker}
-          </h4> */}
-
-          <h1 className="hero-text-anim text-5xl md:text-6xl font-bold tracking-tight leading-[1.05] mb-6 whitespace-pre-line">
+          <h1 className="hero-text-anim text-4xl md:text-6xl font-bold tracking-tight leading-[1.1] md:leading-[1.05] mb-6 whitespace-pre-line">
             <span className="text-white block">{data.titleWhite}</span>
             <span className="text-orange-500">{data.titleOrange}</span>
           </h1>
 
-          <p className="hero-text-anim text-slate-300 text-base md:text-lg leading-relaxed max-w-2xl mb-8">
+          <p className="hero-text-anim text-slate-300 text-sm md:text-lg leading-relaxed max-w-2xl mb-8">
             {data.description}
           </p>
 
           {/* Stacked Features (Icon on Top, Text Below) */}
-          <div className="hero-text-anim grid grid-cols-2 md:grid-cols-4 gap-1 mb-8">
+          <div className="hero-text-anim grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-1 mb-8">
             {data.features.map((feat, i) => (
               <div key={i} className="flex flex-col items-start">
-                <svg className="w-7 h-7 text-orange-500 mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-6 h-6 md:w-7 md:h-7 text-orange-500 mb-2 md:mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   {genericIcons[i % genericIcons.length]}
                 </svg>
-                <h4 className="text-white font-bold text-sm leading-tight mb-1">{feat.title}</h4>
-                <p className="text-slate-400 text-xs leading-snug">{feat.desc}</p>
+                <h4 className="text-white font-bold text-xs md:text-sm leading-tight mb-1">{feat.title}</h4>
+                <p className="text-slate-400 text-[10px] md:text-xs leading-snug">{feat.desc}</p>
               </div>
             ))}
           </div>
 
           {/* Buttons Area */}
           {data.buttons && data.buttons.length > 0 && (
-            <div className="hero-text-anim flex flex-col sm:flex-row gap-4">
+            <div className="hero-text-anim flex flex-col sm:flex-row gap-3 md:gap-4">
               {data.buttons.map((btn, i) => (
                 <Link 
                   key={i} 
                   to={btn.link} 
-                  className={`flex items-center justify-center gap-2 px-8 py-3.5 rounded font-bold text-sm transition-all duration-300 ${
+                  className={`flex items-center justify-center gap-2 px-6 md:px-8 py-3.5 rounded font-bold text-sm transition-all duration-300 ${
                     btn.primary 
-                    ? 'bg-[#f3790a] hover:bg-orange-600 text-white' 
-                    : 'bg-transparent border border-white/20 text-white hover:bg-white/10'
+                    ? 'bg-[#f3790a] hover:bg-orange-600 text-white shadow-lg' 
+                    : 'bg-[#111111]/50 backdrop-blur-sm border border-white/20 text-white hover:bg-white/10'
                   }`}
                 >
                   {btn.label}

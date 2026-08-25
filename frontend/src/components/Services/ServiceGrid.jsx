@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -22,7 +23,6 @@ const gridDataStore = {
       { title: "Cosmetics", desc: "Premium cosmetics for every beauty need.", img: extra },
       { title: "Skincare", desc: "Nourish, protect & glow with our skincare range.", img: extra },
       { title: "Haircare", desc: "Stronger, healthier hair every day.", img: extra },
-      { title: "Hand Lotion", desc: "Soft, smooth & hydrated hands all day.", img: extra },
       { title: "Stationery", desc: "Quality stationery for school & businesses.", img: extra },
       { title: "Personal Care", desc: "Daily essentials for a confident you.", img: extra },
       { title: "Packaging", desc: "Innovative packaging for every industry.", img: extra },
@@ -37,8 +37,9 @@ const gridDataStore = {
       { title: "Electric Vehicles", desc: "Modern, eco-friendly mobility solutions.", img: autoextra },
       { title: "Tires & Tubes", desc: "Durable all-weather automotive tires.", img: autoextra },
       { title: "Spare Parts", desc: "Genuine OEM parts and accessories.", img: autoextra },
-      { title: "Batteries", desc: "Long-lasting power for all vehicles.", img: autoextra },
-      { title: "Lubricants", desc: "Premium oils for engine protection.", img: autoextra }, 
+      { title: "Batteries & Lubricants", desc: "Long-lasting power and lubricant  for all vehicles.", img: autoextra },
+      { title: "Batteries & Lubricants", desc: "Long-lasting power and lubricant  for all vehicles.", img: autoextra },
+      
     ]
   },
   "perfumery": {
@@ -49,7 +50,6 @@ const gridDataStore = {
       { title: "Everyday Fragrance", desc: "Accessible scents for daily wear.", img: perfuextra },
       { title: "Perfume Oils", desc: "Highly concentrated, lasting attars.", img: perfuextra },
       { title: "Deodorants", desc: "Refreshing aerosol body sprays.", img: perfuextra },
-      { title: "Gift Sets", desc: "Premium boxed fragrance collections.", img: perfuextra },
       { title: "Body Mists", desc: "Light, breezy sprays for quick refreshment.", img: perfuextra },
       { title: "Raw Extracts", desc: "Base notes for custom blending.", img: perfuextra },
     ]
@@ -62,9 +62,9 @@ const gridDataStore = {
       { title: "Platinum", desc: "Multi-layered platinum for enhanced comfort.", img: extra },
       { title: "Stainless Steel", desc: "Built for everyday shaving performance.", img: extra },
       { title: "Metal Razors", desc: "Classic, durable metal build for control.", img: extra },
-      { title: "Click Razors", desc: "Cartridge-ready with ergonomic grip.", img: extra },
       { title: "Shaving Cream", desc: "Rich lather for the ultimate smooth glide.", img: extra },
       { title: "OEM Blades", desc: "Custom manufactured for your brand.", img: extra },
+       { title: "OEM Blades", desc: "Custom manufactured for your brand.", img: extra },
     ]
   }
 };
@@ -126,10 +126,8 @@ export default function ServiceGrid({ category = "personal-care" }) {
         <div className="cat-grid-wrapper w-full grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8">
           
           {data.items.map((cat, index) => {
-            // Layout Logic: First 4 items = 3 columns (4 per row), Next 3 items = 4 columns (3 per row)
-            const gridClass = index < 4 
-              ? 'md:col-span-6 lg:col-span-3' 
-              : 'md:col-span-6 lg:col-span-4';
+            // Standard product items take 3 columns each (4 per row on desktop)
+            const gridClass = 'md:col-span-6 lg:col-span-3';
 
             return (
               <div 
@@ -165,10 +163,51 @@ export default function ServiceGrid({ category = "personal-care" }) {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 5l7 7-7 7"></path>
                   </svg>
                 </div>
-
               </div>
             );
           })}
+
+          {/* ======================================================= */}
+          {/* THE NEW DYNAMIC CTA BLOCK (Fills the remaining space)     */}
+          {/* Since there are 6 items, they leave exactly 2 empty       */}
+          {/* boxes (col-span-6). We perfectly fill this empty space!   */}
+          {/* ======================================================= */}
+          <div className="cat-card md:col-span-12 lg:col-span-3 relative bg-[#111111]/90 rounded-[2rem] p-8 md:p-8 flex flex-col justify-center items-start transition-all duration-500 ease-out hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(243,121,10,0.3)] overflow-hidden group">
+            
+            {/* Animated Glow Background */}
+            <div className="absolute top-0 right-0 w-64 h-64 bg-orange-500/20 rounded-full blur-[80px] pointer-events-none group-hover:bg-orange-500/30  duration-700"></div>
+            <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-blue-500/20 rounded-full blur-[60px] pointer-events-none"></div>
+
+            <div className="relative z-10 w-full">
+              
+              {/* Message Icon */}
+              <div className="w-14 h-14 bg-white/10 rounded-2xl flex items-center justify-center mb-6 md:mb-8 text-orange-500 backdrop-blur-md border border-white/10 group-hover:scale-110  group-hover:text-white transition-all duration-500">
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path>
+                </svg>
+              </div>
+              
+              <h3 className="text-white font-extrabold text-2xl  mb-4 leading-tight">
+                Looking for a <br className="hidden md:block" />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">Custom Solution?</span>
+              </h3>
+              
+              <p className="text-slate-300 text-sm md:text-sm  leading-relaxed mb-8 md:mb-10 max-w-md">
+                Don't see what you need? Send us a direct enquiry for custom manufacturing, bulk wholesale orders, or to explore our complete, unlisted catalog.
+              </p>
+              
+              <Link 
+                to="/contact" 
+                className="inline-flex items-center gap-3 bg-orange-500 hover:bg-orange-600 text-white font-bold text-sm md:text-base py-4 px-8 rounded-xl transition-all duration-300 shadow-[0_4px_20px_rgba(243,121,10,0.4)] hover:shadow-[0_6px_25px_rgba(243,121,10,0.6)] group/btn"
+              >
+                Send an Enquiry
+                <svg className="w-5 h-5 transform group-hover/btn:translate-x-1.5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                </svg>
+              </Link>
+              
+            </div>
+          </div>
 
         </div>
 

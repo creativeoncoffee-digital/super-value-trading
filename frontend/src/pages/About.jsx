@@ -9,6 +9,9 @@ import TrustedMarks from '../components/TrustedMarkets';
 import Faq from '../components/FAQ/Faq';
 import Breadcrumb from '../components/Breadcrumb';
 import ServiceGallery from '../components/Services/ServiceGallery';
+import AboutStory from '../components/About/AboutStory';
+import OurServices from '../components/About/OurServices';
+import HeroMarquee from '../components/HeroMarquee';
 
 export default function About() {
   return (
@@ -19,10 +22,13 @@ export default function About() {
   activeColor="text-orange-500" 
 />
       <AboutHero />
+      <HeroMarquee />
       {/* <TrustedMarks /> */}
-      <WhoWeAre />
-      <CoreValues />
+      <AboutStory />
+      {/* <WhoWeAre /> */}
+      {/* <CoreValues /> */}
       <ProductDivisions />
+      <OurServices />
       <AboutStats />
       <AboutCTA />
       <ServiceGallery category="exhibition  " />

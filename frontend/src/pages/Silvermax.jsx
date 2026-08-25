@@ -7,11 +7,19 @@ import ServiceSteps from '../components/Services/ServiceSteps';
 import ServiceGrid from '../components/Services/ServiceGrid';
 import ServiceGallery from '../components/Services/ServiceGallery';
 import Breadcrumb from '../components/Breadcrumb';
+import HeroMarquee from '../components/HeroMarquee';
 
 
 
 export default function Silvermax() {
     const category = "silvermax";
+  //   const silvermaxHighlights = [
+  //   "Cryogenic Coated Blades",
+  //   "Platinum Edges",
+  //   "Precision Engineering",
+  //   "Global Barber Choice",
+  //   "OEM Capable"
+  // ];
 
   return (
     <div>
@@ -21,6 +29,7 @@ export default function Silvermax() {
         hoverColor="hover:text-orange-500" 
       />
         <ServicesHero category="silvermax" /> 
+        <HeroMarquee/>
         <ServiceSteps category={category} />
         <ServiceGrid category={category} />
         <ProductShowcase category="personal-care" />

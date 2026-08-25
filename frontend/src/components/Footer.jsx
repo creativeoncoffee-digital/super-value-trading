@@ -46,7 +46,7 @@ export default function Footer() {
   };
 
   return (
-    <footer ref={footerRef} className="w-full bg-[#111111] text-white pt-24 pb-8 overflow-hidden border-t border-white/10 font-sans">
+    <footer ref={footerRef} className="w-full bg-[#111111]   text-white pt-24 pb-8 overflow-hidden border-t border-white/10 font-sans">
       <div className="max-w-[1400px] mx-auto px-[clamp(1.5rem,5vw,4rem)]">
         
         {/* --- TOP SECTION: DIRECT CONTACT & MINIMALIST FORM --- */}

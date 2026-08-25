@@ -14,6 +14,7 @@ import WhatWeOffer from '../components/Services/WhatWeOffer';
 import CreateYourBrand from '../components/Services/CreateYourBrand'; 
 import ServiceSteps from '../components/Services/ServiceSteps';
 import ServiceGallery from '../components/Services/ServiceGallery';
+import HeroMarquee from '../components/HeroMarquee';
 
 
 
@@ -29,6 +30,7 @@ export default function PersonalCarePage() {
             />
 
       <ServiceHero category={category} />
+      <HeroMarquee />
       <ServiceSteps category={category} />
       <ServiceAbout category={category} />
       <TrustedMarkets category={category} />

@@ -16,6 +16,7 @@ import WhatWeOffer from '../components/Services/WhatWeOffer';
 import CreateYourBrand from '../components/Services/CreateYourBrand';
 import ServiceSteps from '../components/Services/ServiceSteps';
 import ServiceGallery from '../components/Services/ServiceGallery';
+import HeroMarquee from '../components/HeroMarquee';
 
 
 export default function Automobiles() {
@@ -29,6 +30,7 @@ export default function Automobiles() {
            hoverColor="hover:text-orange-500" 
          />
       <ServiceHero category={category} />
+      <HeroMarquee/>
       <ServiceSteps category={category} />
        <ServiceAbout category={category} />
       <ServiceGrid category={category} />

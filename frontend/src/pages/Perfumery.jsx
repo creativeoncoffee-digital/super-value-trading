@@ -18,6 +18,7 @@ import ManufacturingShowcase from '../components/Services/ManufacturingShowcase'
 import ServiceGallery from '../components/Services/ServiceGallery';
 import CTABanner from '../components/CTABanner';
 import WhyPartner from '../components/WhyPartner';
+import HeroMarquee from '../components/HeroMarquee';
 
 export default function Perfumery() {
   const category = "perfumery";
@@ -31,6 +32,7 @@ export default function Perfumery() {
            />
       
       <ServiceHero category={category} />
+      <HeroMarquee  />
       <ServiceSteps category={category} />
       <TrustedMarkets category={category} />
         <ServiceAbout category={category} />
