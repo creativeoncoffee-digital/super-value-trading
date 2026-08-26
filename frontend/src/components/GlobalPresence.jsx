@@ -130,7 +130,7 @@ export default function GlobalPresence() {
         
         {/* Header */}
         <div className="text-center mb-10 max-w-2xl">
-          <h2 className="reveal-up text-3xl md:text-5xl font-bold text-[#0B1E3A] mb-4 tracking-tight">
+          <h2 className="reveal-up text-3xl md:text-5xl font-semibold text-[#0B1E3A] mb-4 tracking-tight">
             We're global to privilege you
           </h2>
           <p className="reveal-up text-slate-500 text-base leading-relaxed">
@@ -230,7 +230,7 @@ export default function GlobalPresence() {
                 <span 
                   ref={addToStatsRefs} 
                   data-target={stat.target} 
-                  className="text-4xl md:text-5xl font-black text-[#0B1E3A] tracking-tighter"
+                  className="text-3xl md:text-4xl font-semibold text-[#0B1E3A] tracking-tighter"
                 >
                   0
                 </span>

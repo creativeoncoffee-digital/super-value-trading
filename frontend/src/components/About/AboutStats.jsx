@@ -57,7 +57,7 @@ export default function AboutStats() {
         { opacity: 1, y: 0, duration: 0.8, stagger: 0.1, ease: 'power3.out', scrollTrigger: { trigger: '.stats-grid', start: 'top 85%' } }
       );
 
-      // AUTO-HOVER WAVE LOGIC
+      // AUTO-HOVER WAVE LOGIC (Slowed Down)
       ScrollTrigger.create({
         trigger: '.stats-grid',
         start: 'top 85%',
@@ -65,12 +65,13 @@ export default function AboutStats() {
         onEnter: () => {
           setTimeout(() => {
             statsData.forEach((_, i) => {
-              // Trigger hover ON
-              setTimeout(() => setAutoHoverIndex(i), i * 150);
-              // Trigger hover OFF slightly later
+              // Trigger hover ON (400ms delay between each card instead of 150ms)
+              setTimeout(() => setAutoHoverIndex(i), i * 400);
+              
+              // Trigger hover OFF (stays hovered for 600ms so it's clearly visible)
               setTimeout(() => {
                 setAutoHoverIndex(prev => prev === i ? -1 : prev);
-              }, i * 150 + 300); 
+              }, i * 400 + 600); 
             });
           }, 2000); // Wait for the fade-in animation to finish
         }

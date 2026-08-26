@@ -17,6 +17,8 @@ import Silvermax from './pages/Silvermax';  // Import the Silvermax page
 // import BusinessActivities from './pages/BusinessActivities'; // Import this when ready for the "Others" link
 import ScrollToTop from './components/ScrollToTop';
 import Gallery from './pages/Gallery';
+import ScrollRestoration from './components/ScrollRestoration';
+
 
 function App() {
   return (
@@ -32,11 +34,9 @@ function AppShell() {
 
   return (
     <div className={`flex min-h-screen flex-col bg-[linear-gradient(180deg,#ffffff_0%,#f7f9fc_45%,#ffffff_100%)] text-[#16202E] ${isHomePage ? '' : 'non-home-theme'}`}>
-      {/* The Header will always show at the top */}
+      <ScrollRestoration />
       <Header />
 
-      {/* The main content area that changes based on the URL */}
-        <ScrollToTop />
       <main className="flex-grow w-full">
         <Routes>
         
@@ -62,6 +62,8 @@ function AppShell() {
 
       {/* The Footer will always show at the bottom */}
       <Footer />
+      <ScrollToTop />
+
     </div>
   );
 }

@@ -53,7 +53,7 @@ export default function AboutSection() {
           
           <div className="about-text flex items-center gap-4 mb-4">
             <span className="w-8 h-[2px] bg-orange-500"></span>
-            <h2 className="brand-title text-3xl md:text-4xl font-bold text-[#0B1E3A] tracking-tight">
+            <h2 className="brand-title text-3xl md:text-4xl font-semibold text-[#0B1E3A] tracking-tight">
               About Super Value
             </h2>
           </div>

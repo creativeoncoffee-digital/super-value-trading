@@ -37,7 +37,7 @@ export default function WhatWeTrade() {
   const tradeItems = [
     { title: "FMCG & Personal Care", desc: "Razor blades, grooming systems, skincare, and everyday FMCG products for reliable trade supply.", img: icon1 },
     { title: "Perfumery & Fragrances", desc: "Luxury perfumes, perfume oils, and private-label fragrance development for global markets.", img: icon2 },
-    { title: "Consumer Goods", desc: "A diverse portfolio spanning specialty cosmetics, beauty goods, and private-label opportunities.", img: icon3 },
+    { title: "Silvermax Blade", desc: "High-quality blades for various industrial and consumer applications.", img: icon3 },
     { title: "Automobiles & Parts", desc: "Two-wheelers, three-wheelers, EVs, tires, tubes, and automotive parts across trade corridors.", img: icon4 },
   ];
 
@@ -46,7 +46,7 @@ export default function WhatWeTrade() {
       <div className="max-w-7xl mx-auto flex flex-col gap-10 md:gap-12">
         
         <div className="max-w-5xl">
-          <h2 className="text-3xl md:text-5xl font-bold text-[#0B1E3A] mb-4 tracking-tight">What We Trade</h2>
+          <h2 className="text-3xl md:text-5xl font-semibold text-[#0B1E3A] mb-4 tracking-tight">What We Trade</h2>
           <p className="text-slate-600 text-base md:text-lg leading-relaxed mb-4 md:mb-8 max-w-3xl">
             Our core focus is delivering high-demand consumer products with efficiency, reliability, and trust. With a sharp eye on compliance, we ensure seamless transactions that keep global markets supplied.
           </p>

@@ -73,7 +73,7 @@ export default function AboutStory() {
             </h4>
           </div>
 
-          <h2 className="story-text-anim text-3xl md:text-4xl lg:text-[42px] font-semibold text-[#0B1E3A] tracking-tight leading-[1.15] mb-6">
+          <h2 className="story-text-anim text-3xl md:text-5xl font-semibold text-[#0B1E3A] tracking-tight leading-[1.15] mb-6">
             Building Value <br className="hidden md:block" />
             Beyond Borders
           </h2>

@@ -46,7 +46,7 @@ export default function Footer() {
   };
 
   return (
-    <footer ref={footerRef} className="w-full bg-[#111111]   text-white pt-24 pb-8 overflow-hidden border-t border-white/10 font-sans">
+    <footer ref={footerRef} className="w-full bg-gray-800   text-white pt-24 pb-8 overflow-hidden border-t border-white/10 font-sans">
       <div className="max-w-[1400px] mx-auto px-[clamp(1.5rem,5vw,4rem)]">
         
         {/* --- TOP SECTION: DIRECT CONTACT & MINIMALIST FORM --- */}
@@ -91,7 +91,7 @@ export default function Footer() {
                     type="text" 
                     required 
                     placeholder="First Name *"
-                    className="w-full bg-transparent border-b border-slate-700 text-white px-0 py-3 outline-none focus:border-orange-500 transition-colors placeholder:text-slate-600 text-sm"
+                    className="w-full bg-transparent border-b border-slate-700 text-white px-0 py-3 outline-none focus:border-orange-500 transition-colors placeholder:text-white text-sm"
                   />
                 </div>
                 <div className="footer-item relative group">
@@ -99,7 +99,7 @@ export default function Footer() {
                     type="text" 
                     required 
                     placeholder="Last Name *"
-                    className="w-full bg-transparent border-b border-slate-700 text-white px-0 py-3 outline-none focus:border-orange-500 transition-colors placeholder:text-slate-600 text-sm"
+                    className="w-full bg-transparent border-b border-slate-700 text-white px-0 py-3 outline-none focus:border-orange-500 transition-colors placeholder:text-white text-sm"
                   />
                 </div>
               </div>
@@ -110,7 +110,7 @@ export default function Footer() {
                     type="email" 
                     required 
                     placeholder="Corporate Email *"
-                    className="w-full bg-transparent border-b border-slate-700 text-white px-0 py-3 outline-none focus:border-orange-500 transition-colors placeholder:text-slate-600 text-sm"
+                    className="w-full bg-transparent border-b border-slate-700 text-white px-0 py-3 outline-none focus:border-orange-500 transition-colors placeholder:text-white text-sm"
                   />
                 </div>
                 <div className="footer-item relative group">
@@ -118,7 +118,7 @@ export default function Footer() {
                     type="tel" 
                     required 
                     placeholder="Phone Number *"
-                    className="w-full bg-transparent border-b border-slate-700 text-white px-0 py-3 outline-none focus:border-orange-500 transition-colors placeholder:text-slate-600 text-sm"
+                    className="w-full bg-transparent border-b border-slate-700 text-white px-0 py-3 outline-none focus:border-orange-500 transition-colors placeholder:text-white text-sm"
                   />
                 </div>
               </div>
@@ -127,14 +127,14 @@ export default function Footer() {
                 <textarea 
                   rows="3" 
                   placeholder="Tell us about your sourcing or distribution needs..."
-                  className="w-full bg-transparent border-b border-slate-700 text-white px-0 py-3 outline-none focus:border-orange-500 transition-colors placeholder:text-slate-600 text-sm resize-none"
+                  className="w-full bg-transparent border-b border-slate-700 text-white px-0 py-3 outline-none focus:border-orange-500 transition-colors placeholder:text-white text-sm resize-none"
                 ></textarea>
               </div>
 
               <div className="footer-item pt-4">
                 <button 
                   type="submit" 
-                  className="text-white bg-orange-500 hover:bg-orange-600  font-bold py-4 px-10 rounded text-sm tracking-wide transition-all duration-300 w-full md:w-auto"
+                  className="text-white bg-orange-500 hover:bg-orange-500  font-bold py-4 px-10 rounded text-sm tracking-wide transition-all duration-300 w-full md:w-auto"
                 >
                   Submit Inquiry
                 </button>

@@ -26,6 +26,7 @@ const gridDataStore = {
       { title: "Stationery", desc: "Quality stationery for school & businesses.", img: extra },
       { title: "Personal Care", desc: "Daily essentials for a confident you.", img: extra },
       { title: "Packaging", desc: "Innovative packaging for every industry.", img: extra },
+       { title: "Packaging", desc: "Innovative packaging for every industry.", img: extra },
     ]
   },
   "automobiles": {

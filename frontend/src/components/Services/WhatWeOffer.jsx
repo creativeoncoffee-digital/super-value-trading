@@ -14,7 +14,7 @@ gsap.registerPlugin(ScrollTrigger);
 const offerDataStore = {
   "personal-care": {
     kicker: "OUR SERVICES",
-    title: "What We Offer",
+    title: "We Work In These Area ",
     cards: [
       {
         title: "Distribution & Global Partnerships",
@@ -29,7 +29,7 @@ const offerDataStore = {
         btnLink: "/contact"
       },
       {
-        title: "Private Label / OEM Manufacturing",
+        title: "Private Label/OEM Manufacturing",
         desc: "Launch your own brand with our end-to-end manufacturing solutions.",
         img: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800&auto=format&fit=crop", // Lab/Manufacturing
         bullets: [
@@ -266,7 +266,7 @@ export default function WhatWeOffer({ category = "personal-care" }) {
                   {card.bullets.map((bullet, i) => (
                     <li key={i} className="flex items-start gap-3">
                       {/* Custom Green Checkmark Icon matching the screenshot */}
-                      <svg className="w-5 h-5 text-[#111111] shrink-0 mt-0.5" viewBox="0 0 24 24" fill="currentColor">
+                      <svg className="w-5 h-5 text-orange-300 shrink-0 mt-0.5" viewBox="0 0 24 24" fill="currentColor">
                         <path fillRule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l4.5-6.25z" clipRule="evenodd" />
                       </svg>
                       <span className="text-[#1c2331] font-semibold text-sm">{bullet}</span>
