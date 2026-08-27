@@ -137,48 +137,57 @@ export default function Header() {
         </div>          
       </div>
 
-      {/* MOBILE SIDEBAR SECTION */}
+  {/* MOBILE SIDEBAR OVERLAY */}
       <div 
         onClick={() => setIsMobileMenuOpen(false)}
-        className={`fixed inset-0 bg-black/70 backdrop-blur-sm z-[50] md:hidden transition-all duration-500 ${isMobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}
+        className={`fixed inset-0 bg-[#0B1E3A]/40 backdrop-blur-sm z-[50] md:hidden transition-all duration-500 ${isMobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}
       ></div>
 
+      {/* MOBILE SIDEBAR MENU */}
       <div 
-        className={`fixed top-0 h-[100dvh] w-[80%] max-w-[320px] bg-[#0A1628] border-l border-white/10 z-[55] shadow-2xl md:hidden flex flex-col pt-24 px-6 pb-8 transition-all duration-500 ease-in-out ${isMobileMenuOpen ? 'right-0 visible' : '-right-[100%] invisible'}`}
+        className={`fixed top-0 h-[100dvh] w-[70%] max-w-[340px] bg-white border-l border-slate-100 z-[55] shadow-[-20px_0_50px_rgba(11,30,58,0.1)] md:hidden flex flex-col pt-24 px-6 pb-8 transition-all duration-500 ease-in-out ${isMobileMenuOpen ? 'right-0 visible' : '-right-[100%] invisible'}`}
       >
-        <div className="flex flex-col gap-6 overflow-y-auto overflow-x-hidden h-full no-scrollbar">
-          <Link to="/" className="text-lg font-bold text-white hover:text-orange-500 transition-colors border-b border-white/10 pb-4">Home</Link>
-          <Link to="/about" className="text-lg font-bold text-white hover:text-orange-500 transition-colors border-b border-white/10 pb-4">About Us</Link>
+        <div className="flex flex-col gap-6 overflow-y-auto overflow-x-hidden h-full no-scrollbar pr-2">
           
-          <div className="flex flex-col border-b border-white/10 pb-4">
+          <Link to="/" className="text-[17px] font-bold text-[#0B1E3A] hover:text-orange-500 transition-colors border-b border-slate-100 pb-4">Home</Link>
+          <Link to="/about" className="text-[17px] font-bold text-[#0B1E3A] hover:text-orange-500 transition-colors border-b border-slate-100 pb-4">About Us</Link>
+          
+          <div className="flex flex-col border-b border-slate-100 pb-4">
             <button 
               onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
-              className="flex justify-between items-center text-lg font-bold text-white hover:text-orange-500 transition-colors outline-none cursor-pointer"
+              className="flex justify-between items-center text-[17px] font-bold text-[#0B1E3A] hover:text-orange-500 transition-colors outline-none cursor-pointer"
             >
               Products & Services
-              <svg className={`w-5 h-5 transform transition-transform duration-300 ${isMobileServicesOpen ? 'rotate-180 text-orange-500' : ''}`} viewBox="0 0 20 20" fill="currentColor">
+              <svg className={`w-5 h-5 transform transition-transform duration-300 ${isMobileServicesOpen ? 'rotate-180 text-orange-500' : 'text-slate-400'}`} viewBox="0 0 20 20" fill="currentColor">
                 <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
               </svg>
             </button>
-            <div className={`flex flex-col gap-4 overflow-hidden transition-all duration-300 ${isMobileServicesOpen ? 'max-h-[300px] mt-4 opacity-100 pl-4' : 'max-h-0 opacity-0 pl-4'}`}>
-              <Link to="/personal-care" className="text-sm font-medium text-slate-400 hover:text-orange-500 transition-colors">FMCG and Personal Care</Link>
-              <Link to="/perfumery" className="text-sm font-medium text-slate-400 hover:text-orange-500 transition-colors">Perfumery</Link>
-              <Link to="/automobiles" className="text-sm font-medium text-slate-400 hover:text-orange-500 transition-colors">Automobiles</Link>
-              <Link to="/silvermax" className="text-sm font-medium text-slate-400 hover:text-orange-500 transition-colors">Silvermax Blades</Link>
+            
+            {/* Animated Dropdown Items */}
+            <div className={`flex flex-col gap-5 overflow-hidden transition-all duration-300 ${isMobileServicesOpen ? 'max-h-[300px] mt-5 opacity-100 pl-4' : 'max-h-0 opacity-0 pl-4'}`}>
+              <Link to="/personal-care" className="text-[15px] font-semibold text-slate-600 hover:text-orange-500 transition-colors">FMCG & Personal Care</Link>
+              <Link to="/perfumery" className="text-[15px] font-semibold text-slate-600 hover:text-orange-500 transition-colors">Perfumery</Link>
+              <Link to="/automobiles" className="text-[15px] font-semibold text-slate-600 hover:text-orange-500 transition-colors">Automobiles</Link>
+              <Link to="/silvermax" className="text-[15px] font-semibold text-slate-600 hover:text-orange-500 transition-colors">Silvermax Blades</Link>
             </div>
           </div>
 
-          <Link to="/blogs" className="text-lg font-bold text-white hover:text-orange-500 transition-colors border-b border-white/10 pb-4">Blog</Link>
-          <Link to="/gallery" className="text-lg font-bold text-white hover:text-orange-500 transition-colors border-b border-white/10 pb-4">Gallery</Link>
-          <Link to="/contact" className="text-lg font-bold text-white hover:text-orange-500 transition-colors border-b border-white/10 pb-4">Contact Us</Link>
+          <Link to="/blogs" className="text-[17px] font-bold text-[#0B1E3A] hover:text-orange-500 transition-colors border-b border-slate-100 pb-4">Blog</Link>
+          <Link to="/gallery" className="text-[17px] font-bold text-[#0B1E3A] hover:text-orange-500 transition-colors border-b border-slate-100 pb-4">Gallery</Link>
+          <Link to="/contact" className="text-[17px] font-bold text-[#0B1E3A] hover:text-orange-500 transition-colors border-b border-slate-100 pb-4">Contact Us</Link>
         </div>
         
-        <div className="mt-auto pt-6 flex flex-col gap-4">
-          <a href="tel:+917292023399" className="flex items-center justify-center gap-2 text-sm font-bold text-white">
-            <svg className="w-4 h-4 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
-            +9172920 23399
+        {/* Bottom Contact Section */}
+        <div className="mt-auto pt-6 flex flex-col gap-4 border-t border-slate-100">
+          <a href="tel:+917292023399" className="flex items-center justify-center gap-3 text-[15px] font-bold text-[#0B1E3A] hover:text-orange-500 transition-colors">
+            <div className="w-8 h-8 rounded-full bg-orange-50 flex items-center justify-center text-orange-500">
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+            </div>
+            +91 72920 23399
           </a>
-          <Link to="/contact" className="bg-[#f3790a] text-white font-bold py-3 text-center rounded w-full">Get a Quote</Link>
+          <Link to="/contact" className="bg-[#f3790a] hover:bg-[#d9660a] text-white font-bold py-3.5 text-center rounded-xl w-full shadow-md hover:shadow-lg transition-all duration-300">
+            Get a Quote
+          </Link>
         </div>
       </div>
     </header>

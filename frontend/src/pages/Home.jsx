@@ -5,18 +5,18 @@ import { Link } from 'react-router-dom';
 
 // Import your components
 import HomeHero from '../components/Home/HomeHero';
-import OurClients from '../components/OurClients';
+// import OurClients from '../components/OurClients';
 import AboutSection from '../components/Home/AboutSection';
 import WhatWeTrade from '../components/Home/WhatWeTrade';
 import GlobalPresence from '../components/GlobalPresence';
 import HomeBlogs from '../components/Home/HomeBlogs';
 // import HomeStats from '../components/Home/HomeStats';
 
-import pic from '../assets/img/office-interior.jpg';
-import grooming from '../assets/img/grooming-flatlay.jpg';
-import perfumery from '../assets/img/perfume-stones.jpg';
-import consumerGoods from '../assets/img/warehouse.jpg';
-import automobiles from '../assets/img/tires.jpg';
+// import pic from '../assets/img/office-interior.jpg';
+// import grooming from '../assets/img/grooming-flatlay.jpg';
+// import perfumery from '../assets/img/perfume-stones.jpg';
+// import consumerGoods from '../assets/img/warehouse.jpg';
+// import automobiles from '../assets/img/tires.jpg';
 import WhyUs from '../components/Home/WhyUs';
 import Faq from '../components/FAQ/Faq';
 import TrustedMarkets from '../components/TrustedMarkets';

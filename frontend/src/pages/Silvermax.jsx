@@ -32,8 +32,8 @@ export default function Silvermax() {
         <HeroMarquee/>
         <ServiceSteps category={category} />
         <ServiceGrid category={category} />
-        <ProductShowcase category="personal-care" />
-        <ManufacturingShowcase category="silvermax"  />
+        <ProductShowcase category={category} />
+        <ManufacturingShowcase category={category}  />
         <WhatWeOffer category={category} />
         <ServiceGallery category={category} />
       

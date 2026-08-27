@@ -8,6 +8,25 @@ import extra from "../../assets/extra.png";
 import autoextra from "../../assets/autoextra.png";
 import perfuextra from "../../assets/perfuextra.png";
 
+
+
+// subcategory images 
+// auto
+import car from "../../assets/Products/Sub/carSub.png";
+import ev from "../../assets/Products/Sub/evSub.png";
+import parts from "../../assets/Products/Sub/partsSub.png";
+import threeWheel from "../../assets/Products/Sub/threeSub.png";
+import tier from "../../assets/Products/Sub/tierSub.png";
+
+
+//silver
+import S1 from "../../assets/Products/Sub/SV1.webp";
+import S2 from "../../assets/Products/Sub/SV2.webp";
+import S3 from "../../assets/Products/Sub/SV3.webp";
+import S4 from "../../assets/Products/Sub/SV4.webp";
+import S5 from "../../assets/Products/Sub/SV5.webp";
+import S6 from "../../assets/Products/Sub/SV6.webp";
+
 gsap.registerPlugin(ScrollTrigger);
 
 // ============================================================================
@@ -33,13 +52,14 @@ const gridDataStore = {
     kicker: "OUR CATEGORIES",
     title: "Explore Automotive Solutions",
     items: [
+      { title: "Cars", desc: "A wide range of vehicles for every need.", img: car },
       { title: "Two Wheelers", desc: "High-performance bikes and scooters.", img: autoextra },
-      { title: "Three Wheelers", desc: "Reliable commercial transport units.", img: autoextra },
-      { title: "Electric Vehicles", desc: "Modern, eco-friendly mobility solutions.", img: autoextra },
-      { title: "Tires & Tubes", desc: "Durable all-weather automotive tires.", img: autoextra },
-      { title: "Spare Parts", desc: "Genuine OEM parts and accessories.", img: autoextra },
+      { title: "Three Wheelers", desc: "Reliable commercial transport units.", img: threeWheel },
+      { title: "Electric Vehicles", desc: "Modern, eco-friendly mobility solutions.", img: ev },
+      { title: "Tires & Tubes", desc: "Durable all-weather automotive tires.", img: tier },
+      { title: "Spare Parts", desc: "Genuine OEM parts and accessories.", img: parts },
       { title: "Batteries & Lubricants", desc: "Long-lasting power and lubricant  for all vehicles.", img: autoextra },
-      { title: "Batteries & Lubricants", desc: "Long-lasting power and lubricant  for all vehicles.", img: autoextra },
+    
       
     ]
   },
@@ -59,13 +79,13 @@ const gridDataStore = {
     kicker: "OUR CATEGORIES",
     title: "Explore Grooming Solutions",
     items: [
-      { title: "Super Platinum", desc: "Advanced cryogenic coating for smooth shaves.", img: extra },
-      { title: "Platinum", desc: "Multi-layered platinum for enhanced comfort.", img: extra },
-      { title: "Stainless Steel", desc: "Built for everyday shaving performance.", img: extra },
-      { title: "Metal Razors", desc: "Classic, durable metal build for control.", img: extra },
-      { title: "Shaving Cream", desc: "Rich lather for the ultimate smooth glide.", img: extra },
-      { title: "OEM Blades", desc: "Custom manufactured for your brand.", img: extra },
-       { title: "OEM Blades", desc: "Custom manufactured for your brand.", img: extra },
+      { title: "Super Platinum", desc: "Advanced cryogenic coating for smooth shaves.", img: S1 },
+      { title: "Platinum", desc: "Multi-layered platinum for enhanced comfort.", img: S2 },
+      { title: "Stainless Steel", desc: "Built for everyday shaving performance.", img: S3 },
+      { title: "Metal Razors", desc: "Classic, durable metal build for control.", img: S4 },
+      { title: "Shaving Cream", desc: "Rich lather for the ultimate smooth glide.", img: S5 },
+      { title: "OEM Blades", desc: "Custom manufactured for your brand.", img: S6 },
+       { title: "OEM Blades", desc: "Custom manufactured for your brand.", img: S3 },
     ]
   }
 };

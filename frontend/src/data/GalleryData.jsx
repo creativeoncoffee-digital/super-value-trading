@@ -1,4 +1,23 @@
 // src/data/GalleryData.js
+//auto
+import A1 from "../assets/Products/Sub/carSub.png";
+import A2 from "../assets/Products/Sub/evSub.png";
+import A3 from "../assets/Products/Sub/partsSub.png";
+import A4 from "../assets/Products/Sub/threeSub.png";
+import A5 from "../assets/Products/Sub/tierSub.png";
+
+
+//silver
+import S1 from "../assets/Products/Sub/SV1.webp";
+import S2 from "../assets/Products/Sub/SV2.webp";
+import S3 from "../assets/Products/Sub/SV3.webp";
+import S4 from "../assets/Products/Sub/SV4.webp";
+import S5 from "../assets/Products/Sub/SV5.webp";
+import S6 from "../assets/Products/Sub/SV6.webp";
+
+
+
+
 
 export const galleryData = [
   // EXHIBITION / MANUFACTURING
@@ -14,10 +33,11 @@ export const galleryData = [
   { id: 8, category: "perfumery", src: "https://images.unsplash.com/photo-1616949755610-8c9bac08f9f8?q=80&w=800&auto=format&fit=crop", title: "Custom Scent Development" },
 
   // AUTOMOBILES
-  { id: 9, category: "automobiles", src: "https://images.unsplash.com/photo-1580273916550-e323be2ae537?q=80&w=800&auto=format&fit=crop", title: "Supervalue OEM Tires" },
-  { id: 10, category: "automobiles", src: "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?q=80&w=800&auto=format&fit=crop", title: "Automotive Spare Parts" },
-  { id: 11, category: "automobiles", src: "https://images.unsplash.com/photo-1558981403-c5f9899a28bc?q=80&w=800&auto=format&fit=crop", title: "Two Wheeler Distribution" },
-  { id: 12, category: "automobiles", src: "https://images.unsplash.com/photo-1514316454349-750a7fd3da3a?q=80&w=800&auto=format&fit=crop", title: "Commercial Three Wheelers" },
+  { id: 9, category: "automobiles", src: A5, title: "Supervalue OEM Tires" },
+  { id: 10, category: "automobiles", src: A3, title: "Automotive Spare Parts" },
+  { id: 11, category: "automobiles", src: A4, title: "Two Wheeler Distribution" },
+  { id: 12, category: "automobiles", src: A1, title: "Commercial Three Wheelers" },
+  { id: 13, category: "automobiles", src: A2, title: "Commercial Three Wheelers" },
 
   // PERSONAL CARE
   { id: 13, category: "personal-care", src: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&w=800&auto=format&fit=crop", title: "Daily Skincare Line" },
@@ -26,8 +46,10 @@ export const galleryData = [
   { id: 16, category: "personal-care", src: "https://images.unsplash.com/photo-1616683693504-3ea7e9ad6fec?q=80&w=800&auto=format&fit=crop", title: "Cosmetics Packaging" },
 
   // SILVERMAX
-  { id: 17, category: "silvermax", src: "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?q=80&w=800&auto=format&fit=crop", title: "Super Platinum Blades" },
-  { id: 18, category: "silvermax", src: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800&auto=format&fit=crop", title: "Precision Manufacturing" },
-  { id: 19, category: "silvermax", src: "https://images.unsplash.com/photo-1494412519320-aa3da6751270?q=80&w=800&auto=format&fit=crop", title: "Wholesale Packaging" },
-  { id: 20, category: "silvermax", src: "https://images.unsplash.com/photo-1573511860302-28c5243198e6?q=80&w=800&auto=format&fit=crop", title: "Metal Razor Assemblies" }
+  { id: 17, category: "silvermax", src: S1, title: "Super Platinum Blades" },
+  { id: 18, category: "silvermax", src: S2, title: "Precision Manufacturing" },
+  { id: 19, category: "silvermax", src: S3, title: "Wholesale Packaging" },
+  { id: 20, category: "silvermax", src: S4, title: "Metal Razor Assemblies" },
+  { id: 21, category: "silvermax", src: S5, title: "Quality Control Lab" },
+  { id: 22, category: "silvermax", src: S6, title: "Final Product Inspection" },
 ];

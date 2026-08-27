@@ -3,13 +3,8 @@ import TrustedMarkets from '../components/TrustedMarkets';
 import ServiceAbout from '../components/Services/ServiceAbout';       // IMPORT NEW COMPONENT
 import ServiceGrid from '../components/Services/ServiceGrid'; 
 import ProductShowcase from '../components/Services/ProductShowcase';
-import PersonalCareSolutions from '../components/PersonalCareSolutions';
-import BikeShowcase from '../components/BikeShowcase';
-import CarShowcase from '../components/CarShowcase';
-import WhyChooseUs from '../components/WhyChooseUs';
 import Faq from '../components/FAQ/Faq';
 import ServiceCTA from '../components/CTABanner';
-import AestheticShowcase from '../components/Services/AestheticShowcase';
 import Breadcrumb from '../components/Breadcrumb';
 import AutomotiveBrandFocus from '../components/Services/AutomotiveBrandFocus';
 import WhatWeOffer from '../components/Services/WhatWeOffer';
@@ -40,20 +35,9 @@ export default function Automobiles() {
     
        <ProductShowcase category={category} />
        
-  
-      {/* <PersonalCareSolutions category={category} /> */}
-      
-      {/* Custom Automobile Components */}
-      {/* <BikeShowcase category={category} />
-      <CarShowcase category={category} /> */}
-      
-      {/* <WhyChooseUs category={category} /> */}
       <WhatWeOffer category={category} />
       <ServiceGallery category={category} />
-      
-      {/* FAQ for Automobiles */}
        <ServiceCTA category={category} />
-       {/* <AestheticShowcase /> */}
       <Faq page="automobiles" />
     </main>
   );

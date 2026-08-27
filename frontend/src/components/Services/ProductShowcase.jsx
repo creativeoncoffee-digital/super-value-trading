@@ -2,13 +2,132 @@ import { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { productData } from '../../data/ProductData';
+
+// IMPORT YOUR IMAGES HERE
+import BladeImg from '../../assets/Products/Blade.png';
+import PerfumeBottleImg from '../../assets/Products/PerfumeBottle.png';
+import TireImg from '../../assets/Products/Tire.png';
+import CareImg from '../../assets/perfuextra.png'; // Placeholder transparent PNG for Personal Care
 
 gsap.registerPlugin(ScrollTrigger);
 
+// ============================================================================
+// INTERNAL DATA STORE
+// You can now safely delete 'productShowcase' from your ProductData.jsx file.
+// ============================================================================
+const showcaseDataStore = {
+  "personal-care": {
+    image: CareImg,
+    imageAlt: "Personal care showcase",
+    backgroundClass: 'bg-white',
+    glowClass: 'bg-[#0a53a6]/12',
+    accentClass: 'bg-[#0a53a6]',
+    ctaClass: 'bg-[#0a53a6] hover:bg-[#0e67cd] shadow-[#0a53a6]/30',
+    panels: {
+      left: {
+        eyebrow: 'Premium FMCG',
+        description: 'High-quality everyday essentials formulated for safety, efficacy, and global standards.',
+        ctaLabel: 'Inquiry Now',
+        ctaHref: '/contact',
+      },
+      right: {
+        eyebrow: 'Trusted Supply Chain',
+        description: 'We ensure consistent availability and distribution of personal care products to markets worldwide.',
+        ctaLabel: 'Explore Range',
+        ctaHref: '/contact',
+      },
+      bottom: {
+        title: 'Distributed globally by Super Value',
+        description: 'Your trusted partner for consumer goods and private-label personal care solutions.',
+      },
+    },
+  },
+  "perfumery": {
+    image: PerfumeBottleImg,
+    imageAlt: 'Perfumery showcase',
+    backgroundClass: 'bg-[#f8fafc]',
+    glowClass: 'bg-orange-500/10',
+    accentClass: 'bg-[#0a53a6]',
+    ctaClass: 'bg-orange-500 hover:bg-orange-600',
+    panels: {
+      left: {
+        eyebrow: 'SUPER VALUE',
+        description: 'Our Own Brand. Alongside private-label manufacturing, we distribute our own exclusive Super Value fragrance lines designed for scalable market entry.',
+        ctaLabel: 'View Our Line',
+        ctaHref: '/contact',
+      },
+      right: {
+        eyebrow: 'Wholesale Distribution',
+        description: 'From concentrated oils to ready-to-sell perfumes, our lines are built for scale, consistency, and global export.',
+        ctaLabel: 'Talk to an Expert',
+        ctaHref: '/contact',
+      },
+      bottom: {
+        title: 'Distributed globally by Super Value',
+        description: 'Delivering premium fragrance solutions across retail and wholesale channels.',
+      },
+    },
+  },
+  "automobiles": {
+    image: TireImg,
+    imageAlt: 'Automotive spare parts showcase',
+    backgroundClass: 'bg-white',
+    glowClass: 'bg-[#0a53a6]/12',
+    accentClass: 'bg-[#0a53a6]',
+    ctaClass: 'bg-[#0a53a6] hover:bg-[#0e67cd] shadow-[#0a53a6]/30',
+    panels: {
+      left: {
+        eyebrow: 'Supervalue Brand',
+        description: 'Take advantage of our custom private label capabilities. We manufacture and supply premium tires, tubes, and spare parts under our trusted Supervalue name.',
+        ctaLabel: 'Start Sourcing',
+        ctaHref: '/contact',
+      },
+      right: {
+        eyebrow: 'Piaggio, TVS, Hero',
+        description: 'We are proud exporters of the world’s leading two and three wheeler brands, including traditional combustion engines and modern Electronic Vehicles.',
+        ctaLabel: 'View Vehicle Range',
+        ctaHref: '/contact',
+      },
+      bottom: {
+        title: 'Distributed globally by Super Value',
+        description: 'Your premier source for bikes, three-wheelers, and high-quality spare parts.',
+      },
+    },
+  },
+  "silvermax": {
+    image: BladeImg,
+    imageAlt: "Silvermax blade showcase",
+    backgroundClass: 'bg-white',
+    glowClass: 'bg-[#0a53a6]/12',
+    accentClass: 'bg-[#0a53a6]',
+    ctaClass: 'bg-[#0a53a6] hover:bg-[#0e67cd] shadow-[#0a53a6]/30',
+    panels: {
+      left: {
+        eyebrow: 'Precision Engineering',
+        description: 'Crafted from high-grade stainless steel, ensuring maximum durability and performance for the premium global grooming market.',
+        ctaLabel: 'Inquiry Now',
+        ctaHref: '/contact',
+      },
+      right: {
+        eyebrow: 'Advanced Coating',
+        description: 'Our authorized personal care products utilize multi-layered coating technology to dramatically extend product lifespan.',
+        ctaLabel: 'Explore Range',
+        ctaHref: '/contact',
+      },
+      bottom: {
+        title: 'Distributed globally by Super Value',
+        description: 'Supplying regional markets with trusted grooming systems, consumer goods, and private-label opportunities.',
+      },
+    },
+  }
+};
+
 export default function ProductShowcase({ category = 'personal-care' }) {
   const containerRef = useRef(null);
-  const data = productData[category]?.productShowcase;
+  
+  // Safely grab the data based on category, default to personal-care
+  const safeCategory = category ? category.toLowerCase().trim() : "personal-care";
+  const data = showcaseDataStore[safeCategory] || showcaseDataStore["personal-care"];
 
   useEffect(() => {
     if (!data) return;

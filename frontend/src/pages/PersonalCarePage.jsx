@@ -3,12 +3,8 @@ import TrustedMarkets from '../components/TrustedMarkets';
 import ServiceAbout from '../components/Services/ServiceAbout';       // IMPORT NEW COMPONENT
 import ServiceGrid from '../components/Services/ServiceGrid'; 
 import ProductShowcase from '../components/Services/ProductShowcase';
-        // IMPORT NEW COMPONENT
-import PersonalCareSolutions from '../components/PersonalCareSolutions';
-import WhyChooseUs from '../components/WhyChooseUs';
 import Faq from '../components/FAQ/Faq';
 import ServiceCTA from '../components/CTABanner';
-import AestheticShowcase from '../components/Services/AestheticShowcase';
 import Breadcrumb from '../components/Breadcrumb';
 import WhatWeOffer from '../components/Services/WhatWeOffer';
 import CreateYourBrand from '../components/Services/CreateYourBrand'; 
@@ -36,6 +32,7 @@ export default function PersonalCarePage() {
       <TrustedMarkets category={category} />
       {/* <ProductShowcase category={category} /> */} 
         <ServiceGrid category={category} />
+        <ProductShowcase category={category} />
       
       <CreateYourBrand category={category} />
    
