@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom'; // <-- Imported Link for routing
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -34,11 +35,12 @@ export default function WhatWeTrade() {
     return () => ctx.revert();
   }, []);
 
+  // Added "link" properties to each item to route to the correct pages
   const tradeItems = [
-    { title: "FMCG & Personal Care", desc: "Razor blades, grooming systems, skincare, and everyday FMCG products for reliable trade supply.", img: icon1 },
-    { title: "Perfumery & Fragrances", desc: "Luxury perfumes, perfume oils, and private-label fragrance development for global markets.", img: icon2 },
-    { title: "Silvermax Blade", desc: "High-quality blades for various industrial and consumer applications.", img: icon3 },
-    { title: "Automobiles & Parts", desc: "Two-wheelers, three-wheelers, EVs, tires, tubes, and automotive parts across trade corridors.", img: icon4 },
+    { title: "Silvermax Blade", desc: "High-quality blades for various industrial and consumer applications.", img: icon3, link: "/silvermax" },
+    { title: "FMCG & Personal Care", desc: "Razor blades, grooming systems, skincare, and everyday FMCG products for reliable trade supply.", img: icon1, link: "/personal-care" },
+    { title: "Perfumery", desc: "Luxury perfumes, perfume oils, and private-label fragrance development for global markets.", img: icon2, link: "/perfumery" },
+    { title: "Automobiles", desc: "Two-wheelers, three-wheelers, EVs, tires, tubes, and automotive parts across trade corridors.", img: icon4, link: "/automobiles" },
   ];
 
   return (
@@ -61,9 +63,13 @@ export default function WhatWeTrade() {
 
           <div className="flex flex-col gap-4 md:gap-5">
             {tradeItems.map((item, index) => (
-              <div key={index} className="trade-list-item p-5 md:p-4 bg-white rounded-2xl shadow-sm border border-slate-100 hover:shadow-lg hover:border-orange-200 transition-all duration-300 group cursor-pointer">
+              // Replaced <div> with <Link> so the entire box is clickable
+              <Link 
+                to={item.link} 
+                key={index} 
+                className="trade-list-item block p-5 md:p-4 bg-white rounded-2xl shadow-sm border border-slate-100 hover:shadow-lg hover:border-orange-200 transition-all duration-300 group cursor-pointer"
+              >
                 
-                {/* FIX: Highly responsive wrapper to align image and title on mobile */}
                 <div className="flex items-start md:items-center gap-4">
                   
                   {/* Image/Icon */}
@@ -78,7 +84,7 @@ export default function WhatWeTrade() {
                       <div className="flex justify-between items-center w-full">
                         <h3 className="text-lg md:text-xl font-bold text-[#0B1E3A] md:mb-1">{item.title}</h3>
                         
-                        {/* Mobile-only Arrow (appears next to title) */}
+                        {/* Mobile-only Arrow */}
                         <div className="md:hidden w-8 h-8 rounded-full bg-slate-50 flex flex-shrink-0 items-center justify-center text-slate-400 group-hover:bg-orange-500 group-hover:text-white transition-colors duration-300">
                           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                         </div>
@@ -87,7 +93,7 @@ export default function WhatWeTrade() {
                       <p className="text-sm text-slate-500 leading-relaxed mt-1 md:mt-0 pr-2 md:pr-0">{item.desc}</p>
                     </div>
 
-                    {/* Desktop-only Arrow (appears on the far right) */}
+                    {/* Desktop-only Arrow */}
                     <div className="hidden md:flex w-10 h-10 rounded-full bg-slate-50 flex-shrink-0 items-center justify-center text-slate-400 group-hover:bg-orange-500 group-hover:text-white transition-colors duration-300">
                       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                     </div>
@@ -95,16 +101,20 @@ export default function WhatWeTrade() {
                   </div>
                 </div>
 
-              </div>
+              </Link>
             ))}
 
             <div className="slide-anim flex flex-col mt-2 md:mt-4">
-              <span className="brand-button bg-orange-500 text-white w-max cursor-pointer shadow-lg shadow-orange-500/20 px-6 py-3">
+              {/* Changed from <span> to <Link> to navigate to the contact page */}
+              <Link 
+                to="/contact" 
+                className="brand-button flex items-center justify-center bg-orange-500 hover:bg-orange-600 text-white w-max cursor-pointer shadow-lg shadow-orange-500/30 px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold uppercase tracking-wider text-sm transition-all duration-300 hover:-translate-y-1"
+              >
                 Discuss A Trade
                 <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M13 5l7 7-7 7M5 12h15"></path>
                 </svg>
-              </span>
+              </Link>
             </div>
           </div>
           

@@ -39,13 +39,13 @@ const gridDataStore = {
     kicker: "OUR CATEGORIES",
     title: "Explore Our Product Categories",
     items: [
-      { title: "Cosmetics", desc: "Premium cosmetics for every beauty need.", img: extra },
-      { title: "Skincare", desc: "Nourish, protect & glow with our skincare range.", img: extra },
-      { title: "Haircare", desc: "Stronger, healthier hair every day.", img: extra },
-      { title: "Stationery", desc: "Quality stationery for school & businesses.", img: extra },
-      { title: "Personal Care", desc: "Daily essentials for a confident you.", img: extra },
-      { title: "Packaging", desc: "Innovative packaging for every industry.", img: extra },
-       { title: "Packaging", desc: "Innovative packaging for every industry.", img: extra },
+      { title: "Perfume/Fragrance", desc: "Discover a world of captivating scents.", img: extra },
+      { title: "Shampoo", desc: "Clean and nourish your hair with our range.", img: extra },
+      { title: "Hair Oil", desc: "Natural oils for healthy, strong hair.", img: extra },
+      { title: "Face Wash", desc: "Gentle cleansing for your daily routine.", img: extra },
+      { title: "Body Lotion", desc: "Moisturize and protect your skin with our range.", img: extra },
+      { title: "Hand Wash", desc: "Gentle cleansing for your hands.", img: extra },
+       { title: "Shaving Form", desc: "Premium shaving cream for a smooth shave.", img: extra },
     ]
   },
   "automobiles": {
@@ -118,13 +118,13 @@ export default function ServiceGrid({ category = "personal-care" }) {
   if (!data) return null;
 
   return (
-    <section ref={containerRef} className="w-full bg-[#f8fafc] py-24 md:py-32 font-sans border-t border-slate-100 overflow-hidden">
+    <section ref={containerRef} className="w-full bg-[#f8fafc] py-15 md:py-18 font-sans border-t border-slate-100 overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-[clamp(1.5rem,5vw,4rem)] flex flex-col items-center">
         
         {/* ======================================================= */}
         {/* SECTION HEADER                                          */}
         {/* ======================================================= */}
-        <div className="cat-header flex flex-col items-center text-center mb-16 md:mb-20">
+        <div className="cat-header flex flex-col items-center text-center mb-10 md:mb-14">
           <div className="flex items-center gap-3 mb-4">
             <span className="w-8 h-[2px] bg-orange-500"></span>
             <h4 className="text-orange-500 font-bold uppercase tracking-[0.2em] text-xs md:text-sm">
@@ -133,7 +133,7 @@ export default function ServiceGrid({ category = "personal-care" }) {
             <span className="w-8 h-[2px] bg-orange-500"></span>
           </div>
           
-          <h2 className="text-3xl md:text-4xl lg:text-[44px] font-extrabold text-[#0B1E3A] tracking-tight mb-4">
+          <h2 className="text-3xl md:text-5xl font-semibold text-[#071326] tracking-tight leading-[1.1] mb-4">
             {data.title}
           </h2>
           <p className="text-slate-500 text-sm md:text-base max-w-2xl">

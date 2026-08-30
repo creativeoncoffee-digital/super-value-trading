@@ -114,7 +114,7 @@ export default function ServiceSteps({ category = "perfumery" }) {
   if (!data) return null;
 
   return (
-    <section ref={containerRef} className="w-full bg-white py-24 lg:py-32 font-sans overflow-hidden">
+    <section ref={containerRef} className="w-full bg-white py-15 md:py-16 mt-3 font-sans overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-[clamp(1.5rem,5vw,4rem)]">
         
         {/* 3-Column Grid */}

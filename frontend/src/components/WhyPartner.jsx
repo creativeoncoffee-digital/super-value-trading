@@ -60,7 +60,7 @@ export default function WhyPartner({ category = "perfumery" }) {
   if (!data) return null;
 
   return (
-    <section ref={containerRef} className="w-full bg-[#f8fafc] py-5 md:py-10 border-t border-slate-100 font-sans">
+    <section ref={containerRef} className="w-full bg-white py-5 md:py-15 mb-10  font-sans">
       <div className="max-w-[1600px] mx-auto px-[clamp(1.5rem,5vw,4rem)]">
         
         <div className="partner-header flex flex-col items-center text-center mb-12">

@@ -4,7 +4,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 // Replace this with your actual image path when ready
-import Img from '../../assets/Home/HomeAbout.jpeg'; 
+import Img from '../../assets/Home/HomeAbout.png'; 
 
 gsap.registerPlugin(ScrollTrigger);
 

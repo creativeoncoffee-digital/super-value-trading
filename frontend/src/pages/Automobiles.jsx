@@ -2,16 +2,14 @@ import ServiceHero from '../components/Services/ServiceHero';
 import TrustedMarkets from '../components/TrustedMarkets';
 import ServiceAbout from '../components/Services/ServiceAbout';       // IMPORT NEW COMPONENT
 import ServiceGrid from '../components/Services/ServiceGrid'; 
-import ProductShowcase from '../components/Services/ProductShowcase';
 import Faq from '../components/FAQ/Faq';
 import ServiceCTA from '../components/CTABanner';
 import Breadcrumb from '../components/Breadcrumb';
-import AutomotiveBrandFocus from '../components/Services/AutomotiveBrandFocus';
-import WhatWeOffer from '../components/Services/WhatWeOffer';
-import CreateYourBrand from '../components/Services/CreateYourBrand';
 import ServiceSteps from '../components/Services/ServiceSteps';
 import ServiceGallery from '../components/Services/ServiceGallery';
 import HeroMarquee from '../components/HeroMarquee';
+import AdvancedFeature from '../components/Services/AdvancedFeature';
+import WhyPartner from '../components/WhyPartner';
 
 
 export default function Automobiles() {
@@ -28,17 +26,13 @@ export default function Automobiles() {
       <HeroMarquee/>
       <ServiceSteps category={category} />
        <ServiceAbout category={category} />
+       <TrustedMarkets category={category} />
       <ServiceGrid category={category} />
-        <TrustedMarkets category={category} />
-      <AutomotiveBrandFocus />
-      <CreateYourBrand category={category} />
-    
-       <ProductShowcase category={category} />
-       
-      <WhatWeOffer category={category} />
+      <AdvancedFeature category={category} />
+      <WhyPartner />
+       <ServiceCTA/>
       <ServiceGallery category={category} />
-       <ServiceCTA category={category} />
-      <Faq page="automobiles" />
+      <Faq page={category} />
     </main>
   );
 }

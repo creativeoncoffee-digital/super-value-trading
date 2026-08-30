@@ -83,7 +83,7 @@ export default function AboutStats() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative w-full bg-white py-24 md:py-32 font-sans border-t border-slate-100 overflow-hidden">
+    <section ref={sectionRef} className="relative w-full bg-white py-15 md:py-18 pb-5 font-sans border-t border-slate-100 overflow-hidden">
       
       {/* Subtle World Map / Network Background (Mimics the faint background in your image) */}
       <div className="absolute inset-0 z-0 pointer-events-none opacity-[0.03]" 

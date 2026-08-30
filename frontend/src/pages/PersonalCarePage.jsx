@@ -2,15 +2,14 @@ import ServiceHero from '../components/Services/ServiceHero';
 import TrustedMarkets from '../components/TrustedMarkets';
 import ServiceAbout from '../components/Services/ServiceAbout';       // IMPORT NEW COMPONENT
 import ServiceGrid from '../components/Services/ServiceGrid'; 
-import ProductShowcase from '../components/Services/ProductShowcase';
 import Faq from '../components/FAQ/Faq';
 import ServiceCTA from '../components/CTABanner';
 import Breadcrumb from '../components/Breadcrumb';
-import WhatWeOffer from '../components/Services/WhatWeOffer';
-import CreateYourBrand from '../components/Services/CreateYourBrand'; 
 import ServiceSteps from '../components/Services/ServiceSteps';
 import ServiceGallery from '../components/Services/ServiceGallery';
 import HeroMarquee from '../components/HeroMarquee';
+import WhyPartner from '../components/WhyPartner';
+import AdvancedFeature from '../components/Services/AdvancedFeature';
 
 
 
@@ -29,21 +28,13 @@ export default function PersonalCarePage() {
       <HeroMarquee />
       <ServiceSteps category={category} />
       <ServiceAbout category={category} />
-      <TrustedMarkets category={category} />
-      {/* <ProductShowcase category={category} /> */} 
+      <TrustedMarkets category={category} /> 
         <ServiceGrid category={category} />
-        <ProductShowcase category={category} />
-      
-      <CreateYourBrand category={category} />
-   
-      
-      {/* <PersonalCareSolutions category={category} /> */}
-      {/* <WhyChooseUs category={category} /> */}
-      <WhatWeOffer category={category} />
+           <AdvancedFeature category={category} />
+        <WhyPartner />
       <ServiceCTA category={category} />
       <ServiceGallery category={category} />
-      {/* <AestheticShowcase /> */}
-      <Faq page="fmcg" />
+     <Faq page={category} />
     </main>
   );
 }

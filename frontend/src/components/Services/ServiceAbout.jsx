@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import CareAbout from '../../assets/Products/ServicePage/CareAbout.png';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -49,10 +50,10 @@ const aboutDataStore = {
 
   "personal-care": {
     title: "ABOUT SUPER VALUE",
-    headline: "Your Trusted",
-    highlight: "FMCG Partner",
+    headline: "Your Trusted FMCG & Personal Care",
+    highlight: "Manufacturing Partner",
     description: "Super Value supplies grooming and personal care essentials across international markets, combining dependable sourcing, private-label support, and long-term distribution expertise.",
-    image: "https://images.unsplash.com/photo-1621607505833-616916c46a25?q=80&w=800&auto=format&fit=crop",
+    image: CareAbout,
     bullets: [
       "International standards of quality and safety",
       "End-to-end private label and OEM capabilities",
@@ -110,8 +111,8 @@ export default function ServiceAbout({ category = "perfumery" }) {
   if (!data) return null;
 
   return (
-    <section ref={containerRef} className="w-full bg-white py-24 md:py-32 font-sans overflow-hidden border-t border-slate-100">
-      <div className="max-w-[1400px] mx-auto px-[clamp(1.5rem,5vw,4rem)] flex flex-col lg:flex-row gap-16 lg:gap-20 items-center">
+    <section ref={containerRef} className="w-full bg-white py-24 md:py-15 font-sans overflow-hidden border-t border-slate-100">
+      <div className="max-w-[1400px] mx-auto px-[clamp(1.5rem,5vw,4rem)] flex flex-col lg:flex-row gap-8 lg:gap-10 items-center">
         
         {/* ========================================== */}
         {/* LEFT: IMAGE SHOWCASE                       */}
@@ -138,14 +139,13 @@ export default function ServiceAbout({ category = "perfumery" }) {
           
           {/* Eyebrow */}
           <div className="about-text-anim flex items-center gap-4 mb-4">
-            <span className="w-8 h-[2px] bg-orange-500"></span>
             <h3 className="text-orange-500 font-bold uppercase tracking-[0.2em] text-xs md:text-sm">
               {data.title}
             </h3>
           </div>
 
           {/* Headline with Gradient Highlight */}
-          <h2 className="about-text-anim text-3xl md:text-5xl font-bold text-[#071326] tracking-tight leading-[1.1] mb-6">
+          <h2 className="about-text-anim text-3xl md:text-5xl font-semibold text-[#071326] tracking-tight leading-[1.1] mb-4">
             {data.headline} <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-orange-400">
               {data.highlight}
@@ -153,16 +153,16 @@ export default function ServiceAbout({ category = "perfumery" }) {
           </h2>
 
           {/* Description */}
-          <p className="about-text-anim text-slate-500 text-base md:text-lg leading-relaxed mb-8 max-w-xl">
+          <p className="about-text-anim text-slate-500 text-base md:text-lg leading-relaxed mb-6 max-w-xl">
             {data.description}
           </p>
 
           {/* Elegant Bullet Points */}
-          <ul className="about-text-anim flex flex-col gap-4 mb-10 w-full">
+          <ul className="about-text-anim flex flex-col gap-4 mb-8 w-full">
             {data.bullets.map((bullet, i) => (
-              <li key={i} className="flex items-start gap-4">
-                <div className="w-6 h-6 rounded-full bg-orange-50 flex items-center justify-center shrink-0 mt-0.5 border border-orange-100">
-                  <svg className="w-3.5 h-3.5 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <li key={i} className="flex items-start gap-3">
+                <div className="w-6 h-6 rounded-full bg-orange-50 flex items-center justify-center shrink-0 mt-0 border border-orange-100">
+                  <svg className="w-3 h-3 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7"></path>
                   </svg>
                 </div>
@@ -174,12 +174,12 @@ export default function ServiceAbout({ category = "perfumery" }) {
           </ul>
 
           {/* UNIFIED DESIGN: The 3-Block "Positioning" Style for EVERY category */}
-          <div className="about-text-anim w-full mb-10">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 bg-slate-50 rounded-2xl p-6 md:p-8 border border-slate-100 shadow-sm">
+          <div className="about-text-anim w-full mb-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-2 bg-slate-50 rounded-2xl p-3 md:p-5 border border-slate-100 shadow-sm">
               {data.positioning.map((pos, i) => (
                 <div key={i} className="flex flex-col border-l-2 border-orange-400 pl-4">
                   <span className="text-[#071326] font-bold text-xs uppercase tracking-widest mb-1">{pos.title}</span>
-                  <span className="text-slate-500 text-xs font-medium leading-relaxed mt-1">{pos.desc}</span>
+                  <span className="text-slate-600 text-xs font-medium leading-relaxed mt-1">{pos.desc}</span>
                 </div>
               ))}
             </div>

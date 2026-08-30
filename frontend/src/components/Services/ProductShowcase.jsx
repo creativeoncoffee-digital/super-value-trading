@@ -221,8 +221,8 @@ export default function ProductShowcase({ category = 'personal-care' }) {
   if (!data) return null;
 
   return (
-    <section ref={containerRef} className={`relative w-full h-[100vh] ${data.backgroundClass || 'bg-white'} font-sans`}>
-      <div className="relative w-full h-full overflow-hidden flex items-center justify-center">
+    <section ref={containerRef} className={`relative w-full h-[80vh] ${data.backgroundClass || 'bg-white'} font-sans`}>
+      <div className="relative w-full h-[75vh] overflow-hidden flex items-center justify-center">
         
         {/* Glow Effect */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none">

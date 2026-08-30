@@ -86,9 +86,17 @@ export default function Header() {
             {/* ========================================================================= */}
             {/* REFINED MEGA MENU CARD                                                    */}
             {/* ========================================================================= */}
-            <div className="absolute top-full left-1/2 -translate-x-1/2 w-[550px] lg:w-[640px] bg-white shadow-[0_20px_50px_rgba(11,30,58,0.1)] rounded-2xl p-4 grid grid-cols-2 gap-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-slate-100 z-50 text-left">
-              
-              <Link to="/personal-care" className="p-5 rounded-xl bg-transparent hover:bg-slate-50 border border-transparent hover:border-slate-100 transition-all duration-300 flex flex-col gap-1.5 group/item">
+            <div className="absolute top-full left-1/2 -translate-x-1/2 w-[550px] md:w-[640px] bg-white shadow-[0_20px_50px_rgba(11,30,58,0.1)] rounded-2xl p-4 grid grid-cols-2 gap-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-slate-100 z-50 text-left">
+
+               <Link to="/silvermax" className="p-3 rounded-xl bg-transparent hover:bg-slate-50 border border-transparent hover:border-slate-100 transition-all duration-300 flex flex-col gap-1.5 group/item">
+                <div className="flex items-center justify-between w-full">
+                  <span className="text-[#0B1E3A] font-bold text-sm group-hover/item:text-orange-500 transition-colors duration-300">Silvermax Blades</span>
+                  <svg className="w-4 h-4 text-orange-500 opacity-0 -translate-x-2 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 5l7 7-7 7"></path></svg>
+                </div>
+                <span className="text-slate-500 text-[12px] font-medium leading-relaxed pr-2">Precision engineered grooming solutions</span>
+              </Link>
+
+              <Link to="/personal-care" className="p-3 rounded-xl bg-transparent hover:bg-slate-50 border border-transparent hover:border-slate-100 transition-all duration-300 flex flex-col gap-1.5 group/item">
                 <div className="flex items-center justify-between w-full">
                   <span className="text-[#0B1E3A] font-bold text-sm group-hover/item:text-orange-500 transition-colors duration-300">FMCG & Personal Care</span>
                   <svg className="w-4 h-4 text-orange-500 opacity-0 -translate-x-2 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 5l7 7-7 7"></path></svg>
@@ -96,7 +104,7 @@ export default function Header() {
                 <span className="text-slate-500 text-[12px] font-medium leading-relaxed pr-2">Premium daily essentials & cosmetics</span>
               </Link>
               
-              <Link to="/perfumery" className="p-5 rounded-xl bg-transparent hover:bg-slate-50 border border-transparent hover:border-slate-100 transition-all duration-300 flex flex-col gap-1.5 group/item">
+              <Link to="/perfumery" className="p-3 rounded-xl bg-transparent hover:bg-slate-50 border border-transparent hover:border-slate-100 transition-all duration-300 flex flex-col gap-1.5 group/item">
                 <div className="flex items-center justify-between w-full">
                   <span className="text-[#0B1E3A] font-bold text-sm group-hover/item:text-orange-500 transition-colors duration-300">Perfumery</span>
                   <svg className="w-4 h-4 text-orange-500 opacity-0 -translate-x-2 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 5l7 7-7 7"></path></svg>
@@ -104,7 +112,7 @@ export default function Header() {
                 <span className="text-slate-500 text-[12px] font-medium leading-relaxed pr-2">Private label & luxury fragrances</span>
               </Link>
               
-              <Link to="/automobiles" className="p-5 rounded-xl bg-transparent hover:bg-slate-50 border border-transparent hover:border-slate-100 transition-all duration-300 flex flex-col gap-1.5 group/item">
+              <Link to="/automobiles" className="p-3 rounded-xl bg-transparent hover:bg-slate-50 border border-transparent hover:border-slate-100 transition-all duration-300 flex flex-col gap-1.5 group/item">
                 <div className="flex items-center justify-between w-full">
                   <span className="text-[#0B1E3A] font-bold text-sm group-hover/item:text-orange-500 transition-colors duration-300">Automobiles</span>
                   <svg className="w-4 h-4 text-orange-500 opacity-0 -translate-x-2 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 5l7 7-7 7"></path></svg>
@@ -112,13 +120,7 @@ export default function Header() {
                 <span className="text-slate-500 text-[12px] font-medium leading-relaxed pr-2">Vehicles, tires, tubes & spare parts</span>
               </Link>
               
-              <Link to="/silvermax" className="p-5 rounded-xl bg-transparent hover:bg-slate-50 border border-transparent hover:border-slate-100 transition-all duration-300 flex flex-col gap-1.5 group/item">
-                <div className="flex items-center justify-between w-full">
-                  <span className="text-[#0B1E3A] font-bold text-sm group-hover/item:text-orange-500 transition-colors duration-300">Silvermax Blades</span>
-                  <svg className="w-4 h-4 text-orange-500 opacity-0 -translate-x-2 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 5l7 7-7 7"></path></svg>
-                </div>
-                <span className="text-slate-500 text-[12px] font-medium leading-relaxed pr-2">Precision engineered grooming solutions</span>
-              </Link>
+          
 
             </div>
           </div>
