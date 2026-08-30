@@ -31,7 +31,7 @@ export default function About() {
       <OurServices />
       <AboutStats />
       <AboutCTA />
-      <ServiceGallery category="exhibition  " />
+      <ServiceGallery category="exhibition" />
       <Faq page="about" />
     </main>
   );
