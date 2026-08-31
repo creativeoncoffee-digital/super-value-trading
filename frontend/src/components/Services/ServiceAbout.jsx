@@ -2,6 +2,10 @@ import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import CareAbout from '../../assets/Products/ServicePage/CareAbout.png';
+import SilverAbout from '../../assets/Products/ServicePage/SilverAbout.png';
+import AutomobileAbout from '../../assets/Products/ServicePage/AutomobileAbout.png';
+import PerfumeAbout from '../../assets/Products/ServicePage/PerfumeAbout.png';
+import PersonalAbout from '../../assets/Products/ServicePage/PersonalAbout.png';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -17,7 +21,7 @@ const aboutDataStore = {
     headline: "From Fragrance Idea to",
     highlight: "Your Own Brand",
     description: "We help you create your own perfume brand with product options designed around your target audience, market positioning and desired presentation.",
-    image: "https://images.unsplash.com/photo-1594035910387-fea47794261f?q=80&w=800&auto=format&fit=crop",
+    image: PerfumeAbout,
     bullets: [
       "Uncompromising quality and safety standards",
       "Seamless global export and logistics infrastructure",
@@ -35,7 +39,7 @@ const aboutDataStore = {
     headline: "Leaders in",
     highlight: "Specialized Export",
     description: "Our automotive division operates with a sharp focus on two primary categories: Vehicles (Two and Three Wheelers) and Spare Parts. We are an authorized distribution partner for global names like Piaggio, TVS, and Hero.",
-    image: "https://images.unsplash.com/photo-1578844251758-2f71da64c96f?q=80&w=800&auto=format&fit=crop",
+    image: AutomobileAbout,
     bullets: [
       "Authorized distribution for Piaggio, TVS, and Hero",
       "Extensive catalog of OEM and aftermarket spare parts",
@@ -53,7 +57,7 @@ const aboutDataStore = {
     headline: "Your Trusted FMCG & Personal Care",
     highlight: "Manufacturing Partner",
     description: "Super Value supplies grooming and personal care essentials across international markets, combining dependable sourcing, private-label support, and long-term distribution expertise.",
-    image: CareAbout,
+    image: PersonalAbout,
     bullets: [
       "International standards of quality and safety",
       "End-to-end private label and OEM capabilities",
@@ -71,7 +75,7 @@ const aboutDataStore = {
     headline: "Precision",
     highlight: "Grooming Solutions",
     description: "Authorized distribution and global supply of premium blades and grooming solutions engineered for absolute precision and comfort in every shave.",
-    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800&auto=format&fit=crop",
+    image: SilverAbout,
     bullets: [
       "High-grade stainless steel engineering",
       "Platinum-coated edges for ultimate comfort",

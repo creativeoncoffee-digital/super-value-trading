@@ -1,4 +1,16 @@
 // src/data/GalleryData.js
+
+
+
+
+// personal care 
+import c1 from "../assets/Products/Sub/supervalue edible oil.png";
+import c2 from "../assets/Products/Sub/supervalue facewash.png";
+import c3 from "../assets/Products/Sub/supervalue hair oil.png";
+import c4 from "../assets/Products/Sub/supervalue handwash.png";
+import c5 from "../assets/Products/Sub/supervalue persume.png"
+import c6 from "../assets/Products/Sub/supervalue shampoo.png";
+
 //auto
 import A1 from "../assets/Products/Sub/carSub.png";
 import A2 from "../assets/Products/Sub/evSub.png";
@@ -12,8 +24,17 @@ import S1 from "../assets/Products/Sub/SV1.webp";
 import S2 from "../assets/Products/Sub/SV2.webp";
 import S3 from "../assets/Products/Sub/SV3.webp";
 import S4 from "../assets/Products/Sub/SV4.webp";
-import S5 from "../assets/Products/Sub/SV5.webp";
+import S5 from "../assets/Products/Sub/SV5.png";
 import S6 from "../assets/Products/Sub/SV6.webp";
+
+// perfumnery 
+
+import p1 from "../assets/Products/Sub/PsubDeodorant.png";
+import p2 from "../assets/Products/Sub/PsubEssentialOil.png";
+import p3 from "../assets/Products/Sub/PsubManufacturing.png";
+import p4 from "../assets/Products/Sub/PsubPerfume.png";
+import p5 from "../assets/Products/Sub/PsubSpray.png";
+import p6 from "../assets/Products/Sub/PsubOil.png";
 
 
 
@@ -89,10 +110,10 @@ export const galleryData = [
 
   
   // PERFUMERY
-  { id: 501, category: "perfumery", src: "https://images.unsplash.com/photo-1594035910387-fea47794261f?q=80&w=800&auto=format&fit=crop", title: "Luxury Perfume Formulation" },
-  { id: 502, category: "perfumery", src: "https://images.unsplash.com/photo-1541643600914-78b084683601?q=80&w=800&auto=format&fit=crop", title: "Private Label Bottles" },
-  { id: 503, category: "perfumery", src: "https://images.unsplash.com/photo-1615634260167-c8cdede054de?q=80&w=800&auto=format&fit=crop", title: "Essential Oils Extraction" },
-  { id: 504, category: "perfumery", src: "https://images.unsplash.com/photo-1616949755610-8c9bac08f9f8?q=80&w=800&auto=format&fit=crop", title: "Custom Scent Development" },
+  { id: 501, category: "perfumery", src: p1, title: "Luxury Perfume Formulation" },
+  { id: 502, category: "perfumery", src: p2, title: "Private Label Bottles" },
+  { id: 503, category: "perfumery", src: p3, title: "Essential Oils Extraction" },
+  { id: 504, category: "perfumery", src: p4, title: "Custom Scent Development" },
 
   // AUTOMOBILES
   { id: 601, category: "automobiles", src: A5, title: "Supervalue OEM Tires" },
@@ -102,10 +123,13 @@ export const galleryData = [
   { id: 605, category: "automobiles", src: A2, title: "Commercial Three Wheelers" },
 
   // PERSONAL CARE
-  { id: 701, category: "personal-care", src: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&w=800&auto=format&fit=crop", title: "Daily Skincare Line" },
-  { id: 702, category: "personal-care", src: "https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?q=80&w=800&auto=format&fit=crop", title: "Premium Lotions" },
-  { id: 703, category: "personal-care", src: "https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?q=80&w=800&auto=format&fit=crop", title: "Haircare & Shampoos" },
-  { id: 704, category: "personal-care", src: "https://images.unsplash.com/photo-1616683693504-3ea7e9ad6fec?q=80&w=800&auto=format&fit=crop", title: "Cosmetics Packaging" },
+  { id: 701, category: "personal-care", src: c1, title: "Daily Skincare Line" },
+  { id: 702, category: "personal-care", src: c2, title: "Premium Lotions" },
+  { id: 703, category: "personal-care", src:c3, title: "Haircare & Shampoos" },
+  { id: 704, category: "personal-care", src: c4, title: "Cosmetics Packaging" },
+   { id: 705, category: "personal-care", src:c5, title: "Haircare & Shampoos" },
+  { id: 706, category: "personal-care", src: c6, title: "Cosmetics Packaging" },
+
 
   // SILVERMAX
   { id: 801, category: "silvermax", src: S1, title: "Super Platinum Blades" },

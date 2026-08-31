@@ -24,8 +24,29 @@ import S1 from "../../assets/Products/Sub/SV1.webp";
 import S2 from "../../assets/Products/Sub/SV2.webp";
 import S3 from "../../assets/Products/Sub/SV3.webp";
 import S4 from "../../assets/Products/Sub/SV4.webp";
-import S5 from "../../assets/Products/Sub/SV5.webp";
+import S5 from "../../assets/Products/Sub/SV5.png";
 import S6 from "../../assets/Products/Sub/SV6.webp";
+
+
+
+//Perfume
+import PsubDeodorant from "../../assets/Products/Sub/PsubDeodorant.png";
+import PsubEssentialOil from "../../assets/Products/Sub/PsubEssentialOil.png";
+import PsubManufacturing from "../../assets/Products/Sub/PsubManufacturing.png";
+import PsubPerfume from "../../assets/Products/Sub/PsubPerfume.png";
+import PsubSpray from "../../assets/Products/Sub/PsubSpray.png";
+import PsubOil from "../../assets/Products/Sub/PsubOil.png";
+// import tier from "../../assets/Products/Sub/tierSub.png";
+
+
+// personal care
+import c1 from "../../assets/Products/Sub/supervalue edible oil.png";
+import c2 from "../../assets/Products/Sub/supervalue facewash.png";
+import c3 from "../../assets/Products/Sub/supervalue hair oil.png";
+import c4 from "../../assets/Products/Sub/supervalue handwash.png";
+import c5 from "../../assets/Products/Sub/supervalue persume.png"
+import c6 from "../../assets/Products/Sub/supervalue shampoo.png";
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -39,40 +60,37 @@ const gridDataStore = {
     kicker: "OUR CATEGORIES",
     title: "Explore Our Product Categories",
     items: [
-      { title: "Perfume/Fragrance", desc: "Discover a world of captivating scents.", img: extra },
-      { title: "Shampoo", desc: "Clean and nourish your hair with our range.", img: extra },
-      { title: "Hair Oil", desc: "Natural oils for healthy, strong hair.", img: extra },
-      { title: "Face Wash", desc: "Gentle cleansing for your daily routine.", img: extra },
-      { title: "Body Lotion", desc: "Moisturize and protect your skin with our range.", img: extra },
-      { title: "Hand Wash", desc: "Gentle cleansing for your hands.", img: extra },
-       { title: "Shaving Form", desc: "Premium shaving cream for a smooth shave.", img: extra },
+      { title: "Perfume/Fragrance", desc: "Discover a world of captivating scents.", img: c5 },
+      { title: "Shampoo", desc: "Clean and nourish your hair with our range.", img: c6 },
+      { title: "Hair Oil", desc: "Natural oils for healthy, strong hair.", img: c3 },
+      { title: "Face Wash", desc: "Gentle cleansing for your daily routine.", img: c2 },
+      { title: "Body Lotion", desc: "Moisturize and protect your skin with our range.", img: c1 },
+      { title: "Hand Wash", desc: "Gentle cleansing for your hands.", img: c4 },
+       { title: "Shaving Form", desc: "Premium shaving cream for a smooth shave.", img: S5 },
     ]
   },
   "automobiles": {
     kicker: "OUR CATEGORIES",
     title: "Explore Automotive Solutions",
-    items: [
-      { title: "Cars", desc: "A wide range of vehicles for every need.", img: car },
-      { title: "Two Wheelers", desc: "High-performance bikes and scooters.", img: autoextra },
-      { title: "Three Wheelers", desc: "Reliable commercial transport units.", img: threeWheel },
-      { title: "Electric Vehicles", desc: "Modern, eco-friendly mobility solutions.", img: ev },
-      { title: "Tires & Tubes", desc: "Durable all-weather automotive tires.", img: tier },
-      { title: "Spare Parts", desc: "Genuine OEM parts and accessories.", img: parts },
-      { title: "Batteries & Lubricants", desc: "Long-lasting power and lubricant  for all vehicles.", img: autoextra },
-    
-      
-    ]
+   items: [
+  { title: "Cars", desc: "Reliable passenger vehicles engineered for global markets and commercial fleets.", img: car },
+  { title: "Two Wheelers", desc: "High-performance bikes and scooters for efficient daily mobility.", img: autoextra },
+  { title: "Three Wheelers", desc: "Heavy-duty, reliable three-wheelers built for commercial supply chains.", img: threeWheel },
+  { title: "Electric Vehicles", desc: "Modern, eco-friendly EVs driving the future of sustainable transport.", img: ev },
+  { title: "Tires & Tubes", desc: "Durable, high-traction tires and tubes for all-weather performance.", img: tier },
+  { title: "Spare Parts", desc: "Genuine OEM and premium aftermarket automotive components.", img: parts }
+]
   },
   "perfumery": {
     kicker: "OUR CATEGORIES",
     title: "Explore Fragrance Collections",
     items: [
-      { title: "Luxury Perfumes", desc: "Signature scents for the elite market.", img: perfuextra },
-      { title: "Everyday Fragrance", desc: "Accessible scents for daily wear.", img: perfuextra },
-      { title: "Perfume Oils", desc: "Highly concentrated, lasting attars.", img: perfuextra },
-      { title: "Deodorants", desc: "Refreshing aerosol body sprays.", img: perfuextra },
-      { title: "Body Mists", desc: "Light, breezy sprays for quick refreshment.", img: perfuextra },
-      { title: "Raw Extracts", desc: "Base notes for custom blending.", img: perfuextra },
+      { title: "Perfumes", desc: "Signature scents for the elite market.", img: PsubPerfume },
+      { title: "Spray Perfume", desc: "Convenient and easy-to-use fragrance solution.", img: PsubSpray },
+      { title: "Perfume Oils", desc: "Highly concentrated, lasting attars.", img: PsubOil },
+      { title: "Deodorants", desc: "Effective odor protection for all-day freshness.", img: PsubDeodorant },
+      { title: "Essential Oils", desc: "Natural oils for aromatherapy and wellness.", img: PsubEssentialOil },
+      { title: "Perfume Manufacturing", desc: "Custom fragrance creation and production.", img: PsubManufacturing },
     ]
   },
   "silvermax": {

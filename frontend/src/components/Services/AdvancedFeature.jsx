@@ -6,6 +6,29 @@ import sv1 from '../../assets/Products/ServicePage/SilvermaxAF.png';
 import sv2 from '../../assets/Products/ServicePage/SilvermaxAF2.png';
 import sv3 from '../../assets/Products/ServicePage/SilvermaxAF3.png';
 
+
+
+// perfume
+import PsubOil from "../../assets/Products/Sub/PsubOil.png";
+import PsubManufacturing from "../../assets/Products/Sub/PsubManufacturing.png";
+import PsubPerfume from "../../assets/Products/Sub/PsubPerfume.png";
+
+
+//personal care
+  import c1 from "../../assets/Products/Sub/supervalue edible oil.png";
+import c2 from "../../assets/Products/Sub/supervalue facewash.png";
+import c3 from "../../assets/Products/Sub/supervalue hair oil.png";
+import c4 from "../../assets/Products/Sub/supervalue handwash.png";
+import c6 from "../../assets/Products/Sub/supervalue shampoo.png";
+
+
+//Automobile
+// import A1 from "../../assets/Products/Sub/carSub.png";
+import A2 from "../../assets/Products/Sub/evSub.png";
+import A3 from "../../assets/Products/Sub/partsSub.png";
+import A4 from "../../assets/Products/Sub/threeSub.png";
+import A5 from "../../assets/Products/Sub/tierSub.png";
+
 gsap.registerPlugin(ScrollTrigger);
 
 // ============================================================================
@@ -65,9 +88,11 @@ const featureDataStore = {
     ctaLabel: "View Personal Care",
     ctaLink: "/contact",
     images: [
-      "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&w=1000&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?q=80&w=1000&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?q=80&w=1000&auto=format&fit=crop"
+         c1,
+          c2,
+           c3,
+          c4,
+            c6
     ]
   },
   "perfumery": {
@@ -94,9 +119,9 @@ const featureDataStore = {
     ctaLabel: "Explore Perfumery",
     ctaLink: "/contact",
     images: [
-      "https://images.unsplash.com/photo-1541643600914-78b084683601?q=80&w=1000&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1594035910387-fea47794261f?q=80&w=1000&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1588405748880-12d1d2a59f75?q=80&w=1000&auto=format&fit=crop"
+      PsubOil,
+      PsubManufacturing,
+      PsubPerfume
     ]
   },
   "automobiles": {
@@ -123,9 +148,11 @@ const featureDataStore = {
     ctaLabel: "View Automotive",
     ctaLink: "/contact",
     images: [
-      "https://images.unsplash.com/photo-1580273916550-e323be2ae537?q=80&w=1000&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1558981403-c5f9899a28bc?q=80&w=1000&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1514316454349-750a7fd3da3a?q=80&w=1000&auto=format&fit=crop"
+    A2,
+    A3,
+    A4,
+    A5
+
     ]
   }
 };

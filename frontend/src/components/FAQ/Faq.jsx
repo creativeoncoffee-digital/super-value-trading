@@ -75,7 +75,7 @@ export default function Faq({ page = 'home' }) {
                 {/* Clickable Question Area */}
                 <button 
                   onClick={() => toggleFaq(index)}
-                  className="w-full flex items-center justify-between p-6 text-left focus:outline-none group"
+                  className="w-full flex cursor-pointer items-center justify-between p-6 text-left focus:outline-none group"
                 >
                   <h3 className={`text-lg md:text-lg font-semibold transition-colors duration-300 ${isOpen ? 'text-orange-500' : 'text-[#0B1E3A] group-hover:text-orange-500'}`}>
                     {faq.question}
