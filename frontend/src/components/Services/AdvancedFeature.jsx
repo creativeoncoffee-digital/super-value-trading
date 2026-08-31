@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import sv1 from '../../assets/Products/ServicePage/SilvermaxAF.png';
-import sv2 from '../../assets/Products/ServicePage/SilvermaxAF2.png';
+import sv2 from '../../assets/Products/ServicePage/SIlvermaxAF2.png';
 import sv3 from '../../assets/Products/ServicePage/SilvermaxAF3.png';
 
 
