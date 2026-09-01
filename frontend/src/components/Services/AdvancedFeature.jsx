@@ -235,7 +235,7 @@ export default function AdvancedFeature({ category = "silvermax" }) {
           </div>
 
           {/* Title */}
-          <p className="adv-text-anim text13xl md:text-2xl  font-semibold text-[#0B1E3A] tracking-tight leading-[1.1] mb-1 whitespace-pre-line">
+          <p className="adv-text-anim text-sm md:text-xl  font-semibold text-[#0B1E3A] tracking-tight leading-[1.1] mb-1 whitespace-pre-line">
             {data.title}
           </p>
             <h2 className="adv-text-anim text-3xl md:text-5xl  font-semibold text-[#0B1E3A] tracking-tight leading-[1.1] mb-6 whitespace-pre-line">

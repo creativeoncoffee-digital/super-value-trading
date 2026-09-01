@@ -152,7 +152,7 @@ export default function ServiceAbout({ category = "perfumery" }) {
           <h2 className="about-text-anim flex flex-col gap-1 md:gap-2 mb-4">
             
             {/* "Your Trusted" - Smaller, medium weight */}
-            <span className="text-xl md:text-3xl font-medium  -mb-2 text-[#071326] tracking-tight">
+            <span className="text-sm md:text-xl font-medium  -mb-2 text-[#071326] tracking-tight">
               {data.headline}
             </span>
             
