@@ -30,7 +30,7 @@ export default function Perfumery() {
           <ServiceGrid category={category} />
              <AdvancedFeature category={category} />
           <WhyPartner />
-           <ServiceCTA/>
+           <ServiceCTA category={category}/>
       <ServiceGallery category={category} />
      <Faq page={category} />
     </main>

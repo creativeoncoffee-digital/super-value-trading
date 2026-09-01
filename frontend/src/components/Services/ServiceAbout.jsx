@@ -6,6 +6,7 @@ import SilverAbout from '../../assets/Products/ServicePage/SilverAbout.png';
 import AutomobileAbout from '../../assets/Products/ServicePage/AutomobileAbout.png';
 import PerfumeAbout from '../../assets/Products/ServicePage/PerfumeAbout.png';
 import PersonalAbout from '../../assets/Products/ServicePage/PersonalAbout.png';
+import { Link } from 'react-router-dom';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -17,9 +18,9 @@ gsap.registerPlugin(ScrollTrigger);
 
 const aboutDataStore = {
   "perfumery": {
-    title: "PRIVATE LABEL PERFUMERY",
-    headline: "From Fragrance Idea to",
-    highlight: "Your Own Brand",
+    title: "ABOUT PERFUMERY",
+    headline: "Your Trusted",
+    highlight: "Perfume & Scents Brand Builder Partner",
     description: "We help you create your own perfume brand with product options designed around your target audience, market positioning and desired presentation.",
     image: PerfumeAbout,
     bullets: [
@@ -35,9 +36,9 @@ const aboutDataStore = {
   },
   
   "automobiles": {
-    title: "AUTOMOTIVE FOCUS",
-    headline: "Leaders in",
-    highlight: "Specialized Export",
+    title: "About Automoblies",
+    headline: "Your Trusted",
+    highlight: "Automotive Brand Builder Partner ",
     description: "Our automotive division operates with a sharp focus on two primary categories: Vehicles (Two and Three Wheelers) and Spare Parts. We are an authorized distribution partner for global names like Piaggio, TVS, and Hero.",
     image: AutomobileAbout,
     bullets: [
@@ -53,9 +54,9 @@ const aboutDataStore = {
   },
 
   "personal-care": {
-    title: "ABOUT SUPER VALUE",
-    headline: "Your Trusted FMCG & Personal Care",
-    highlight: "Manufacturing Partner",
+    title: "ABOUT FMCG",
+    headline: "Your Trusted",
+    highlight: " FMCG & Personal Care Brand Builder Partner",
     description: "Super Value supplies grooming and personal care essentials across international markets, combining dependable sourcing, private-label support, and long-term distribution expertise.",
     image: PersonalAbout,
     bullets: [
@@ -72,8 +73,8 @@ const aboutDataStore = {
 
   "silvermax": {
     title: "ABOUT SILVERMAX",
-    headline: "Precision",
-    highlight: "Grooming Solutions",
+    headline: "Your Trusted",
+    highlight: "Silvermax Blades Brand Building Partner",
     description: "Authorized distribution and global supply of premium blades and grooming solutions engineered for absolute precision and comfort in every shave.",
     image: SilverAbout,
     bullets: [
@@ -143,29 +144,54 @@ export default function ServiceAbout({ category = "perfumery" }) {
           
           {/* Eyebrow */}
           <div className="about-text-anim flex items-center gap-4 mb-4">
-            <h3 className="text-orange-500 font-bold uppercase tracking-[0.2em] text-xs md:text-sm">
+            <h3 className="text-orange-500 font-semibold uppercase tracking-[0.2em] text-xs md:text-xs">
               {data.title}
             </h3>
           </div>
+{/* Headline with Gradient Highlight */}
+          <h2 className="about-text-anim flex flex-col gap-1 md:gap-2 mb-4">
+            
+            {/* "Your Trusted" - Smaller, medium weight */}
+            <span className="text-xl md:text-3xl font-medium  -mb-2 text-[#071326] tracking-tight">
+              {data.headline}
+            </span>
+            
+            {/* The Highlight Text */}
+            <span className="text-3xl md:text-5xl font-semibold text-[#071326] leading-[1.2] tracking-tight pb-1">
+              
+              {/* Logic to color ONLY the last two words */}
+              {data.highlight && data.highlight.split(' ').length > 2 ? (
+                <>
+                  {/* Part 1: Everything EXCEPT the last two words stays dark */}
+                  {data.highlight.split(' ').slice(0, -3).join(' ')}{' '}
+                  
+                  {/* Part 2: ONLY the last two words get the orange gradient */}
+                  {/* FIX: Added py-1 so the bottom of the 'g' never gets clipped by bg-clip-text */}
+                  <span className="text-transparent bg-clip-text bg-orange-500  py-1">
+                    {data.highlight.split(' ').slice(-3).join(' ')}
+                  </span>
+                </>
+              ) : (
+                
+                /* Fallback if the highlight is 2 words or fewer */
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-orange-400 py-1">
+                  {data.highlight}
+                </span>
+              )}
 
-          {/* Headline with Gradient Highlight */}
-          <h2 className="about-text-anim text-3xl md:text-5xl font-semibold text-[#071326] tracking-tight leading-[1.1] mb-4">
-            {data.headline} <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-orange-400">
-              {data.highlight}
             </span>
           </h2>
 
           {/* Description */}
-          <p className="about-text-anim text-slate-500 text-base md:text-lg leading-relaxed mb-6 max-w-xl">
+          <p className="about-text-anim text-slate-500 text-base md:text-lg leading-snug mb-6 max-w-xl">
             {data.description}
           </p>
 
           {/* Elegant Bullet Points */}
           <ul className="about-text-anim flex flex-col gap-4 mb-8 w-full">
             {data.bullets.map((bullet, i) => (
-              <li key={i} className="flex items-start gap-3">
-                <div className="w-6 h-6 rounded-full bg-orange-50 flex items-center justify-center shrink-0 mt-0 border border-orange-100">
+              <li key={i} className="flex items-start gap-2">
+                <div className="w-4 h-4 rounded-full bg-orange-50 flex items-center justify-center shrink-0 mt-0 border border-orange-100">
                   <svg className="w-3 h-3 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7"></path>
                   </svg>
@@ -177,27 +203,34 @@ export default function ServiceAbout({ category = "perfumery" }) {
             ))}
           </ul>
 
-          {/* UNIFIED DESIGN: The 3-Block "Positioning" Style for EVERY category */}
+        {/* UNIFIED DESIGN: The 3-Block "Positioning" Style for EVERY category */}
           <div className="about-text-anim w-full mb-8">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-2 bg-slate-50 rounded-2xl p-3 md:p-5 border border-slate-100 shadow-sm">
+            {/* FIX: Changed gap-2 to gap-5 on mobile to separate the stacked items */}
+            <div className="grid grid-cols-3 md:grid-cols-3 gap-2 md:gap-4 bg-slate-50 rounded-2xl p-5 md:p-6 border border-slate-100 shadow-sm">
               {data.positioning.map((pos, i) => (
-                <div key={i} className="flex flex-col border-l-2 border-orange-400 pl-4">
-                  <span className="text-[#071326] font-bold text-xs uppercase tracking-widest mb-1">{pos.title}</span>
-                  <span className="text-slate-600 text-xs font-medium leading-relaxed mt-1">{pos.desc}</span>
+                <div key={i} className="flex flex-col border-l-2 border-orange-400 pl-4 py-1">
+                  <span className="text-[#071326] font-bold text-xs uppercase tracking-widest mb-1">
+                    {pos.title}
+                  </span>
+                  {/* Removed mt-1 so it sits cleanly under the title with natural spacing */}
+                  <span className="text-slate-600  text-[9px] md:text-xs font-medium leading-relaxed">
+                    {pos.desc}
+                  </span>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* CTA Button */}
-          <div className="about-text-anim">
-            <button className="bg-orange-500  hover:bg-orange-500 text-white font-bold text-sm py-4 px-8 rounded-xl shadow-lg transition-all duration-300 flex items-center gap-3 group">
-              Discover More
-              <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-              </svg>
-            </button>
-          </div>
+        {/* CTA Button */}
+          <Link 
+            to="/contact" 
+            className="inline-flex items-center gap-3 bg-orange-500 hover:bg-[#d9660a] text-white font-bold text-sm py-4 px-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 group w-fit"
+          >
+            Discover More
+            <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+            </svg>
+          </Link>
 
         </div>
       </div>

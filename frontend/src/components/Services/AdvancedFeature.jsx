@@ -2,9 +2,13 @@ import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import sv1 from '../../assets/Products/ServicePage/SilvermaxAF.png';
-import sv2 from '../../assets/Products/ServicePage/SIlvermaxAF2.png';
-import sv3 from '../../assets/Products/ServicePage/SilvermaxAF3.png';
+
+import S1 from "../../assets/Products/Sub/SV1.webp";
+import S2 from "../../assets/Products/Sub/SV2.webp";
+import S3 from "../../assets/Products/Sub/SV3.webp";
+import S4 from "../../assets/Products/Sub/SV3.png";
+import S5 from "../../assets/Products/Sub/SV5.png";
+import S6 from "../../assets/Products/Sub/SV6.webp";
 
 
 
@@ -12,6 +16,8 @@ import sv3 from '../../assets/Products/ServicePage/SilvermaxAF3.png';
 import PsubOil from "../../assets/Products/Sub/PsubOil.png";
 import PsubManufacturing from "../../assets/Products/Sub/PsubManufacturing.png";
 import PsubPerfume from "../../assets/Products/Sub/PsubPerfume.png";
+import PsubEssentialOil from "../../assets/Products/Sub/PsubEssentialOil.png";
+import PsubSpray from "../../assets/Products/Sub/PsubSpray.png";
 
 
 //personal care
@@ -36,8 +42,9 @@ gsap.registerPlugin(ScrollTrigger);
 // ============================================================================
 const featureDataStore = {
   "silvermax": {
-    eyebrow: "OUR MOST ADVANCED LINE",
-    title: "Silvermax\nPremium Stainless",
+    eyebrow: "SILVERMAX BLADES",
+    title: "Build Your Brand",
+    highlight: "Silvermax & Stainless Steel Blades",
     description: "Engineered for a smoother, safer and more comfortable shave. Silvermax combines stainless steel precision with lasting sharpness for everyday confidence.",
     features: [
       {
@@ -59,14 +66,18 @@ const featureDataStore = {
     ctaLabel: "Explore Products",
     ctaLink: "/contact",
     images: [
-      sv1,
-      sv2,
-      sv3
+      S1,
+      S2,
+      S3,
+      S4,
+      S5,
+      S6
     ]
   },
   "personal-care": {
-    eyebrow: "EVERYDAY ESSENTIALS",
-    title: "Premium FMCG &\nPersonal Care",
+    eyebrow: "Personal Care Solutions",
+    title: "Build Your Brand",
+    highlight: "Personal Care & FMCG Products",
     description: "Delivering trusted grooming, hygiene, and daily care products formulated for safety and global distribution.",
     features: [
       {
@@ -96,8 +107,9 @@ const featureDataStore = {
     ]
   },
   "perfumery": {
-    eyebrow: "SIGNATURE SCENTS",
-    title: "Luxury Perfumery\n& Fragrances",
+    eyebrow: "PERFUMERY SOLUTIONS",
+   title: "Build Your Brand",
+     highlight: "Perfumes, Oils & Fragrances",
     description: "From raw ingredients and perfume oils to fully packaged retail products, we develop and distribute world-class fragrance lines.",
     features: [
       {
@@ -121,12 +133,15 @@ const featureDataStore = {
     images: [
       PsubOil,
       PsubManufacturing,
-      PsubPerfume
+      PsubSpray,
+      PsubPerfume,
+      PsubEssentialOil
     ]
   },
   "automobiles": {
-    eyebrow: "GLOBAL MOBILITY",
-    title: "Automotive Parts\n& Vehicles",
+    eyebrow: "AUTOMOTIVE SOLUTIONS",
+    title: "Build Your Brand",
+     highlight: "Automotive Parts and Vehicles",
     description: "Supplying the modern road. From Piaggio and TVS vehicles to high-performance tires and premium spare parts.",
     features: [
       {
@@ -209,7 +224,7 @@ export default function AdvancedFeature({ category = "silvermax" }) {
         {/* ======================================================= */}
         {/* LEFT SIDE: TEXT & FEATURES                              */}
         {/* ======================================================= */}
-        <div className="w-full ml-17 md:w-1/2 flex flex-col items-start">
+        <div className="w-full md:ml-17 md:w-1/2 flex flex-col items-start">
           
           {/* Eyebrow */}
           <div className="adv-text-anim flex items-center gap-4 mb-4">
@@ -220,8 +235,11 @@ export default function AdvancedFeature({ category = "silvermax" }) {
           </div>
 
           {/* Title */}
-          <h2 className="adv-text-anim text-3xl md:text-5xl  font-semibold text-[#0B1E3A] tracking-tight leading-[1.1] mb-6 whitespace-pre-line">
+          <p className="adv-text-anim text13xl md:text-2xl  font-semibold text-[#0B1E3A] tracking-tight leading-[1.1] mb-1 whitespace-pre-line">
             {data.title}
+          </p>
+            <h2 className="adv-text-anim text-3xl md:text-5xl  font-semibold text-[#0B1E3A] tracking-tight leading-[1.1] mb-6 whitespace-pre-line">
+            {data.highlight}
           </h2>
 
           {/* Description */}
@@ -273,7 +291,7 @@ export default function AdvancedFeature({ category = "silvermax" }) {
         {/* RIGHT SIDE: AUTO-FADING MULTI-IMAGE SLIDER              */}
         {/* ======================================================= */}
         {/* FIX: Removed lg:justify-end and used justify-center to close the gap cleanly */}
-        <div className="adv-img-anim mr-17 w-full md:w-1/2 relative flex items-center justify-center mt-10 lg:mt-0">
+        <div className="adv-img-anim md:mr-17 w-full md:w-1/2 relative flex items-center justify-center mt-10 lg:mt-0">
           
           {/* Main Image Container */}
           <div className="relative w-full aspect-square md:aspect-[4/3] lg:aspect-square max-w-[600px] rounded-[2rem] overflow-hidden shadow-2xl bg-slate-100 border border-slate-200">

@@ -11,7 +11,10 @@ export default function ServiceGallery({ category = "perfumery" }) {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
   
-  const baseImages = galleryData.filter(img => img.category === category);
+  // FIX 1: Attach the original index to each image so it never gets lost when arrays are duplicated/reversed
+  const baseImages = galleryData
+    .filter(img => img.category === category)
+    .map((img, index) => ({ ...img, originalIndex: index }));
 
   useEffect(() => {
     if (baseImages.length === 0) return;
@@ -35,8 +38,9 @@ export default function ServiceGallery({ category = "perfumery" }) {
   const reversedTrack = [...baseTrack].reverse();
   const row2Images = [...reversedTrack, ...reversedTrack];
 
-  const openLightbox = (index) => {
-    setCurrentIndex(index % baseImages.length);
+  // FIX 1 (cont.): Use the explicitly tracked originalIndex to open the correct image
+  const openLightbox = (originalIndex) => {
+    setCurrentIndex(originalIndex);
     setLightboxOpen(true);
     document.body.style.overflow = 'hidden'; 
   };
@@ -65,12 +69,13 @@ export default function ServiceGallery({ category = "perfumery" }) {
             0% { transform: translate3d(0, 0, 0); }
             100% { transform: translate3d(-50%, 0, 0); }
           }
+          /* FIX 2: Increased duration to dramatically slow down the scroll speed */
           .animate-scroll-fast {
-            animation: scrollLeft 60s linear infinite;
+            animation: scrollLeft 100s linear infinite;
             will-change: transform;
           }
           .animate-scroll-slow {
-            animation: scrollLeft 65s linear infinite;
+            animation: scrollLeft 120s linear infinite;
             will-change: transform;
           }
           .pause-on-hover:hover {
@@ -82,10 +87,10 @@ export default function ServiceGallery({ category = "perfumery" }) {
       <div className="max-w-[1400px] mx-auto px-[clamp(1.5rem,5vw,4rem)]">
         <div className="gallery-header-anim flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 md:mb-16">
           <div>
-            <h4 className="text-orange-500 font-bold uppercase tracking-widest text-xs md:text-sm mb-2 md:mb-3">
+            <h4 className="text-orange-500 font-bold uppercase tracking-widest text-xs text-start justify-start md:text-sm mb-2 md:mb-3">
               Our Work
             </h4>
-            <h2 className="text-3xl md:text-5xl font-bold text-[#0B1E3A] capitalize tracking-tight">
+            <h2 className="text-3xl md:text-5xl font-bold text-[#0B1E3A] text-start justify-start capitalize tracking-tight">
               {category.replace('-', ' ')} Gallery
             </h2>
           </div>
@@ -110,11 +115,10 @@ export default function ServiceGallery({ category = "perfumery" }) {
           {row1Images.map((img, index) => (
             <div 
               key={`r1-${index}`} 
-              onClick={() => openLightbox(index)}
-              // FIX: Removed padding (p-6) so the image can touch the edges
+              // Using img.originalIndex instead of index
+              onClick={() => openLightbox(img.originalIndex)}
               className="relative h-[220px] md:h-[280px] lg:h-[320px] w-[300px] md:w-[400px] lg:w-[480px] rounded-2xl md:rounded-[2rem] overflow-hidden cursor-pointer group shadow-sm hover:shadow-xl transition-all duration-300 shrink-0 bg-slate-100"
             >
-              {/* FIX: Changed to object-cover to completely fill the box without white gaps */}
               <img 
                 src={img.src} 
                 alt={img.title} 
@@ -136,7 +140,8 @@ export default function ServiceGallery({ category = "perfumery" }) {
           {row2Images.map((img, index) => (
             <div 
               key={`r2-${index}`} 
-              onClick={() => openLightbox(index)}
+              // Using img.originalIndex instead of index
+              onClick={() => openLightbox(img.originalIndex)}
               className="relative h-[220px] md:h-[280px] lg:h-[320px] w-[300px] md:w-[400px] lg:w-[480px] rounded-2xl md:rounded-[2rem] overflow-hidden cursor-pointer group shadow-sm hover:shadow-xl transition-all duration-300 shrink-0 bg-slate-100"
             >
               <img 
@@ -162,22 +167,21 @@ export default function ServiceGallery({ category = "perfumery" }) {
       {/* ======================================================= */}
       {lightboxOpen && (
         <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-[#07101E]/95 backdrop-blur-xl" onClick={closeLightbox}>
-          
-          <button onClick={closeLightbox} className="absolute top-6 right-6 text-white/50 hover:text-orange-500 p-2 transition-colors">
+        
+          <button onClick={closeLightbox} className="absolute cursor-pointer top-6 right-6 text-white/50 hover:text-orange-500 p-2 transition-colors">
             <svg className="w-8 h-8 md:w-10 md:h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path></svg>
           </button>
 
-          <button onClick={prevImage} className="absolute left-2 md:left-10 text-white/30 hover:text-white p-4 transition-colors">
+          <button onClick={prevImage} className="absolute left-2 cursor-pointer md:left-10 text-white/30 hover:text-white p-4 transition-colors">
             <svg className="w-10 h-10 md:w-14 md:h-14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7"></path></svg>
           </button>
 
-          <div className="relative w-[90%] max-w-6xl max-h-[85vh] flex flex-col items-center" onClick={(e) => e.stopPropagation()}>
-            <div className="bg-white p-4 md:p-6 rounded-2xl shadow-2xl">
-              {/* Image in lightbox retains object-contain so it is never cropped */}
+          <div className="relative w-[90%] max-w-6xl max-h-[95vh] flex flex-col items-center" onClick={(e) => e.stopPropagation()}>
+            <div className="bg-white p-0 md:p-0 rounded-2xl shadow-2xl">
               <img 
                 src={baseImages[currentIndex].src} 
                 alt={baseImages[currentIndex].title} 
-                className="w-full h-auto max-h-[65vh] object-contain" 
+                className="w-full h-auto max-h-[75vh] object-contain" 
               />
             </div>
             <div className="mt-6 text-center">
@@ -188,7 +192,7 @@ export default function ServiceGallery({ category = "perfumery" }) {
             </div>
           </div>
 
-          <button onClick={nextImage} className="absolute right-2 md:right-10 text-white/30 hover:text-white p-4 transition-colors">
+          <button onClick={nextImage} className="absolute right-2 md:right-10 cursor-pointer text-white/30 hover:text-white p-4 transition-colors">
             <svg className="w-10 h-10 md:w-14 md:h-14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path></svg>
           </button>
         </div>

@@ -5,7 +5,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Logo from '../assets/img/logo.png';
 
 // Import your blueprint background image
-import footerBg from '../assets/footerBg.jpeg'; 
+// import footerBg from '../assets/footerBg.jpeg'; 
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -56,11 +56,11 @@ export default function Footer() {
         <div className="absolute inset-0 bg-[#050A14]"></div>
         
         {/* 2. The Blueprint Image - Opacity increased to 40% and set to screen blend to make lines glow */}
-        <img 
+        {/* <img 
           src={footerBg} 
           alt="Manufacturing Blueprint Background" 
           className="absolute inset-0 w-full h-full object-cover opacity-40 mix-blend-screen" 
-        />
+        /> */}
         
         {/* 3. Very subtle gradient overlay just to keep text readable (reduced from 95% opacity to 40%) */}
         <div className="absolute inset-0 bg-gradient-to-b from-[#0B1E3A]/40 via-[#07101E]/40 to-[#050A14]/80"></div>
@@ -190,6 +190,8 @@ export default function Footer() {
               <h4 className="text-white font-bold text-sm tracking-wider uppercase mb-2">Company</h4>
               <Link to="/" className="text-slate-400 text-sm hover:text-orange-500 hover:translate-x-1 transition-all w-fit">Home</Link>
               <Link to="/about" className="text-slate-400 text-sm hover:text-orange-500 hover:translate-x-1 transition-all w-fit">About Us</Link>
+                  <Link to="/blogs" className="text-slate-400 text-sm hover:text-orange-500 hover:translate-x-1 transition-all w-fit">Blogs</Link>
+                      <Link to="/gallery" className="text-slate-400 text-sm hover:text-orange-500 hover:translate-x-1 transition-all w-fit">Gallery</Link>
             </div>
 
             {/* Col 3: Sectors */}
@@ -219,7 +221,9 @@ export default function Footer() {
           <p className="text-slate-500 text-xs font-medium">
             © {new Date().getFullYear()} Super Value General Trading LLC. All rights reserved.
           </p>
-          
+                 <div className="flex flex-wrap items-center justify-center gap-6">
+            <Link to="https://creativeoncoffee.com/" className="text-slate-400 text-xs hover:text-white transition-colors">Design & Developed By Creative On Coffee</Link>
+             </div>
           <div className="flex flex-wrap items-center justify-center gap-6">
             <Link to="/privacy" className="text-slate-500 text-xs hover:text-white transition-colors">Privacy Policy</Link>
             <Link to="/terms" className="text-slate-500 text-xs hover:text-white transition-colors">Terms & Conditions</Link>
