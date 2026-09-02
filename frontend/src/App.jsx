@@ -18,6 +18,8 @@ import Silvermax from './pages/Silvermax';  // Import the Silvermax page
 import ScrollToTop from './components/ScrollToTop';
 import Gallery from './pages/Gallery';
 import ScrollRestoration from './components/ScrollRestoration';
+import Privacy from './pages/Privacy';
+import Terms from './pages/Terms';
 
 
 function App() {
@@ -55,7 +57,8 @@ function AppShell() {
 
           <Route path="/blogs" element={<Blogs />} /> 
          <Route path="/gallery" element={<Gallery />} /> 
-          
+         <Route path="/privacy" element={<Privacy />} />
+          <Route path="/terms" element={<Terms />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>

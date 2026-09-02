@@ -225,8 +225,8 @@ export default function Footer() {
             <Link to="https://creativeoncoffee.com/" className="text-slate-400 text-xs hover:text-white transition-colors">Design & Developed By Creative On Coffee</Link>
              </div>
           <div className="flex flex-wrap items-center justify-center gap-6">
-            <Link to="/privacy" className="text-slate-500 text-xs hover:text-white transition-colors">Privacy Policy</Link>
-            <Link to="/terms" className="text-slate-500 text-xs hover:text-white transition-colors">Terms & Conditions</Link>
+            <Link to="/privacy" className="text-slate-400 text-xs hover:text-white transition-colors">Privacy Policy</Link>
+            <Link to="/terms" className="text-slate-400 text-xs hover:text-white transition-colors">Terms & Conditions</Link>
             
             <div className="flex items-center gap-4 md:ml-4">
               <a href="#" className="text-slate-400 hover:text-orange-500 transition-colors hover:-translate-y-1" aria-label="LinkedIn">
