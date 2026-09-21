@@ -41,7 +41,7 @@ export default function Silvermax() {
         <WhyPartner/>
          <ServiceCTA category={category}/>
         <ServiceGallery category={category} />
-       <Faq page={category} />
+       {/* <Faq page={category} /> */}
       
     </div>
   )

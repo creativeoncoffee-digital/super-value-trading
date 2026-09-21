@@ -25,14 +25,14 @@ export default function Perfumery() {
       <ServiceHero category={category} />
       <HeroMarquee  />
       <ServiceSteps category={category} />
-      <TrustedMarkets category={category} />
+      {/* <TrustedMarkets category={category} /> */}
         <ServiceAbout category={category} />
           <ServiceGrid category={category} />
              <AdvancedFeature category={category} />
           <WhyPartner />
            <ServiceCTA category={category}/>
       <ServiceGallery category={category} />
-     <Faq page={category} />
+     {/* <Faq page={category} /> */}
     </main>
   );
 }   

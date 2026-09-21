@@ -32,7 +32,7 @@ export default function About() {
       <AboutStats />
       <AboutCTA />
       <ServiceGallery category="exhibition" />
-      <Faq page="about" />
+      {/* <Faq page="about" /> */}
     </main>
   );
 }

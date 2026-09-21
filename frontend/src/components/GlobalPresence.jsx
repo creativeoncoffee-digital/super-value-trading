@@ -130,8 +130,11 @@ export default function GlobalPresence() {
         
         {/* Header */}
         <div className="text-center mb-10 max-w-2xl">
+            <p className="text-2xl md:text-[1rem] font-extrabold text-orange-500 leading-tight mb-4 tracking-wide">
+           Global Reach
+          </p>
           <h2 className="reveal-up text-3xl md:text-5xl font-semibold text-[#0B1E3A] mb-4 tracking-tight">
-            We're global to privilege you
+          Our GLobal Presence
           </h2>
           <p className="reveal-up text-slate-500 text-base leading-relaxed">
             Operating from the world's most strategic logistical hubs, ensuring seamless cross-border trade, compliance, and distribution worldwide.
@@ -140,7 +143,7 @@ export default function GlobalPresence() {
 
         {/* Controls (Interactive Dropdown & Button) */}
         <div className="reveal-up flex flex-col sm:flex-row items-center gap-4 z-30 relative shadow-xl shadow-slate-200/50 rounded-lg bg-white p-2 border border-slate-100">
-          <div className="relative flex items-center bg-white px-4 py-3 rounded-md w-full sm:w-64">
+          <div className="relative flex items-center bg-white px-4 py-3 rounded-md w-full sm:w-35">
             <span className="mr-3 text-lg">🌍</span>
             
             {/* Dynamic Select mapping over your locations array */}
@@ -158,10 +161,7 @@ export default function GlobalPresence() {
             
             <svg className="w-4 h-4 text-slate-400 absolute right-4 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
           </div>
-          <button className="brand-button brand-button-primary w-full sm:w-auto">
-            See Services
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M13 5l7 7-7 7M5 12h15"></path></svg>
-          </button>
+        
         </div>
 
         {/* Map Container */}

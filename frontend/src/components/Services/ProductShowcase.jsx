@@ -27,7 +27,7 @@ const showcaseDataStore = {
       left: {
         eyebrow: 'Premium FMCG',
         description: 'High-quality everyday essentials formulated for safety, efficacy, and global standards.',
-        ctaLabel: 'Inquiry Now',
+        ctaLabel: 'Inquire Now',
         ctaHref: '/contact',
       },
       right: {

@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { Link } from 'react-router-dom';
+import Banner from '../../assets/Banner.jpg';
 
 export default function AboutHero() {
   const sectionRef = useRef(null);
@@ -25,7 +26,7 @@ export default function AboutHero() {
       <div className="absolute inset-0 z-0">
         <img 
           // You can update this placeholder banner later as requested
-          src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=2000&auto=format&fit=crop" 
+          src={Banner} 
           alt="Global Trade Dubai" 
           className="w-full h-full object-cover object-center opacity-30 mix-blend-lighten grayscale"
         />

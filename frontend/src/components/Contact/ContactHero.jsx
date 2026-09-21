@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 
+import Banner from '../../assets/Banner.jpg';
 export default function ContactHero() {
   const sectionRef = useRef(null);
 
@@ -15,12 +16,12 @@ export default function ContactHero() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative w-full min-h-[60vh] flex flex-col justify-end bg-[#07101E] overflow-hidden font-sans pt-32 pb-16">
+    <section ref={sectionRef} className="relative w-full min-h-[55vh] flex flex-col justify-end bg-[#07101E] overflow-hidden font-sans pt-20 pb-16">
       
       {/* Background Image & Gradient */}
       <div className="absolute inset-0 z-0">
         <img 
-          src="https://images.unsplash.com/photo-1596524430615-b46475ddff6e?q=80&w=2000&auto=format&fit=crop" 
+          src={Banner} 
           alt="Contact Us" 
           className="w-full h-full object-cover opacity-90 grayscale"
         />
@@ -34,12 +35,12 @@ export default function ContactHero() {
         </p>
 
         <h1 className="contact-anim text-4xl md:text-6xl font-bold text-white tracking-tight leading-[1.05] mb-6">
-          Let's Build Your Business Together <br className="md:hidden" />
+          Contact Us <br className="md:hidden" />
           {/* <span className="text-orange-500"></span> */}
         </h1>
 
         <p className="contact-anim text-slate-300 text-base md:text-lg leading-relaxed max-w-2xl">
-          Whether you are looking for global distribution, wholesale pricing, or end-to-end private label manufacturing, our dedicated trade desk is ready to assist you.
+          We are here to assist you with your trade inquiries, partnerships, and any questions you may have. Reach out to us and our team will respond promptly.
         </p>
 
       </div>

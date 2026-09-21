@@ -32,7 +32,7 @@ export default function AboutSection() {
   return (
     <section ref={sectionRef} className="w-full bg-white pb-10 pt-30 px-8 overflow-hidden brand-section">
       {/* Matched the max-w-7xl and flex gap to the WhatWeTrade component */}
-      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12 lg:gap-10 ">
         
         {/* Left Side: Cinematic Image */}
         <div className="about-image w-full lg:w-1/2 flex justify-center">
@@ -54,26 +54,29 @@ export default function AboutSection() {
           <div className="about-text flex items-center gap-4 mb-4">
             <span className="w-8 h-[2px] bg-orange-500"></span>
             <h2 className="brand-title text-3xl md:text-4xl font-semibold text-[#0B1E3A] tracking-tight">
-              About Super Value
+             Connecting Products, Markets & Opportunities
             </h2>
           </div>
 
           <p className="about-text brand-lead ml-12 mb-10">
-            Super Value General Trading LLC is a <br className="hidden xl:block" />
-            <span className="text-orange-500 font-bold">premier, multi-sector trading enterprise</span><br className="hidden xl:block" />
-            incorporated in <span className="text-[#0B1E3A] font-bold">Dubai, United Arab Emirates.</span><br />
-            Operating from the world's most strategic<br className="hidden xl:block" />
-            logistical hub, the company specialises in the<br className="hidden xl:block" />
-            sourcing, distribution and cross-border trade<br className="hidden xl:block" />
-            of high-demand commodities and consumer goods.
+            At SVGT, we go beyond conventional trading.<br className="hidden xl:block" />
+            <span className="text-orange-500 font-bold">  We identify the right products and reliable sources,</span><br className="hidden xl:block" />
+             create efficient routes to market, and build the partnerships needed to turn products
+              into successful businesses. From global sourcing and
+               procurement to distribution, market development, brand 
+               representation and international expansion, we support
+                our partners throughout the commercial journey
+                 Operating across 80+ countries, our strength lies in
+                  understanding markets, connecting the right people and
+                   creating solutions that deliver quality, competitiveness and lasting business value.
+            
           </p>
-
           <div className="about-text">
             <Link 
               to="/contact" 
               className="brand-button brand-button-primary ml-12"
             >
-              Inquiry Now
+              Inquire Now
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
             </Link>
           </div>

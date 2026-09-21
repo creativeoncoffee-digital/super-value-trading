@@ -34,7 +34,7 @@ export default function PersonalCarePage() {
         <WhyPartner />
       <ServiceCTA category={category} />
       <ServiceGallery category={category} />
-     <Faq page={category} />
+     {/* <Faq page={category} /> */}
     </main>
   );
 }

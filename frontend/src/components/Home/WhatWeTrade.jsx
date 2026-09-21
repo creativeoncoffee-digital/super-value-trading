@@ -110,7 +110,7 @@ export default function WhatWeTrade() {
                 to="/contact" 
                 className="brand-button flex items-center justify-center bg-orange-500 hover:bg-orange-600 text-white w-max cursor-pointer shadow-lg shadow-orange-500/30 px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold uppercase tracking-wider text-sm transition-all duration-300 hover:-translate-y-1"
               >
-                Discuss A Trade
+                Inquire Now
                 <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M13 5l7 7-7 7M5 12h15"></path>
                 </svg>

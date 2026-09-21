@@ -32,7 +32,7 @@ export default function Automobiles() {
       <WhyPartner />
        <ServiceCTA category={category}/>
       <ServiceGallery category={category} />
-      <Faq page={category} />
+      {/* <Faq page={category} /> */}
     </main>
   );
 }
