@@ -3,12 +3,14 @@ import sv1 from '../assets/CTA/AutoCTA.png';
 import sv2 from '../assets/CTA/CareCTA.png';
 import sv3 from '../assets/CTA/SilvermaxCTA.png';
 import sv4 from '../assets/CTA/SilvermaxCTA2.png';
+import PerfumeCTA from '../assets/Home/HomePerfumeBanner.png';
+
 
 const bannerMap = {
   "automobiles": sv1,
   "personal-care": sv2,
   "silvermax": sv3,
-  "perfumery": sv4
+  "perfumery": PerfumeCTA
 };
 
 export default function CTABanner({ category }) {

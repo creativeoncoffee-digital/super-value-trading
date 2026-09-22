@@ -21,6 +21,8 @@ import WhyUs from '../components/Home/WhyUs';
 import Faq from '../components/FAQ/Faq';
 import TrustedMarkets from '../components/TrustedMarkets';
 import BusinessSolutions from '../components/Home/BusinessSolutions';
+import ServiceSteps from '../components/Services/ServiceSteps';
+
 gsap.registerPlugin(ScrollTrigger);
 
 
@@ -51,7 +53,7 @@ export default function Home() {
       
       {/* 1. Hero Section */}
       <HomeHero />
-       {/* <ServiceSteps/> */}
+       <ServiceSteps category="personal-care"/>
       {/* <TrustedMarkets category="home" /> */}
       <AboutSection />
       <WhatWeTrade />

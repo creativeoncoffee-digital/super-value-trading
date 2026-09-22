@@ -2,18 +2,22 @@ import { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 
-import slide1 from '../../assets/Home/HomeBanner1.png';
+// import slide1 from '../../assets/Home/HomeBanner1.png';
 import slide2 from '../../assets/Home/HomeBanner2.png';
 import slide3 from '../../assets/Home/HomeBanner3.png';
+import slide4 from '../../assets/Home/HomeFmcgBanner.png';
+import slide5 from '../../assets/Home/HomePerfumeBanner.png';
 
 export default function HomeHero() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const sliderRef = useRef(null);
 
   const slides = [
-    { id: 1, image: slide1, title: "Premium Perfumery", link: "/perfumery" },
-    { id: 2, image: slide2, title: "FMCG & Personal Care", link: "/personal-care" },
-    { id: 3, image: slide3, title: "Automotive Solutions", link: "/automobiles" }
+    // { id: 1, image: slide1, title: "Premium Perfumery", link: "/perfumery" },
+    { id: 2, image: slide2, title: "Silvermax", link: "/silvermax" },
+    { id: 3, image: slide3, title: "Automotive Solutions", link: "/automobiles" },
+    { id: 4, image: slide4, title: "FMCG & Personal Care", link: "/personal-care" },
+    { id: 5, image: slide5, title: "Premium Perfumery", link: "/perfumery" },
   ];
 
   useEffect(() => {

@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 
-import Banner from '../../assets/Banner.jpg';
+import Banner from '../../assets/ContactBanner.png';
 export default function ContactHero() {
   const sectionRef = useRef(null);
 
