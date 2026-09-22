@@ -10,7 +10,7 @@ const bannerMap = {
   "automobiles": sv1,
   "personal-care": sv2,
   "silvermax": sv3,
-  "perfumery": PerfumeCTA
+  "perfumery": sv4
 };
 
 export default function CTABanner({ category }) {
