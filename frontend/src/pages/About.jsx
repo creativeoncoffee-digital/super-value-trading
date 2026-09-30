@@ -12,6 +12,10 @@ import ServiceGallery from '../components/Services/ServiceGallery';
 import AboutStory from '../components/About/AboutStory';
 import OurServices from '../components/About/OurServices';
 import HeroMarquee from '../components/HeroMarquee';
+import ResearchIntelligence from '../components/About/ResearchIntelligence';
+import ManufacturingMarket from '../components/About/ManufacturingMarket';
+import ResponsibleBusiness from '../components/About/ResponsibleBusiness';
+
 
 export default function About() {
   return (
@@ -25,13 +29,16 @@ export default function About() {
       <HeroMarquee />
       {/* <TrustedMarks /> */}
       <AboutStory />
+      <ManufacturingMarket />
+      <ResearchIntelligence />
+      <ResponsibleBusiness />
       {/* <WhoWeAre /> */}
       {/* <CoreValues /> */}
-      <ProductDivisions />
+      {/* <ProductDivisions /> */}
       <OurServices />
       <AboutStats />
       <AboutCTA />
-      <ServiceGallery category="exhibition" />
+      {/* <ServiceGallery category="exhibition" /> */}
       {/* <Faq page="about" /> */}
     </main>
   );

@@ -6,6 +6,7 @@ import ContactHero from '../components/Contact/ContactHero';
 import Form from '../components/Contact/Form';
 // import License from '../components/Contact/License';
 import Breadcrumb from '../components/Breadcrumb';
+import Faq from '../components/FAQ/Faq';
 
 
 
@@ -47,6 +48,7 @@ export default function Contact() {
         {/* 3. The License & Compliance Section */}
         {/* <License />
          */}
+         <Faq category="contact"/>
 
     
 

@@ -74,8 +74,8 @@ const aboutDataStore = {
   "silvermax": {
     title: "ABOUT SILVERMAX",
     headline: "Your Trusted",
-    highlight: "Silvermax Blades Brand Building Partner",
-    description: "Authorized distribution and global supply of premium blades and grooming solutions engineered for absolute precision and comfort in every shave.",
+    highlight: "ENGINEERED FOR PERFORMANCE\nMADE WITH PRECISION.",
+    description: "Silvermax blades are manufactured with carefully selected materials, precision edge technology and advanced surface treatments. From material selection to final inspection, every stage is controlled to deliver consistent quality, durability and a superior shaving experience.",
     image: SilverAbout,
     bullets: [
       "High-grade stainless steel engineering",
@@ -83,9 +83,18 @@ const aboutDataStore = {
       "Scalable bulk and wholesale distribution"
     ],
     positioning: [
-      { title: "PLATINUM", desc: "Premium Multi-Coated Blades" },
-      { title: "STAINLESS", desc: "Reliable Everyday Performance" },
-      { title: "CUSTOM", desc: "OEM Blister & Packaging" }
+     { 
+        title: "High-Grade Materials", 
+        desc: "Premium stainless steel engineered for performance." //[cite: 32]
+      },
+      { 
+        title: "Advanced Coatings", 
+        desc: "Platinum and specialized surface treatments." //[cite: 32]
+      },
+      { 
+        title: "Precision Edge", 
+        desc: "Controlled grinding, honing and finishing." //[cite: 32]
+      }
     ]
   }
 };

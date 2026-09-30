@@ -37,7 +37,7 @@ export default function Form() {
   };
 
   return (
-    <section ref={containerRef} className="w-full bg-[#f8fafc] py-16 md:py-24 font-sans relative overflow-hidden border-t border-slate-200">
+    <section ref={containerRef} className="w-full bg-[#f8fafc] py-16 md:pt-25 font-sans relative overflow-hidden border-t border-slate-200">
       
       <div className="relative z-10 max-w-[1300px] mx-auto px-[clamp(1.5rem,5vw,4rem)] flex flex-col lg:flex-row gap-12 lg:gap-16">
         

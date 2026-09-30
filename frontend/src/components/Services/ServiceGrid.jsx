@@ -87,13 +87,34 @@ const gridDataStore = {
     kicker: "OUR CATEGORIES",
     title: "Explore Grooming Solutions",
     items: [
-      { title: "Super Platinum", desc: "Advanced cryogenic coating for smooth shaves.", img: S2 },
-      { title: "Platinum", desc: "Multi-layered platinum for enhanced comfort.", img: S6 },
-      { title: "Stainless Steel", desc: "Built for everyday shaving performance.", img: S3 },
-      { title: "Double Edge Razors", desc: "Classic, durable metal build for control.", img: S9 },
-      { title: "Shaving Foams", desc: "Rich lather for the ultimate smooth glide.", img: S5 },
-      { title: "Non Foaming Gels", desc: "Smooth, non-foaming gel for a clean shave.", img: S8 },
-      { title: "Shaving creme", desc: "Luxurious cream for a premium shaving experience.", img: S7 },
+      // { title: "Super Platinum", desc: "Advanced cryogenic coating for smooth shaves.", img: S2 },
+      // { title: "Platinum", desc: "Multi-layered platinum for enhanced comfort.", img: S6 },
+      // { title: "Stainless Steel", desc: "Built for everyday shaving performance.", img: S3 },
+      // { title: "Double Edge Razors", desc: "Classic, durable metal build for control.", img: S9 },
+      // { title: "Shaving Foams", desc: "Rich lather for the ultimate smooth glide.", img: S5 },
+      // { title: "Non Foaming Gels", desc: "Smooth, non-foaming gel for a clean shave.", img: S8 },
+      // { title: "Shaving creme", desc: "Luxurious cream for a premium shaving experience.", img: S7 },
+      { 
+    title: "Double Edge Blades", 
+    desc: "Classic performance for everyday shaving.", 
+    img: S2 
+  },
+  { 
+    title: "Single Edge Blades", 
+    desc: "Premium razor systems built for a superior shave.", 
+    img: S6 
+  },
+  { 
+    title: "Disposable Razors", 
+    desc: "Reliable quality for modern grooming needs.", 
+    img: S3 
+  },
+  { 
+    title: "Salon Razors & Trimmers", 
+    desc: "Specialized solutions for professional use.", 
+    img: S9 
+  }
+
     ]
   }
 };

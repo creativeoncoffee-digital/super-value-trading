@@ -44,7 +44,7 @@ function AppShell() {
         
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route path="/silvermax" element={<Silvermax />} />  {/* Route for Silvermax page */}
+          <Route path="/silvermax-blade" element={<Silvermax />} />  {/* Route for Silvermax page */}
           <Route path="/contact" element={<Contact />} /> 
           
           {/* Products & Services Routes */}

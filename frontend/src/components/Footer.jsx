@@ -214,7 +214,7 @@ export default function Footer() {
               <Link to="/personal-care" className="text-slate-400 text-sm hover:text-orange-500 hover:translate-x-1 transition-all w-fit">FMCG & Personal Care</Link>
               <Link to="/perfumery" className="text-slate-400 text-sm hover:text-orange-500 hover:translate-x-1 transition-all w-fit">Perfumery & Fragrances</Link>
               <Link to="/automobiles" className="text-slate-400 text-sm hover:text-orange-500 hover:translate-x-1 transition-all w-fit">Automotive Solutions</Link>
-              <Link to="/silvermax" className="text-slate-400 text-sm hover:text-orange-500 hover:translate-x-1 transition-all w-fit">Silvermax Blades</Link>
+              <Link to="/silvermax-blade" className="text-slate-400 text-sm hover:text-orange-500 hover:translate-x-1 transition-all w-fit">Silvermax Blades</Link>
             </div>
 
             <div className="footer-item flex flex-col gap-4">

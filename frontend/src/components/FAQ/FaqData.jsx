@@ -1,4 +1,47 @@
 export const faqData = {
+  contact: [
+    {
+      question: "How quickly can I expect a response to my enquiry?",
+      answer: "Our commercial desk reviews all submissions promptly. You can expect a detailed response from one of our global specialists within one business day."
+    },
+    {
+    question: "Where is your global headquarters located?",
+    answer: "Our headquarters is strategically located in Office 1707, Damac XL Tower, Marasi Drive, Business Bay, Dubai, UAE. We also operate with connected offices in Singapore, India, Saudi Arabia, and the USA."
+  },
+  {
+    question: "Do you have Minimum Order Quantities (MOQs)?",
+    answer: "Yes, MOQs vary depending on the product category (FMCG, Perfumery, Automobiles, Silvermax) and specific commercial requirements. Please outline your expected volume in the contact form so we can provide tailored options."
+  },
+  {
+    question: "Do you offer OEM or private label manufacturing?",
+    answer: "Absolutely. We specialize in helping businesses build their own brands, particularly in Perfumery and Personal Care. We offer end-to-end solutions from formulation and product identification to final packaging."
+  },
+  {
+    question: "Which international markets and regions do you supply to?",
+    answer: "We operate a truly global supply network, connecting products and businesses across more than 80 countries spanning the Middle East, Africa, Europe, Asia, and the Americas."
+  },
+  {
+    question: "How can my company become an authorized distributor?",
+    answer: "We are actively expanding our global distribution network. Please detail your target market, current distribution capabilities, and sectors of interest in the contact form, and our partnership team will reach out."
+  },
+  {
+    question: "How do I request a formal commercial quotation?",
+    answer: "You can request a quote by filling out the contact form with your specific product interests, expected volume, and destination port. Our commercial desk will prepare and send a detailed proposal."
+  },
+  {
+    question: "Can I receive a comprehensive product catalog?",
+    answer: "Because our portfolio spans multiple extensive sectors, we provide highly tailored digital catalogs based on your specific commercial needs. Let us know your focus area, and we will send the relevant catalogs."
+  },
+  {
+    question: "Are product samples available before placing a bulk order?",
+    answer: "Yes, we provide product samples for most of our FMCG, Perfumery, and Silvermax lines. We believe in ensuring complete quality alignment before finalizing any bulk commercial agreements."
+  },
+  {
+    question: "Will I have a dedicated point of contact for my account?",
+    answer: "Yes. Once your initial enquiry is processed, you will be assigned a dedicated commercial manager who will support you end-to-end, from initial sourcing to final delivery in your market."
+  }
+],
+
   home: [
     {
       question: "What is Super Value General Trading LLC?",

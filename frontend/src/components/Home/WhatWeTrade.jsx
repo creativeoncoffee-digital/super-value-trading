@@ -37,7 +37,7 @@ export default function WhatWeTrade() {
 
   // Added "link" properties to each item to route to the correct pages
   const tradeItems = [
-    { title: "Silvermax Blade", desc: "High-quality blades for various industrial and consumer applications.", img: icon3, link: "/silvermax" },
+    { title: "Silvermax Blade", desc: "High-quality blades for various industrial and consumer applications.", img: icon3, link: "/silvermax-blade" },
     { title: "FMCG & Personal Care", desc: "Razor blades, grooming systems, skincare, and everyday FMCG products for reliable supply.", img: icon1, link: "/personal-care" },
     { title: "Perfumery", desc: "Luxury perfumes, perfume oils, and private-label fragrance development for global markets.", img: icon2, link: "/perfumery" },
     { title: "Automobiles", desc: "Two-wheelers, three-wheelers, EVs, tires, tubes, and automotive parts across whole supply chains.", img: icon4, link: "/automobiles" },

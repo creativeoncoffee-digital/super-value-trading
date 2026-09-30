@@ -10,6 +10,7 @@ import AdvancedFeature from '../components/Services/AdvancedFeature';
 import Faq from '../components/FAQ/Faq';
 import WhyPartner from '../components/WhyPartner';
 import ServiceCTA from '../components/CTABanner';
+import ProcessSteps from '../components/Services/ProcessSteps';
 
 
 
@@ -37,6 +38,7 @@ export default function Silvermax() {
         <ServiceAbout category={category} />
         <TrustedMarkets category={category} />
         <ServiceGrid category={category} />
+        <ProcessSteps category={category} />
         <AdvancedFeature category={category} />
         <WhyPartner/>
          <ServiceCTA category={category}/>

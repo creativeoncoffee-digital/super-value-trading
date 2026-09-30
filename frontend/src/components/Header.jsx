@@ -88,7 +88,7 @@ export default function Header() {
             {/* ========================================================================= */}
             <div className="absolute top-full left-1/2 -translate-x-1/2 w-[550px] md:w-[640px] bg-white shadow-[0_20px_50px_rgba(11,30,58,0.1)] rounded-2xl p-4 grid grid-cols-2 gap-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-slate-100 z-50 text-left">
 
-               <Link to="/silvermax" className="p-3 rounded-xl bg-transparent hover:bg-slate-50 border border-transparent hover:border-slate-100 transition-all duration-300 flex flex-col gap-1.5 group/item">
+               <Link to="/silvermax-blade" className="p-3 rounded-xl bg-transparent hover:bg-slate-50 border border-transparent hover:border-slate-100 transition-all duration-300 flex flex-col gap-1.5 group/item">
                 <div className="flex items-center justify-between w-full">
                   <span className="text-[#0B1E3A] font-bold text-sm group-hover/item:text-orange-500 transition-colors duration-300">Silvermax Blades</span>
                   <svg className="w-4 h-4 text-orange-500 opacity-0 -translate-x-2 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 5l7 7-7 7"></path></svg>
@@ -167,7 +167,7 @@ export default function Header() {
             
             {/* Animated Dropdown Items */}
             <div className={`flex flex-col gap-5 overflow-hidden transition-all duration-300 ${isMobileServicesOpen ? 'max-h-[300px] mt-5 opacity-100 pl-4' : 'max-h-0 opacity-0 pl-4'}`}>
-               <Link to="/silvermax" className="text-[15px] font-semibold text-slate-600 hover:text-orange-500 transition-colors">Silvermax Blades</Link>
+               <Link to="/silvermax-blade" className="text-[15px] font-semibold text-slate-600 hover:text-orange-500 transition-colors">Silvermax Blades</Link>
               <Link to="/personal-care" className="text-[15px] font-semibold text-slate-600 hover:text-orange-500 transition-colors">FMCG & Personal Care</Link>
               <Link to="/perfumery" className="text-[15px] font-semibold text-slate-600 hover:text-orange-500 transition-colors">Perfumery</Link>
               <Link to="/automobiles" className="text-[15px] font-semibold text-slate-600 hover:text-orange-500 transition-colors">Automobiles</Link>

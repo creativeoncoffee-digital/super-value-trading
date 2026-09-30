@@ -5,25 +5,25 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 const storyCards = [
-  {
-    title: "Dubai-Based Company",
-    desc: "Serving clients across Middle East, Africa, Europe, Asia, and beyond.",
-    icon: "M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+{
+    title: "Dubai Based",
+    desc: "Strategically positioned for international trade.",
+    icon: "M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" // Placeholder diamond/building icon
   },
   {
-    title: "More Than a Trading Company",
-    desc: "We are your international business growth partner.",
-    icon: "M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
+    title: "Global Connections",
+    desc: "Access to trusted suppliers, buyers and distribution partners worldwide.",
+    icon: "M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" // Placeholder network icon
   },
   {
-    title: "One-Stop Solution",
-    desc: "From product sourcing to market entry and distribution — all under one roof.",
-    icon: "M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+    title: "Real Trade Experience",
+    desc: "Built on years of international sourcing, supply and market development.",
+    icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" // Placeholder shield/experience icon
   },
   {
-    title: "Trusted by Distributors & Brands",
-    desc: "Personally connected relationships that drive results.",
-    icon: "M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+    title: "EndToEnd Coordination",
+    desc: "From product identification to final delivery in market.",
+    icon: "M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" // Placeholder gear/process icon
   },
   {
     title: "Professional. Reliable. Global.",
@@ -79,8 +79,8 @@ export default function AboutStory() {
           </h2>
 
 
-          <p className="story-text-anim text-slate-600 text-sm md:text-[15px] leading-relaxed mb-6">
-            With over 23+ years of international business experience and a leadership team with global exposure, Super Value Trading has evolved into a one-stop solution for businesses seeking reliable import-export support, product sourcing, brand development, and market entry.
+        <p className="story-text-anim text-slate-600 text-sm md:text-[15px] leading-relaxed mb-6">
+            Built on over 23 years of international business experience and guided by a leadership team with global exposure, Super Value has evolved into a one-stop partner for businesses looking to expand beyond borders. From market entry and distribution to sourcing, manufacturing and growth, we connect the right products with the right markets and business partners — creating opportunities built for long-term success.
           </p>
 
           <p className="story-text-anim text-slate-600 text-sm md:text-[15px] leading-relaxed font-medium">

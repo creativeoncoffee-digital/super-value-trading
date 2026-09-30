@@ -86,12 +86,12 @@ const heroDataStore = {
 
   "silvermax": {
     kicker: "PRECISION GROOMING",
-    titleWhite: "Advanced Blade\nManufacturing",
+    titleWhite: "A BETTER SHAVE\nBUILDS BRANDS",
     titleOrange: "",
-    description: "Authorized distribution and global supply of premium blades and grooming solutions engineered for absolute precision and comfort.",
+    description: "Silvermax blades are manufactured with high-grade materials,advanced surface treatments and precision engineering to deliver consistent sharpness glide and reliable performance.",
     buttons: [
       { label: "Explore Blades", link: "/contact", primary: true, arrow: true },
-      { label: "OEM Manufacturing", link: "/contact", primary: false, arrow: false }
+      { label: "Request Brochure", link: "/contact", primary: false, arrow: true }
     ],
     banners: [
       { type: 'image', src: blade, mobileSrc: [bladeMobile] }

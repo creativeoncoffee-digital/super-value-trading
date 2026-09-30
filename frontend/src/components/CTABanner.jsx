@@ -9,7 +9,7 @@ import PerfumeCTA from '../assets/Home/HomePerfumeBanner.png';
 const bannerMap = {
   "automobiles": sv1,
   "personal-care": sv2,
-  "silvermax": sv3,
+  "silvermax-blade": sv3,
   "perfumery": sv4
 };
 
