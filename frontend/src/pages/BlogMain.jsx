@@ -212,7 +212,7 @@ export default function BlogMain() {
             {/* Close Button */}
             <button 
               onClick={closeModal}
-              className="absolute top-6 right-6 z-10 w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg hover:bg-orange-500 hover:text-white transition-colors text-slate-800"
+              className="absolute md:top-18 top-6 right-6 z-10 w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full cursor-pointer flex items-center justify-center shadow-lg hover:bg-orange-500 hover:text-white transition-colors text-slate-800"
             >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path></svg>
             </button>

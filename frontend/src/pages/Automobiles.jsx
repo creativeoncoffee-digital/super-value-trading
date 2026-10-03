@@ -1,5 +1,5 @@
 import ServiceHero from '../components/Services/ServiceHero';
-import TrustedMarkets from '../components/TrustedMarkets';
+// import TrustedMarkets from '../components/TrustedMarkets';
 import ServiceAbout from '../components/Services/ServiceAbout';       // IMPORT NEW COMPONENT
 import ServiceGrid from '../components/Services/ServiceGrid'; 
 import Faq from '../components/FAQ/Faq';
@@ -26,7 +26,7 @@ export default function Automobiles() {
       <HeroMarquee/>
       <ServiceSteps category={category} />
        <ServiceAbout category={category} />
-       <TrustedMarkets category={category} />
+       {/* <TrustedMarkets category={category} /> */}
       <ServiceGrid category={category} />
       <AdvancedFeature category={category} />
       <WhyPartner />

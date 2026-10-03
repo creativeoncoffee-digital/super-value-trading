@@ -29,8 +29,8 @@ const heroDataStore = {
     titleOrange: "",
     description: "From just $1 to Luxury Premium - we help you create your own perfume brand that defines your identity.",
     buttons: [
-      { label: "Start Your Brand Journey", link: "/contact", primary: true, arrow: true },
-      { label: "Explore Products", link: "/contact", primary: false, arrow: false }
+      { label: "Explore Perfume", link: "/contact", primary: true, arrow: true },
+      { label: "Request Brochure", link: "/contact", primary: false, arrow: false }
     ],
     banners: [
       // FEATURE ADDED: 'mobileSrc' handles the phone banner
@@ -50,8 +50,8 @@ const heroDataStore = {
     titleOrange: "",
     description: "Reliable parts. Trusted brands. Powerful performance. Your one-stop destination for two & three wheelers and all kinds of spare parts.",
     buttons: [
-      { label: "Two & Three Wheelers", link: "/contact", primary: true, arrow: true },
-      { label: "Spare Parts & Accessories", link: "/contact", primary: false, arrow: false }
+      { label: "Explore Parts", link: "/contact", primary: true, arrow: true },
+      { label: "Request Brochure", link: "/contact", primary: false, arrow: false }
     ],
     banners: [
       { type: 'image', src: auto, mobileSrc: [autoMobile] }
@@ -70,8 +70,8 @@ const heroDataStore = {
     titleOrange: "",
     description: "Premium quality products. Trusted brands. Endless possibilities. Formulated for safety and everyday wellness.",
     buttons: [
-      { label: "Explore Range", link: "/contact", primary: true, arrow: true },
-      { label: "Partner With Us", link: "/contact", primary: false, arrow: false }
+      { label: "Explore Products", link: "/contact", primary: true, arrow: true },
+      { label: "Request Brochure", link: "/contact", primary: false, arrow: false }
     ],
     banners: [
       { type: 'image', src: care, mobileSrc: [careMobile] }

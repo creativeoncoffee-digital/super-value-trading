@@ -136,7 +136,7 @@ export default function ProcessSteps({ category = "silvermax" }) {
               <div key={idx} className="process-step flex items-start gap-5 group">
                 
                 {/* Number Badge */}
-                <div className="w-12 h-12 rounded-full bg-orange-500 text-white flex items-center justify-center font-bold text-lg shrink-0 shadow-md group-hover:scale-110 group-hover:bg-orange-600 transition-all duration-300">
+                <div className="w-10 h-10 rounded-full bg-[#f3790a] text-white flex items-center justify-center font-bold text-md shrink-0 shadow-md group-hover:scale-110 group-hover:bg-orange-500 transition-all duration-300">
                   {step.num}
                 </div>
                 

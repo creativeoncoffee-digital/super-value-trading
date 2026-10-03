@@ -55,33 +55,37 @@ export default function ResearchIntelligence() {
         </div>
 
         {/* Right Content */}
-        <div className="w-full lg:w-[55%] flex flex-col justify-center lg:py-6">
-          <div className="rnd-text-anim flex items-center gap-4 mb-5">
-            {/* <span className="text-slate-400 font-bold tracking-widest text-xs">06</span> */}
-            <span className="text-[#f3790a] font-bold uppercase tracking-[0.2em] text-[12px]">
+        <div className="w-full lg:w-[55%] flex flex-col justify-center items-center lg:items-start lg:py-6">
+          
+          {/* Centered on mobile, left on desktop */}
+          <div className="rnd-text-anim w-full flex justify-center lg:justify-start items-center gap-4 mb-2">
+            <span className="text-[#f3790a] font-bold uppercase tracking-[0.2em] text-[12px] text-center lg:text-left">
               R&D & MARKET INTELLIGENCE
             </span>
           </div>
           
-          <h2 className="rnd-text-anim text-3xl md:text-[42px] font-bold text-[#0B1E3A] tracking-tight leading-[1.15] mb-6">
+          {/* Centered on mobile, left on desktop */}
+          <h2 className="rnd-text-anim w-full text-center lg:text-left text-3xl md:text-[42px] font-bold text-[#0B1E3A] tracking-tight leading-[1] mb-4">
             Research That <br />
             <span className="text-[#f3790a]">Drives Better Decisions.</span>
           </h2>
           
-          <p className="rnd-text-anim text-slate-600 text-sm md:text-[15px] leading-relaxed mb-12">
+          {/* Centered on mobile, left on desktop */}
+          <p className="rnd-text-anim w-full text-center lg:text-left text-slate-600 text-sm md:text-[15px] leading-relaxed mb-6">
             Our research and development work spans both product innovation and market intelligence — helping us improve what we make, understand where opportunities exist, and develop products suited to evolving market needs.
           </p>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-5 w-full">
             {researchFeatures.map((feature, idx) => (
-              <div key={idx} className="rnd-text-anim flex flex-col items-start group">
+            
+              <div key={idx} className="rnd-text-anim flex flex-col items-center lg:items-start text-center lg:text-left group">
                 <svg className="w-6 h-6 text-slate-700 mb-4 group-hover:text-orange-500 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d={feature.icon}></path>
                 </svg>
                 <h4 className="text-[#0B1E3A] font-bold text-[10px] uppercase tracking-widest mb-2 group-hover:text-orange-500 transition-colors duration-300">
                   {feature.title}
                 </h4>
-                <p className="text-slate-500 text-[13px] leading-relaxed pr-2">
+                <p className="text-slate-500 text-[13px] leading-relaxed lg:pr-2">
                   {feature.desc}
                 </p>
               </div>

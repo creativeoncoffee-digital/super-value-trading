@@ -87,34 +87,26 @@ const gridDataStore = {
     kicker: "OUR CATEGORIES",
     title: "Explore Grooming Solutions",
     items: [
-      // { title: "Super Platinum", desc: "Advanced cryogenic coating for smooth shaves.", img: S2 },
-      // { title: "Platinum", desc: "Multi-layered platinum for enhanced comfort.", img: S6 },
-      // { title: "Stainless Steel", desc: "Built for everyday shaving performance.", img: S3 },
-      // { title: "Double Edge Razors", desc: "Classic, durable metal build for control.", img: S9 },
-      // { title: "Shaving Foams", desc: "Rich lather for the ultimate smooth glide.", img: S5 },
-      // { title: "Non Foaming Gels", desc: "Smooth, non-foaming gel for a clean shave.", img: S8 },
-      // { title: "Shaving creme", desc: "Luxurious cream for a premium shaving experience.", img: S7 },
       { 
-    title: "Double Edge Blades", 
-    desc: "Classic performance for everyday shaving.", 
-    img: S2 
-  },
-  { 
-    title: "Single Edge Blades", 
-    desc: "Premium razor systems built for a superior shave.", 
-    img: S6 
-  },
-  { 
-    title: "Disposable Razors", 
-    desc: "Reliable quality for modern grooming needs.", 
-    img: S3 
-  },
-  { 
-    title: "Salon Razors & Trimmers", 
-    desc: "Specialized solutions for professional use.", 
-    img: S9 
-  }
-
+        title: "Double Edge Blades", 
+        desc: "Classic performance for everyday shaving.", 
+        img: S2 
+      },
+      { 
+        title: "Single Edge Blades", 
+        desc: "Premium razor systems built for a superior shave.", 
+        img: S6 
+      },
+      { 
+        title: "Disposable Razors", 
+        desc: "Reliable quality for modern grooming needs.", 
+        img: S3 
+      },
+      { 
+        title: "Salon Razors & Trimmers", 
+        desc: "Specialized solutions for professional use.", 
+        img: S9 
+      }
     ]
   }
 };
@@ -176,17 +168,14 @@ export default function ServiceGrid({ category = "personal-care" }) {
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-orange-50/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
 
-                {/* FIX: Reset margins to 0 on mobile (mx-0) to prevent overflow, but kept them negative on desktop (lg:-mx-8) */}
                 <div className="mx-0 -mt-6 lg:-mt-8 lg:-mx-8 h-48 md:h-56 mb-8 flex items-center justify-center overflow-hidden bg-slate-50 border-b border-slate-100/50 rounded-t-[1.5rem] lg:rounded-t-[2rem]">
                   <img 
                     src={cat.img} 
                     alt={cat.title} 
-                    // Adjusted w-full to prevent ugly zooming on mobile
                     className="w-full h-full object-cover mix-blend-multiply" 
                   />
                 </div>
                 
-                {/* Text Content - UNTOUCHED padding exactly as requested */}
                 <div className="flex flex-col pr-12 relative flex-grow">
                   <h3 className="text-[#0B1E3A] font-bold text-lg md:text-xl mb-3 leading-tight group-hover:text-orange-500 transition-colors duration-300">
                     {cat.title}
@@ -196,7 +185,6 @@ export default function ServiceGrid({ category = "personal-care" }) {
                   </p>
                 </div>
 
-                {/* Interactive Animated Arrow Button */}
                 <div className="absolute bottom-6 right-6 lg:bottom-8 lg:right-8 w-10 h-10 md:w-12 md:h-12 bg-white border border-slate-200 group-hover:bg-orange-500 group-hover:border-orange-500 rounded-full flex items-center justify-center text-slate-400 group-hover:text-white transition-all duration-300 shadow-sm group-hover:shadow-md">
                   <svg className="w-4 h-4 md:w-5 md:h-5 transform group-hover:translate-x-0.5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 5l7 7-7 7"></path>
@@ -206,40 +194,43 @@ export default function ServiceGrid({ category = "personal-care" }) {
             );
           })}
 
-          <div className="cat-card md:col-span-12 lg:col-span-3 relative bg-[#111111]/90 rounded-[2rem] p-8 md:p-8 flex flex-col justify-center items-start transition-all duration-500 ease-out hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(243,121,10,0.3)] overflow-hidden group">
-            
-            <div className="absolute top-0 right-0 w-64 h-64 bg-orange-500/20 rounded-full blur-[80px] pointer-events-none group-hover:bg-orange-500/30  duration-700"></div>
-            <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-blue-500/20 rounded-full blur-[60px] pointer-events-none"></div>
+          {/* FIX: Conditional Rendering - only show CTA block if there are more than 4 items */}
+          {data.items.length > 4 && (
+            <div className="cat-card md:col-span-12 lg:col-span-3 relative bg-[#111111]/90 rounded-[2rem] p-8 md:p-8 flex flex-col justify-center items-start transition-all duration-500 ease-out hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(243,121,10,0.3)] overflow-hidden group">
+              
+              <div className="absolute top-0 right-0 w-64 h-64 bg-orange-500/20 rounded-full blur-[80px] pointer-events-none group-hover:bg-orange-500/30  duration-700"></div>
+              <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-blue-500/20 rounded-full blur-[60px] pointer-events-none"></div>
 
-            <div className="relative z-10 w-full">
-              
-              <div className="w-14 h-14 bg-white/10 rounded-2xl flex items-center justify-center mb-6 md:mb-8 text-orange-500 backdrop-blur-md border border-white/10 group-hover:scale-110  group-hover:text-white transition-all duration-500">
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path>
-                </svg>
+              <div className="relative z-10 w-full">
+                
+                <div className="w-14 h-14 bg-white/10 rounded-2xl flex items-center justify-center mb-6 md:mb-8 text-orange-500 backdrop-blur-md border border-white/10 group-hover:scale-110  group-hover:text-white transition-all duration-500">
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path>
+                  </svg>
+                </div>
+                
+                <h3 className="text-white font-extrabold text-2xl  mb-4 leading-tight">
+                  Looking for a <br className="hidden md:block" />
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">Custom Solution?</span>
+                </h3>
+                
+                <p className="text-slate-300 text-sm md:text-sm  leading-relaxed mb-8 md:mb-10 max-w-md">
+                  Don't see what you need? Send us a direct enquiry for custom manufacturing, bulk wholesale orders, or to explore our complete, unlisted catalog.
+                </p>
+                
+                <Link 
+                  to="/contact" 
+                  className="inline-flex items-center gap-3 bg-orange-500 hover:bg-orange-600 text-white font-bold text-sm md:text-base py-4 px-8 rounded-xl transition-all duration-300 shadow-[0_4px_20px_rgba(243,121,10,0.4)] hover:shadow-[0_6px_25px_rgba(243,121,10,0.6)] group/btn"
+                >
+                  Send an Enquiry
+                  <svg className="w-5 h-5 transform group-hover/btn:translate-x-1.5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                  </svg>
+                </Link>
+                
               </div>
-              
-              <h3 className="text-white font-extrabold text-2xl  mb-4 leading-tight">
-                Looking for a <br className="hidden md:block" />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">Custom Solution?</span>
-              </h3>
-              
-              <p className="text-slate-300 text-sm md:text-sm  leading-relaxed mb-8 md:mb-10 max-w-md">
-                Don't see what you need? Send us a direct enquiry for custom manufacturing, bulk wholesale orders, or to explore our complete, unlisted catalog.
-              </p>
-              
-              <Link 
-                to="/contact" 
-                className="inline-flex items-center gap-3 bg-orange-500 hover:bg-orange-600 text-white font-bold text-sm md:text-base py-4 px-8 rounded-xl transition-all duration-300 shadow-[0_4px_20px_rgba(243,121,10,0.4)] hover:shadow-[0_6px_25px_rgba(243,121,10,0.6)] group/btn"
-              >
-                Send an Enquiry
-                <svg className="w-5 h-5 transform group-hover/btn:translate-x-1.5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                </svg>
-              </Link>
-              
             </div>
-          </div>
+          )}
 
         </div>
 

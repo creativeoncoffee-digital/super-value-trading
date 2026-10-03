@@ -43,19 +43,16 @@ export default function ResponsibleBusiness() {
 
   useEffect(() => {
     let ctx = gsap.context(() => {
-      // Top Left Text Animation
       gsap.fromTo('.rb-text-anim',
         { opacity: 0, x: -30 },
         { opacity: 1, x: 0, duration: 1, stagger: 0.15, ease: 'power3.out', scrollTrigger: { trigger: sectionRef.current, start: 'top 80%' } }
       );
 
-      // Top Right Image Animation
       gsap.fromTo('.rb-img-anim',
         { opacity: 0, scale: 0.95, x: 30 },
         { opacity: 1, scale: 1, x: 0, duration: 1.2, ease: 'power3.out', scrollTrigger: { trigger: sectionRef.current, start: 'top 80%' } }
       );
 
-      // Bottom Grid Staggered Animation
       gsap.fromTo('.rb-grid-anim',
         { opacity: 0, y: 30 },
         { opacity: 1, y: 0, duration: 0.8, stagger: 0.1, ease: 'power3.out', scrollTrigger: { trigger: '.rb-grid-wrapper', start: 'top 90%' } }
@@ -66,7 +63,7 @@ export default function ResponsibleBusiness() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="w-full bg-[#f8fafc] py-20 md:py-28 font-sans overflow-hidden border-t border-slate-200">
+    <section ref={sectionRef} className="w-full bg-[#f8fafc] py-13 md:py-15 font-sans overflow-hidden border-t border-slate-200">
       <div className="max-w-[1400px] mx-auto px-[clamp(1.5rem,5vw,4rem)]">
         
         {/* ======================================================= */}
@@ -75,21 +72,23 @@ export default function ResponsibleBusiness() {
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 mb-16">
           
           {/* Left Text */}
-          <div className="w-full lg:w-[55%] flex flex-col justify-center">
+          <div className="w-full lg:w-[55%] flex flex-col justify-center items-center lg:items-start">
             
-            <div className="rb-text-anim flex items-center gap-3 mb-6">
-              {/* <span className="text-[#0B1E3A] font-bold text-xs tracking-widest">07</span> */}
-              <h4 className="text-[#f3790a] font-bold uppercase tracking-[0.2em] text-[12px] md:text-xs">
+            {/* Centered on mobile, left on desktop */}
+            <div className="rb-text-anim w-full flex justify-center lg:justify-start items-center gap-3 mb-6">
+              <h4 className="text-[#f3790a] font-bold uppercase tracking-[0.2em] text-[12px] md:text-xs text-center lg:text-left">
                 RESPONSIBLE BUSINESS
               </h4>
             </div>
             
-            <h2 className="rb-text-anim text-4xl md:text-5xl lg:text-6xl font-semibold text-[#0B1E3A] tracking-tight leading-[1.1] mb-6">
+            {/* Centered on mobile, left on desktop */}
+            <h2 className="rb-text-anim w-full text-center lg:text-left text-4xl md:text-5xl lg:text-6xl font-semibold text-[#0B1E3A] tracking-tight leading-[1.1] mb-6">
               Building for <br />
               <span className="text-[#f3790a]">the Long Term.</span>
             </h2>
             
-            <p className="rb-text-anim text-slate-600 text-sm md:text-base leading-relaxed max-w-xl">
+            {/* Centered on mobile, left on desktop */}
+            <p className="rb-text-anim w-full text-center lg:text-left text-slate-600 text-sm md:text-base leading-relaxed max-w-xl">
               We believe responsible business goes beyond the products we sell. It includes how we source, manufacture, package, move and build relationships across our business.
             </p>
 
@@ -97,15 +96,12 @@ export default function ResponsibleBusiness() {
 
           {/* Right Image */}
           <div className="rb-img-anim w-full lg:w-[45%] relative rounded-2xl md:rounded-[2rem] overflow-hidden min-h-[250px] md:min-h-[350px] shadow-lg">
-            {/* Replace this div with your actual image tag */}
             <div className="absolute inset-0 bg-[#071326] w-full h-full object-cover">
                <img src={leafImg} alt="Responsible Business" className="w-full h-full object-cover" />
             </div>
             
-            {/* Dark overlay for text readability */}
             <div className="absolute inset-0 bg-gradient-to-l from-black/60 to-transparent"></div>
             
-            {/* Overlay Text */}
             <div className="absolute top-8 right-8 md:top-12 md:right-12 text-right flex flex-col items-end">
               <h4 className="text-white font-bold text-sm md:text-lg tracking-widest uppercase leading-snug mb-3 text-right">
                 A MORE <br />
@@ -118,25 +114,23 @@ export default function ResponsibleBusiness() {
 
         </div>
 
-        {/* ======================================================= */}
-        {/* BOTTOM SECTION: 4-Column Details Grid                   */}
-        {/* ======================================================= */}
+  
         <div className="rb-grid-wrapper w-full border-t border-slate-200 pt-12">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
+          {/* Changed to grid-cols-2 to force 2 items per row on mobile */}
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 lg:gap-10 w-full">
             {responsibilityData.map((item, index) => (
-              <div key={index} className="rb-grid-anim flex items-start gap-4 group">
+             
+              <div key={index} className="rb-grid-anim flex flex-col items-center lg:items-start text-center lg:text-left group">
                 
-                {/* Outline Icon */}
-                <div className="w-8 h-8 flex items-center justify-center text-slate-600 group-hover:text-orange-500 transition-colors duration-300 shrink-0">
+                <div className="w-8 h-8 flex items-center justify-center text-slate-600 group-hover:text-orange-500 transition-colors duration-300 mb-3 shrink-0">
                   {item.icon}
                 </div>
                 
-                {/* Text Content */}
                 <div className="flex flex-col pt-1">
-                  <h4 className="text-[#0B1E3A] font-bold text-[11px] uppercase tracking-wider mb-2 group-hover:text-orange-500 transition-colors duration-300">
+                  <h4 className="text-[#0B1E3A] font-bold text-[10px] md:text-[11px] uppercase tracking-wider mb-2 group-hover:text-orange-500 transition-colors duration-300">
                     {item.title}
                   </h4>
-                  <p className="text-slate-500 text-xs leading-relaxed">
+                  <p className="text-slate-500 text-[11px] md:text-xs leading-relaxed">
                     {item.desc}
                   </p>
                 </div>

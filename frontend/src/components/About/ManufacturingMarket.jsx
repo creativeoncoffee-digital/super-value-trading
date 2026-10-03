@@ -46,31 +46,31 @@ export default function ManufacturingMarket() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="w-full bg-white py-20 md:py-28 font-sans overflow-hidden border-t border-slate-100">
+    <section ref={sectionRef} className="w-full bg-white py-13 md:py-28 font-sans overflow-hidden border-t border-slate-100">
       <div className="max-w-[1400px] mx-auto px-[clamp(1.5rem,5vw,4rem)] flex flex-col lg:flex-row gap-12 lg:gap-16 items-center lg:items-start">
-        
-        {/* Left Content */}
-        <div className="w-full lg:w-1/2 flex flex-col">
-          <h2 className="mfg-text-anim text-3xl md:text-5xl font-bold text-[#0B1E3A] tracking-tight leading-[1.15] mb-6">
+   {/* Left Content */}
+        <div className="w-full lg:w-1/2 flex flex-col items-center lg:items-start">
+          <h2 className="mfg-text-anim w-full text-center lg:text-left text-3xl md:text-5xl font-bold text-[#0B1E3A] tracking-tight leading-[1] mb-4">
             From Manufacturing <br className="hidden md:block" />
             <span className="text-[#f3790a]">to Market.</span>
           </h2>
-          <p className="mfg-text-anim text-slate-600 text-sm md:text-[15px] leading-relaxed mb-12 max-w-lg">
+          <p className="mfg-text-anim w-full text-center lg:text-left text-slate-600 text-sm md:text-[15px] leading-relaxed mb-8 max-w-2xl">
             Our manufacturing capabilities allow us to develop, produce and supply products across multiple categories. With established operations in India and further facilities in development worldwide, we continue to build a stronger production network closer to the markets we serve.
           </p>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-10">
+          {/* Changed grid-cols-1 to grid-cols-2 to force 2 items per row on mobile */}
+          <div className="grid grid-cols-2 gap-x-4 md:gap-x-6 gap-y-6 md:gap-y-4 w-full">
             {manufacturingFeatures.map((feature, idx) => (
-              <div key={idx} className="mfg-text-anim flex flex-col items-start group">
-                <div className="w-10 h-10 rounded-lg bg-slate-50 border border-slate-100 flex items-center justify-center mb-4 group-hover:bg-orange-50 group-hover:border-orange-100 transition-colors duration-300">
+              <div key={idx} className="mfg-text-anim flex flex-col items-center lg:items-start text-center lg:text-left group">
+                <div className="w-10 h-10 rounded-lg bg-slate-50 border border-slate-100 flex items-center justify-center mb-3 md:mb-4 group-hover:bg-orange-50 group-hover:border-orange-100 transition-colors duration-300">
                   <svg className="w-5 h-5 text-slate-600 group-hover:text-orange-500 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d={feature.icon}></path>
                   </svg>
                 </div>
-                <h4 className="text-[#0B1E3A] font-bold text-[10px] uppercase tracking-widest mb-2 group-hover:text-orange-500 transition-colors duration-300">
+                <h4 className="text-[#0B1E3A] font-bold text-[10px] uppercase tracking-widest mb-1.5 md:mb-2 group-hover:text-orange-500 transition-colors duration-300">
                   {feature.title}
                 </h4>
-                <p className="text-slate-500 text-[13px] leading-relaxed pr-4">
+                <p className="text-slate-500 text-[12px] md:text-[13px] leading-relaxed lg:pr-4">
                   {feature.desc}
                 </p>
               </div>
@@ -79,12 +79,12 @@ export default function ManufacturingMarket() {
         </div>
 
         {/* Right Image/Collage Space */}
-        <div className="mfg-image-anim w-full lg:w-1/2 relative rounded-3xl overflow-hidden bg-slate-100 aspect-square md:aspect-[4/3] border border-slate-200">
+        <div className="mfg-image-anim w-full lg:w-1/2 md:mt-15 relative rounded-3xl overflow-hidden bg-slate-100 aspect-square md:aspect-[4/3] border border-slate-200">
           <img src={p} alt="Manufacturing Operations" className="w-full h-full object-cover" />
-          <div className="absolute bottom-6 right-6 bg-white/90 backdrop-blur-md p-6 rounded-2xl shadow-xl max-w-[200px] border border-white/20">
+          {/* <div className="absolute bottom-6 right-6 bg-white/90 backdrop-blur-md p-3 rounded-2xl shadow-xl max-w-[200px] border border-white/20">
             <p className="text-orange-500 font-bold text-[10px] uppercase tracking-widest mb-1">Our Manufacturing Capabilities</p>
             <p className="text-[#0B1E3A] font-bold text-sm leading-tight">REAL PRODUCTS.<br/>REAL OPPORTUNITIES.</p>
-          </div>
+          </div> */}
         </div>
 
       </div>

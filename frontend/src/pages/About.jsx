@@ -30,12 +30,13 @@ export default function About() {
       {/* <TrustedMarks /> */}
       <AboutStory />
       <ManufacturingMarket />
+      <OurServices />
       <ResearchIntelligence />
       <ResponsibleBusiness />
       {/* <WhoWeAre /> */}
       {/* <CoreValues /> */}
       {/* <ProductDivisions /> */}
-      <OurServices />
+      
       <AboutStats />
       <AboutCTA />
       {/* <ServiceGallery category="exhibition" /> */}

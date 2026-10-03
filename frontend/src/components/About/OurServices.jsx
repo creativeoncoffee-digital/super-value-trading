@@ -101,7 +101,7 @@ export default function OurServices() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="w-full bg-[#f8fafc] py-10 md:pb-15  font-sans  overflow-hidden">
+    <section ref={sectionRef} className="w-full bg-[#f8fafc] py-14 md:pb-15  font-sans  overflow-hidden">
       <div className="max-w-[1600px] mx-auto px-[clamp(1.5rem,5vw,4rem)] flex flex-col items-center">
         
         {/* ======================================================= */}

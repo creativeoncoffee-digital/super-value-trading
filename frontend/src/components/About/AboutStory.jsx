@@ -59,31 +59,30 @@ export default function AboutStory() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="w-full bg-[#f8fafc] py-24 md:py-25 font-sans overflow-hidden border-t border-slate-200">
+    <section ref={sectionRef} className="w-full bg-[#f8fafc] py-14 md:py-25 font-sans overflow-hidden border-t border-slate-200">
       <div className="max-w-[1400px] mx-auto px-[clamp(1.5rem,5vw,4rem)] flex flex-col lg:flex-row items-center lg:items-start gap-12 lg:gap-16">
         
         {/* ======================================================= */}
         {/* LEFT COLUMN: TEXT CONTENT                               */}
         {/* ======================================================= */}
-        <div className="w-full lg:w-[35%] flex flex-col items-start pt-2">
+        <div className="w-full lg:w-[35%] flex flex-col md:items-start pt-2">
           
-          <div className="story-text-anim flex items-center gap-3 mb-4">
-            <h4 className="text-orange-500 font-bold uppercase tracking-[0.2em] text-xs">
+         <div className="story-text-anim w-full flex justify-center lg:justify-start gap-3 mb-4">
+            <h4 className="text-orange-500 font-bold uppercase tracking-[0.2em] text-xs text-center lg:text-left">
               Our Story
             </h4>
           </div>
 
-          <h2 className="story-text-anim text-3xl md:text-5xl font-semibold text-[#0B1E3A] tracking-tight leading-[1.15] mb-6">
+          <h2 className="story-text-anim w-full text-center lg:text-left text-3xl md:text-5xl font-semibold text-[#0B1E3A] tracking-tight leading-[1.15] mb-6">
             Building Value <br className="hidden md:block" />
             Beyond Borders
           </h2>
 
-
-        <p className="story-text-anim text-slate-600 text-sm md:text-[15px] leading-relaxed mb-6">
+<p className="story-text-anim w-full text-center lg:text-left text-slate-600 text-sm md:text-[15px] leading-relaxed mb-6">
             Built on over 23 years of international business experience and guided by a leadership team with global exposure, Super Value has evolved into a one-stop partner for businesses looking to expand beyond borders. From market entry and distribution to sourcing, manufacturing and growth, we connect the right products with the right markets and business partners — creating opportunities built for long-term success.
           </p>
 
-          <p className="story-text-anim text-slate-600 text-sm md:text-[15px] leading-relaxed font-medium">
+          <p className="story-text-anim w-full text-center lg:text-left text-slate-600 text-sm md:text-[15px] leading-relaxed font-medium">
             We don't just trade products — we build long-term partnerships that create lasting global value.
           </p>
 

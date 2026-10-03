@@ -5,7 +5,7 @@ import ServiceGallery from '../components/Services/ServiceGallery';
 import Breadcrumb from '../components/Breadcrumb';
 import HeroMarquee from '../components/HeroMarquee';
 import ServiceAbout from '../components/Services/ServiceAbout';
-import TrustedMarkets from '../components/TrustedMarkets';
+// import TrustedMarkets from '../components/TrustedMarkets';
 import AdvancedFeature from '../components/Services/AdvancedFeature';
 import Faq from '../components/FAQ/Faq';
 import WhyPartner from '../components/WhyPartner';
@@ -36,7 +36,7 @@ export default function Silvermax() {
         <HeroMarquee/>
         <ServiceSteps category={category} />
         <ServiceAbout category={category} />
-        <TrustedMarkets category={category} />
+        {/* <TrustedMarkets category={category} /> */}
         <ServiceGrid category={category} />
         <ProcessSteps category={category} />
         <AdvancedFeature category={category} />
