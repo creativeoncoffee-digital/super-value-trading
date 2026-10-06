@@ -16,7 +16,7 @@ import ProcessSteps from '../components/Services/ProcessSteps';
 
 
 export default function Silvermax() {
-    const category = "silvermax";
+    const category = "silvermax-blade";
   //   const silvermaxHighlights = [
   //   "Cryogenic Coated Blades",
   //   "Platinum Edges",

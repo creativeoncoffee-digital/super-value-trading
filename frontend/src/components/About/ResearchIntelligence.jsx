@@ -46,7 +46,7 @@ export default function ResearchIntelligence() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="w-full bg-[#f8fafc] py-20 md:py-28 font-sans overflow-hidden border-t border-slate-200">
+    <section ref={sectionRef} className="w-full bg-[#f8fafc] py-14 md:py-16 font-sans overflow-hidden border-t border-slate-200">
       <div className="max-w-[1400px] mx-auto px-[clamp(1.5rem,5vw,4rem)] flex flex-col lg:flex-row gap-12 lg:gap-20 items-center lg:items-start">
         
         {/* Left Image */}

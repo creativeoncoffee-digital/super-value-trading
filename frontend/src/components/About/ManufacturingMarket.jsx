@@ -54,7 +54,7 @@ export default function ManufacturingMarket() {
             From Manufacturing <br className="hidden md:block" />
             <span className="text-[#f3790a]">to Market.</span>
           </h2>
-          <p className="mfg-text-anim w-full text-center lg:text-left text-slate-600 text-sm md:text-[15px] leading-relaxed mb-8 max-w-2xl">
+          <p className="mfg-text-anim w-full text-center lg:text-left text-slate-600 text-sm md:text-[15px] leading-relaxed mb-1 max-w-2xl">
             Our manufacturing capabilities allow us to develop, produce and supply products across multiple categories. With established operations in India and further facilities in development worldwide, we continue to build a stronger production network closer to the markets we serve.
           </p>
 

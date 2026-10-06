@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import gsap from 'gsap';
+import { FaWhatsapp } from 'react-icons/fa'; // Importing React Icons WhatsApp
 import logoImg from '../assets/img/logo.png';
 
 export default function Header() {
@@ -119,8 +120,6 @@ export default function Header() {
                 </div>
                 <span className="text-slate-500 text-[12px] font-medium leading-relaxed pr-2">Vehicles, tires, tubes & spare parts</span>
               </Link>
-              
-          
 
             </div>
           </div>
@@ -129,9 +128,16 @@ export default function Header() {
           <Link to="/gallery" className="hover:text-orange-500 transition-colors">Gallery</Link>
         </nav>
 
+        {/* DESKTOP CONTACT BUTTONS */}
         <div className="hidden md:flex items-center gap-6">
-          <a href="tel:+917292023399" className="flex items-center gap-2 text-sm font-bold hover:text-orange-500 transition-colors">
-            <svg className="w-5 h-5 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+          <a 
+            href="https://wa.me/917292023399" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 font-bold hover:text-[#25D366] transition-colors group"
+          >
+            <FaWhatsapp className="text-[2rem] text-orange-500 group-hover:text-[#25D366] transition-colors" />
+            <span className="hidden lg:block text-sm transition-colors group-hover:text-[#25D366]"></span>
           </a>
           <Link to="/contact" className="bg-[#f3790a] hover:bg-orange-600 text-white font-bold text-sm px-6 py-2.5 rounded transition-all shadow-sm">
             Get In Touch
@@ -139,7 +145,7 @@ export default function Header() {
         </div>          
       </div>
 
-  {/* MOBILE SIDEBAR OVERLAY */}
+      {/* MOBILE SIDEBAR OVERLAY */}
       <div 
         onClick={() => setIsMobileMenuOpen(false)}
         className={`fixed inset-0 bg-[#0B1E3A]/40 backdrop-blur-sm z-[50] md:hidden transition-all duration-500 ${isMobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}
@@ -167,11 +173,10 @@ export default function Header() {
             
             {/* Animated Dropdown Items */}
             <div className={`flex flex-col gap-5 overflow-hidden transition-all duration-300 ${isMobileServicesOpen ? 'max-h-[300px] mt-5 opacity-100 pl-4' : 'max-h-0 opacity-0 pl-4'}`}>
-               <Link to="/silvermax-blade" className="text-[15px] font-semibold text-slate-600 hover:text-orange-500 transition-colors">Silvermax Blades</Link>
+              <Link to="/silvermax-blade" className="text-[15px] font-semibold text-slate-600 hover:text-orange-500 transition-colors">Silvermax Blades</Link>
               <Link to="/personal-care" className="text-[15px] font-semibold text-slate-600 hover:text-orange-500 transition-colors">FMCG & Personal Care</Link>
               <Link to="/perfumery" className="text-[15px] font-semibold text-slate-600 hover:text-orange-500 transition-colors">Perfumery</Link>
               <Link to="/automobiles" className="text-[15px] font-semibold text-slate-600 hover:text-orange-500 transition-colors">Automobiles</Link>
-             
             </div>
           </div>
 
@@ -180,13 +185,18 @@ export default function Header() {
           <Link to="/contact" className="text-[17px] font-bold text-[#0B1E3A] hover:text-orange-500 transition-colors border-b border-slate-100 pb-4">Contact Us</Link>
         </div>
         
-        {/* Bottom Contact Section */}
-        <div className="mt-auto pt-6 flex flex-col gap-4 border-t border-slate-100">
-          <a href="tel:+917292023399" className="flex items-center justify-center gap-3 text-[15px] font-bold text-[#0B1E3A] hover:text-orange-500 transition-colors">
-            <div className="w-8 h-8 rounded-full bg-orange-50 flex items-center justify-center text-orange-500">
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+        {/* MOBILE BOTTOM CONTACT SECTION */}
+        <div className="mt-auto pt-6 flex flex-col gap-5 border-t border-slate-100">
+          <a 
+            href="https://wa.me/917292023399" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="flex items-center justify-center gap-2 text-[16px] font-bold text-[#0B1E3A] hover:text-[#25D366] transition-colors group"
+          >
+            <div className="flex items-center justify-center text-[#25D366]">
+              <FaWhatsapp className="text-3xl" />
             </div>
-            +91 7xxxxxx
+            
           </a>
           <Link to="/contact" className="bg-[#f3790a] hover:bg-[#d9660a] text-white font-bold py-3.5 text-center rounded-xl w-full shadow-md hover:shadow-lg transition-all duration-300">
             Get a Quote

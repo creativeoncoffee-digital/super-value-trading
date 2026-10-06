@@ -9,8 +9,27 @@ gsap.registerPlugin(ScrollTrigger);
 // All 4 categories currently use the exact same data from your screenshot.
 // You can update the text for automobiles, silvermax, and personal-care later.
 // ============================================================================
-
 const stepsDataStore = {
+  "home": [
+    {
+      step: "01",
+      title: "Global Sourcing\n& Supply",
+      desc: "Access a diverse, high-quality portfolio of products across multiple sectors directly from our trusted manufacturing network.",
+      icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+    },
+    {
+      step: "02",
+      title: "Distribution &\nMarket Expansion",
+      desc: "Connect your products with established retailers, distributors, and commercial partners across 80+ international markets.",
+      icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+    },
+    {
+      step: "03",
+      title: "OEM & Brand\nDevelopment",
+      desc: "Build and scale your own brand with our end-to-end manufacturing, formulation, and custom packaging solutions.",
+      icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+    }
+  ],
   "perfumery": [
     {
       step: "01",
@@ -35,27 +54,27 @@ const stepsDataStore = {
     {
       step: "01",
       title: "Direct Supply",
-      desc: "Purchase premium perfumes, oils, sprays, deodorants and other perfumery products directly from us.",
+      desc: "Wholesale sourcing of passenger vehicles, commercial fleets, tires, and premium aftermarket spare parts.",
       icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
     },
     {
       step: "02",
       title: "Distribution &\nGlobal Partnerships",
-      desc: "Expand your reach with our global distribution network across UAE and international markets.",
+      desc: "Build reliable automotive supply chains and expand your dealership reach across major international corridors.",
       icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
     },
     {
       step: "03",
-      title: "Private Label / OEM\nManufacturing",
-      desc: "Launch your own brand with customized products and packaging tailored to your market needs.",
+      title: "OEM Parts &\nCustom Solutions",
+      desc: "Source specific commercial fleet solutions or manufacture precision OEM components for your automotive brand.",
       icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
     }
   ],
-"silvermax": [
+  "silvermax-blade": [
     {
       step: "01",
       title: "Direct Supply",
-      desc: "Wholesale Supply of Silvermax blades and razors for distributors, wholesalers, retailers and international buyer.",
+      desc: "Wholesale Supply of Silvermax blades and razors for distributors, wholesalers, retailers and international buyers.",
       icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
     },
     {
@@ -75,19 +94,19 @@ const stepsDataStore = {
     {
       step: "01",
       title: "Direct Supply",
-      desc: "Purchase premium perfumes, oils, sprays, deodorants and other perfumery products directly from us.",
+      desc: "Wholesale fulfillment of high-demand FMCG, skincare, body lotions, and essential personal care products.",
       icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
     },
     {
       step: "02",
       title: "Distribution &\nGlobal Partnerships",
-      desc: "Expand your reach with our global distribution network across UAE and international markets.",
+      desc: "Leverage our logistics expertise to stock your retail networks and expand FMCG distribution globally.",
       icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
     },
     {
       step: "03",
       title: "Private Label / OEM\nManufacturing",
-      desc: "Launch your own brand with customized products and packaging tailored to your market needs.",
+      desc: "Develop unique cosmetic formulations, shampoos, and skincare lines under your own established brand name.",
       icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
     }
   ]

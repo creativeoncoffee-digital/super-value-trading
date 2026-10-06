@@ -53,7 +53,7 @@ export default function Home() {
       
       {/* 1. Hero Section */}
       <HomeHero />
-       <ServiceSteps category="personal-care"/>
+       <ServiceSteps category="home"/>
       {/* <TrustedMarkets category="home" /> */}
       <AboutSection />
       <WhatWeTrade />
