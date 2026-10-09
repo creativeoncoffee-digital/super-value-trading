@@ -83,7 +83,7 @@ const gridDataStore = {
       { title: "Perfume Manufacturing", desc: "Custom fragrance creation and production.", img: PsubManufacturing },
     ]
   },
-  "silvermax": {
+  "silvermax-blade": {
     kicker: "OUR CATEGORIES",
     title: "Explore Grooming Solutions",
     items: [

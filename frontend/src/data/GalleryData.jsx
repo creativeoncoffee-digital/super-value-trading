@@ -132,10 +132,10 @@ export const galleryData = [
 
 
   // SILVERMAX
-  { id: 801, category: "silvermax", src: S1, title: "Super Platinum Blades" },
-  { id: 802, category: "silvermax", src: S2, title: "Precision Manufacturing" },
-  { id: 803, category: "silvermax", src: S3, title: "Wholesale Packaging" },
-  { id: 804, category: "silvermax", src: S4, title: "Metal Razor Assemblies" },
-  { id: 805, category: "silvermax", src: S5, title: "Quality Control Lab" },
-  { id: 806, category: "silvermax", src: S6, title: "Final Product Inspection" },
+  { id: 801, category: "silvermax-blade", src: S1, title: "Super Platinum Blades" },
+  { id: 802, category: "silvermax-blade", src: S2, title: "Precision Manufacturing" },
+  { id: 803, category: "silvermax-blade", src: S3, title: "Wholesale Packaging" },
+  { id: 804, category: "silvermax-blade", src: S4, title: "Metal Razor Assemblies" },
+  { id: 805, category: "silvermax-blade", src: S5, title: "Quality Control Lab" },
+  { id: 806, category: "silvermax-blade", src: S6, title: "Final Product Inspection" },
 ];

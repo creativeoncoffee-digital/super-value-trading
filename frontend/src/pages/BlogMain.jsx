@@ -72,7 +72,7 @@ export default function BlogMain() {
       />
 
       {/* --- TOP SECTION: LATEST NEWS --- */}
-      <section className="max-w-7xl mx-auto px-8 pt-24 pb-16">
+      <section className="max-w-7xl mx-auto px-8 pt-15 pb-16">
         <h1 className="reveal-top text-4xl md:text-5xl font-bold text-[#0B1E3A] mb-12">
           Latest News
         </h1>
@@ -206,7 +206,7 @@ export default function BlogMain() {
           
           {/* Modal Container */}
           <div 
-            className="bg-white rounded-2xl shadow-2xl w-full max-w-7xl max-h-[95vh] overflow-y-auto relative animate-in fade-in zoom-in duration-300"
+            className="bg-white rounded-2xl shadow-2xl w-full max-w-6xl max-h-[95vh] overflow-y-auto relative animate-in fade-in zoom-in duration-300"
             onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside modal
           >
             {/* Close Button */}
@@ -228,7 +228,7 @@ export default function BlogMain() {
             </div>
 
             {/* Modal Content */}
-            <div className="max-w-4xl mx-auto px-6 py-12 md:py-16 -mt-32 relative z-10 bg-white rounded-t-3xl md:rounded-t-none md:bg-transparent md:-mt-0">
+            <div className="max-w-5xl mx-auto px-6 py-12 md:py-16 -mt-32 relative z-10 bg-white rounded-t-3xl md:rounded-t-none md:bg-transparent md:-mt-0">
               
               <p className="text-orange-500 font-bold uppercase tracking-widest text-sm mb-4">
                 {selectedPost.category}

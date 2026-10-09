@@ -53,12 +53,11 @@ export default function Form() {
             </h4>
           </div>
 
-          <h2 className="contact-info-anim text-4xl md:text-5xl lg:text-[52px] font-extrabold text-[#0B1E3A] tracking-tight leading-[1.1] mb-6">
-            Explore New <br />
-            <span className="text-orange-500">Opportunities Together.</span>
+          <h2 className="contact-info-anim text-4xl md:text-5xl lg:text-[52px] font-extrabold text-[#0B1E3A] tracking-tight leading-[1] mb-3">
+            Explore New  <span className="text-orange-500">Opportunities .</span>
           </h2>
 
-          <div className="contact-info-anim flex flex-col gap-4 mb-10 max-w-xl">
+          <div className="contact-info-anim flex flex-col gap-4 mb-6 max-w-xl">
             <p className="text-slate-600 text-base md:text-lg leading-relaxed">
               Whether you're looking to source products, expand your distribution, enter a new market or develop your own brand, our team is here to support you.
             </p>

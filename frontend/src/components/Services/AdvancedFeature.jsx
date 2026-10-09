@@ -41,7 +41,7 @@ gsap.registerPlugin(ScrollTrigger);
 // INTERNAL DATA STORE FOR ALL 4 SERVICES
 // ============================================================================
 const featureDataStore = {
-  "silvermax": {
+  "silvermax-blade": {
     eyebrow: "SILVERMAX BLADES",
     title: "Build Your Brand",
     highlight: "Silvermax & Stainless Steel Blades",
@@ -217,9 +217,9 @@ export default function AdvancedFeature({ category = "silvermax" }) {
   }, [category]);
 
   return (
-    <section ref={sectionRef} className="w-full bg-white py-13 md:py-16 px-[clamp(1.5rem,5vw,4rem)] overflow-hidden font-sans border-t border-slate-100">
+    <section ref={sectionRef} className="w-full bg-white py-13 md:py-16  overflow-hidden font-sans border-t border-slate-100">
       {/* FIX: Changed gap-14 lg:gap-20 to exactly gap-10 on desktop to reduce the visual space */}
-      <div className="max-w-[1400px] mx-auto flex flex-col lg:flex-row items-center gap-10 lg:gap-10">
+      <div className="max-w-8xl mx-auto flex flex-col lg:flex-row items-center gap-10 lg:gap-10">
         
         {/* ======================================================= */}
         {/* LEFT SIDE: TEXT & FEATURES                              */}

@@ -32,7 +32,7 @@ export default function Silvermax() {
         activeColor="text-white" 
         hoverColor="hover:text-orange-500" 
       />
-        <ServicesHero category="silvermax" /> 
+        <ServicesHero category="silvermax-blade" /> 
         <HeroMarquee/>
         <ServiceSteps category={category} />
         <ServiceAbout category={category} />

@@ -39,10 +39,10 @@ export default function AboutHero() {
       {/* FOREGROUND CONTENT                                        */}
       {/* ========================================================= */}
       <div className="relative z-10 w-full max-w-[1400px] mx-auto px-[clamp(1.5rem,5vw,4rem)]">
-        <div className="w-full lg:w-[65%] xl:w-[60%]">
+        <div className="w-full lg:w-[65%] xl:w-[70%]">
 
           {/* Main Heading (From Screenshot) */}
-          <h1 className="about-anim text-4xl md:text-5xl lg:text-[64px] font-bold text-white tracking-tight leading-[1.1] mb-4">
+          <h1 className="about-anim text-5xl md:text-6xl md:mt-20 font-bold text-white tracking-tight leading-[1] mb-4">
             Global Reach. <br />End-to-End Excellence.
           </h1>
 

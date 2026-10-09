@@ -84,11 +84,12 @@ const heroDataStore = {
     ]
   },
 
-  "silvermax": {
+  "silvermax-blade": {
     kicker: "PRECISION GROOMING",
     titleWhite: "A BETTER SHAVE\nBUILDS BRANDS",
-    titleOrange: "",
-    description: "Silvermax blades are manufactured with high-grade materials,advanced surface treatments and precision engineering to deliver consistent sharpness glide and reliable performance.",
+    titleOrange: "", 
+    description: "Silvermax blades use premium materials and precision engineering to deliver lasting sharpness, a smooth glide, and reliable performance.",
+
     buttons: [
       { label: "Explore Blades", link: "/contact", primary: true, arrow: true },
       { label: "Request Brochure", link: "/contact", primary: false, arrow: true }
@@ -142,7 +143,7 @@ export default function ServiceHero({ category = "perfumery" }) {
   }, [category]);
 
   return (
-    <section ref={containerRef} className="relative w-full min-h-[90vh] flex flex-col justify-end bg-[#111111] overflow-hidden py-10 font-sans pt-20">
+    <section ref={containerRef} className="relative w-full min-h-[100vh] flex flex-col justify-end bg-[#111111] overflow-hidden py-10 font-sans pt-20">
       
       {/* ========================================================= */}
       {/* BACKGROUND SLIDER (Images & Videos)                       */}
@@ -194,7 +195,7 @@ export default function ServiceHero({ category = "perfumery" }) {
         {/* Top Text Content */}
         <div className="w-full lg:w-[65%] xl:w-[50%] mb-12 mt-10 md:mt-0">
 
-          <h1 className="hero-text-anim text-4xl md:text-6xl font-bold tracking-tight leading-[1.1] md:leading-[1.05] mb-6 whitespace-pre-line">
+          <h1 className="hero-text-anim text-4xl md:text-6xl font-bold tracking-tight leading-[1.1] md:leading-[1] mb-3 whitespace-pre-line">
             <span className="text-white block">{data.titleWhite}</span>
             <span className="text-orange-500">{data.titleOrange}</span>
           </h1>

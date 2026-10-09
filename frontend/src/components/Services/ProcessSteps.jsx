@@ -116,7 +116,7 @@ export default function ProcessSteps({ category = "silvermax" }) {
           
           <div className="process-header flex flex-col items-start mb-10">
             <div className="flex items-center gap-4 mb-4">
-              <span className="w-8 h-[2px] bg-orange-500"></span>
+              {/* <span className="w-8 h-[2px] bg-orange-500"></span> */}
               <h4 className="text-orange-500 font-bold uppercase tracking-[0.2em] text-xs">
                 {data.kicker}
               </h4>

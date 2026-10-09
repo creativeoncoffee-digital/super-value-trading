@@ -71,7 +71,7 @@ const aboutDataStore = {
     ]
   },
 
-  "silvermax": {
+  "silvermax-blade": {
     title: "ABOUT SILVERMAX",
     headline: "Your Trusted",
     highlight: "ENGINEERED FOR PERFORMANCE\nMADE WITH PRECISION.",
