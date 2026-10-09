@@ -131,7 +131,7 @@ export default function Header() {
         {/* DESKTOP CONTACT BUTTONS */}
         <div className="hidden md:flex items-center gap-6">
           <a 
-            href="https://wa.me/917292023399" 
+            href="https://wa.me/971529607401" 
             target="_blank" 
             rel="noopener noreferrer"
             className="flex items-center gap-2 font-bold hover:text-[#25D366] transition-colors group"

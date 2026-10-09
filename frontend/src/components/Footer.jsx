@@ -97,7 +97,7 @@ export default function Footer() {
               </div>
               <div>
                 <p className="text-slate-400 text-xs font-bold uppercase tracking-widest mb-1">Trading Enquiries</p>
-                <a href="mailto:gosupervalue@outlook.com" className="text-lg font-medium text-white hover:text-orange-500 transition-colors">gosupervalue@outlook.com</a>
+                <a href="mailto:info@supervalue.com" className="text-lg font-medium text-white hover:text-orange-500 transition-colors">gosupervalue@outlook.com</a>
               </div>
             </div>
           </div>
