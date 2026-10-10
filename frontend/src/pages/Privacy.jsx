@@ -155,7 +155,7 @@ export default function Privacy() {
             {/* Intro text */}
             <div className="content-anim bg-white rounded-2xl p-6 md:p-8 border border-slate-200/60 shadow-sm ">
               <p className="text-slate-600 leading-relaxed text-base md:text-lg mb-4">
-                Go Super Value General Trading LLC ("Go Super Value," "we," "us," or "our") respects your privacy and is committed to protecting the personal information you share with us through our website, www.gosupervalue.com (the "Site"). This Privacy Policy explains what information we collect, how we use it, and the choices you have.
+                Go Super Value General Trading LLC ("Go Super Value," "we," "us," or "our") respects your privacy and is committed to protecting the personal information you share with us through our website. This Privacy Policy explains what information we collect, how we use it, and the choices you have.
               </p>
               <p className="text-slate-600 leading-relaxed text-base md:text-lg font-medium text-[#071326]">
                 By using the Site, you agree to the collection and use of information as described in this Policy. If you do not agree, please do not use the Site.
@@ -241,9 +241,9 @@ export default function Privacy() {
                     <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center"><svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg></div>
                     +971 52 960 7401
                   </a>
-                  <a href="mailto:gosupervalue@outlook.com" className="flex items-center gap-3 text-slate-300 hover:text-orange-500 transition-colors">
+                  <a href="mailto:info@supervalue.com" className="flex items-center gap-3 text-slate-300 hover:text-orange-500 transition-colors">
                     <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center"><svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg></div>
-                    gosupervalue@outlook.com
+                    info@supervalue.com
                   </a>
                 </div>
               </div>
