@@ -15,9 +15,11 @@ export default function HomeHero() {
   const slides = [
     // { id: 1, image: slide1, title: "Premium Perfumery", link: "/perfumery" },
     { id: 2, image: slide2, title: "Silvermax", link: "/silvermax-blade" },
+     { id: 5, image: slide5, title: "Premium Perfumery", link: "/perfumery" },
+     { id: 4, image: slide4, title: "FMCG & Personal Care", link: "/personal-care" },
     { id: 3, image: slide3, title: "Automotive Solutions", link: "/automobiles" },
-    { id: 4, image: slide4, title: "FMCG & Personal Care", link: "/personal-care" },
-    { id: 5, image: slide5, title: "Premium Perfumery", link: "/perfumery" },
+    
+   
   ];
 
   useEffect(() => {

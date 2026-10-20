@@ -3,7 +3,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 // Replace this with your actual image path for the manufacturing image
-import S3 from "../../assets/Products/Sub/SV3.png";
+import S3 from "../../assets/Products/Sub/ProcessPic2.jpg";
 // import autoImg from '../../assets/img/auto-manufacturing.jpg';
 // import perfumeryImg from '../../assets/img/perfumery-manufacturing.jpg';
 // import fmcgImg from '../../assets/img/fmcg-manufacturing.jpg';
@@ -91,14 +91,14 @@ export default function ProcessSteps({ category = "silvermax" }) {
   if (!data) return null;
 
   return (
-    <section ref={containerRef} className="w-full bg-white py-16 md:py-24 font-sans overflow-hidden border-t border-slate-100">
+    <section ref={containerRef} className="w-full bg-white py-16 md:py-15 font-sans overflow-hidden border-t border-slate-100">
       <div className="max-w-[1400px] mx-auto px-[clamp(1.5rem,5vw,4rem)] flex flex-col lg:flex-row gap-12 lg:gap-20 items-start">
         
         {/* ======================================================= */}
         {/* LEFT SIDE: Image Container                              */}
         {/* ======================================================= */}
         <div className="process-img w-full lg:w-1/2 relative lg:sticky lg:top-32 rounded-3xl overflow-hidden shadow-2xl border border-slate-100">
-          <div className="aspect-[4/3] md:aspect-[16/10] lg:aspect-[4/5] w-full">
+          <div className="aspect-[4/3] md:aspect-[4/5] w-full">
             <img 
               src={data.image} 
               alt={data.title} 

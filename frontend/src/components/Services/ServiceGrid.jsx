@@ -19,13 +19,13 @@ import tier from "../../assets/Products/Sub/tierSub.png";
 //silver
 import S1 from "../../assets/Products/Sub/SV1.webp";
 import S2 from "../../assets/Products/Sub/SV2.webp";
-import S3 from "../../assets/Products/Sub/SV3.png";
+import S3 from "../../assets/Products/Sub/DISPOSABLE RAZOR.jpeg";
 import S4 from "../../assets/Products/Sub/SV4.webp";
 import S5 from "../../assets/Products/Sub/SV5.png";
-import S6 from "../../assets/Products/Sub/SV6.webp";
+import S6 from "../../assets/Products/Sub/SINGLE EDGE.JPEG";
 import S7 from "../../assets/Products/Sub/SV7.png";
 import S8 from "../../assets/Products/Sub/SV8.png";
-import S9 from "../../assets/Products/Sub/SV9.png";
+import S9 from "../../assets/Products/Sub/TRIMMER.png";
 
 //Perfume
 import PsubDeodorant from "../../assets/Products/Sub/PsubDeodorant.png";

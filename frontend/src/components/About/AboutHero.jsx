@@ -48,7 +48,7 @@ export default function AboutHero() {
 
           {/* Description (From Screenshot) */}
           <p className="about-anim text-slate-300 text-base md:text-lg leading-relaxed max-w-xl mb-8">
-            Super Value Trading is a Dubai-based international trading company helping brands launch, grow, and scale across global markets with trust, strategy, and expertise.
+            Super Value Trading is a Dubai-based international distribution and sourcing company helping brands launch, grow, and scale across global markets with trust, strategy, and expertise.
           </p>
 
           {/* ======================================================= */}

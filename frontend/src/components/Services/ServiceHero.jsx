@@ -98,7 +98,7 @@ const heroDataStore = {
       { type: 'image', src: blade, mobileSrc: [bladeMobile] }
     ],
     features: [
-      { title: "Precision", desc: "Engineering" },
+      { title: "Cryo Genic Sputtering", desc: "Coating technology" },
       { title: "Trusted", desc: "Global standard" },
       { title: "Wholesale", desc: "Bulk optimized" },
       { title: "Logistics", desc: "Fast shipping" }
@@ -195,7 +195,7 @@ export default function ServiceHero({ category = "perfumery" }) {
         {/* Top Text Content */}
         <div className="w-full lg:w-[65%] xl:w-[50%] mb-12 mt-10 md:mt-0">
 
-          <h1 className="hero-text-anim text-4xl md:text-6xl font-bold tracking-tight leading-[1.1] md:leading-[1] mb-3 whitespace-pre-line">
+          <h1 className="hero-text-anim text-4xl md:text-6xl font-bold md:mt-20 tracking-tight leading-[1.1] md:leading-[1] mb-3 whitespace-pre-line">
             <span className="text-white block">{data.titleWhite}</span>
             <span className="text-orange-500">{data.titleOrange}</span>
           </h1>

@@ -3,7 +3,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 // Import your plant/leaf image here
-import leafImg from "../../assets/About/AboutPersonal.png"; // Replace with your actual image path
+import leafImg from "../../assets/About/ResponsibleImg.png"; // Replace with your actual image path
 
 gsap.registerPlugin(ScrollTrigger);
 
