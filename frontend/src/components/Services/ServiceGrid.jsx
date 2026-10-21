@@ -22,7 +22,7 @@ import S2 from "../../assets/Products/Sub/SV2.webp";
 import S3 from "../../assets/Products/Sub/DISPOSABLE RAZOR.jpeg";
 import S4 from "../../assets/Products/Sub/SV4.webp";
 import S5 from "../../assets/Products/Sub/SV5.png";
-import S6 from "../../assets/Products/Sub/SINGLE EDGE.JPEG";
+import S6 from "../../assets/Products/Sub/SINGLE EDGE.jpeg";
 import S7 from "../../assets/Products/Sub/SV7.png";
 import S8 from "../../assets/Products/Sub/SV8.png";
 import S9 from "../../assets/Products/Sub/TRIMMER.png";
