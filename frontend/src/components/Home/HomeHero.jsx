@@ -63,7 +63,7 @@ export default function HomeHero() {
 
               <h1 className="slide-anim text-white font-bold text-5xl md:text-6xl lg:text-7xl leading-[1.05] tracking-tight mb-8 drop-shadow-lg max-w-3xl">
                 {slide.title === "Silvermax" ? (
-                  <span className="font-black italic uppercase text-[#1a1a1a] tracking-tighter">
+                  <span className="font-black italic uppercase text-white tracking-tighter">
                     SILVERMAX<sup className="text-[0.4em] align-super font-semibold ml-1">&reg;</sup>
                   </span>
                 ) : (
