@@ -22,10 +22,18 @@ import A5 from "../assets/Products/Sub/tierSub.png";
 //silver
 import S1 from "../assets/Products/Sub/SV1.webp";
 import S2 from "../assets/Products/Sub/SV2.webp";
-import S3 from "../assets/Products/Sub/SV3.webp";
+// import S3 from "../assets/Products/Sub/SV3.webp";
 import S4 from "../assets/Products/Sub/SV4.webp";
 import S5 from "../assets/Products/Sub/SV5.png";
 import S6 from "../assets/Products/Sub/SV6.webp";
+import S7 from "../assets/Products/Sub/TrimmerSub.png";
+import S8 from "../assets/Products/Sub/TRIMMER.png";
+import S9 from "../assets/Products/Sub/Sil.jpg";
+import S10 from "../assets/Products/Sub/Sil2.jpg";
+import S11 from "../assets/Products/Sub/ProcessPic.jpg";
+import S12 from "../assets/Products/Sub/ProcessPic2.jpg";
+import S13 from "../assets/Products/Sub/DISPOSABLE RAZOR.jpg";
+
 
 // perfumnery 
 
@@ -35,6 +43,13 @@ import p3 from "../assets/Products/Sub/PsubManufacturing.png";
 import p4 from "../assets/Products/Sub/PsubPerfume.png";
 import p5 from "../assets/Products/Sub/PsubSpray.png";
 import p6 from "../assets/Products/Sub/PsubOil.png";
+import p7 from "../assets/Products/Sub/Per.png";
+import p8 from "../assets/Products/Sub/Per2.webp";
+import p9 from "../assets/Products/Sub/Per3.webp";
+import p10 from "../assets/Products/Sub/Per4.webp";
+import p11 from "../assets/Products/Sub/Per5.webp";
+import p12 from "../assets/Products/Sub/Per6.webp";
+import p13 from "../assets/Products/Sub/Per7.png";
 
 
 
@@ -110,10 +125,19 @@ export const galleryData = [
 
   
   // PERFUMERY
-  { id: 501, category: "perfumery", src: p1, title: "Luxury Perfume Formulation" },
-  { id: 502, category: "perfumery", src: p2, title: "Private Label Bottles" },
+  { id: 501, category: "perfumery", src: p11, title: "Luxury Perfume Formulation" },
+  { id: 502, category: "perfumery", src: p12, title: "Private Label Bottles" },
   { id: 503, category: "perfumery", src: p3, title: "Essential Oils Extraction" },
   { id: 504, category: "perfumery", src: p4, title: "Custom Scent Development" },
+  { id: 505, category: "perfumery", src: p5, title: "Fragrance Blending Process" },
+  { id: 506, category: "perfumery", src: p6, title: "Perfume Packaging" },
+  { id: 507, category: "perfumery", src: p7, title: "Perfume Bottle Design" },
+  { id: 508, category: "perfumery", src: p8, title: "Perfume Manufacturing Facility" },
+  { id: 509, category: "perfumery", src: p9, title: "Perfume Quality Control" },
+  { id: 510, category: "perfumery", src: p10, title: "Perfume Production Line" },
+  { id: 511, category: "perfumery", src: p1, title: "Perfume Filling Process" },
+  { id: 512, category: "perfumery", src: p2, title: "Perfume Labeling and Packaging" },
+  { id: 513, category: "perfumery", src: p13, title: "Perfume Distribution and Logistics" },
 
   // AUTOMOBILES
   { id: 601, category: "automobiles", src: A5, title: "Supervalue OEM Tires" },
@@ -134,8 +158,15 @@ export const galleryData = [
   // SILVERMAX
   { id: 801, category: "silvermax-blade", src: S1, title: "Super Platinum Blades" },
   { id: 802, category: "silvermax-blade", src: S2, title: "Precision Manufacturing" },
-  { id: 803, category: "silvermax-blade", src: S3, title: "Wholesale Packaging" },
+  // { id: 803, category: "silvermax-blade", src: S3, title: "Wholesale Packaging" },
   { id: 804, category: "silvermax-blade", src: S4, title: "Metal Razor Assemblies" },
   { id: 805, category: "silvermax-blade", src: S5, title: "Quality Control Lab" },
   { id: 806, category: "silvermax-blade", src: S6, title: "Final Product Inspection" },
+  { id: 807, category: "silvermax-blade", src: S7, title: "Trimmer Manufacturing" },
+  { id: 808, category: "silvermax-blade", src: S8, title: "Trimmer Assembly Line" },
+  { id: 809, category: "silvermax-blade", src: S9, title: "Silvermax Blade Packaging" },
+  { id: 810, category: "silvermax-blade", src: S10, title: "Silvermax Blade Quality Check" },
+  { id: 811, category: "silvermax-blade", src: S11, title: "Silvermax Blade Production Process" },
+  { id: 812, category: "silvermax-blade", src: S12, title: "Silvermax Blade Manufacturing Facility" },
+  { id: 813, category: "silvermax-blade", src: S13, title: "Disposable Razor Manufacturing" },
 ];

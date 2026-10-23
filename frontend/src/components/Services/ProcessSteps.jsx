@@ -3,7 +3,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 // Replace this with your actual image path for the manufacturing image
-import S3 from "../../assets/Products/Sub/ProcessPic2.jpg";
+import S3 from "../../assets/Products/Sub/ProcessPic2.png";
 // import autoImg from '../../assets/img/auto-manufacturing.jpg';
 // import perfumeryImg from '../../assets/img/perfumery-manufacturing.jpg';
 // import fmcgImg from '../../assets/img/fmcg-manufacturing.jpg';

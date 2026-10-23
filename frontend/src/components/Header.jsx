@@ -128,21 +128,19 @@ export default function Header() {
           <Link to="/gallery" className="hover:text-orange-500 transition-colors">Gallery</Link>
         </nav>
 
-        {/* DESKTOP CONTACT BUTTONS */}
-        <div className="hidden md:flex items-center gap-6">
-          <a 
-            href="https://wa.me/971529607401" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 font-bold hover:text-[#25D366] transition-colors group"
-          >
-            <FaWhatsapp className="text-[2rem] text-orange-500 group-hover:text-[#25D366] transition-colors" />
-            <span className="hidden lg:block text-sm transition-colors group-hover:text-[#25D366]"></span>
-          </a>
-          <Link to="/contact" className="bg-[#f3790a] hover:bg-orange-600 text-white font-bold text-sm px-6 py-2.5 rounded transition-all shadow-sm">
-            Get In Touch
-          </Link>
-        </div>          
+       <div className="hidden md:flex items-center gap-6">
+  <a 
+    href="https://wa.me/971529607401" 
+    target="_blank" 
+    rel="noopener noreferrer"
+    className="flex items-center gap-2 font-bold group"
+  >
+    <FaWhatsapp className="text-[2rem] text-[#25D366] group-hover:scale-110 transition-transform duration-300" />
+  </a>
+  <Link to="/contact" className="bg-[#f3790a] hover:bg-orange-600 text-white font-bold text-sm px-6 py-2.5 rounded transition-all shadow-sm">
+    Get In Touch
+  </Link>
+</div>         
       </div>
 
       {/* MOBILE SIDEBAR OVERLAY */}

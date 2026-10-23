@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import p from "../../assets/About/ManufacturingImg.png"
+import p from "../../assets/About/Manufacture.png"
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -77,9 +77,9 @@ export default function ManufacturingMarket() {
             ))}
           </div>
         </div>
-
+            
         {/* Right Image/Collage Space */}
-        <div className="mfg-image-anim w-full lg:w-1/2 md:mt-15 relative rounded-3xl overflow-hidden bg-slate-100 aspect-square md:aspect-[4/4] border border-slate-200">
+        <div className="mfg-image-anim w-full lg:w-1/2 md:mt-1 relative rounded-3xl overflow-hidden bg-slate-100 aspect-square md:aspect-[4/4] border border-slate-200">
           <img src={p} alt="Manufacturing Operations" className="w-full h-full object-cover" />
           {/* <div className="absolute bottom-6 right-6 bg-white/90 backdrop-blur-md p-3 rounded-2xl shadow-xl max-w-[200px] border border-white/20">
             <p className="text-orange-500 font-bold text-[10px] uppercase tracking-widest mb-1">Our Manufacturing Capabilities</p>

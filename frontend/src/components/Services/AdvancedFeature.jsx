@@ -5,10 +5,12 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 import S1 from "../../assets/Products/Sub/SV1.webp";
 import S2 from "../../assets/Products/Sub/SV2.webp";
-import S3 from "../../assets/Products/Sub/SV3.webp";
+import S3 from "../../assets/Products/Sub/DISPOSABLE RAZOR.jpeg";
 import S4 from "../../assets/Products/Sub/SV3.png";
 import S5 from "../../assets/Products/Sub/SV5.png";
 import S6 from "../../assets/Products/Sub/SV6.webp";
+import S7 from "../../assets/Products/Sub/Sil.jpg";
+import S8 from "../../assets/Products/Sub/Sil2.jpg";
 
 
 
@@ -18,6 +20,9 @@ import PsubManufacturing from "../../assets/Products/Sub/PsubManufacturing.png";
 import PsubPerfume from "../../assets/Products/Sub/PsubPerfume.png";
 import PsubEssentialOil from "../../assets/Products/Sub/PsubEssentialOil.png";
 import PsubSpray from "../../assets/Products/Sub/PsubSpray.png";
+import Per from "../../assets/Products/Sub/Per.png";
+import Per2 from "../../assets/Products/Sub/Per2.webp";
+import Per3 from "../../assets/Products/Sub/Per3.webp";
 
 
 //personal care
@@ -34,6 +39,10 @@ import A2 from "../../assets/Products/Sub/evSub.png";
 import A3 from "../../assets/Products/Sub/partsSub.png";
 import A4 from "../../assets/Products/Sub/threeSub.png";
 import A5 from "../../assets/Products/Sub/tierSub.png";
+import A6 from "../../assets/Products/Sub/A6.jpeg";
+import A7 from "../../assets/Products/Sub/A7.png";
+import A8 from "../../assets/Products/Sub/A8.png";
+import A9 from "../../assets/Products/Sub/A9.png";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -71,7 +80,9 @@ const featureDataStore = {
       S3,
       S4,
       S5,
-      S6
+      S6,
+      S7,
+      S8
     ]
   },
   "personal-care": {
@@ -132,7 +143,10 @@ const featureDataStore = {
     ctaLink: "/contact",
     images: [
       PsubOil,
+      Per,
       PsubManufacturing,
+      Per2,
+      Per3,
       PsubSpray,
       PsubPerfume,
       PsubEssentialOil
@@ -163,9 +177,12 @@ const featureDataStore = {
     ctaLabel: "View Automotive",
     ctaLink: "/contact",
     images: [
+      A8,
     A2,
-    A3,
+    A7,
+    A6,
     A4,
+    A9,
     A5
 
     ]

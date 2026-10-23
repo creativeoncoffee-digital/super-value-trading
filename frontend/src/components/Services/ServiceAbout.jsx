@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import CareAbout from '../../assets/Products/ServicePage/CareAbout.png';
-import SilverAbout from '../../assets/Products/ServicePage/SilverAbout.png';
+import SilverAbout from '../../assets/Products/ServicePage/ResearchImg.png';
 import AutomobileAbout from '../../assets/Products/ServicePage/AutomobileAbout.png';
 import PerfumeAbout from '../../assets/Products/ServicePage/PerfumeAbout.png';
 import PersonalAbout from '../../assets/Products/ServicePage/PersonalAbout.png';

@@ -13,55 +13,52 @@ export default function GlobalPresence() {
   const [activeLocation, setActiveLocation] = useState("UAE");
 
   // =========================================================================
-  // GLOBAL LOCATION DATA
-  // To move a dot on your map, adjust the 'top' and 'left' percentages below.
+  // RECALIBRATED GLOBAL LOCATION DATA
+  // Coordinates highly tuned to match standard dotted world map layouts
   // =========================================================================
   const locations = [
     // --- Middle East & GCC ---
-    { id: "UAE", country: "UAE", city: "Dubai", top: "45%", left: "62%" },
-    { id: "Saudi Arabia", country: "Saudi Arabia", city: "Riyadh", top: "43%", left: "59%" },
-    { id: "GCC", country: "GCC Region", city: "Multiple Hubs", top: "46%", left: "60%" },
-    { id: "Iraq", country: "Iraq", city: "Baghdad", top: "38%", left: "58%" },
+    { id: "UAE", country: "UAE", city: "Dubai", top: "48%", left: "63%" },
+    { id: "Saudi Arabia", country: "Saudi Arabia", city: "Riyadh", top: "48%", left: "59%" },
+    { id: "GCC", country: "GCC Region", city: "Multiple Hubs", top: "46%", left: "61%" },
+    { id: "Iraq", country: "Iraq", city: "Baghdad", top: "40%", left: "58%" },
     
     // --- Africa ---
-    { id: "Algeria", country: "Algeria", city: "Algiers", top: "40%", left: "46%" },
-    { id: "Nigeria", country: "Nigeria", city: "Abuja", top: "55%", left: "48%" },
-    { id: "Morocco", country: "Morocco", city: "Rabat", top: "38%", left: "43%" },
+    { id: "Morocco", country: "Morocco", city: "Rabat", top: "40%", left: "43%" },
+    { id: "Algeria", country: "Algeria", city: "Algiers", top: "42%", left: "47%" },
     { id: "Tunisia", country: "Tunisia", city: "Tunis", top: "37%", left: "48%" },
-    { id: "Burkina Faso", country: "Burkina Faso", city: "Ouagadougou", top: "52%", left: "44%" },
-    { id: "Ghana", country: "Ghana", city: "Accra", top: "56%", left: "45%" },
-    { id: "Libya", country: "Libya", city: "Tripoli", top: "39%", left: "50%" },
-    { id: "Angola", country: "Angola", city: "Luanda", top: "68%", left: "51%" },
-    { id: "Uganda", country: "Uganda", city: "Kampala", top: "60%", left: "56%" },
+    { id: "Libya", country: "Libya", city: "Tripoli", top: "42%", left: "51%" },
     { id: "Ivory Coast", country: "Ivory Coast", city: "Yamoussoukro", top: "55%", left: "43%" },
+    { id: "Burkina Faso", country: "Burkina Faso", city: "Ouagadougou", top: "52%", left: "44%" },
+    { id: "Ghana", country: "Ghana", city: "Accra", top: "57%", left: "45%" },
+    { id: "Nigeria", country: "Nigeria", city: "Abuja", top: "55%", left: "49%" },
+    { id: "Angola", country: "Angola", city: "Luanda", top: "68%", left: "51%" },
+    { id: "Uganda", country: "Uganda", city: "Kampala", top: "59%", left: "57%" },
 
     // --- Asia ---
-    { id: "China", country: "China", city: "Shanghai", top: "38%", left: "80%" },
-    { id: "Malaysia", country: "Malaysia", city: "Kuala Lumpur", top: "58%", left: "78%" },
-    { id: "Vietnam", country: "Vietnam", city: "Hanoi", top: "52%", left: "79%" },
-    { id: "Singapore", country: "Singapore", city: "Singapore", top: "60%", left: "79%" },
-    { id: "Turkey", country: "Turkey", city: "Istanbul", top: "35%", left: "55%" },
+    { id: "China", country: "China", city: "Shanghai", top: "42%", left: "77%" },
+    { id: "Vietnam", country: "Vietnam", city: "Hanoi", top: "53%", left: "78%" },
+    { id: "Malaysia", country: "Malaysia", city: "Kuala Lumpur", top: "58%", left: "77%" },
+    { id: "Singapore", country: "Singapore", city: "Singapore", top: "61%", left: "78%" },
+    { id: "Turkey", country: "Turkey", city: "Istanbul", top: "35%", left: "54%" },
 
     // --- Europe ---
-    { id: "UK", country: "United Kingdom", city: "London", top: "25%", left: "45%" },
-    { id: "Ireland", country: "Ireland", city: "Dublin", top: "24%", left: "43%" },
-    { id: "Spain", country: "Spain", city: "Madrid", top: "34%", left: "44%" },
-    { id: "Italy", country: "Italy", city: "Rome", top: "32%", left: "49%" },
+    { id: "UK", country: "United Kingdom", city: "London", top: "29%", left: "45%" },
+    { id: "Ireland", country: "Ireland", city: "Dublin", top: "28%", left: "43%" },
+    { id: "Spain", country: "Spain", city: "Madrid", top: "37%", left: "44%" },
+    { id: "Italy", country: "Italy", city: "Rome", top: "34%", left: "49%" },
 
     // --- Americas ---
-    { id: "USA", country: "USA", city: "New York", top: "35%", left: "22%" },
-    { id: "Canada", country: "Canada", city: "Toronto", top: "25%", left: "20%" },
-    { id: "Mexico", country: "Mexico", city: "Mexico City", top: "45%", left: "15%" },
-    { id: "Venezuela", country: "Venezuela", city: "Caracas", top: "55%", left: "25%" },
-    { id: "Chile", country: "Chile", city: "Santiago", top: "80%", left: "23%" }
+    { id: "Canada", country: "Canada", city: "Toronto", top: "30%", left: "24%" },
+    { id: "USA", country: "USA", city: "New York", top: "38%", left: "21%" },
+    { id: "Mexico", country: "Mexico", city: "Mexico City", top: "47%", left: "14%" },
+    { id: "Venezuela", country: "Venezuela", city: "Caracas", top: "56%", left: "24%" },
+    { id: "Chile", country: "Chile", city: "Santiago", top: "78%", left: "23%" }
   ];
 
   // Alphabetize the list for the dropdown menu
   const sortedLocations = [...locations].sort((a, b) => a.country.localeCompare(b.country));
 
-  // =========================================================================
-  // UPDATED STATS DATA
-  // =========================================================================
   const stats = [
     { id: 1, suffix: "+", target: 23, label: "YEARS EXPERIENCE", icon: "M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" },
     { id: 2, suffix: "+", target: 80, label: "COUNTRIES SERVED", icon: "M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" },
@@ -77,31 +74,26 @@ export default function GlobalPresence() {
 
   useEffect(() => {
     let ctx = gsap.context(() => {
-      // 1. Reveal Header & Controls
       gsap.fromTo('.reveal-up',
         { opacity: 0, y: 30 },
         { opacity: 1, y: 0, duration: 0.8, stagger: 0.15, ease: 'power3.out', scrollTrigger: { trigger: sectionRef.current, start: 'top 80%' } }
       );
 
-      // 2. Reveal Map
       gsap.fromTo('.map-anim',
         { opacity: 0, scale: 0.95 },
         { opacity: 1, scale: 1, duration: 1.2, ease: 'power2.out', scrollTrigger: { trigger: '.map-container', start: 'top 75%' } }
       );
 
-      // 3. Pop-in Map Markers sequentially
       gsap.fromTo('.marker-anim',
         { opacity: 0, scale: 0 },
         { opacity: 1, scale: 1, duration: 0.5, stagger: 0.05, ease: 'back.out(2)', scrollTrigger: { trigger: '.map-container', start: 'top 60%' } }
       );
 
-      // 4. Reveal Stats Row
       gsap.fromTo('.stat-box',
         { opacity: 0, y: 30 },
         { opacity: 1, y: 0, duration: 0.6, stagger: 0.15, ease: 'power3.out', scrollTrigger: { trigger: '.stats-row', start: 'top 85%' } }
       );
 
-      // 5. Animate Numbers Counting Up
       statsRefs.current.forEach((el) => {
         const target = parseInt(el.getAttribute('data-target'), 10);
         gsap.fromTo(el,
@@ -113,7 +105,6 @@ export default function GlobalPresence() {
             snap: { innerHTML: 1 },
             scrollTrigger: { trigger: el, start: 'top 90%', once: true },
             onUpdate: function () {
-              // Automatically add commas to large numbers (e.g., 2,000)
               el.innerHTML = Math.round(this.targets()[0].innerHTML).toLocaleString('en-US');
             }
           }
@@ -130,23 +121,22 @@ export default function GlobalPresence() {
         
         {/* Header */}
         <div className="text-center mb-10 max-w-2xl">
-            <p className="text-2xl md:text-[1rem] font-extrabold text-orange-500 leading-tight mb-4 tracking-wide">
-           Global Reach
+          <p className="text-2xl md:text-[1rem] font-extrabold text-orange-500 leading-tight mb-4 tracking-wide">
+            Global Reach
           </p>
           <h2 className="reveal-up text-3xl md:text-5xl font-semibold text-[#0B1E3A] mb-4 tracking-tight">
-          Our GLobal Presence
+            Our Global Presence
           </h2>
           <p className="reveal-up text-slate-500 text-base leading-relaxed">
             Operating from the world's most strategic logistical hubs, ensuring seamless cross-border trade, compliance, and distribution worldwide.
           </p>
         </div>
 
-        {/* Controls (Interactive Dropdown & Button) */}
+        {/* Controls */}
         <div className="reveal-up flex flex-col sm:flex-row items-center gap-4 z-30 relative shadow-xl shadow-slate-200/50 rounded-lg bg-white p-2 border border-slate-100">
           <div className="relative flex items-center bg-white px-4 py-3 rounded-md w-full sm:w-35">
             <span className="mr-3 text-lg">🌍</span>
             
-            {/* Dynamic Select mapping over your locations array */}
             <select 
               value={activeLocation || "UAE"}
               onChange={(e) => setActiveLocation(e.target.value)}
@@ -161,11 +151,10 @@ export default function GlobalPresence() {
             
             <svg className="w-4 h-4 text-slate-400 absolute right-4 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
           </div>
-        
         </div>
 
-        {/* Map Container */}
-        <div className="map-container map-anim relative w-full max-w-7xl my-10 aspect-[2/1] md:aspect-[2.5/1]">
+        {/* Map Container (Fixed Dimensions) */}
+        <div className="map-container map-anim relative w-full max-w-5xl my-10 aspect-[2/1] lg:aspect-[2.2/1]">
           <img 
             src={mapImg} 
             alt="Global Map" 
@@ -183,21 +172,21 @@ export default function GlobalPresence() {
                 style={{ 
                   top: loc.top, 
                   left: loc.left,
+                  transform: 'translate(-50%, -50%)', // Keeps dots perfectly centered on their coordinates
                   zIndex: isActive ? 50 : 10 
                 }}
                 onMouseEnter={() => setActiveLocation(loc.id)}
                 onMouseLeave={() => setActiveLocation(null)}
               >
-                {/* Outer Ripple Effect - Highlights when active */}
                 {isActive && (
                   <div className="absolute -inset-2 bg-orange-500/40 rounded-full animate-ping opacity-75 pointer-events-none"></div>
                 )}
                 
-                {/* Inner Dot */}
+                {/* Fixed Dot Shape: Ensures perfect circles */}
                 <div className={`relative rounded-full shadow-[0_0_10px_rgba(249,115,22,0.8)] border-2 border-white transition-all duration-300 ${
                   isActive 
-                  ? 'w-3 h-3 md:w-4 md:h-4 bg-orange-500 scale-125' 
-                  : 'w-2 h-4 md:w-3 md:h-3 bg-orange-500 group-hover:scale-125'
+                  ? 'w-4 h-4 bg-orange-500 scale-125' 
+                  : 'w-3 h-3 md:w-3.5 md:h-3.5 bg-orange-500 group-hover:scale-125'
                 }`}></div>
 
                 {/* Tooltip */}
@@ -217,14 +206,12 @@ export default function GlobalPresence() {
         <div className="stats-row w-full grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-2">
           {stats.map((stat) => (
             <div key={stat.id} className="stat-box flex flex-col items-center text-center group">
-              {/* SVG Icon */}
               <div className="w-12 h-12 mb-4 text-orange-500 group-hover:-translate-y-1 transition-transform duration-300">
                 <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" className="w-full h-full">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d={stat.icon}></path>
                 </svg>
               </div>
               
-              {/* Number Counter */}
               <div className="flex items-baseline mb-1">
                 {stat.prefix && <span className="text-3xl md:text-5xl font-bold text-[#0B1E3A]">{stat.prefix}</span>}
                 <span 
@@ -234,11 +221,9 @@ export default function GlobalPresence() {
                 >
                   0
                 </span>
-                {/* Dynamically adds the + suffix in orange */}
                 {stat.suffix && <span className="text-3xl md:text-4xl font-bold text-orange-500 ml-1">{stat.suffix}</span>}
               </div>
               
-              {/* Label */}
               <p className="text-xs md:text-sm font-bold text-slate-400 uppercase tracking-widest mt-2">
                 {stat.label}
               </p>
