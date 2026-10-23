@@ -18,8 +18,6 @@ export default function HomeHero() {
      { id: 5, image: slide5, title: "Premium Perfumery", link: "/perfumery" },
      { id: 4, image: slide4, title: "FMCG & Personal Care", link: "/personal-care" },
     { id: 3, image: slide3, title: "Automotive Solutions", link: "/automobiles" },
-    
-   
   ];
 
   useEffect(() => {
@@ -38,11 +36,8 @@ export default function HomeHero() {
   }, [currentSlide]);
 
   return (
-    // Increased height to 100vh and removed margins so the transparent header overlaps perfectly
     <section className="relative w-full h-[100vh] min-h-[600px] bg-[#07101E] overflow-hidden">
-
       <div ref={sliderRef} className="w-full h-full relative group">
-
         {slides.map((slide, index) => (
           <div
             key={slide.id}
@@ -67,7 +62,13 @@ export default function HomeHero() {
               </div>
 
               <h1 className="slide-anim text-white font-bold text-5xl md:text-6xl lg:text-7xl leading-[1.05] tracking-tight mb-8 drop-shadow-lg max-w-3xl">
-                {slide.title}
+                {slide.title === "Silvermax" ? (
+                  <span className="font-black italic uppercase text-[#1a1a1a] tracking-tighter">
+                    SILVERMAX<sup className="text-[0.4em] align-super font-semibold ml-1">&reg;</sup>
+                  </span>
+                ) : (
+                  slide.title
+                )}
               </h1>
 
               <div className="slide-anim">

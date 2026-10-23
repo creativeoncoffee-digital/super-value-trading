@@ -24,8 +24,7 @@ import S1 from "../assets/Products/Sub/SV1.webp";
 import S2 from "../assets/Products/Sub/SV2.webp";
 // import S3 from "../assets/Products/Sub/SV3.webp";
 import S4 from "../assets/Products/Sub/SV4.webp";
-import S5 from "../assets/Products/Sub/SV5.png";
-import S6 from "../assets/Products/Sub/SV6.webp";
+import S5 from "../assets/Products/Sub/SV5.png";;
 import S7 from "../assets/Products/Sub/TrimmerSub.png";
 import S8 from "../assets/Products/Sub/TRIMMER.png";
 import S9 from "../assets/Products/Sub/Sil.jpg";
@@ -161,7 +160,6 @@ export const galleryData = [
   // { id: 803, category: "silvermax-blade", src: S3, title: "Wholesale Packaging" },
   { id: 804, category: "silvermax-blade", src: S4, title: "Metal Razor Assemblies" },
   { id: 805, category: "silvermax-blade", src: S5, title: "Quality Control Lab" },
-  { id: 806, category: "silvermax-blade", src: S6, title: "Final Product Inspection" },
   { id: 807, category: "silvermax-blade", src: S7, title: "Trimmer Manufacturing" },
   { id: 808, category: "silvermax-blade", src: S8, title: "Trimmer Assembly Line" },
   { id: 809, category: "silvermax-blade", src: S9, title: "Silvermax Blade Packaging" },

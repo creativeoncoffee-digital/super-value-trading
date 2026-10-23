@@ -8,7 +8,7 @@ import S2 from "../../assets/Products/Sub/SV2.webp";
 import S3 from "../../assets/Products/Sub/DISPOSABLE RAZOR.jpeg";
 import S4 from "../../assets/Products/Sub/SV3.png";
 import S5 from "../../assets/Products/Sub/SV5.png";
-import S6 from "../../assets/Products/Sub/SV6.webp";
+
 import S7 from "../../assets/Products/Sub/Sil.jpg";
 import S8 from "../../assets/Products/Sub/Sil2.jpg";
 
@@ -80,7 +80,6 @@ const featureDataStore = {
       S3,
       S4,
       S5,
-      S6,
       S7,
       S8
     ]
