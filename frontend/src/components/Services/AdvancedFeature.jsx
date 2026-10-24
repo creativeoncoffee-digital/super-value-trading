@@ -18,11 +18,12 @@ import S8 from "../../assets/Products/Sub/Sil2.jpg";
 import PsubOil from "../../assets/Products/Sub/PsubOil.png";
 import PsubManufacturing from "../../assets/Products/Sub/PsubManufacturing.png";
 import PsubPerfume from "../../assets/Products/Sub/PsubPerfume.png";
-import PsubEssentialOil from "../../assets/Products/Sub/PsubEssentialOil.png";
+// import PsubEssentialOil from "../../assets/Products/Sub/PsubEssentialOil.png";
 import PsubSpray from "../../assets/Products/Sub/PsubSpray.png";
 import Per from "../../assets/Products/Sub/Per.png";
 import Per2 from "../../assets/Products/Sub/Per2.webp";
 import Per3 from "../../assets/Products/Sub/Per3.webp";
+import Sandalwood from "../../assets/Products/Sub/Sandalwood.png";
 
 
 //personal care
@@ -129,7 +130,7 @@ const featureDataStore = {
       },
       {
         title: "Bespoke Packaging",
-        desc: "Premium bottles and unboxing experience.",
+        desc: "Premiums and unboxing experience.",
         icon: "M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"
       },
       {
@@ -148,7 +149,7 @@ const featureDataStore = {
       Per3,
       PsubSpray,
       PsubPerfume,
-      PsubEssentialOil
+      Sandalwood
     ]
   },
   "automobiles": {
@@ -234,41 +235,43 @@ export default function AdvancedFeature({ category = "silvermax" }) {
 
   return (
     <section ref={sectionRef} className="w-full bg-white py-13 md:py-16  overflow-hidden font-sans border-t border-slate-100">
-      {/* FIX: Changed gap-14 lg:gap-20 to exactly gap-10 on desktop to reduce the visual space */}
+   {/* FIX: Changed gap-14 lg:gap-20 to exactly gap-10 on desktop to reduce the visual space */}
       <div className="max-w-8xl mx-auto flex flex-col lg:flex-row items-center gap-10 lg:gap-10">
         
         {/* ======================================================= */}
         {/* LEFT SIDE: TEXT & FEATURES                              */}
         {/* ======================================================= */}
-        <div className="w-full md:ml-17 md:w-1/2 flex flex-col items-start">
+        {/* Added items-center md:items-start to main column */}
+        <div className="w-full md:ml-17 md:w-1/2 flex flex-col items-center md:items-start">
           
           {/* Eyebrow */}
-          <div className="adv-text-anim flex items-center gap-4 mb-4">
-            <h4 className="text-orange-500 font-bold uppercase tracking-[0.2em] text-xs">
+          <div className="adv-text-anim w-full flex items-center justify-center md:justify-start gap-4 mb-4">
+            <h4 className="text-orange-500 font-bold uppercase tracking-[0.2em] text-xs text-center md:text-left">
               {data.eyebrow}
             </h4>
-      
           </div>
 
           {/* Title */}
-          <p className="adv-text-anim text-sm md:text-xl  font-semibold text-[#0B1E3A] tracking-tight leading-[1.1] mb-1 whitespace-pre-line">
+          <p className="adv-text-anim w-full text-center md:text-left text-sm md:text-xl font-semibold text-[#0B1E3A] tracking-tight leading-[1.1] mb-1 whitespace-pre-line">
             {data.title}
           </p>
-            <h2 className="adv-text-anim text-3xl md:text-5xl  font-semibold text-[#0B1E3A] tracking-tight leading-[1.1] mb-6 whitespace-pre-line">
+          <h2 className="adv-text-anim w-full text-center md:text-left text-3xl md:text-5xl font-semibold text-[#0B1E3A] tracking-tight leading-[1.1] mb-6 whitespace-pre-line">
             {data.highlight}
           </h2>
 
           {/* Description */}
-          <p className="adv-text-anim text-slate-500 text-base md:text-lg leading-relaxed mb-10 max-w-lg">
+          <p className="adv-text-anim w-full text-center md:text-left text-slate-500 text-base md:text-lg leading-relaxed mb-10 max-w-lg mx-auto md:mx-0">
             {data.description}
           </p>
 
           {/* Features List */}
-          <div className="adv-text-anim flex flex-col gap-6 mb-12 w-full">
+          {/* Removed ml-10 which was breaking mobile centering */}
+          <div className="adv-text-anim w-full flex flex-col items-center md:items-start gap-6 mb-12">
             {data.features.map((feature, idx) => (
-              <div key={idx} className="flex items-start gap-4 group">
+              // Changed to flex-col on mobile for perfect centering, flex-row on desktop
+              <div key={idx} className="flex flex-col md:flex-row items-center md:items-start text-center md:text-left gap-3 md:gap-4 group max-w-sm md:max-w-none">
                 
-           {/* FIX: Forced the SVG stroke and text explicitly to white on group-hover */}
+                {/* FIX: Forced the SVG stroke and text explicitly to white on group-hover */}
                 <div className="w-12 h-12 md:w-14 md:h-14 rounded-xl bg-orange-50 text-orange-500 flex items-center justify-center shrink-0 border border-orange-100 group-hover:bg-orange-500 group-hover:text-white group-hover:shadow-[0_4px_15px_rgba(243,121,10,0.3)] transition-all duration-300">
                   <svg className="w-6 h-6 md:w-7 md:h-7 group-hover:stroke-white group-hover:text-white transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d={feature.icon}></path>
@@ -289,7 +292,7 @@ export default function AdvancedFeature({ category = "silvermax" }) {
           </div>
 
           {/* CTA Button */}
-          <div className="adv-text-anim">
+          <div className="adv-text-anim w-full flex justify-center md:justify-start">
             <Link 
               to={data.ctaLink} 
               className="inline-flex items-center gap-3 bg-[#f3790a] hover:bg-[#d9660a] text-white font-bold text-sm md:text-base py-4 px-8 rounded-xl shadow-[0_4px_20px_rgba(243,121,10,0.3)] hover:shadow-[0_6px_25px_rgba(243,121,10,0.5)] transition-all duration-300 hover:-translate-y-1 group"

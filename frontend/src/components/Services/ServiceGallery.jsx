@@ -96,7 +96,7 @@ export default function ServiceGallery({ category = "perfumery" }) {
           </div>
           <Link 
             to="/gallery" 
-            className="w-fit bg-orange-500 hover:bg-orange-600 text-white font-bold text-sm px-6 py-3 md:px-8 md:py-4 rounded-xl flex items-center gap-2 transition-all duration-300 shadow-[0_4px_20px_rgba(243,121,10,0.3)] hover:-translate-y-1"
+            className="w-fit  bg-orange-500 hover:bg-orange-600 text-white font-bold text-sm px-6 py-3 md:px-8 md:py-4 rounded-xl flex items-center gap-2 transition-all duration-300 shadow-[0_4px_20px_rgba(243,121,10,0.3)] hover:-translate-y-1"
           >
             View Full Gallery 
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

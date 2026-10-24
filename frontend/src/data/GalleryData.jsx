@@ -37,7 +37,7 @@ import S13 from "../assets/Products/Sub/DISPOSABLE RAZOR.jpg";
 // perfumnery 
 
 import p1 from "../assets/Products/Sub/PsubDeodorant.png";
-import p2 from "../assets/Products/Sub/PsubEssentialOil.png";
+// import p2 from "../assets/Products/Sub/PsubEssentialOil.png";
 import p3 from "../assets/Products/Sub/PsubManufacturing.png";
 import p4 from "../assets/Products/Sub/PsubPerfume.png";
 import p5 from "../assets/Products/Sub/PsubSpray.png";
@@ -49,6 +49,8 @@ import p10 from "../assets/Products/Sub/Per4.webp";
 import p11 from "../assets/Products/Sub/Per5.webp";
 import p12 from "../assets/Products/Sub/Per6.webp";
 import p13 from "../assets/Products/Sub/Per7.png";
+import Santaluxe from "../assets/Products/Gallery/Santaluxe.png";
+import Nubia from "../assets/Products/Gallery/Nubia.png";
 
 
 
@@ -125,6 +127,8 @@ export const galleryData = [
   
   // PERFUMERY
   { id: 501, category: "perfumery", src: p11, title: "Luxury Perfume Formulation" },
+  { id: 5014, category: "perfumery", src: Santaluxe, title: "Santaluxe Perfume" },
+  { id: 5015, category: "perfumery", src: Nubia, title: "Nubia Perfume" },
   { id: 502, category: "perfumery", src: p12, title: "Private Label Bottles" },
   { id: 503, category: "perfumery", src: p3, title: "Essential Oils Extraction" },
   { id: 504, category: "perfumery", src: p4, title: "Custom Scent Development" },
@@ -135,8 +139,9 @@ export const galleryData = [
   { id: 509, category: "perfumery", src: p9, title: "Perfume Quality Control" },
   { id: 510, category: "perfumery", src: p10, title: "Perfume Production Line" },
   { id: 511, category: "perfumery", src: p1, title: "Perfume Filling Process" },
-  { id: 512, category: "perfumery", src: p2, title: "Perfume Labeling and Packaging" },
+  // { id: 512, category: "perfumery", src: p2, title: "Perfume Labeling and Packaging" },
   { id: 513, category: "perfumery", src: p13, title: "Perfume Distribution and Logistics" },
+
 
   // AUTOMOBILES
   { id: 601, category: "automobiles", src: A5, title: "Supervalue OEM Tires" },

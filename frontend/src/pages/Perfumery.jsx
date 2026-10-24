@@ -10,6 +10,7 @@ import ServiceCTA from '../components/CTABanner';
 import WhyPartner from '../components/WhyPartner';
 import HeroMarquee from '../components/HeroMarquee';
 import AdvancedFeature from '../components/Services/AdvancedFeature';
+import OurBrands from '../components/Services/OurBrands';
 
 export default function Perfumery() {
   const category = "perfumery";
@@ -29,6 +30,7 @@ export default function Perfumery() {
         <ServiceAbout category={category} />
           <ServiceGrid category={category} />
              <AdvancedFeature category={category} />
+             <OurBrands />
           <WhyPartner />
            <ServiceCTA category={category}/>
       <ServiceGallery category={category} />

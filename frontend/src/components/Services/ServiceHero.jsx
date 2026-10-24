@@ -25,9 +25,9 @@ import bladeMobile from "../../assets/Products/Banners/blade_phone.png"
 const heroDataStore = {
   "perfumery": {
     kicker: "CREATE YOUR SIGNATURE",
-    titleWhite: "Perfume Brand\nWith Us",
+    titleWhite: "YOUR VISION\nYOUR FRAGRANCE\nYOUR BRAND",
     titleOrange: "",
-    description: "From just $1 to Luxury Premium - we help you create your own perfume brand that defines your identity.",
+    description: "From fragrance development to  finished products, we manufature premium perfumes and fragrance products for brands looking to create something uniquely their own.",
     buttons: [
       { label: "Explore Perfume", link: "/contact", primary: true, arrow: true },
       { label: "Request Brochure", link: "/contact", primary: false, arrow: false }

@@ -28,12 +28,15 @@ import S8 from "../../assets/Products/Sub/SV8.png";
 import S9 from "../../assets/Products/Sub/TrimmerSub.png";
 
 //Perfume
-import PsubDeodorant from "../../assets/Products/Sub/PsubDeodorant.png";
-import PsubEssentialOil from "../../assets/Products/Sub/PsubEssentialOil.png";
+
 import PsubManufacturing from "../../assets/Products/Sub/PsubManufacturing.png";
+import Bakhoor from "../../assets/Products/Sub/Bakhoor.png";
+import Sandalwood from "../../assets/Products/Sub/Sandalwood.png";
+import Operculum from "../../assets/Products/Sub/Operculum.png";
 import PsubPerfume from "../../assets/Products/Sub/PsubPerfume.png";
-import PsubSpray from "../../assets/Products/Sub/PsubSpray.png";
+
 import PsubOil from "../../assets/Products/Sub/PsubOil.png";
+import Other from "../../assets/Products/Sub/others.png";
 
 // personal care
 import c1 from "../../assets/Products/Sub/supervalue edible oil.png";
@@ -76,11 +79,11 @@ const gridDataStore = {
     title: "Explore Fragrance Collections",
     items: [
       { title: "Perfumes", desc: "Signature scents for the elite market.", img: PsubPerfume },
-      { title: "Spray Perfume", desc: "Convenient and easy-to-use fragrance solution.", img: PsubSpray },
+      { title: "Bakhoor", desc: "Traditional and contemporary incense fragrances for morden markets.", img: Bakhoor },
       { title: "Perfume Oils", desc: "Highly concentrated, lasting attars.", img: PsubOil },
-      { title: "Deodorants", desc: "Effective odor protection for all-day freshness.", img: PsubDeodorant },
-      { title: "Essential Oils", desc: "Natural oils for aromatherapy and wellness.", img: PsubEssentialOil },
-      { title: "Perfume Manufacturing", desc: "Custom fragrance creation and production.", img: PsubManufacturing },
+      { title: "Sandalwood", desc: "Premium sandalwood oil for a luxurious scent.", img: Sandalwood }, 
+      { title: "Operculum", desc: "Authentic opoponax (opperculum) resins and blends for distinctive fragrances.", img: Operculum },
+      { title: "Others", desc: "Body sprays , dedorants fragrance mists and other fragrance products.", img: Other },
     ]
   },
   "silvermax-blade": {
@@ -164,7 +167,7 @@ export default function ServiceGrid({ category = "personal-care" }) {
             return (
               <div 
                 key={index} 
-                className={`cat-card group relative bg-white border border-slate-200/60 rounded-[2rem] p-6 lg:p-8 flex flex-col transition-all duration-500 ease-out hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(11,30,58,0.08)] hover:border-orange-500/20 cursor-pointer overflow-hidden z-10 ${gridClass}`}
+                className={`cat-card group relative bg-white border border-slate-200/60 rounded-[2rem] p-6 lg:p-4 flex flex-col transition-all duration-500 ease-out hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(11,30,58,0.08)] hover:border-orange-500/20 cursor-pointer overflow-hidden z-10 ${gridClass}`}
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-orange-50/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
 
@@ -185,7 +188,7 @@ export default function ServiceGrid({ category = "personal-care" }) {
                   </p>
                 </div>
 
-                <div className="absolute bottom-6 right-6 lg:bottom-8 lg:right-8 w-10 h-10 md:w-12 md:h-12 bg-white border border-slate-200 group-hover:bg-orange-500 group-hover:border-orange-500 rounded-full flex items-center justify-center text-slate-400 group-hover:text-white transition-all duration-300 shadow-sm group-hover:shadow-md">
+                <div className="absolute bottom-6 right-8 lg:bottom-8 lg:right-5 w-10 h-10 md:w-12 md:h-12 bg-white border border-slate-200 group-hover:bg-orange-500 group-hover:border-orange-500 rounded-full flex items-center justify-center text-slate-400 group-hover:text-white transition-all duration-300 shadow-sm group-hover:shadow-md">
                   <svg className="w-4 h-4 md:w-5 md:h-5 transform group-hover:translate-x-0.5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 5l7 7-7 7"></path>
                   </svg>
@@ -203,26 +206,26 @@ export default function ServiceGrid({ category = "personal-care" }) {
 
               <div className="relative z-10 w-full">
                 
-                <div className="w-14 h-14 bg-white/10 rounded-2xl flex items-center justify-center mb-6 md:mb-8 text-orange-500 backdrop-blur-md border border-white/10 group-hover:scale-110  group-hover:text-white transition-all duration-500">
+                <div className="w-14 h-14 bg-white/10 rounded-2xl flex items-center justify-center mb-3 md:mb-4 text-orange-500 backdrop-blur-md border border-white/10 group-hover:scale-110  group-hover:text-white transition-all duration-500">
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path>
                   </svg>
                 </div>
                 
-                <h3 className="text-white font-extrabold text-2xl  mb-4 leading-tight">
+                <h3 className="text-white font-extrabold text-2xl  mb-2 leading-tight">
                   Looking for a <br className="hidden md:block" />
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">Custom Solution?</span>
                 </h3>
                 
-                <p className="text-slate-300 text-sm md:text-sm  leading-relaxed mb-8 md:mb-10 max-w-md">
-                  Don't see what you need? Send us a direct enquiry for custom manufacturing, bulk wholesale orders, or to explore our complete, unlisted catalog.
+                <p className="text-slate-300 text-sm md:text-sm  leading-relaxed mb-3 md:mb-3 max-w-md">
+                  We specialize in creating tailored products and solutions to meet your unique business needs.
                 </p>
                 
                 <Link 
                   to="/contact" 
-                  className="inline-flex items-center gap-3 bg-orange-500 hover:bg-orange-600 text-white font-bold text-sm md:text-base py-4 px-8 rounded-xl transition-all duration-300 shadow-[0_4px_20px_rgba(243,121,10,0.4)] hover:shadow-[0_6px_25px_rgba(243,121,10,0.6)] group/btn"
+                  className="inline-flex items-center gap-1 bg-orange-500 hover:bg-orange-600 text-white font-bold text-sm md:text-base py-4 px-8 rounded-xl transition-all duration-300 shadow-[0_4px_20px_rgba(243,121,10,0.4)] hover:shadow-[0_6px_25px_rgba(243,121,10,0.6)] group/btn"
                 >
-                  Send an Enquiry
+                  Send Enquiry
                   <svg className="w-5 h-5 transform group-hover/btn:translate-x-1.5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
                   </svg>
