@@ -32,6 +32,16 @@ import c2 from "../../assets/Products/Sub/supervalue facewash.png";
 import c3 from "../../assets/Products/Sub/supervalue hair oil.png";
 import c4 from "../../assets/Products/Sub/supervalue handwash.png";
 import c6 from "../../assets/Products/Sub/supervalue shampoo.png";
+import c5 from "../../assets/Products/Sub/Essential Oil 2.jpg";
+import c7 from "../../assets/Products/Sub/Essential Oil 4.jpg";
+import c8 from "../../assets/Products/Sub/HAIR CARE.png";
+import c9 from "../../assets/Products/Sub/Salon Supplies.jpg";
+import c10 from "../../assets/Products/Sub/Other FMCG 2.jpg";
+import c11 from "../../assets/Products/Sub/Luxury Skincare Production Line.png";
+
+
+
+
 
 
 //Automobile
@@ -110,9 +120,15 @@ const featureDataStore = {
     ctaLabel: "View Personal Care",
     ctaLink: "/contact",
     images: [
+      c5,
+      c7,
+      c8,
          c1,
           c2,
+          c9,
+          c10,
            c3,
+           c11,
           c4,
             c6
     ]

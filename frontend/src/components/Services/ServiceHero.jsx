@@ -66,9 +66,9 @@ const heroDataStore = {
 
   "personal-care": {
     kicker: "PREMIUM PERSONAL CARE",
-    titleWhite: "FMCG &\nPersonal Care",
-    titleOrange: "",
-    description: "Premium quality products. Trusted brands. Endless possibilities. Formulated for safety and everyday wellness.",
+    titleWhite: "Everyday\n Essentials.",
+    titleOrange: "Global Market.",
+    description: "Trusted FMCG and personal care products from leading brands. Sourced, supplied and distributed worldwide.",
     buttons: [
       { label: "Explore Products", link: "/contact", primary: true, arrow: true },
       { label: "Request Brochure", link: "/contact", primary: false, arrow: false }

@@ -18,42 +18,43 @@ export default function GlobalPresence() {
   // =========================================================================
   const locations = [
     // --- Middle East & GCC ---
-    { id: "UAE", country: "UAE", city: "Dubai", top: "48%", left: "63%" },
-    { id: "Saudi Arabia", country: "Saudi Arabia", city: "Riyadh", top: "48%", left: "59%" },
-    { id: "GCC", country: "GCC Region", city: "Multiple Hubs", top: "46%", left: "61%" },
-    { id: "Iraq", country: "Iraq", city: "Baghdad", top: "40%", left: "58%" },
+    { id: "UAE", country: "UAE", city: "Dubai", top: "35%", left: "47%" },
+    { id: "Saudi Arabia", country: "Saudi Arabia", city: "Riyadh", top: "35%", left: "45%" },
+    // { id: "GCC", country: "GCC Region", city: "Multiple Hubs", top: "46%", left: "61%" },
+    { id: "Iraq", country: "Iraq", city: "Baghdad", top: "28%", left: "46%" },
     
     // --- Africa ---
-    { id: "Morocco", country: "Morocco", city: "Rabat", top: "40%", left: "43%" },
-    { id: "Algeria", country: "Algeria", city: "Algiers", top: "42%", left: "47%" },
-    { id: "Tunisia", country: "Tunisia", city: "Tunis", top: "37%", left: "48%" },
-    { id: "Libya", country: "Libya", city: "Tripoli", top: "42%", left: "51%" },
-    { id: "Ivory Coast", country: "Ivory Coast", city: "Yamoussoukro", top: "55%", left: "43%" },
-    { id: "Burkina Faso", country: "Burkina Faso", city: "Ouagadougou", top: "52%", left: "44%" },
-    { id: "Ghana", country: "Ghana", city: "Accra", top: "57%", left: "45%" },
-    { id: "Nigeria", country: "Nigeria", city: "Abuja", top: "55%", left: "49%" },
-    { id: "Angola", country: "Angola", city: "Luanda", top: "68%", left: "51%" },
-    { id: "Uganda", country: "Uganda", city: "Kampala", top: "59%", left: "57%" },
+    { id: "Morocco", country: "Morocco", city: "Rabat", top: "22%", left: "39%" },
+    { id: "Algeria", country: "Algeria", city: "Algiers", top: "33%", left: "37%" },
+    { id: "Tunisia", country: "Tunisia", city: "Tunis", top: "32%", left: "38%" },
+    { id: "Libya", country: "Libya", city: "Tripoli", top: "35%", left: "42%" },
+      // { id: "Ivory Coast", country: "Ivory Coast", city: "Yamoussoukro", top: "55%", left: "43%" },
+      // { id: "Burkina Faso", country: "Burkina Faso", city: "Ouagadougou", top: "52%", left: "44%" },
+      // { id: "Ghana", country: "Ghana", city: "Accra", top: "57%", left: "45%" },
+    { id: "Nigeria", country: "Nigeria", city: "Abuja", top: "51%", left: "39%" },
+    { id: "Angola", country: "Angola", city: "Luanda", top: "63%", left: "40%" },
+    { id: "Uganda", country: "Uganda", city: "Kampala", top: "55%", left: "43%" },
 
     // --- Asia ---
-    { id: "China", country: "China", city: "Shanghai", top: "42%", left: "77%" },
-    { id: "Vietnam", country: "Vietnam", city: "Hanoi", top: "53%", left: "78%" },
-    { id: "Malaysia", country: "Malaysia", city: "Kuala Lumpur", top: "58%", left: "77%" },
-    { id: "Singapore", country: "Singapore", city: "Singapore", top: "61%", left: "78%" },
-    { id: "Turkey", country: "Turkey", city: "Istanbul", top: "35%", left: "54%" },
+    { id: "China", country: "China", city: "Shanghai", top: "28%", left: "57%" },
+    { id: "India", country: "India", city: "Mumbai", top: "35%", left: "54%" },
+    { id: "Vietnam", country: "Vietnam", city: "Hanoi", top: "42%", left: "63%" },
+    { id: "Malaysia", country: "Malaysia", city: "Kuala Lumpur", top: "49%", left: "61%" },
+    { id: "Singapore", country: "Singapore", city: "Singapore", top: "51%", left: "60%"},
+    { id: "Turkey", country: "Turkey", city: "Istanbul", top: "25%", left: "41%"  },
 
     // --- Europe ---
-    { id: "UK", country: "United Kingdom", city: "London", top: "29%", left: "45%" },
-    { id: "Ireland", country: "Ireland", city: "Dublin", top: "28%", left: "43%" },
-    { id: "Spain", country: "Spain", city: "Madrid", top: "37%", left: "44%" },
-    { id: "Italy", country: "Italy", city: "Rome", top: "34%", left: "49%" },
+    { id: "UK", country: "United Kingdom", city: "London", top: "5%", left: "45%" },
+    { id: "Ireland", country: "Ireland", city: "Dublin", top: "7%", left: "43%" },
+    { id: "Spain", country: "Spain", city: "Madrid", top: "11%", left: "41%" },
+    { id: "Italy", country: "Italy", city: "Rome", top: "13%", left: "44%" },
 
     // --- Americas ---
-    { id: "Canada", country: "Canada", city: "Toronto", top: "30%", left: "24%" },
-    { id: "USA", country: "USA", city: "New York", top: "38%", left: "21%" },
-    { id: "Mexico", country: "Mexico", city: "Mexico City", top: "47%", left: "14%" },
-    { id: "Venezuela", country: "Venezuela", city: "Caracas", top: "56%", left: "24%" },
-    { id: "Chile", country: "Chile", city: "Santiago", top: "78%", left: "23%" }
+    { id: "Canada", country: "Canada", city: "Toronto", top: "16%", left: "12%" },
+    { id: "USA", country: "USA", city: "New York", top: "21%", left: "12%" },
+    { id: "Mexico", country: "Mexico", city: "Mexico City", top: "31%", left: "9%" },
+    { id: "Venezuela", country: "Venezuela", city: "Caracas", top: "46%", left: "16%" },
+    { id: "Chile", country: "Chile", city: "Santiago", top: "74%", left: "18%" }
   ];
 
   // Alphabetize the list for the dropdown menu

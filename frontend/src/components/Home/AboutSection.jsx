@@ -52,13 +52,13 @@ export default function AboutSection() {
         <div className="w-full lg:w-1/2 flex flex-col items-start justify-center pl-0 lg:pl-8">
           
           <div className="about-text flex items-center gap-4 mb-4">
-            <span className="w-8 h-[2px] bg-orange-500"></span>
-            <h2 className="brand-title text-3xl md:text-4xl font-semibold text-[#0B1E3A] tracking-tight">
+            {/* <span className="w-8 h-[2px] bg-orange-500"></span> */}
+            <h2 className="brand-title text-left md:text-left md:ml-12 text-3xl md:text-4xl font-semibold text-[#0B1E3A] tracking-tight">
              Connecting Products, Markets & Opportunities
             </h2>
           </div>
 
-          <p className="about-text brand-lead ml-12 mb-10">
+          <p className="about-text brand-lead md:ml-12 mb-10">
             At SVGT, we go beyond conventional trading.<br className="hidden xl:block" />
             <span className="text-orange-500 font-bold">  We identify the right products and reliable sources,</span><br className="hidden xl:block" />
              create efficient routes to market, and build the partnerships needed to turn products

@@ -10,6 +10,11 @@ import c3 from "../assets/Products/Sub/supervalue hair oil.png";
 import c4 from "../assets/Products/Sub/supervalue handwash.png";
 import c5 from "../assets/Products/Sub/supervalue persume.png"
 import c6 from "../assets/Products/Sub/supervalue shampoo.png";
+import c7 from "../assets/Products/Sub/Essential Oil 4.jpg";
+import c8 from "../assets/Products/Sub/HAIR CARE.png";
+import c9 from "../assets/Products/Sub/Salon Supplies.jpg";
+import c10 from "../assets/Products/Sub/Other FMCG 2.jpg";
+import c11 from "../assets/Products/Sub/Luxury Skincare Production Line.png";
 
 //auto
 import A1 from "../assets/Products/Sub/carSub.png";
@@ -17,6 +22,11 @@ import A2 from "../assets/Products/Sub/evSub.png";
 import A3 from "../assets/Products/Sub/partsSub.png";
 import A4 from "../assets/Products/Sub/threeSub.png";
 import A5 from "../assets/Products/Sub/tierSub.png";
+import A6 from "../assets/Products/Sub/A6.jpeg";
+import A7 from "../assets/Products/Sub/A7.png";
+import A8 from "../assets/Products/Sub/A8.png";
+import A9 from "../assets/Products/Sub/A9.png";
+
 
 
 //silver
@@ -149,6 +159,12 @@ export const galleryData = [
   { id: 603, category: "automobiles", src: A4, title: "Two Wheeler Distribution" },
   { id: 604, category: "automobiles", src: A1, title: "Commercial Three Wheelers" },
   { id: 605, category: "automobiles", src: A2, title: "Commercial Three Wheelers" },
+  { id: 607, category: "automobiles", src: A7, title: "Electric Vehicle Components" },
+  { id: 608, category: "automobiles", src: A8, title: "Automotive Manufacturing Process" },
+  { id: 606, category: "automobiles", src: A6, title: "Electric Mobility Solutions" },
+  
+  { id: 609, category: "automobiles", src: A9, title: "Automotive Assembly Line" },
+
 
   // PERSONAL CARE
   { id: 701, category: "personal-care", src: c1, title: "Daily Skincare Line" },
@@ -157,6 +173,14 @@ export const galleryData = [
   { id: 704, category: "personal-care", src: c4, title: "Cosmetics Packaging" },
    { id: 705, category: "personal-care", src:c5, title: "Haircare & Shampoos" },
   { id: 706, category: "personal-care", src: c6, title: "Cosmetics Packaging" },
+  { id: 709, category: "personal-care", src: c9, title: "Salon Supplies" },
+  { id: 710, category: "personal-care", src: c10, title: "Other FMCG Products" },
+  { id: 707, category: "personal-care", src: c7, title: "Essential Oils" },
+  { id: 708, category: "personal-care", src: c8, title: "Hair Care Products" },
+  
+  { id: 711, category: "personal-care", src: c11, title: "Luxury Skincare Production Line" },
+
+  
 
 
   // SILVERMAX

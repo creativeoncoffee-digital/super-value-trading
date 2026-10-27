@@ -5,7 +5,8 @@ import CareAbout from '../../assets/Products/ServicePage/CareAbout.png';
 import SilverAbout from '../../assets/Products/ServicePage/ResearchImg.png';
 import AutomobileAbout from '../../assets/Products/ServicePage/AutomobileAbout.png';
 import PerfumeAbout from '../../assets/Products/ServicePage/PerfumeAbout.png';
-import PersonalAbout from '../../assets/Products/ServicePage/PersonalAbout.png';
+// import PersonalAbout from '../../assets/Products/ServicePage/PersonalAbout.png';
+import PersonalAbout from '../../assets/Products/Sub/AboutFmcg.png';
 import { Link } from 'react-router-dom';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -56,8 +57,8 @@ const aboutDataStore = {
   "personal-care": {
     title: "ABOUT FMCG",
     headline: "Your Trusted",
-    highlight: " FMCG & Personal Care Brand Builder Partner",
-    description: "Super Value supplies grooming and personal care essentials across international markets, combining dependable sourcing, private-label support, and long-term distribution expertise.",
+    highlight: "Consumer Products Sourced With Purpose.",
+    description: "We bring a wide range of FMCG and personal care products to global markets, combining trusted brands, consistent quality and efficient supply chain solutions. Whether you're a distributor, retailer or a brand owner, we help you access the right products for your market.",
     image: PersonalAbout,
     bullets: [
       "International standards of quality and safety",

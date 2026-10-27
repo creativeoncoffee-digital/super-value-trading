@@ -54,19 +54,19 @@ const stepsDataStore = {
     {
       step: "01",
       title: "Direct Supply",
-      desc: "Wholesale sourcing of passenger vehicles, commercial fleets, tires, and premium aftermarket spare parts.",
+      desc: "Access genuine automotive products from established manufacturers, including CEAT, TVS, Hero, Piaggio and other brands across two-wheelers, three-wheelers, tyres and electric mobility.",
       icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
     },
     {
       step: "02",
       title: "Distribution &\nGlobal Partnerships",
-      desc: "Build reliable automotive supply chains and expand your dealership reach across major international corridors.",
+      desc: "We connect manufacturers with distributors, dealers and commercial partners across international markets.",
       icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
     },
     {
       step: "03",
       title: "OEM Parts &\nCustom Solutions",
-      desc: "Source specific commercial fleet solutions or manufacture precision OEM components for your automotive brand.",
+      desc: "Develop your own branded range of selected automotive products (tyres and spare parts) through our manufacturing and sourcing network.",
       icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
     }
   ],
@@ -94,19 +94,19 @@ const stepsDataStore = {
     {
       step: "01",
       title: "Direct Supply",
-      desc: "Wholesale fulfillment of high-demand FMCG, skincare, body lotions, and essential personal care products.",
+      desc: "Market-Ready Products:From small orders to large volumes, we provide flexible supply solutions for distributors, wholesalers and retailers.",
       icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
     },
     {
       step: "02",
-      title: "Distribution &\nGlobal Partnerships",
-      desc: "Leverage our logistics expertise to stock your retail networks and expand FMCG distribution globally.",
+      title: "Source",
+      desc: "Market-Ready Products :We identify and source quality FMCG products from trusted manufacturers and brands..",
       icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
     },
     {
       step: "03",
-      title: "Private Label / OEM\nManufacturing",
-      desc: "Develop unique cosmetic formulations, shampoos, and skincare lines under your own established brand name.",
+      title: "Expand",
+      desc: "Distribution & Market: Access We connect the right products to international markets through our global network and long-term partnerships.",
       icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
     }
   ]
