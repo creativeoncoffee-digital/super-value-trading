@@ -25,8 +25,8 @@ import bladeMobile from "../../assets/Products/Banners/blade_phone.png"
 const heroDataStore = {
   "perfumery": {
     kicker: "CREATE YOUR SIGNATURE",
-    titleWhite: "YOUR VISION\nYOUR FRAGRANCE\nYOUR BRAND",
-    titleOrange: "",
+    titleWhite: "YOUR VISION\nYOUR FRAGRANCE",
+    titleOrange: "YOUR BRAND",
     description: "From fragrance development to  finished products, we manufature premium perfumes and fragrance products for brands looking to create something uniquely their own.",
     buttons: [
       { label: "Explore Perfume", link: "/contact", primary: true, arrow: true },
@@ -46,8 +46,8 @@ const heroDataStore = {
 
   "automobiles": {
     kicker: "GLOBAL MOBILITY & TIRES",
-    titleWhite: "Parts &\nAccessories",
-    titleOrange: "",
+    titleWhite: "Parts &",
+    titleOrange: "Accessories",
     description: "Reliable parts. Trusted brands. Powerful performance. Your one-stop destination for two & three wheelers and all kinds of spare parts.",
     buttons: [
       { label: "Explore Parts", link: "/contact", primary: true, arrow: true },
@@ -86,8 +86,8 @@ const heroDataStore = {
 
   "silvermax-blade": {
     kicker: "PRECISION GROOMING",
-    titleWhite: "A BETTER SHAVE\nBUILDS BRANDS",
-    titleOrange: "", 
+    titleWhite: "A BETTER SHAVE",
+    titleOrange: "BUILDS BRANDS", 
     description: "Silvermax blades use premium materials and precision engineering to deliver lasting sharpness, a smooth glide, and reliable performance.",
 
     buttons: [

@@ -34,6 +34,12 @@ const statsData = [
     title: "Business Support",
     subtitle: "& Execution",
     icon: "M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"
+  },
+    {
+    value: "Trusted",
+    title: "Global Partners",
+    subtitle: "Worldwide",
+    icon: "M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"
   }
 ];
 
@@ -90,7 +96,7 @@ export default function AboutStats() {
            style={{ backgroundImage: 'radial-gradient(#0B1E3A 1px, transparent 1px)', backgroundSize: '30px 30px' }}>
       </div>
 
-      <div className="relative z-10 max-w-[1600px] mx-auto px-[clamp(1.5rem,5vw,4rem)] flex flex-col items-center">
+      <div className="relative z-10 max-w-[1800px] mx-auto px-[clamp(1.5rem,5vw,4rem)] flex flex-col items-center">
         
         {/* ======================================================= */}
         {/* HEADER SECTION                                          */}
@@ -114,7 +120,7 @@ export default function AboutStats() {
         {/* ======================================================= */}
         {/* 5-COLUMN STATS GRID                                     */}
         {/* ======================================================= */}
-        <div className="stats-grid w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-y-12 gap-x-4">
+        <div className="stats-grid w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-y-8 gap-x-4">
           {statsData.map((stat, index) => {
             const isAutoHovered = autoHoverIndex === index;
 
@@ -125,7 +131,7 @@ export default function AboutStats() {
               >
                 
                 {/* Icon Container with Hover Lift */}
-                <div className={`w-16 h-16 rounded-2xl border border-slate-100 flex items-center justify-center mb-5 transition-all duration-500 ease-out
+                <div className={`w-12 h-12 rounded-2xl border border-slate-100 flex items-center justify-center mb-5 transition-all duration-500 ease-out
                   ${isAutoHovered 
                     ? '-translate-y-2 bg-orange-500 text-white shadow-[0_10px_20px_rgba(243,121,10,0.3)]' 
                     : 'bg-slate-50 text-[#0B1E3A] group-hover:-translate-y-2 group-hover:bg-orange-500 group-hover:text-white group-hover:shadow-[0_10px_20px_rgba(243,121,10,0.3)]'}
@@ -136,7 +142,7 @@ export default function AboutStats() {
                 </div>
 
                 {/* Massive Stat Value */}
-                <h3 className={`text-2xl md:text-3xl font-semibold mb-2 transition-colors duration-300 tracking-tight
+                <h3 className={`text-2xl md:text-2xl font-semibold mb-2 transition-colors duration-300 tracking-tight
                   ${isAutoHovered ? 'text-orange-500' : 'text-[#0B1E3A] group-hover:text-orange-500'}
                 `}>
                   {stat.value}

@@ -92,7 +92,7 @@ export default function BusinessSolutions() {
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-orange-500/5 rounded-full blur-[100px] pointer-events-none -z-10"></div>
 
       {/* FIX: Shifted the entire content block right using relative positioning on large screens */}
-      <div className="max-w-[1400px] mx-auto px-[clamp(1.5rem,5vw,4rem)] flex flex-col items-center relative lg:left-8 xl:left-12">
+      <div className="max-w-[1400px] mx-auto px-[clamp(1.5rem,5vw,4rem)] flex flex-col items-center relative ">
         
         {/* ======================================================= */}
         {/* SECTION HEADER                                          */}

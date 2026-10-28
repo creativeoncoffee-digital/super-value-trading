@@ -86,15 +86,15 @@ const aboutDataStore = {
     positioning: [
      { 
         title: "High-Grade Materials", 
-        desc: "Premium stainless steel engineered for performance." //[cite: 32]
+        desc: "Premium stainless steel engineered for performance."
       },
       { 
         title: "Advanced Coatings", 
-        desc: "Platinum and specialized surface treatments." //[cite: 32]
+        desc: "Platinum and specialized surface treatments."
       },
       { 
         title: "Precision Edge", 
-        desc: "Controlled grinding, honing and finishing." //[cite: 32]
+        desc: "Controlled grinding, honing and finishing."
       }
     ]
   }
@@ -126,14 +126,13 @@ export default function ServiceAbout({ category = "perfumery" }) {
   if (!data) return null;
 
   return (
-    <section ref={containerRef} className="w-full bg-white py-24 md:py-15 font-sans overflow-hidden border-t border-slate-100">
+    <section ref={containerRef} className="w-full bg-white py-10 md:py-15 font-sans overflow-hidden border-t border-slate-100">
       <div className="max-w-[1400px] mx-auto px-[clamp(1.5rem,5vw,4rem)] flex flex-col lg:flex-row gap-8 lg:gap-10 items-center">
         
         {/* ========================================== */}
         {/* LEFT: IMAGE SHOWCASE                       */}
         {/* ========================================== */}
         <div className="about-img-wrapper w-full lg:w-1/2 relative flex justify-center lg:justify-start">
-          
           
           {/* Main Image Container */}
           <div className="relative w-full max-w-[550px] aspect-[4/5] rounded-[2.5rem] overflow-hidden shadow-[0_20px_60px_rgba(7,19,38,0.08)] group bg-slate-100">
@@ -150,24 +149,26 @@ export default function ServiceAbout({ category = "perfumery" }) {
         {/* ========================================== */}
         {/* RIGHT: TEXT & CONTENT                      */}
         {/* ========================================== */}
-        <div className="w-full lg:w-1/2 flex flex-col items-start">
+        {/* FIX: Parent flex container aligns center on mobile, start on desktop */}
+        <div className="w-full lg:w-1/2 flex flex-col items-center md:items-start">
           
           {/* Eyebrow */}
-          <div className="about-text-anim flex items-center gap-4 mb-4">
-            <h3 className="text-orange-500 font-semibold uppercase tracking-[0.2em] text-xs md:text-xs">
+          <div className="about-text-anim flex items-center justify-center md:justify-start gap-4 mb-4 w-full">
+            <h3 className="text-orange-500 font-semibold uppercase tracking-[0.2em] text-xs md:text-xs text-center md:text-left">
               {data.title}
             </h3>
           </div>
-{/* Headline with Gradient Highlight */}
-          <h2 className="about-text-anim flex flex-col gap-1 md:gap-2 mb-4">
+
+          {/* Headline with Gradient Highlight */}
+          <h2 className="about-text-anim flex flex-col items-center md:items-start gap-1 md:gap-2 mb-4 w-full">
             
-            {/* "Your Trusted" - Smaller, medium weight */}
-            <span className="text-sm md:text-xl font-medium  -mb-2 text-[#071326] tracking-tight">
+            {/* "Your Trusted" - Centered on mobile, left on desktop */}
+            <span className="text-sm md:text-xl font-medium -mb-2 text-[#071326] tracking-tight text-center md:text-left w-full">
               {data.headline}
             </span>
             
             {/* The Highlight Text */}
-            <span className="text-3xl md:text-5xl font-semibold text-[#071326] leading-[1.2] tracking-tight pb-1">
+            <span className="text-3xl md:text-5xl font-semibold text-[#071326] leading-[1.2] tracking-tight pb-1 text-center md:text-left w-full">
               
               {/* Logic to color ONLY the last two words */}
               {data.highlight && data.highlight.split(' ').length > 2 ? (
@@ -177,7 +178,7 @@ export default function ServiceAbout({ category = "perfumery" }) {
                   
                   {/* Part 2: ONLY the last two words get the orange gradient */}
                   {/* FIX: Added py-1 so the bottom of the 'g' never gets clipped by bg-clip-text */}
-                  <span className="text-transparent bg-clip-text bg-orange-500  py-1">
+                  <span className="text-transparent bg-clip-text bg-orange-500 py-1">
                     {data.highlight.split(' ').slice(-3).join(' ')}
                   </span>
                 </>
@@ -193,37 +194,36 @@ export default function ServiceAbout({ category = "perfumery" }) {
           </h2>
 
           {/* Description */}
-          <p className="about-text-anim text-slate-500 text-base md:text-lg leading-snug mb-6 max-w-xl">
+          <p className="about-text-anim text-slate-500 text-base md:text-lg leading-snug mb-6 max-w-xl text-center md:text-left">
             {data.description}
           </p>
 
           {/* Elegant Bullet Points */}
-          <ul className="about-text-anim flex flex-col gap-4 mb-8 w-full">
+          <ul className="about-text-anim flex flex-col items-center md:items-start gap-4 mb-8 w-full">
             {data.bullets.map((bullet, i) => (
-              <li key={i} className="flex items-start gap-2">
-                <div className="w-4 h-4 rounded-full bg-orange-50 flex items-center justify-center shrink-0 mt-0 border border-orange-100">
+              <li key={i} className="flex items-start justify-center md:justify-start gap-3 w-full">
+                <div className="w-4 h-4 rounded-full bg-orange-50 flex items-center justify-center shrink-0 mt-1 border border-orange-100">
                   <svg className="w-3 h-3 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7"></path>
                   </svg>
                 </div>
-                <span className="text-[#071326] font-semibold text-sm md:text-base leading-snug">
+                <span className="text-[#071326] font-semibold text-sm md:text-base leading-snug text-left max-w-[280px] md:max-w-none">
                   {bullet}
                 </span>
               </li>
             ))}
           </ul>
 
-        {/* UNIFIED DESIGN: The 3-Block "Positioning" Style for EVERY category */}
+          {/* UNIFIED DESIGN: The 3-Block "Positioning" Style for EVERY category */}
           <div className="about-text-anim w-full mb-8">
-            {/* FIX: Changed gap-2 to gap-5 on mobile to separate the stacked items */}
-            <div className="grid grid-cols-3 md:grid-cols-3 gap-2 md:gap-4 bg-slate-50 rounded-2xl p-5 md:p-6 border border-slate-100 shadow-sm">
+            {/* FIX: Stack on mobile (grid-cols-1) and side-by-side on desktop (md:grid-cols-3) */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-4 bg-slate-50 rounded-2xl p-5 md:p-6 border border-slate-100 shadow-sm w-full">
               {data.positioning.map((pos, i) => (
-                <div key={i} className="flex flex-col border-l-2 border-orange-400 pl-4 py-1">
+                <div key={i} className="flex flex-col items-center md:items-start text-center md:text-left border-t-2 md:border-t-0 md:border-l-2 border-orange-400 pt-3 md:pt-1 pl-0 md:pl-4">
                   <span className="text-[#071326] font-bold text-xs uppercase tracking-widest mb-1">
                     {pos.title}
                   </span>
-                  {/* Removed mt-1 so it sits cleanly under the title with natural spacing */}
-                  <span className="text-slate-600  text-[9px] md:text-xs font-medium leading-relaxed">
+                  <span className="text-slate-600 text-[11px] md:text-xs font-medium leading-relaxed">
                     {pos.desc}
                   </span>
                 </div>
@@ -231,7 +231,7 @@ export default function ServiceAbout({ category = "perfumery" }) {
             </div>
           </div>
 
-        {/* CTA Button */}
+          {/* CTA Button */}
           <Link 
             to="/contact" 
             className="inline-flex items-center gap-3 bg-orange-500 hover:bg-[#d9660a] text-white font-bold text-sm py-4 px-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 group w-fit"

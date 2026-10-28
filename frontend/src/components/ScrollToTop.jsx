@@ -42,7 +42,7 @@ export default function ScrollToTop() {
 
   return (
     <div 
-      className={`fixed bottom-6 right-6 md:bottom-10 md:right-10 z-[100] transition-all duration-700 ease-out flex items-center justify-center
+      className={`fixed bottom-6 right-6 md:bottom-15 md:right-10 z-[100] transition-all duration-700 ease-out flex items-center justify-center
         ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12 pointer-events-none'}
       `}
     >

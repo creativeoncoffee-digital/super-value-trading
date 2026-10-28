@@ -165,13 +165,14 @@ export default function ServiceGrid({ category = "personal-care" }) {
             const gridClass = 'md:col-span-6 lg:col-span-3';
 
             return (
-              <div 
+              <Link 
+                to="/contact"
                 key={index} 
                 className={`cat-card group relative bg-white border border-slate-200/60 rounded-[2rem] p-6 lg:p-4 flex flex-col transition-all duration-500 ease-out hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(11,30,58,0.08)] hover:border-orange-500/20 cursor-pointer overflow-hidden z-10 ${gridClass}`}
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-orange-50/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
 
-                <div className="mx-0 -mt-6 lg:-mt-8 lg:-mx-8 h-48 md:h-56 mb-8 flex items-center justify-center overflow-hidden bg-slate-50 border-b border-slate-100/50 rounded-t-[1.5rem] lg:rounded-t-[2rem]">
+                <div className="mx-0 -mt-6 lg:-mt-8 lg:-mx-8 h-58 md:h-80 mb-8 flex items-center justify-center overflow-hidden bg-slate-50 border-b border-slate-100/50 rounded-t-[1.5rem] lg:rounded-t-[2rem]">
                   <img 
                     src={cat.img} 
                     alt={cat.title} 
@@ -193,7 +194,7 @@ export default function ServiceGrid({ category = "personal-care" }) {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 5l7 7-7 7"></path>
                   </svg>
                 </div>
-              </div>
+              </Link>
             );
           })}
 
